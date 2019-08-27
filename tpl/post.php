@@ -2,7 +2,7 @@
 <html lang="en" data-wb-role="formdata" data-wb-form="{{_form}}" data-wb-item="{{_item}}" data-wb-hide="wb">
 <meta data-wb-role="include" data-wb-src="template" data-wb-name="head.inc.php" data-wb-hide="*">
 <meta http-equiv="refresh" content="0;/404" data-wb-where='"{{active}}" = ""' data-wb-append="head">
-<body class="preloader-body">
+<body class="preloader-body" data-wb-where='"{{active}}" = "on"'>
 <meta data-wb-role="include" data-wb-src="template" data-wb-name="loader.inc.php" data-wb-hide="*">
 <meta data-wb-role="include" data-wb-src="template" data-wb-name="header.inc.php" data-wb-hide="*">
 
