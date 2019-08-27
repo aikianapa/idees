@@ -26,31 +26,6 @@
     </div>
 </div>
 
-<div class="post-content" style="background:url(/tpl/img/bg/404.jpg) 90% 0 no-repeat; background-size:cover;">
-    <div class="container-fluid">
-                <div class="post-container" style="background:transparent; height:70vh;">
-                    <div class="post-inner">
-                        <section class="post-section post-section--top">
-                            <div class="row">
-                                <div class="col-md-6 post-left">
-                                    <h2 class="post-h2">Ошибка 404</h2>
-                                    <p>Страница не найдена. Возможно, она была перемещена или удалена. Воспользуйтесь меню для перехода в другой раздел.</p>
-                                </div>
-                                <div class="col-md-6 post-right">
-                                    <div class="post-count">
-                                        <div class="post-count__big">&nbsp;</div>
-                                        <div class="post-count__text">
-                                            &nbsp;
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                    </div>
-                </div>
-</div>
-    
 
 <meta data-wb-selector=".post-section img" data-wb-addclass="img-fluid">
 <meta data-wb-selector=".post-section img" data-wb-removeattr="style">
