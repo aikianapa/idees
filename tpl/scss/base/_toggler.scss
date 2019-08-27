@@ -1,0 +1,77 @@
+
+
+/* The switch - the box around the switch__slider */
+.switch__label {
+  cursor: pointer;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+}
+.switch__wrap {
+  height: 20px;
+}
+.switch__text {
+  margin-left: 20px;
+  color: #777D89;
+}
+
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The switch__slider */
+.switch__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #595A5D;
+  -webkit-transition: .4s;
+  transition: .4s;
+  //border: 1px solid #A2A2A4;
+
+}
+
+.switch__slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #A2A2A4;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input.success:checked + .switch__slider {
+  //background-color: #fff;
+  &:before {
+    background-color: white;
+  }
+}
+
+input:focus + .switch__slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .switch__slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded switch__sliders */
+.switch__slider.round {
+  border-radius: 34px;
+}
+
+.switch__slider.round:before {
+  border-radius: 50%;
+}

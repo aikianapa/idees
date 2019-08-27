@@ -1,0 +1,49 @@
+.sort {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  justify-content: flex-end;
+  @media (min-width: 375px) {}
+  @media (min-width: 768px) {}
+  @media (min-width: 992px) {}
+  @media (min-width: 1200px) {
+    padding-right: 20px;
+  }
+
+  @media (max-width: 374px) {
+    font-size: 14px;
+  }
+}
+.sort__icon {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.sort__desc {
+  display: inline-block;
+  margin-right: 10px;
+  color: #B4B4B4;
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.sort__dropdown {
+  display: inline-block;
+  .dropdown-menu {
+    background: #4B4B4B;
+    padding: 20px 0;
+    min-width: 100%;
+  }
+  .dropdown-item {
+    color: #777D89;
+    padding: 0 20px;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+    &:hover {
+      background: transparent;
+      color: white;
+    }
+  }
+}

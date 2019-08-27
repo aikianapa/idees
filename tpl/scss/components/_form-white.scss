@@ -1,0 +1,57 @@
+.form-white {
+  .form-group__text {
+    color: #20232A;
+    font-size: 16px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    cursor: text;
+    transition: all .2s linear;
+  }
+  .form-control {
+    font-size: 16px;
+    color: #20232A;
+  }
+  .smallText {
+    color: #20232A;
+  }
+  .form-group__check {
+    color: #20232A;
+  }
+  .form-control:focus {
+    border-color: #000 !important;
+  }
+}
+
+.input-file {
+  input {
+    display: none;
+
+  }
+  label {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    &:before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      background: url("../img/icon/file.svg") no-repeat;
+    }
+  }
+
+}
+
+.input-file__title {
+  color: #20232A;
+
+}
+.input-file__max {
+  font-size: 12px;
+  color: #777D89;
+  margin-top: 5px;
+}

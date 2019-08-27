@@ -1,0 +1,125 @@
+.header--main {
+  z-index: 1000;
+  //@media (max-height: 600px) {
+  //  height: auto;
+  //  padding-bottom: 10px;
+  //  .container-fluid {
+  //    padding-top: 8px !important;
+  //  }
+  //}
+}
+
+.body-index.modal-open {
+  height: auto !important;
+}
+
+.html-index.modal-open {
+  height: auto !important;
+}
+
+
+
+.footer--main {
+  z-index: 1000;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.header--main, .footer--main {
+  position: fixed;
+  background: transparent;
+  -webkit-transition: opacity .4s, -webkit-transform .4s ease-out;
+  transition: opacity .4s, -webkit-transform .4s ease-out;
+  transition: transform .4s ease-out, opacity .4s;
+  transition: transform .4s ease-out, opacity .4s, -webkit-transform .4s ease-out;
+}
+
+.footer--main {
+  @media (max-height: 600px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.fp-viewing-screen1 {
+  .header--main, .footer--main {
+    background: transparent;
+  }
+}
+
+.fp-viewing-see-also:not(.body-menu-open) {
+  .logo {
+    svg {
+      #Path_91 {
+        fill: $bgcolor;
+      }
+      #Path_92 {
+        fill: $bgcolor;
+      }
+    }
+  }
+  .header--main, .footer--main {
+    background: transparent;
+    color: $bgcolor;
+    * {
+      color: $bgcolor;
+      fill: $bgcolor;
+    }
+  }
+  #fp-nav ul li a span, .fp-slidesNav ul li a span {
+    background: $bgcolor;
+  }
+}
+
+.section {
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.background--see-also {
+  &:before {
+    background: transparent !important;
+  }
+}
+
+.section--see-also {
+  background: #f3f5f6;
+  .see-also {
+    background: transparent;
+  }
+  @media (max-width: 991px) {
+    .navbar-toggler {
+      .bars {
+        display: none;
+      }
+      &:before {
+        content: '';
+      }
+    }
+  }
+}
+
+#fp-nav {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+.afterLoad:not(.body-menu-open) {
+  .header--main {
+    transform: translate3d(0, -100px, 0);
+  }
+  .footer--main {
+    transform: translate3d(0, 100px, 0);
+  }
+}

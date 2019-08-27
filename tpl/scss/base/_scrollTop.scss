@@ -1,0 +1,17 @@
+.scrollTop {
+  position: fixed;
+  left: auto;
+  right: 10px;
+  bottom: 20px;
+  z-index: 111;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+  .scrollTop {
+    left: 40px;
+    right: auto;
+    bottom: 75px;
+  }
+}

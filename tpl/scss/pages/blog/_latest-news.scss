@@ -1,0 +1,76 @@
+.latest-news-wrap {
+  width: 100%;
+  margin-left: auto;
+  .latest-news__date, .latest-news__desc {
+    font-size: 14px;
+  }
+  @media (min-width: 375px) {}
+  @media (min-width: 768px) {}
+  @media (min-width: 992px) {}
+  @media (min-width: 1200px) {
+    max-width: 600px;
+  }
+  @media (min-width: 1300px) {
+    .latest-news__date, .latest-news__desc {
+      font-size: 16px;
+    }
+  }
+
+}
+
+.latest-news {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #5A5A5C;
+  position: relative;
+  @media (min-width: 375px) {}
+  @media (min-width: 480px) {
+
+    padding-left: 210px;
+  }
+  @media (min-width: 992px) {}
+  @media (min-width: 1200px) {}
+
+
+}
+
+.latest-news__left {
+  margin-bottom: 10px;
+  height: 150px;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+  @media (min-width: 375px) {}
+  @media (min-width: 480px) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 190px;
+    margin-bottom: 0;
+    height: auto;
+  }
+  @media (min-width: 992px) {}
+  @media (min-width: 1200px) {}
+
+}
+
+.latest-news__title {
+  font-size: 18px;
+  margin-bottom: 7px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.latest-news__preview {
+  overflow: hidden;
+}
+
+.latest-news__desc {
+  margin-top: 10px;
+  height: 70px;
+  overflow: hidden;
+  line-height: 23px;
+}

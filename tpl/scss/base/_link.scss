@@ -1,0 +1,91 @@
+a:hover {
+  text-decoration: none;
+}
+.link {
+  position: relative;
+  color: $link-color;
+  padding-left: 10px;
+  padding-right: 0;
+  display: inline-block;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 0;
+    top: 50%;
+    left: 0;
+    background: $bg-hover-btn;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+    //opacity: 0;
+  }
+  &:hover, &.link--active {
+    color: white;
+    text-decoration: none;
+    &:after {
+      opacity: 1;
+      height: 30px;
+      margin-top: -15px;
+    }
+  }
+  &:active {
+    &:after {
+      background: white;
+    }
+  }
+}
+
+.link-underline {
+  border-bottom: 1px solid;
+  &:hover {
+    border-bottom: 1px solid transparent;
+  }
+}
+.linkWhite {
+  color: #fff;
+}
+
+.link-black {
+  color: #000000;
+}
+
+.link-img {
+  color: #B4B4B4;
+  display: inline-block;
+  &:hover {
+    color: white;
+  }
+  img {
+    margin-right: 10px;
+  }
+}
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+  .link {
+    padding-right: 10px;
+    padding-left: 0;
+    &:hover, &.link--active {
+      padding-left: 10px;
+      padding-right: 0;
+    }
+  }
+}

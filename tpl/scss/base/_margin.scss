@@ -1,0 +1,12 @@
+.last-mb-0 {
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .mt--60 {
+    top: -60px;
+    position: relative;
+  }
+}

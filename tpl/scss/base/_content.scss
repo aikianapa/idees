@@ -1,0 +1,20 @@
+.content {
+  min-height: 500px;
+  //padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.overflow-auto {
+  overflow: auto;
+  height: 100%;
+}
+
+.content__border {
+  border-top: 1px solid #535456;
+  //margin-top: 14px;
+}
+
+#top {
+  position: relative;
+  top: -80px;
+}

@@ -1,0 +1,86 @@
+.twentytwenty-before-label:before {
+  content: 'было' !important;
+}
+.twentytwenty-after-label:before {
+  content: 'стало' !important;
+}
+
+
+.portfolio-before {
+  background: #F3F5F6;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.portfolio-photo {
+  img {
+    width: 100%;
+  }
+}
+
+
+.portfolio-bg {
+  padding: 50px 0;
+  @media (min-width: 768px) {
+    padding: 100px 0;
+  }
+}
+.portfolio-bg--white {
+  background: #FFFFFF;
+  color: #20232A;
+}
+.portfolio-bg--gray {
+  background: #F3F5F6;
+  color: #20232A;
+}
+
+.portfolio-bg__title {
+  font-size: 40px;
+  text-transform: none;
+  @media (max-width: 1199px) {
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.portfolio-photo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.portfolio-video {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  iframe {
+    width: 100%;
+  }
+}
+
+
+.case-desc {
+  margin-bottom: 40px;
+}
+
+.case-desc__item {
+  display: inline-block;
+  color: #777D89;
+  margin-right: 50px;
+  margin-bottom: 15px;
+}
+
+.case-category {
+
+}
+
+.case-category__item {
+  display: inline-block;
+  color: #fff;
+  background: #777D89;
+  border-radius: 2px;
+  padding: 12px 30px;
+  margin-bottom: 20px;
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}

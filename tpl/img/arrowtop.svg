@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
+  <g id="arrow" transform="translate(-393 1250) rotate(-90)">
+    <circle id="Ellipse_25" data-name="Ellipse 25" cx="27" cy="27" r="27" transform="translate(1196 393)" fill="#fdb813"/>
+    <g id="arrow-right" transform="translate(1211 408)">
+      <g id="Artboard-4" transform="translate(-884 -159)">
+        <g id="_40" data-name="40" transform="translate(884 159)">
+          <path id="Line" d="M3,12H20" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" fill-rule="evenodd"/>
+          <path id="Head" d="M13,4l8,8-8,8" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

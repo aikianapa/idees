@@ -1,0 +1,14 @@
+.tags {
+  color: #B4B4B4;
+  font-size: 0;
+}
+
+.tags__item {
+  display: inline-block;
+  font-size: 16px;
+  &:not(:last-child):after {
+    content: '|';
+    display: inline-block;
+    margin: 0 15px;
+  }
+}
