@@ -24,7 +24,7 @@
 
 <div class="portfolio">
     <div class="container-fluid">
-        <div class="row" data-wb-role="foreach" data-wb-form="products" data-wb-more="#more" data-wb-size="{{_sett.portfolio_list}}" data-wb-sort="_created:d" data-wb-where='active = "on"'>
+        <div class="row" data-wb-role="foreach" data-wb-form="products" data-wb-more="#more" data-wb-size="{{_sett.portfolio_list}}" data-wb-sort="_created:d" data-wb-where='"{{active}}" = "on"'>
             <div class="col-lg-6 mb-5">
                 <a href="/portfolio/{{id}}/" class="portfolio-card">
                     <div class="portfolio-card__bg">

@@ -187,7 +187,7 @@
                     Похожие работы
                 </div>
             </div>
-            <div data-wb-role="foreach" data-wb-form="products" data-wb-tpl="false" data-wb-limit="4" data-wb-rand="true" data-wb-hide="*" data-wb-where='active="on"'>
+            <div data-wb-role="foreach" data-wb-form="products" data-wb-tpl="false" data-wb-limit="4" data-wb-rand="true" data-wb-hide="*" data-wb-where='"{{active}}"="on"'>
                 <div class="col-lg-6 col-xl-6 portfolio-card__col mb-5">
                     <a href="/portfolio/{{id}}/" class="portfolio-card portfolio-card--similar">
                         <div class="portfolio-card__bg" style="background-color: #E1CC17">
