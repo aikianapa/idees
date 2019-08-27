@@ -1,6 +1,7 @@
 <!doctype html>
-<html lang="en" data-wb-role="formdata" data-wb-form="{{_form}}" data-wb-item="{{_item}}" data-wb-hide="wb" data-wb-where='active = "on"'>
+<html lang="en" data-wb-role="formdata" data-wb-form="{{_form}}" data-wb-item="{{_item}}" data-wb-hide="wb">
 <meta data-wb-role="include" data-wb-src="template" data-wb-name="head.inc.php" data-wb-hide="*">
+<meta http-equiv="refresh" content="0;/404" data-wb-where='"{{active}}" = ""' data-wb-append="head">
 <body class="preloader-body">
 <meta data-wb-role="include" data-wb-src="template" data-wb-name="loader.inc.php" data-wb-hide="*">
 <meta data-wb-role="include" data-wb-src="template" data-wb-name="header.inc.php" data-wb-hide="*">
@@ -125,4 +126,3 @@
 <meta data-wb-role="include" data-wb-src="template" data-wb-name="footer.inc.php" data-wb-hide="*">
 </body>
 </html>
-<meta http-equiv="refresh" content="0;/404" data-wb-where='active = ""'>

@@ -85,7 +85,12 @@ $(window).on('load', function () {
     $('body').removeClass('preloader-body');
     $preloader = $('.loaderArea'),
         // $preloader.delay(350).fadeOut('slow');
-        $preloader.addClass('loaderArea--hide');
+    $preloader.addClass('loaderArea--hide');
+    
+    $(".nav-main a[href]").each(function(){
+       if (document.location.pathname.split($(this).attr("href")).length > 1) {$(this).addClass("link--active");}
+    });
+    
 });
 //endregion
 
