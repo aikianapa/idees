@@ -27,7 +27,7 @@
     <div class="container-fluid">
         <div class="row" data-wb-role="foreach" data-wb-form="news" data-wb-sort="date:d" data-wb-size="3" data-wb-more="#moreNews">
             <meta data-wb-role="variable" var="col" data-wb-if='"{{_ndx}}"="3"' value="col-12" else="col-lg-6">
-            <div class="{{_var.col}} mb-5" data-wb-where='"{{active}}"="on"' data-wb-hide="wb">
+            <div class="{{_var.col}} mb-5" data-wb-where='"{{active}}"="on"'>
                 <a href="/blog/{{id}}/" class="blog-card">
                     <div class="blog-card__bg" style="background-image: url('{{_image}}')"></div>
                     <div class="blog-card__category" data-wb-role="tree" data-wb-item="blogtags" data-wb-branch="{{tag}}" data-wb-hide="wb">
