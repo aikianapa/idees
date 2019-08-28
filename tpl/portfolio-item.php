@@ -154,7 +154,7 @@
 </main>
 
 <div data-wb-role="foreach" data-wb-tpl="false" data-wb-from="images" data-wb-hide="wb">
-    <section class="parallax" data-wb-where='"{{%images[{{_idx}}].visible}}"="1" AND "{{_idx}}" > "3" AND "{{_idx}}" < "{{count({{%images}}) - 1}}"' data-parallax="scroll" data-image-src="/uploads/{{_form}}/{{_item}}/{{%images[{{_idx}}].img}}"></section>
+    <section class="parallax" data-wb-where='"{{%images[{{_idx}}].visible}}"="1" AND "{{_idx}}" > "3" AND "{{_idx}}" < "{{count({{%images}})}}"' data-parallax="scroll" data-image-src="/uploads/{{_form}}/{{_item}}/{{%images[{{_idx}}].img}}"></section>
 </div>
 
 
