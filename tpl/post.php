@@ -103,7 +103,7 @@
         <h2 class="see-also__title">
             Читайте также:
         </h2>
-        <div class="row see-also__row" data-wb-role="foreach" data-wb-form="news" data-wb-tpl="false" data-wb-limit="3" data-wb-rand="true" data-wb-where='id != "{{_route.item}}"' data-wb-hide="wb">
+        <div class="row see-also__row" data-wb-role="foreach" data-wb-form="news" data-wb-tpl="false" data-wb-limit="3" data-wb-rand="true" data-wb-where='id != "{{_route.item}}" AND active = "on"' data-wb-hide="wb">
             <div class="col-xl-4 see-also__item">
                 <a href="/blog/{{id}}/" class="see-also__link">
                     <div class="see-also__item-sub" data-wb-role="tree" data-wb-item="blogtags" data-wb-branch="{{tag}}" data-wb-hide="wb">
