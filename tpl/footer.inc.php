@@ -633,6 +633,7 @@
             icon: image
         });
     }
+    
 </script>
 <script async defer  data-wb-hide="wb" data-wb-where='"{{_item}}"="contacts"'
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLPTiq5f79TuxAoW7VZYMUdoWG4p5Xf24&callback=initMap">
