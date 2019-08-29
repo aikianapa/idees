@@ -416,10 +416,25 @@
                 center: uluru,
                 styles: [
                     {
+                        "stylers": [
+                            {
+                                "color": "#2b2f38"
+                            }
+                        ]
+                    },
+                    {
                         "elementType": "geometry",
                         "stylers": [
                             {
-                                "color": "#212121"
+                                "color": "#2b2f38"
+                            }
+                        ]
+                    },
+                    {
+                        "elementType": "labels",
+                        "stylers": [
+                            {
+                                "weight": 0.5
                             }
                         ]
                     },
@@ -435,7 +450,7 @@
                         "elementType": "labels.text.fill",
                         "stylers": [
                             {
-                                "color": "#757575"
+                                "color": "#ffffff"
                             }
                         ]
                     },
@@ -523,7 +538,7 @@
                         "elementType": "geometry.fill",
                         "stylers": [
                             {
-                                "color": "#2c2c2c"
+                                "color": "#292d36"
                             }
                         ]
                     },
@@ -532,7 +547,7 @@
                         "elementType": "labels.text.fill",
                         "stylers": [
                             {
-                                "color": "#8a8a8a"
+                                "color": "#777d89"
                             }
                         ]
                     },
@@ -541,7 +556,7 @@
                         "elementType": "geometry",
                         "stylers": [
                             {
-                                "color": "#373737"
+                                "color": "#20232a"
                             }
                         ]
                     },
@@ -550,7 +565,7 @@
                         "elementType": "geometry",
                         "stylers": [
                             {
-                                "color": "#3c3c3c"
+                                "color": "#20232a"
                             }
                         ]
                     },
@@ -559,7 +574,7 @@
                         "elementType": "geometry",
                         "stylers": [
                             {
-                                "color": "#4e4e4e"
+                                "color": "#2b2f38"
                             }
                         ]
                     },
@@ -568,7 +583,7 @@
                         "elementType": "labels.text.fill",
                         "stylers": [
                             {
-                                "color": "#616161"
+                                "color": "#777d89"
                             }
                         ]
                     },
@@ -577,7 +592,16 @@
                         "elementType": "labels.text.fill",
                         "stylers": [
                             {
-                                "color": "#757575"
+                                "color": "#777d89"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "transit.line",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#777d89"
                             }
                         ]
                     },
@@ -586,7 +610,7 @@
                         "elementType": "geometry",
                         "stylers": [
                             {
-                                "color": "#000000"
+                                "color": "#777d89"
                             }
                         ]
                     },
@@ -595,7 +619,7 @@
                         "elementType": "labels.text.fill",
                         "stylers": [
                             {
-                                "color": "#3d3d3d"
+                                "color": "#20232a"
                             }
                         ]
                     }
