@@ -30,7 +30,8 @@
 <div class="post-content">
     <div class="container-fluid">
                 <div class="post-container">
-                    <div class="post-inner" data-wb-hide="wb" data-wb-role="tree" data-wb-from="content" data-wb-children="false">
+                    <meta data-wb-role="variable" var="table" data-wb-if='_table = "news"' value="content" else="lang">
+                    <div class="post-inner" data-wb-hide="wb" data-wb-role="tree" data-wb-from="{{_var.table}}" data-wb-children="false">
                         <section class="post-section post-section--top">
                             <div class="row">
                                 <div class="col-lg post-left">

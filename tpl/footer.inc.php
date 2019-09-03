@@ -357,7 +357,7 @@
                                 данных
                                 на
                                 основе нашей
-                                <a href="personal.html" class="linkWhite" target="_blank">Политики&nbsp;конфиденциальности</a>
+                                <a href="/privacy" class="linkWhite" target="_blank">Политики&nbsp;конфиденциальности</a>
                             </div>
                         </div>
                     </div>
