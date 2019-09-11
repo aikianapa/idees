@@ -86,10 +86,10 @@
                     Поделиться
                 </div>
                 <div class="button-group">
-                    <a href="/" class="button button--icon button--white-outline button--fb">
+                    <a  onclick="Share.facebook('URL','TITLE','IMG_PATH','DESC')" class="button button--icon button--white-outline button--fb">
                         <img src="img/icon/fb.svg" alt="">
                     </a>
-                    <a href="/" class="button button--icon button--white-outline button--vk">
+                    <a  onclick="Share.vkontakte('URL','TITLE','IMG_PATH','DESC')" class="button button--icon button--white-outline button--vk">
                         <img src="img/icon/vk.svg" alt="">
                     </a>
                 </div>
