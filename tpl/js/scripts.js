@@ -211,7 +211,7 @@ $(document).on('click', '#clearCookies', function () {
     });
     $(document).on('wb_mail_done',function(a, b, c){
         $('.attach').removeClass('active');
-        console.log('a: ' + a + 'b:' + b + 'c:' + c);
+        console.log('a: ' + a.html() + 'b:' + b.html() + 'c:' + c);
     });
 //region
 
