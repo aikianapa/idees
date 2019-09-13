@@ -219,7 +219,10 @@ $(document).on('click', '#clearCookies', function () {
             '        </div>\n' +
             '    </div>';
         var fastOrder = b.closest('.fast-order');
+        console.log(b);
+        console.log(1111);
         if (fastOrder.length) {
+            console.log(1111);
             fastOrder.append(successHtml);
         }
     });
