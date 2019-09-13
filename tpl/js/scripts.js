@@ -227,8 +227,8 @@ $(document).on('click', '#clearCookies', function () {
             console.log("sdfsdf");
             fastOrder.append(successHtml);
         }
-        if (fastOrder.length) {
-            console.log(1111);
+        if (fastOrder2.length) {
+            console.log(2342542453465345);
             fastOrder.append(successHtml);
         }
     });
