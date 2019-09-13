@@ -218,13 +218,9 @@ $(document).on('click', '#clearCookies', function () {
             '            В ближайшее время мы&nbsp;свяжемся&nbsp;с&nbsp;вами\n' +
             '        </div>\n' +
             '    </div>';
-        var fastOrder = b.closest('.fast-order');
-        var fastOrder2 = $(b).closest('.fast-order');
-        console.log(a);
-        console.log(b);
-        if (fastOrder2.length) {
-            console.log(2342542453465345);
-            fastOrder.append(successHtml);
+        var fastOrder = $(b).closest('.fast-order');
+        if (fastOrder.length) {
+            fastOrder.append("" + successHtml + "");
         }
     });
 //region
