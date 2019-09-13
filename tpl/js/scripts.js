@@ -209,9 +209,15 @@ $(document).on('click', '#clearCookies', function () {
     $(document).on('click', '.undo', function () {
         $('.attach').removeClass('active');
     });
+    var form1;
+    var form2;
+    var form3;
     $(document).on('wb_mail_done',function(a, b, c){
+        form1 = a;
+        form2 = b;
+        form3 = c;
         $('.attach').removeClass('active');
-        console.log('a: ' + a.html() + 'b:' + b.html() + 'c:' + c);
+        console.log('a: ' + a + 'b:' + b + 'c:' + c);
     });
 //region
 
