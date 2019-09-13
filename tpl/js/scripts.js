@@ -212,7 +212,7 @@ $(document).on('click', '#clearCookies', function () {
     $(document).on('wb_mail_done',function(a, b){
         $('.attach').removeClass('active');
         var successHtml = '<div class="success-form">\n' +
-            '        <img src="success-form__svg" src="img/svg/success.svg">\n' +
+            '        <img class="success-form__svg" src="img/svg/success.svg">\n' +
             '        <div class="success-form__title">Заявка отправлена</div>\n' +
             '        <div class="success-form__text">\n' +
             '            В ближайшее время мы&nbsp;свяжемся&nbsp;с&nbsp;вами\n' +
