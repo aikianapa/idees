@@ -222,11 +222,6 @@ $(document).on('click', '#clearCookies', function () {
         var fastOrder2 = $(b).closest('.fast-order');
         console.log(a);
         console.log(b);
-        if (b.hasClass('button-arrow')) {
-
-            console.log("sdfsdf");
-            fastOrder.append(successHtml);
-        }
         if (fastOrder2.length) {
             console.log(2342542453465345);
             fastOrder.append(successHtml);
