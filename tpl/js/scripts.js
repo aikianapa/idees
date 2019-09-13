@@ -209,15 +209,19 @@ $(document).on('click', '#clearCookies', function () {
     $(document).on('click', '.undo', function () {
         $('.attach').removeClass('active');
     });
-    var form1;
-    var form2;
-    var form3;
-    $(document).on('wb_mail_done',function(a, b, c){
-        form1 = a;
-        form2 = b;
-        form3 = c;
+    $(document).on('wb_mail_done',function(a, b){
         $('.attach').removeClass('active');
-        console.log('a: ' + a + 'b:' + b + 'c:' + c);
+        var successHtml = '<div class="success-form">\n' +
+            '        <img src="success-form__svg" src="img/svg/success.svg">\n' +
+            '        <div class="success-form__title">Заявка отправлена</div>\n' +
+            '        <div class="success-form__text">\n' +
+            '            В ближайшее время мы&nbsp;свяжемся&nbsp;с&nbsp;вами\n' +
+            '        </div>\n' +
+            '    </div>';
+        var fastOrder = b.closest('.fast-order');
+        if (fastOrder.length) {
+            fastOrder.append(successHtml);
+        }
     });
 //region
 
