@@ -209,19 +209,25 @@ $(document).on('click', '#clearCookies', function () {
     $(document).on('click', '.undo', function () {
         $('.attach').removeClass('active');
     });
-    $(document).on('wb_mail_done',function(a, b){
+    $(document).on('wb_mail_done', function(a, b){
         $('.attach').removeClass('active');
         var successHtml = '<div class="success-form">\n' +
             '        <img class="success-form__svg" src="img/svg/success.svg">\n' +
             '        <div class="success-form__title">Заявка отправлена</div>\n' +
             '        <div class="success-form__text">\n' +
             '            В ближайшее время мы&nbsp;свяжемся&nbsp;с&nbsp;вами\n' +
-            '        </div>\n' +
+            '        </div><i class="success-form__close la la-close"></i> \n' +
             '    </div>';
         var fastOrder = $(b).closest('.fast-order');
         if (fastOrder.length) {
             fastOrder.append("" + successHtml + "");
+            setTimeout(function () {
+                fastOrder.find('.success-form').fadeOut();
+            }, 3000)
         }
+    });
+    $(document).on('click', '.success-form__close', function(a, b){
+        $(this).closest('.success-form').fadeOut();
     });
 //region
 
