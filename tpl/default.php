@@ -4,6 +4,8 @@
 <body class="body-index preloader-body">
 <meta data-wb-role="include" data-wb-src="template" data-wb-name="loader.inc.php" data-wb-hide="*">
 <meta data-wb-role="include" data-wb-src="template" data-wb-name="header.inc.php" data-wb-hide="*">
+<meta data-wb-role="variable" var="i" value="0">
+
 <div id="fullpage">
     <div id="moveDown" class="scroll-button">
         <div class="mouse"></div>
@@ -11,8 +13,7 @@
     </div>
 
     <div data-wb-role="tree" data-wb-from="lang" data-wb-hide="*">
-
-        <div class="section" id="section{{_idx}}" data-anchor="{{id}}"
+        <div class="section" id="section{{_var[i]}}" data-anchor="{{id}}"
             style="background-image: url('/uploads/{{_route.form}}/{{_route.item}}/{{data.image[0].img}}')"
             data-wb-where='"{{substr({{id}},0,6)}}"="screen"' data-wb-hide="wb">
             <div class="container-fluid d-flex align-items-center h-100">
@@ -42,9 +43,33 @@
                     </a>
                 </div>
             </div>
+            <meta data-wb-role="variable" var="i" value="{{_var[i]*1 + 1*1}}">
         </div>
         
-        <div class="section section--see-also" id="section{{_idx}}" data-anchor="{{id}}" data-wb-where='"{{id}}"="see-also"' data-wb-hide="wb">
+        
+        <div data-wb-role="foreach" data-wb-form="products" data-wb-tpl="false" data-wb-sort='sort:a _created:d' data-wb-where='"{{id}}"="see-also"' data-wb-hide="*">
+            <div class="section" id="section{{_var[i]}}" data-anchor="{{id}}" 
+                style="background-image: url('{{_image}}')"
+                data-wb-where='active = "on" AND tohome="on"' data-wb-hide="wb">
+                <div class="container-fluid d-flex align-items-center h-100">
+                    <div class="slider-main__content">
+                        <a href="/portfolio/{{id}}/" class="slider-main__title">
+                            <span class="slider-main__toptitle" data-wb-where='"{{name}}">""' data-wb-hide="wb">
+                                {{name}}
+                            </span>
+                            <br>
+                            <span class="slider-main__title" data-wb-where='"{{descr}}">""' data-wb-hide="wb">
+                                {{descr}}
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <meta data-wb-role="variable" var="i" value="{{_var[i]*1 + 1*1}}">
+            </div>
+        </div>
+        
+        
+        <div class="section section--see-also" id="section{{_var[i]*1 + 1*1}}" data-anchor="{{id}}" data-wb-where='"{{id}}"="see-also"' data-wb-hide="wb">
             <div class="see-also__container container-fluid d-flex align-items-center h-100">
                 <div class="slider-main__content">
                     <h2 class="see-also__title">
@@ -68,8 +93,8 @@
                 </div>
             </div>
         </div>
-
     </div>
+    
 </div>
 <meta data-wb-role="include" data-wb-src="template" data-wb-name="footer.inc.php" data-wb-hide="*">
 </body>

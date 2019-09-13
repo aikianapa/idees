@@ -42,6 +42,11 @@
 	<div class="form-group row">
 	  <label class="col-sm-3 form-control-label">Отображать</label>
 	   <div class="col-sm-2"><label class="switch switch-success"><input type="checkbox" name="active"><span></span></label></div>
+
+	  <label class="col-sm-2 form-control-label">На главную</label>
+	   <div class="col-sm-2"><label class="switch switch-success"><input type="checkbox" name="tohome"><span></span></label></div>
+    
+        <div class="col-sm-3"><input type="text" class="form-control" name="sort" placeholder="Сортировка"></div>
 	</div>
     
 	<div class="form-group row">
