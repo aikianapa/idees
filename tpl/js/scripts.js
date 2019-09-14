@@ -142,12 +142,11 @@ $(document).ready(function () {
         // Если отступ сверху больше 50px то показываем кнопку "Наверх"
         var heightBody = $("body").height() - $(window).height() - 50;
         if ($(this).scrollTop() > 100 && $(this).scrollTop() < heightBody) {
-            $('#button-up').fadeIn();
+            $('#button-up').addClass('scrollTop--visible');
         } else {
-            $('#button-up').fadeOut();
+            $('#button-up').removeClass('scrollTop--visible');
         }
     });
-
 
     /** При нажатии на кнопку мы перемещаемся к началу страницы */
     $('#button-up').click(function () {

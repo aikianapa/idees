@@ -8237,7 +8237,8 @@ input:checked + .switch__slider:before {
   border-radius: 50%; }
 
 .scrollTop {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   left: auto;
   right: 10px;
@@ -8253,6 +8254,9 @@ input:checked + .switch__slider:before {
   cursor: pointer; }
   .scrollTop:hover {
     transform: scale(1.1); }
+  .scrollTop.scrollTop--visible {
+    opacity: 1;
+    visibility: visible; }
 
 @media (min-width: 768px) {
   .scrollTop {

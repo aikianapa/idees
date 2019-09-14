@@ -1,5 +1,6 @@
 .scrollTop {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   left: auto;
   right: 10px;
@@ -15,6 +16,10 @@
   cursor: pointer;
   &:hover {
     transform: scale(1.1);
+  }
+  &.scrollTop--visible {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
