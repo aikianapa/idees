@@ -211,7 +211,7 @@ $(document).on('click', '#clearCookies', function () {
     });
     $(document).on('wb_mail_done', function(a, b){
         $('.attach').removeClass('active');
-        var successHtml = '<div class="success-form">\n' +
+        var successHtml = '<div class="success-form" style="display: none">\n' +
             '        <img class="success-form__svg" src="img/svg/success.svg">\n' +
             '        <div class="success-form__title">Заявка отправлена</div>\n' +
             '        <div class="success-form__text">\n' +
@@ -219,8 +219,14 @@ $(document).on('click', '#clearCookies', function () {
             '        </div><i class="success-form__close la la-close"></i> \n' +
             '    </div>';
         var fastOrder = $(b).closest('.fast-order');
+        var successForm = fastOrder.find('.success-form');
         if (fastOrder.length) {
-            fastOrder.append("" + successHtml + "");
+            if (successForm.length) {
+                successForm.fadeIn();
+            } else {
+                fastOrder.append("" + successHtml + "");
+                successForm.fadeIn();
+            }
             setTimeout(function () {
                 fastOrder.find('.success-form').fadeOut();
             }, 3000)
