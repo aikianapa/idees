@@ -1,4 +1,4 @@
-<meta data-wb-role="include" data-wb-src="template" data-wb-name="fastorder.inc.php" data-wb-hide="*" data-wb-where='"{{_item}}"!="404"'>d
+<meta data-wb-role="include" data-wb-src="template" data-wb-name="fastorder.inc.php" data-wb-hide="*" data-wb-where='"{{_item}}"!="home"' data-wb-where='_item!="404"'>
 <div class="footer">
     <div class="container-fluid">
         <div class="row">

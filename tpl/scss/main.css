@@ -8242,7 +8242,7 @@ input:checked + .switch__slider:before {
   position: fixed;
   left: auto;
   right: 10px;
-  bottom: 20px;
+  bottom: 10px;
   z-index: 111;
   border-radius: 50%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -8262,7 +8262,7 @@ input:checked + .switch__slider:before {
   .scrollTop {
     left: 40px;
     right: auto;
-    bottom: 75px; } }
+    bottom: 40px; } }
 /* @import 'layout/navigation';
 @import 'layout/grid';
 @import 'layout/header';
