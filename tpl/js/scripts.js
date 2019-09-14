@@ -235,7 +235,7 @@ $(document).on('click', '#clearCookies', function () {
         }
         if (modalApplication.length) {
             var successForm = modalApplication.find('.success-form');
-            modalApplication.find('.input-wrapper').removeClass('.input--filled').removeAttr('data-text');
+            modalApplication.find('.input-wrapper').removeClass('input--filled').removeAttr('data-text');
             if (successForm.length) {
                 successForm.fadeIn();
             } else {
@@ -243,7 +243,7 @@ $(document).on('click', '#clearCookies', function () {
                 successForm.fadeIn();
             }
             setTimeout(function () {
-                fastOrder.find('.success-form').fadeOut();
+                modalApplication.find('.success-form').fadeOut();
             }, 3000)
         }
     });

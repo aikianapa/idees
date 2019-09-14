@@ -40,3 +40,13 @@
   top: 20px;
   cursor: pointer;
 }
+
+
+.modal--application {
+  .success-form {
+    position: fixed;
+  }
+  .success-form__close {;
+    right: 35px;
+  }
+}

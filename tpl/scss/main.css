@@ -9264,6 +9264,11 @@ body {
   top: 20px;
   cursor: pointer; }
 
+.modal--application .success-form {
+  position: fixed; }
+.modal--application .success-form__close {
+  right: 35px; }
+
 .slider-main {
   width: 100%; }
 
