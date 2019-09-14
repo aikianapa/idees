@@ -146,6 +146,11 @@ $(document).ready(function () {
         } else {
             $('#button-up').removeClass('scrollTop--visible');
         }
+        if $(this).scrollTop() < heightBody) {
+            $('#chatra.chatra--side-bottom').removeClass('chatra--scroll-bottom');
+        } else {
+            $('#chatra.chatra--side-bottom').addClass('chatra--scroll-bottom');
+        }
     });
 
     /** При нажатии на кнопку мы перемещаемся к началу страницы */
