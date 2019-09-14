@@ -102,6 +102,9 @@
     </div>
 </div>
 
+<div id="button-up" class="scrollTop">
+    <img src="img/arrowtop.svg" alt="">
+</div>
 
 <div class="modal modal--application p-0" id="modal-application" tabindex="-1" role="dialog"
      aria-labelledby="exampleModalLongTitle" aria-hidden="true">

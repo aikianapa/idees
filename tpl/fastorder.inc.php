@@ -107,11 +107,4 @@
             </div>
         </form>
     </div>
-   <!-- <div class="success-form">
-        <img class="success-form__svg" src="img/svg/success.svg">
-        <div class="success-form__title">Заявка отправлена</div>
-        <div class="success-form__text">
-            В ближайшее время мы&nbsp;свяжемся&nbsp;с&nbsp;вами
-        </div>
-    </div>-->
 </div>

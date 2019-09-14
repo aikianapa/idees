@@ -142,6 +142,35 @@ $(window).on('load', function () {
 });
 //endregion
 
+
+//region Наверх
+$(document).ready(function () {
+    /**
+     * При прокрутке страницы, показываем или срываем кнопку
+     */
+    $(window).scroll(function () {
+        // Если отступ сверху больше 50px то показываем кнопку "Наверх"
+        var heightBody = $("body").height() - $(window).height() - 50;
+        if ($(this).scrollTop() > 100 && $(this).scrollTop() < heightBody) {
+            $('#button-up').fadeIn();
+        } else {
+            $('#button-up').fadeOut();
+        }
+    });
+
+
+    /** При нажатии на кнопку мы перемещаемся к началу страницы */
+    $('#button-up').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+
+});
+//endregion
+
+
 //region Куки
 $(document).on('click', '#clearCookies', function () {
     $("#cookies").fadeOut();
@@ -222,7 +251,7 @@ $(document).on('click', '#clearCookies', function () {
         var modalApplication = $(b).closest('.modal--application');
         if (fastOrder.length) {
             var successForm = fastOrder.find('.success-form');
-            fastOrder.find('.input-wrapper').removeClass('.input--filled').removeAttr('data-text');
+            fastOrder.find('.input-wrapper').removeClass('input--filled').removeAttr('data-text');
             if (successForm.length) {
                 successForm.fadeIn();
             } else {

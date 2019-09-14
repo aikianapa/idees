@@ -19,7 +19,7 @@
             </div>
             <div class="col-xl-6">
                 <div class="company-head__desc">
-                    Ошибка 404
+                    <img class="success-form__svg" src="img/svg/404.svg">
                 </div>
             </div>
         </div>
