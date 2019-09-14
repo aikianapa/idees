@@ -211,7 +211,7 @@ $(document).on('click', '#clearCookies', function () {
     });
     $(document).on('wb_mail_done', function(a, b){
         $('.attach').removeClass('active');
-        var successHtml = '<div class="success-form">\n' +
+        var successHtml = '<div class="success-form" style="display: none">\n' +
             '        <img class="success-form__svg" src="img/svg/success.svg">\n' +
             '        <div class="success-form__title">Заявка отправлена</div>\n' +
             '        <div class="success-form__text">\n' +
@@ -219,8 +219,29 @@ $(document).on('click', '#clearCookies', function () {
             '        </div><i class="success-form__close la la-close"></i> \n' +
             '    </div>';
         var fastOrder = $(b).closest('.fast-order');
+        var modalApplication = $(b).closest('.modal--application');
         if (fastOrder.length) {
-            fastOrder.append("" + successHtml + "");
+            var successForm = fastOrder.find('.success-form');
+            fastOrder.find('.input-wrapper').removeClass('.input--filled').removeAttr('data-text');
+            if (successForm.length) {
+                successForm.fadeIn();
+            } else {
+                fastOrder.append("" + successHtml + "");
+                successForm.fadeIn();
+            }
+            setTimeout(function () {
+                fastOrder.find('.success-form').fadeOut();
+            }, 3000)
+        }
+        if (modalApplication.length) {
+            var successForm = modalApplication.find('.success-form');
+            modalApplication.find('.input-wrapper').removeClass('.input--filled').removeAttr('data-text');
+            if (successForm.length) {
+                successForm.fadeIn();
+            } else {
+                modalApplication.append("" + successHtml + "");
+                successForm.fadeIn();
+            }
             setTimeout(function () {
                 fastOrder.find('.success-form').fadeOut();
             }, 3000)
