@@ -99,16 +99,6 @@ jQuery(function ($) {
 });
 //endregion
 
-//region Плавный скролл к верху страницы
-$(function () {
-    $(".scrollTop").click(function () {
-        var _href = $(this).attr("href");
-        $("html, body").animate({scrollTop: $(_href).offset().top + "px"});
-        return false;
-    });
-});
-//endregion
-
 //region Меню
 $(document).on('hidden.bs.collapse', '#menuCollapse', function () {
     $('body').removeClass('body-menu-open');

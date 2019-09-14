@@ -1,4 +1,5 @@
 .scrollTop {
+  display: none;
   position: fixed;
   left: auto;
   right: 10px;
@@ -6,6 +7,15 @@
   z-index: 111;
   border-radius: 50%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 @media (min-width: 768px) {
