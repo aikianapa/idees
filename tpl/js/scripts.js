@@ -222,7 +222,7 @@ $(document).on('click', '#clearCookies', function () {
         var modalApplication = $(b).closest('.modal--application');
         if (fastOrder.length) {
             var successForm = fastOrder.find('.success-form');
-            fastOrder.find('.input-wrapper').removeClass('.input--filled').removeAttr('data-text');
+            fastOrder.find('.input-wrapper').removeClass('input--filled').removeAttr('data-text');
             if (successForm.length) {
                 successForm.fadeIn();
             } else {
