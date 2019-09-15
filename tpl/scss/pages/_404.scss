@@ -1,0 +1,50 @@
+.err-404 {
+  .scrollTop {
+    display: none !important;
+  }
+}
+
+.page404 {
+  min-height: calc(100vh - 85px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: none !important;
+  @media (max-width: 767px) {
+    padding-top: 100px !important;
+  }
+  #chatra.chatra--side-bottom {
+    bottom: 20px;
+  }
+}
+
+
+.page404__title {
+  font-size: 30px;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+  @media (min-width: 1200px) {
+    text-align: left;
+    font-size: 40px;
+  }
+}
+
+.page404__text {
+  font-size: 16px;
+  color: #777d89;
+  margin-bottom: 50px;
+  text-align: center;
+  @media (min-width: 1200px) {
+    font-size: 20px;
+    text-align: left;
+  }
+}
+
+.page404__img-wrap {
+  text-align: right;
+}
+
+.page404__img {
+  max-width: 100%;
+}
