@@ -147,9 +147,9 @@ $(document).ready(function () {
             $('#button-up').removeClass('scrollTop--visible');
         }
         if $(this).scrollTop() < heightBody) {
-            $('#chatra.chatra--side-bottom').removeClass('chatra--scroll-bottom');
+            $('#chatra').removeClass('chatra--scroll-bottom');
         } else {
-            $('#chatra.chatra--side-bottom').addClass('chatra--scroll-bottom');
+            $('#chatra').addClass('chatra--scroll-bottom');
         }
     });
 
