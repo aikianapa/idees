@@ -1,0 +1,17 @@
+.body-portfolio-nav {
+  @media (min-height: 500px) and (min-width: 768px) {
+    .scrollTop {
+      transform: translate3d(0, -70px, 0) !important;
+      transform: translate3d(0, -80px, 0) !important;
+    }
+    #chatra.chatra--side-bottom {
+      transform: translate3d(0, -75px, 0) !important;
+      transform: translate3d(0, -80px, 0) !important;
+    }
+  }
+  @media (min-height: 500px) and (min-width: 1200px) {
+    .scrollTop {
+      //transform: translate3d(0, -55px, 0) !important;
+    }
+  }
+}

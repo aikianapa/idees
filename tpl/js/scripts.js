@@ -138,9 +138,9 @@ $(document).ready(function () {
     /**
      * При прокрутке страницы, показываем или срываем кнопку
      */
-    $(window).scroll(function () {
+    function scrollFunc () {
         // Если отступ сверху больше 50px то показываем кнопку "Наверх"
-        var heightBody = $("html").height() - $(window).height() - 0;
+        var heightBody = $("html").height() - $(window).height() - 10;
         if ($(this).scrollTop() > 100) {
             $('#button-up').addClass('scrollTop--visible');
         } else {
@@ -159,6 +159,9 @@ $(document).ready(function () {
         console.log('$(window).height() = ' + $(window).height());
         console.log('heightBody = ' + heightBody);
         console.log('$(this).scrollTop() = ' + $(this).scrollTop());
+    }
+    $(window).scroll(function () {
+        scrollFunc();
     });
 
     /** При нажатии на кнопку мы перемещаемся к началу страницы */

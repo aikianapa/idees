@@ -3,7 +3,7 @@
   padding-top: 16px;
   padding-bottom: 16px;
   margin-top: -20px;
-  background: rgba(51,52,55, 0.9);
+  background: rgba(51, 52, 55, 0.9);
   width: 100%;
   @media (min-width: 768px) and (min-height: 500px) {
     position: fixed;
@@ -22,8 +22,11 @@
 }
 
 .portfolio-nav {
-  transition: transform .4s ease-out, opacity .4s;
-  transition: transform .4s ease-out, opacity .4s, -webkit-transform .4s ease-out;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
   &.portfolio-nav--hide {
     transform: translate3d(0, 80px, 0);
   }

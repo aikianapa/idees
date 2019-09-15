@@ -4,6 +4,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-auto col-xl-4">
+                <div class="footer__link-offer">
+                    <a class="linkWhite" data-toggle="modal" href="#modal-application">Оставить заявку</a>
+                </div>
                 <div class="footer__copyright">
                     2012–2019 © IDEES
                 </div>

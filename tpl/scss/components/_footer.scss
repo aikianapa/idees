@@ -3,41 +3,38 @@
   padding-top: 30px;
   padding-bottom: 30px;
   width: 100%;
-  .footer__copyright, .footer__link, .social {
+  .footer__copyright, .footer__link, .social, .footer__link-offer {
     position: relative;
     z-index: 1;
     display: inline-block;
   }
 }
+
 .footer--main {
   position: absolute;
   bottom: 0;
   background: transparent;
 }
+
+.footer__link {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
 .footer__copyright {
   white-space: nowrap;
   color: #777D89;
-  margin-right: 50px;
+  margin-right: 40px;
+  @media (max-width: 767px) {
+    display: none !important;
+  }
 }
 
-.footer--page {
-
-}
-/*==========  Desktop First  ==========*/
-
-// ≤1200px
-@include media-breakpoint-down(lg) {
-
-}
-
-// ≤992px
-@include media-breakpoint-down(md) {
-
-}
-
-// ≤768px
-@include media-breakpoint-down(sm) {
-
+.footer__link-offer {
+  @media (min-width: 768px) {
+    display: none !important;
+  }
 }
 
 // ≤375px

@@ -23,15 +23,21 @@
   z-index: 1000;
   padding-top: 25px;
   padding-bottom: 25px;
-  @media (min-width: 375px) {}
-  @media (min-width: 768px) {}
-  @media (min-width: 992px) {}
+  @media (min-width: 768px) {
+    .social {
+      right: 170px;
+      .social__link:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
   @media (min-width: 1200px) {
     .social {
       right: 186px;
     }
   }
 }
+
 
 .header--main, .footer--main {
   position: fixed;
@@ -43,9 +49,12 @@
 }
 
 .footer--main {
+  .footer__copyright {
+    color: white;
+  }
   @media (max-height: 600px) {
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
   }
 }
 
