@@ -21,11 +21,14 @@
     opacity: 1;
     visibility: visible;
   }
+  &.scrollTop--scroll-bottom {
+    transform: translate3d(0, -25px, 0) !important;
+  }
 }
 
 @media (min-width: 768px) {
   .scrollTop {
-    left: 40px;
+    left: 45px;
     right: auto;
     bottom: 40px;
   }

@@ -15,10 +15,17 @@
   transform: translate3d(0, -80px, 0) !important;
 }
 
+.body-index {
+  #chatra.chatra--side-bottom {
+    bottom: 20px;
+    transition: transform .4s ease-out, opacity .4s;
+    @media (min-width: 375px) {}
+    @media (min-width: 768px) {}
+    @media (min-width: 992px) {}
+    @media (min-width: 1200px) {
+      right: 60px;
+      bottom: 16px;
+    }
+  }
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> cd9e41a585393813330e1ba1286576234a823901
-
+}

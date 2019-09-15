@@ -23,6 +23,14 @@
   z-index: 1000;
   padding-top: 25px;
   padding-bottom: 25px;
+  @media (min-width: 375px) {}
+  @media (min-width: 768px) {}
+  @media (min-width: 992px) {}
+  @media (min-width: 1200px) {
+    .social {
+      right: 186px;
+    }
+  }
 }
 
 .header--main, .footer--main {
@@ -119,7 +127,7 @@
   .header--main {
     transform: translate3d(0, -100px, 0);
   }
-  .footer--main {
-    transform: translate3d(0, 100px, 0);
+  .footer--main, #chatra.chatra--side-bottom:not(.chatra--expanded) {
+    transform: translate3d(0, 100px, 0) !important;
   }
 }

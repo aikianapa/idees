@@ -8257,10 +8257,12 @@ input:checked + .switch__slider:before {
   .scrollTop.scrollTop--visible {
     opacity: 1;
     visibility: visible; }
+  .scrollTop.scrollTop--scroll-bottom {
+    transform: translate3d(0, -25px, 0) !important; }
 
 @media (min-width: 768px) {
   .scrollTop {
-    left: 40px;
+    left: 45px;
     right: auto;
     bottom: 40px; } }
 /* @import 'layout/navigation';
@@ -9298,6 +9300,14 @@ body {
 .chatra--scroll-bottom {
   transform: translate3d(0, -80px, 0) !important; }
 
+.body-index #chatra.chatra--side-bottom {
+  bottom: 20px;
+  transition: transform .4s ease-out, opacity .4s; }
+  @media (min-width: 1200px) {
+    .body-index #chatra.chatra--side-bottom {
+      right: 60px;
+      bottom: 16px; } }
+
 .slider-main {
   width: 100%; }
 
@@ -9520,6 +9530,9 @@ body {
   z-index: 1000;
   padding-top: 25px;
   padding-bottom: 25px; }
+  @media (min-width: 1200px) {
+    .footer--main .social {
+      right: 186px; } }
 
 .header--main, .footer--main {
   position: fixed;
@@ -9582,8 +9595,8 @@ body {
 
 .afterLoad:not(.body-menu-open) .header--main {
   transform: translate3d(0, -100px, 0); }
-.afterLoad:not(.body-menu-open) .footer--main {
-  transform: translate3d(0, 100px, 0); }
+.afterLoad:not(.body-menu-open) .footer--main, .afterLoad:not(.body-menu-open) #chatra.chatra--side-bottom:not(.chatra--expanded) {
+  transform: translate3d(0, 100px, 0) !important; }
 
 .portfolio {
   background: white;

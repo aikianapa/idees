@@ -32,54 +32,54 @@
             classie.remove(ev.target.parentNode, 'input--filled');
         }
     }
-    
-    
-Share = {
-	vkontakte: function(purl, ptitle, pimg, text) {
-		url  = 'http://vkontakte.ru/share.php?';
-		url += 'url='          + encodeURIComponent(purl);
-		url += '&title='       + encodeURIComponent(ptitle);
-		url += '&description=' + encodeURIComponent(text);
-		url += '&image='       + encodeURIComponent(pimg);
-		url += '&noparse=true';
-		Share.popup(url);
-	},
-	odnoklassniki: function(purl, text) {
-		url  = 'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1';
-		url += '&st.comments=' + encodeURIComponent(text);
-		url += '&st._surl='    + encodeURIComponent(purl);
-		Share.popup(url);
-	},
-	facebook: function(purl, ptitle, pimg, text) {
-		url  = 'http://www.facebook.com/sharer.php?s=100';
-		url += '&p[title]='     + encodeURIComponent(ptitle);
-		url += '&p[summary]='   + encodeURIComponent(text);
-		url += '&p[url]='       + encodeURIComponent(purl);
-		url += '&p[images][0]=' + encodeURIComponent(pimg);
-		Share.popup(url);
-	},
-	twitter: function(purl, ptitle) {
-		url  = 'http://twitter.com/share?';
-		url += 'text='      + encodeURIComponent(ptitle);
-		url += '&url='      + encodeURIComponent(purl);
-		url += '&counturl=' + encodeURIComponent(purl);
-		Share.popup(url);
-	},
-	mailru: function(purl, ptitle, pimg, text) {
-		url  = 'http://connect.mail.ru/share?';
-		url += 'url='          + encodeURIComponent(purl);
-		url += '&title='       + encodeURIComponent(ptitle);
-		url += '&description=' + encodeURIComponent(text);
-		url += '&imageurl='    + encodeURIComponent(pimg);
-		Share.popup(url)
-	},
 
-	popup: function(url) {
-		window.open(url,'','toolbar=0,status=0,width=626,height=436');
-	}
-};
-    
-    
+
+    Share = {
+        vkontakte: function(purl, ptitle, pimg, text) {
+            url  = 'http://vkontakte.ru/share.php?';
+            url += 'url='          + encodeURIComponent(purl);
+            url += '&title='       + encodeURIComponent(ptitle);
+            url += '&description=' + encodeURIComponent(text);
+            url += '&image='       + encodeURIComponent(pimg);
+            url += '&noparse=true';
+            Share.popup(url);
+        },
+        odnoklassniki: function(purl, text) {
+            url  = 'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1';
+            url += '&st.comments=' + encodeURIComponent(text);
+            url += '&st._surl='    + encodeURIComponent(purl);
+            Share.popup(url);
+        },
+        facebook: function(purl, ptitle, pimg, text) {
+            url  = 'http://www.facebook.com/sharer.php?s=100';
+            url += '&p[title]='     + encodeURIComponent(ptitle);
+            url += '&p[summary]='   + encodeURIComponent(text);
+            url += '&p[url]='       + encodeURIComponent(purl);
+            url += '&p[images][0]=' + encodeURIComponent(pimg);
+            Share.popup(url);
+        },
+        twitter: function(purl, ptitle) {
+            url  = 'http://twitter.com/share?';
+            url += 'text='      + encodeURIComponent(ptitle);
+            url += '&url='      + encodeURIComponent(purl);
+            url += '&counturl=' + encodeURIComponent(purl);
+            Share.popup(url);
+        },
+        mailru: function(purl, ptitle, pimg, text) {
+            url  = 'http://connect.mail.ru/share?';
+            url += 'url='          + encodeURIComponent(purl);
+            url += '&title='       + encodeURIComponent(ptitle);
+            url += '&description=' + encodeURIComponent(text);
+            url += '&imageurl='    + encodeURIComponent(pimg);
+            Share.popup(url)
+        },
+
+        popup: function(url) {
+            window.open(url,'','toolbar=0,status=0,width=626,height=436');
+        }
+    };
+
+
 })();
 //endregion
 
@@ -123,12 +123,12 @@ $(window).on('load', function () {
     $('body').removeClass('preloader-body');
     $preloader = $('.loaderArea'),
         // $preloader.delay(350).fadeOut('slow');
-    $preloader.addClass('loaderArea--hide');
-    
+        $preloader.addClass('loaderArea--hide');
+
     $(".nav-main a[href]").each(function(){
-       if (document.location.pathname.split($(this).attr("href")).length > 1) {$(this).addClass("link--active");}
+        if (document.location.pathname.split($(this).attr("href")).length > 1) {$(this).addClass("link--active");}
     });
-    
+
 });
 //endregion
 
@@ -140,17 +140,25 @@ $(document).ready(function () {
      */
     $(window).scroll(function () {
         // Если отступ сверху больше 50px то показываем кнопку "Наверх"
-        var heightBody = $("body").height() - $(window).height() - 50;
-        if ($(this).scrollTop() > 100 && $(this).scrollTop() < heightBody) {
+        var heightBody = $("html").height() - $(window).height() - 0;
+        if ($(this).scrollTop() > 100) {
             $('#button-up').addClass('scrollTop--visible');
         } else {
             $('#button-up').removeClass('scrollTop--visible');
         }
-        if $(this).scrollTop() < heightBody) {
+        if ($(this).scrollTop() < heightBody) {
+            $('#button-up').removeClass('scrollTop--scroll-bottom');
             $('#chatra').removeClass('chatra--scroll-bottom');
         } else {
+            $('#button-up').addClass('scrollTop--scroll-bottom');
             $('#chatra').addClass('chatra--scroll-bottom');
         }
+
+        console.log('$("body").height() = ' + $("body").height());
+        console.log('$("html").height() = ' + $("html").height());
+        console.log('$(window).height() = ' + $(window).height());
+        console.log('heightBody = ' + heightBody);
+        console.log('$(this).scrollTop() = ' + $(this).scrollTop());
     });
 
     /** При нажатии на кнопку мы перемещаемся к началу страницы */
@@ -220,63 +228,63 @@ $(document).on('click', '#clearCookies', function () {
 //endregion
 
 //endregion Подчеркивание инпутов
-    $(document).on('keyup', '.input-line', function () {
-        $(this).closest('.input-wrapper').attr('data-text', $(this).val());
-    });
+$(document).on('keyup', '.input-line', function () {
+    $(this).closest('.input-wrapper').attr('data-text', $(this).val());
+});
 //region
 
 //endregion Прикрепление файла
-    $(document).on('click', '.upload', function () {
-        $('.attach').addClass('active');
-    });
-    $(document).on('click', '.undo', function () {
-        $('.attach').removeClass('active');
-    });
-    $(document).on('wb_mail_done', function(a, b){
-        $('.attach').removeClass('active');
-        var successHtml = '<div class="success-form" style="display: none">\n' +
-            '        <img class="success-form__svg" src="img/svg/success.svg">\n' +
-            '        <div class="success-form__title">Заявка отправлена</div>\n' +
-            '        <div class="success-form__text">\n' +
-            '            В ближайшее время мы&nbsp;свяжемся&nbsp;с&nbsp;вами\n' +
-            '        </div><i class="success-form__close la la-close"></i> \n' +
-            '    </div>';
-        var fastOrder = $(b).closest('.fast-order');
-        var modalApplication = $(b).closest('.modal--application');
-        if (fastOrder.length) {
-            var successForm = fastOrder.find('.success-form');
-            fastOrder.find('.input-wrapper').removeClass('input--filled').removeAttr('data-text');
-            if (successForm.length) {
-                successForm.fadeIn();
-            } else {
-                fastOrder.append("" + successHtml + "");
-                successForm.fadeIn();
-            }
-            setTimeout(function () {
-                fastOrder.find('.success-form').fadeOut();
-            }, 3000)
+$(document).on('click', '.upload', function () {
+    $('.attach').addClass('active');
+});
+$(document).on('click', '.undo', function () {
+    $('.attach').removeClass('active');
+});
+$(document).on('wb_mail_done', function(a, b){
+    $('.attach').removeClass('active');
+    var successHtml = '<div class="success-form" style="display: none">\n' +
+        '        <img class="success-form__svg" src="img/svg/success.svg">\n' +
+        '        <div class="success-form__title">Заявка отправлена</div>\n' +
+        '        <div class="success-form__text">\n' +
+        '            В ближайшее время мы&nbsp;свяжемся&nbsp;с&nbsp;вами\n' +
+        '        </div><i class="success-form__close la la-close"></i> \n' +
+        '    </div>';
+    var fastOrder = $(b).closest('.fast-order');
+    var modalApplication = $(b).closest('.modal--application');
+    if (fastOrder.length) {
+        var successForm = fastOrder.find('.success-form');
+        fastOrder.find('.input-wrapper').removeClass('input--filled').removeAttr('data-text');
+        if (successForm.length) {
+            successForm.fadeIn();
+        } else {
+            fastOrder.append("" + successHtml + "");
+            successForm.fadeIn();
         }
-        if (modalApplication.length) {
-            var successForm = modalApplication.find('.success-form');
-            modalApplication.find('.input-wrapper').removeClass('input--filled').removeAttr('data-text');
-            if (successForm.length) {
-                successForm.fadeIn();
-            } else {
-                modalApplication.append("" + successHtml + "");
-                successForm.fadeIn();
-            }
-            setTimeout(function () {
-                modalApplication.find('.success-form').fadeOut();
-            }, 3000)
+        setTimeout(function () {
+            fastOrder.find('.success-form').fadeOut();
+        }, 3000)
+    }
+    if (modalApplication.length) {
+        var successForm = modalApplication.find('.success-form');
+        modalApplication.find('.input-wrapper').removeClass('input--filled').removeAttr('data-text');
+        if (successForm.length) {
+            successForm.fadeIn();
+        } else {
+            modalApplication.append("" + successHtml + "");
+            successForm.fadeIn();
         }
-    });
-    $(document).on('click', '.success-form__close', function(a, b){
-        $(this).closest('.success-form').fadeOut();
-    });
+        setTimeout(function () {
+            modalApplication.find('.success-form').fadeOut();
+        }, 3000)
+    }
+});
+$(document).on('click', '.success-form__close', function(a, b){
+    $(this).closest('.success-form').fadeOut();
+});
 //region
 
 $("label[for]:contains('*')").each(function(){
-    var inpId = $(this).attr("for"); 
+    var inpId = $(this).attr("for");
     $(this).parents("form").find("#"+inpId).prop("required",true);
 });
 
