@@ -8,9 +8,10 @@
 
     
 <main data-wb-role="tree" data-wb-from="content" data-wb-children="false" data-wb-hide="*">
-    <section class="parallax" data-parallax="scroll" data-image-src="{{_image}}" data-wb-where='"{{_idx}}" = "0"'></section>
+    <section class="parallax" data-parallax="scroll" data-image-src="/uploads/{{_form}}/{{_item}}/{{data.form.image[0].img}}" data-wb-where='"{{data.form.type}}" = "block-paralax" AND "{{data.form.visible}}" = "on"'>
+    </section>
     
-    <div class="portfolio-bg portfolio-bg--white" id="#topBlock" data-wb-where='id = "block-top" AND "{{data.visible}}" = "on"'>
+    <div class="portfolio-bg portfolio-bg--white pb-0" id="#topBlock" data-wb-where='_ndx = "1"'>
         <div class="container-fluid">
             <h2 class="portfolio-bg__title mb-5">
                 {{%name}}
@@ -35,39 +36,11 @@
                     </div>
                 </div>
             </div>
-            <div class="row company-block__right-row" data-wb-role="tree" data-wb-from="%content" data-wb-branch="block-top" data-wb-children="false" data-wb-hide="wb">
-                <div class="col-xl-6">
-                    <h2 class="portfolio-bg__title">
-                        {{name}}
-                    </h2>
-                </div>
-                <div class="col-xl-6">
-                    {{data.text}}
-                </div>
-                <meta data-wb-selector="p" data-wb-addclass="company-about__desc">
-            </div>
         </div>
     </div>
     
-    
-    <div class="portfolio-bg portfolio-bg--white" data-wb-where='id = "block-top" AND "{{data.visible}}" = "on"'>
-        <div class="container-fluid" data-wb-role="tree" data-wb-from="%content" data-wb-branch="block-top" data-wb-parent="false" data-wb-hide="wb">
-            <div class="row company-block__right-row" data-wb-where='"{{data.visible}}" = "on"'>
-                <div class="col-xl-6">
-                    <h2 class="portfolio-bg__title">
-                        {{name}}
-                    </h2>
-                </div>
-                <div class="col-xl-6">
-                    {{data.text}}
-                </div>
-                <meta data-wb-selector="p" data-wb-addclass="company-about__desc">
-            </div>
-        </div>
-    </div>
-    
-    <div class="portfolio-bg portfolio-bg--gray" data-wb-where='id = "block-grey" AND "{{data.visible}}" = "on"'>
-        <div class="container-fluid" data-wb-role="tree" data-wb-from="%content" data-wb-branch="block-grey" data-wb-children="false" data-wb-hide="wb">
+    <div class="portfolio-bg portfolio-bg--white" data-wb-where='"{{data.form.type}}" = "block-white" AND "{{data.form.visible}}" = "on"'>
+        <div class="container-fluid">
             <div class="row company-block__right-row">
                 <div class="col-xl-6">
                     <h2 class="portfolio-bg__title">
@@ -75,88 +48,51 @@
                     </h2>
                 </div>
                 <div class="col-xl-6">
-                    {{data.text}}
+                    {{data.form.text}}
                 </div>
                 <meta data-wb-selector="p" data-wb-addclass="company-about__desc">
             </div>
-            <div data-wb-role="foreach" data-wb-from="children" data-wb-tpl="false" data-wb-hide="*">
-            <div class="row company-block__right-row" data-wb-where='"{{data.visible}}" = "on"' >
+        </div>
+    </div>
+    
+    <div class="portfolio-bg portfolio-bg--gray" data-wb-where='"{{data.form.type}}" = "block-grey" AND "{{data.form.visible}}" = "on"'>
+        <div class="container-fluid">
+            <div class="row company-block__right-row">
                 <div class="col-xl-6">
                     <h2 class="portfolio-bg__title">
                         {{name}}
                     </h2>
                 </div>
                 <div class="col-xl-6">
-                    {{data.text}}
+                    {{data.form.text}}
                 </div>
                 <meta data-wb-selector="p" data-wb-addclass="company-about__desc">
-            </div>
             </div>
         </div>
     </div>
 
-    <div class="portfolio-before" data-wb-where='id = "before-after" AND "{{data.visible}}" = "on"'>
-        <div class="container-fluid" data-wb-role="tree" data-wb-from="%content" data-wb-branch="before-after" data-wb-children="false" data-wb-hide="wb">
+    <div class="portfolio-before" data-wb-where='"{{data.form.type}}" = "before-after" AND "{{data.form.visible}}" = "on"'>
+        цукйцйцук
+        <div class="container-fluid">
             <div id='container1' class='twentytwenty-container'>
-                <img src='/uploads/{{_form}}/{{_item}}/{{data.before[0].img}}'>
-                <img src='/uploads/{{_form}}/{{_item}}/{{data.after[0].img}}'>
+                <img src='/uploads/{{_form}}/{{_item}}/{{data.form.before[0].img}}'>
+                <img src='/uploads/{{_form}}/{{_item}}/{{data.form.after[0].img}}'>
             </div>
         </div>
     </div>
     
-    <div class="company-block company-block--gray" data-wb-where='id = "block-bottom" AND "{{data.visible}}" = "on"'>
-        <div class="container-fluid" data-wb-role="tree" data-wb-from="%content" data-wb-branch="block-bottom" data-wb-children="false" data-wb-hide="wb">
-            <div class="row company-block__right-row">
-                <div class="col-xl-6">
-                    <h2 class="company-block__title">
-                        {{name}}
-                    </h2>
-                </div>
-                <div class="col-xl-6">
-                    {{data.text}}
-                </div>
-                <meta data-wb-selector="p" data-wb-addclass="company-about__desc">
-            </div>
-            <div data-wb-role="foreach" data-wb-from="children" data-wb-tpl="false" data-wb-hide="*">
-            <div class="row company-block__right-row" data-wb-where='"{{data.visible}}" = "on"' >
-                <div class="col-xl-6">
-                    <h2 class="portfolio-bg__title">
-                        {{name}}
-                    </h2>
-                </div>
-                <div class="col-xl-6">
-                    {{data.text}}
-                </div>
-                <meta data-wb-selector="p" data-wb-addclass="company-about__desc">
-            </div>
-            </div>
-        </div>
-    </div>
-    
-    <section class="portfolio-video" data-wb-where='id = "block-video" AND "{{data.visible}}" = "on" AND "{{data.video}}" > ""'>
+
+    <section class="portfolio-video" data-wb-where='"{{data.form.type}}" = "block-video" AND "{{data.form.visible}}" = "on"'>
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" src="{{data.video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="{{data.form.video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </section>
 
-    <section class="portfolio-photo" data-wb-where='"{{%images[1].visible}}"="1" AND "{{_idx}}" = "1"' data-wb-hide="wb">
-        <img src="/uploads/{{_form}}/{{_item}}/{{%images[1].img}}" alt="">
+    <section class="portfolio-photo" data-wb-where='"{{data.form.type}}" = "block-image" AND "{{data.form.visible}}" = "on"'>
+        <img src="/uploads/{{_form}}/{{_item}}/{{data.form.image[0].img}}" alt="">
     </section>
-    
-    <section class="portfolio-photo" data-wb-where='"{{%images[2].visible}}"="1" AND "{{_idx}}" = "2"' data-wb-hide="wb">
-        <img src="/uploads/{{_form}}/{{_item}}/{{%images[2].img}}" alt="">
-    </section>
-    
-    <section class="portfolio-photo" data-wb-where='"{{%images[3].visible}}"="1" AND "{{_idx}}" = "3"' data-wb-hide="wb">
-        <img src="/uploads/{{_form}}/{{_item}}/{{%images[3].img}}" alt="">
-    </section>
-    
+
 </main>
-
-<div data-wb-role="foreach" data-wb-tpl="false" data-wb-from="images" data-wb-hide="wb">
-    <section class="parallax" data-wb-where='"{{%images[{{_idx}}].visible}}"="1" AND "{{_idx}}" > "3" AND "{{_idx}}" < "{{count({{%images}})}}"' data-parallax="scroll" data-image-src="/uploads/{{_form}}/{{_item}}/{{%images[{{_idx}}].img}}"></section>
-</div>
-
 
 <div id="portfolio-nav" class="portfolio-nav portfolio-nav--hide">
         <div class="container-fluid">
@@ -187,7 +123,7 @@
                     Похожие работы
                 </div>
             </div>
-            <div data-wb-role="foreach" data-wb-form="products" data-wb-tpl="false" data-wb-limit="4" data-wb-rand="true" data-wb-hide="*">
+            <div data-wb-role="foreach" data-wb-form="products" data-wb-tpl="false" data-wb-limit="4" data-wb-where='id != "{{_item}}"' data-wb-hide="*">
                 <div class="col-lg-6 col-xl-6 portfolio-card__col mb-5" data-wb-hide="wb" data-wb-where='"{{active}}"="on"'>
                     <a href="/portfolio/{{id}}/" class="portfolio-card portfolio-card--similar">
                         <div class="portfolio-card__bg" style="background-color: #E1CC17">

@@ -32,7 +32,8 @@
     </div>
 </div>
 
-<div class="spec-offer" data-wb-role="tree" data-wb-from="lang" data-wb-branch="special" data-wb-children="false" data-wb-hide="wb">
+<div class="spec-offer" data-wb-role="formdata" data-wb-form="pages" data-wb-item="action" data-wb-hide="*">
+<div class="spec-offer" data-wb-role="tree" data-wb-from="lang" data-wb-branch="special" data-wb-children="false" data-wb-hide="wb" data-wb-where='"{{active}}" = "on"'>
     <div class="container-fluid">
         <div class="spec-offer__container">
             <div class="spec-offer__close">
@@ -47,11 +48,12 @@
                 </div>
                 <meta data-wb-selector="h2" data-wb-addclass="spec-offer__title" data-wb-hide="*">
                 <div class="col-xl-6 spec-offer__right">
-                    <button href="#modal-special" class="spec-offer__btn button button--dark-outline" data-toggle="modal">Узнать подробности</button>
+                    <button href="{{data.prop.link.value}}" class="spec-offer__btn button button--dark-outline" data-toggle="modal">{{data.prop.link.label}}</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <div class="company-block services-choose" data-wb-role="tree" data-wb-from="lang" data-wb-branch="choose" data-wb-children="false" data-wb-hide="wb">
@@ -96,15 +98,15 @@
                         </div>
                         <div class="col-lg-8 text-left">
                             <div class="d-md-inline-block mr-md-3 mr-xl-5 mb-3 mb-md-0">Скачать:</div>
-                            <a href="#" class="link-img mr-4 mb-3 mb-md-0">
+                            <a target="_blank" href="/uploads/accounts.pdf" class="link-img mr-4 mb-3 mb-md-0">
                                 <img src="img/pdf.svg" alt="" class="">
                                 <span>Реквизиты</span>
                             </a>
-                            <a href="#" class="link-img mr-4 mb-3 mb-md-0">
+                            <a target="_blank" href="/uploads/offer.pdf" class="link-img mr-4 mb-3 mb-md-0">
                                 <img src="img/pdf.svg" alt="" class="">
                                 <span>Договор</span>
                             </a>
-                            <a href="#" class="link-img mr-4">
+                            <a target="_blank" href="/uploads/applications.pdf" class="link-img mr-4">
                                 <img src="img/pdf.svg" alt="" class="">
                                 <span>Приложение</span>
                             </a>

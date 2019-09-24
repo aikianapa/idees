@@ -23,6 +23,7 @@
 	<li class="nav-item"><a class="nav-link active" href="#{{_GET[form]}}Descr" data-toggle="tab">Описание</a></li>
 	<li class="nav-item"><a class="nav-link" href="#{{_GET[form]}}Property" data-toggle="tab" >Свойства</a></li>
 	<li class="nav-item"><a class="nav-link" href="#{{_GET[form]}}Images" data-toggle="tab">Изображения</a></li>
+    <li class="nav-item"><a class="nav-link" href="#{{_form}}Seo" data-toggle="tab">СЕО</a></li>
 </ul>
 </div>
 <div class="tab-content  p-a m-b-md">
@@ -86,7 +87,10 @@
     <div data-wb-role="tree" name="content" data-wb-dict="portfoliocontent"></div>
 </div>
 <div id="{{_GET[form]}}Images" class="tab-pane fade" data-wb-role="include" src="uploader" role="tabpanel"></div>
+<div id="{{_GET[form]}}Seo" class="tab-pane fade" data-wb-role="include" src="seo" role="tabpanel"></div>
 </div>
+
+
 </form>
 
 

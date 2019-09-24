@@ -8,7 +8,7 @@
 <div class="form-group row">
     <label class="col-12 form-control-label">Текст</label>
     <div class="col-12">
-        <input name="test" placeholder="Test">
+        <input name="test" placeholder="Text">
     </div>
 </div>
 
