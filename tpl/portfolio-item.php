@@ -72,7 +72,6 @@
     </div>
 
     <div class="portfolio-before" data-wb-where='"{{data.form.type}}" = "before-after" AND "{{data.form.visible}}" = "on"'>
-        цукйцйцук
         <div class="container-fluid">
             <div id='container1' class='twentytwenty-container'>
                 <img src='/uploads/{{_form}}/{{_item}}/{{data.form.before[0].img}}'>
