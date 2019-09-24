@@ -17,7 +17,7 @@
     </div>
 	<div class="form-group row v-block-white v-block-grey">
 	  <label class="col-sm-3 form-control-label">Текст</label>
-        <div class="col-sm-9"><textarea data-wb-role="module" src="summernote" class="summernote" name="text"></textarea></div>
+        <div class="col-sm-9"><textarea class="w-100" rows="15" name="text"></textarea></div>
 	</div>
 	<div class="form-group row v-before-after">
 	  <label class="col-sm-3 form-control-label">Было/Стало</label>
