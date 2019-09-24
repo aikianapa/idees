@@ -48,7 +48,7 @@
                     </h2>
                 </div>
                 <div class="col-xl-6">
-                    {{data.form.text}}
+                    <p>{{data.form.text}}</p>
                 </div>
                 <meta data-wb-selector="p" data-wb-addclass="company-about__desc">
             </div>
@@ -64,7 +64,7 @@
                     </h2>
                 </div>
                 <div class="col-xl-6">
-                    {{data.form.text}}
+                    <p>{{data.form.text}}</p>
                 </div>
                 <meta data-wb-selector="p" data-wb-addclass="company-about__desc">
             </div>
