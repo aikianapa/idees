@@ -1,0 +1,143 @@
+.portfolio-bg__subtitle {
+    color: #777d89;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.portfolio-bg__title {
+    margin-bottom: 50px;
+    position: relative;
+    left: -2px;
+}
+
+.portfolio-bg__title--small {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.company-about__desc {
+    font-size: 20px;
+    color: #777d89;
+}
+
+.portfolio-bg--gray {
+    padding: 50px 0;
+    margin-bottom: 25px;
+}
+
+.parallax.parallax--600 {
+    min-height: 600px;
+}
+
+.portfolio-before {
+    background: transparent;
+    padding: 0;
+}
+
+.portfolio-photo:first-of-type {
+    margin-top: 25px;
+}
+
+.case-desc {
+    margin-bottom: 30px;
+}
+
+.case-category {
+    margin-bottom: 30px;
+}
+
+@media (min-width: 1300px) {
+    .container--portfolio.container {
+        max-width: 1270px;
+    }
+}
+
+.portfolio-nav {
+    background: transparent;
+}
+
+.portfolio-nav .button--dark-outline {
+    color: #20232A !important;
+    border-color: #20232A !important;
+    background: white !important;
+}
+
+.portfolio-nav .button--dark-outline:hover {
+    color: #FFFFFF !important;
+    border-color: #20232A !important;
+    background: #20232A !important;
+}
+
+.similar-work {
+    padding-top: 100px;
+}
+
+.similar-work__title {
+    margin-bottom: 20px;
+}
+
+.portfolio--text-block {
+
+    padding: 25px 0 !important;
+}
+
+.similar-work .portfolio-card__category {
+    line-height: 1.2;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+
+.portfolio-card__title {
+    line-height: 1.2 !important;
+    margin-bottom: 20px;
+}
+
+.portfolio-card__wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.similar-work .portfolio-card__title {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 40px;
+}
+
+.similar-work .portfolio-card__desc {
+    line-height: 1.2;
+}
+
+@media (max-width: 767px) {
+    .portfolio-bg__title--small {
+        font-size: 24px;
+    }
+    .company-about__desc {
+        font-size: 18px;
+    }
+}
+
+.top-block {
+  background-image: none !important;
+}
+
+.top-block__title {
+    font-weight: normal;
+}
+
+.nav-main__item .link:not(.linkWhite) {
+    color: #FDB813;
+}
+
+@media (min-width: 1600px) {
+    .nav-main__item:not(:last-child) {
+        margin-right: 110px !important;
+    }
+}
+
+#section1 {
+    background-size: auto;
+    background-position-y: center;
+    background-position-x: calc(100% - 60px);
+}

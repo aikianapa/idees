@@ -11,5 +11,6 @@
 <link rel="stylesheet" href="fonts/line-awesome/css/line-awesome.css">
 <link rel="stylesheet" href="scss/main.css">
 <link rel="stylesheet" href="scss/main.css">
+<link rel="stylesheet" href="scss/new-style.css">
 <title>{{title}}</title>
 </head>
