@@ -34,9 +34,11 @@
                 <div class="case-desc__item">Сайт: {{%site}}</div>
             </div>
 
-            <div class="case-category" data-wb-role="foreach" data-wb-json='{{json_encode({{explode(",",{{%tags}})}})}}'
-                 data-wb-tpl="false" data-wb-where='"{{%tags}}">""' data-wb-hide="wb">
-                <div class="case-category__item">{{_value}}</div>
+            <div data-wb-where='"{{%tags}}">""' data-wb-hide="*">
+                <div class="case-category" data-wb-role="foreach" data-wb-json='{{json_encode({{explode(",",{{%tags}})}})}}'
+                     data-wb-tpl="false" data-wb-hide="wb">
+                    <div class="case-category__item">{{_value}}</div>
+                </div>
             </div>
         </div>
     </div>
