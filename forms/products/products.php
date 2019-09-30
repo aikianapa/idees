@@ -19,13 +19,15 @@ function productsAfterItemRead($Item) {
 	}
 
     $imgs=wbTreeFindBranchById($Item["content"],"header"); 
-    if (is_array($imgs) AND @isset($imgs["data"]["form"]["image"])) {
+    if (is_array($imgs) AND isset($imgs["data"]["form"]["image"]) AND is_array($imgs["data"]["form"]["image"])) {
+        
         foreach($imgs["data"]["form"]["image"] as $i) {
             if ($i["visible"] == "1" AND $i["img"] > "") {
                 $Item["_image"]="/uploads/products/{$Item["id"]}/{$i["img"]}";
                 break;
             }
         }
+        
     }
 
 	return $Item;
