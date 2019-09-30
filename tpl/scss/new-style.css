@@ -141,3 +141,8 @@
     background-position-y: center;
     background-position-x: calc(100% - 60px);
 }
+
+.portfolio-card__img {
+    background-size: cover;
+    background-position: center;
+}

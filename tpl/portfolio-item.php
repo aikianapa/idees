@@ -140,8 +140,8 @@
                      data-wb-where='"{{active}}"="on"'>
                     <a href="/portfolio/{{id}}/" class="portfolio-card portfolio-card--similar">
                         <div class="portfolio-card__bg" style="background-color: #E1CC17">
-                            <img class="portfolio-card__img" src="/thumb/596x400/src/{{_image}}"
-                                 data-wb-where='"{{_image}}">""'>
+                            <div class="portfolio-card__img" style='background-image: url("/thumb/596x400/src/{{_image}}")'
+                                 data-wb-where='"{{_image}}">""'></div>
                         </div>
                         <div class="portfolio-card__wrap">
                             <div class="portfolio-card__category">
