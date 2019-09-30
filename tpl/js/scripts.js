@@ -111,7 +111,7 @@ $(document).on('shown.bs.collapse', '#menuCollapse', function () {
 $(window).on("scroll", function () {
     // Если высота больше 200px
     // Добавляем классу header класс fixed
-    if ($(window).scrollTop() > 0) $('.header').addClass('fixed');
+    if ($(window).scrollTop() > 77) $('.header').addClass('fixed');
     // Иначе удаляем класс fixed
     else $('.header').removeClass('fixed');
 });

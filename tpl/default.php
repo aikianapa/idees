@@ -13,8 +13,11 @@
     </div>
 
     <div data-wb-role="tree" data-wb-from="lang" data-wb-hide="*">
-        <div class="section" id="section{{_var[i]}}" data-anchor="{{id}}"
+    <!--    <div class="section" id="section{{_var[i]}}" data-anchor="{{id}}"
             style="background-image: url('/uploads/{{_route.form}}/{{_route.item}}/{{data.image[0].img}}')"
+            data-wb-where='"{{substr({{id}},0,6)}}"="screen"' data-wb-hide="wb">-->
+        <div class="section" id="section{{_var[i]}}" data-anchor="{{id}}"
+            style="background-image: url('img/home-bg.svg')"
             data-wb-where='"{{substr({{id}},0,6)}}"="screen"' data-wb-hide="wb">
             <div class="container-fluid d-flex align-items-center h-100">
                 <div class="slider-main__content">
