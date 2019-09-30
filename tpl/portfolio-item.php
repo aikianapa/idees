@@ -8,6 +8,7 @@
 
     
 <main data-wb-role="tree" data-wb-from="content" data-wb-children="false" data-wb-hide="*">
+{{id}}
     <section class="parallax" data-parallax="scroll" data-image-src="/uploads/{{_form}}/{{_item}}/{{data.form.image[0].img}}" data-wb-where='"{{data.form.type}}" = "block-paralax" AND "{{data.form.visible}}" = "on"'>
     </section>
     
@@ -30,7 +31,7 @@
                         <div class="case-desc__item">Сайт: {{%site}}</div>
                     </div>
                 </div>
-                <div class="col-xl-6">
+                <div class="col-xl-6" data-wb-where='"{{%tags}}" > ""' data-wb-hide="wb">
                     <div class="case-category" data-wb-role="foreach" data-wb-json='{{json_encode({{explode(",",{{%tags}})}})}}' data-wb-tpl="false" data-wb-where='"{{%tags}}">""' data-wb-hide="wb">
                         <div class="case-category__item">{{_value}}</div>
                     </div>
