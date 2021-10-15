@@ -1,0 +1,13 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="mi mi-rotate-refresh-loading size-24" width="24" height="24" viewBox="0 0 24 24">
+    <rect id="_Transparent_Rectangle__10_" fill="none" width="24" height="24"></rect><g>
+	<rect id="_Transparent_Rectangle__4_" fill="none" width="24" height="24"></rect>
+	<g>
+		
+			<polyline fill="none" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="    6.75,8.25 3,8.25 3,4.5   "></polyline>
+		<path fill="none" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M21,12    c0-4.971-4.029-9-9-9C8.37,3,5.249,5.154,3.826,8.25"></path>
+		
+			<polyline fill="none" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="    17.25,15.75 21,15.75 21,19.5   "></polyline>
+		<path fill="none" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M3,12    c0,4.971,4.029,9,9,9c3.63,0,6.751-2.154,8.174-5.25"></path>
+	</g>
+</g>
+</svg>
