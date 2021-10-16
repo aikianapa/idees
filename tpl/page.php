@@ -1,4 +1,4 @@
-<html>
+<html class="page" lang="ru">
 <head>
     <title>{{title}}</title>
 </head>
