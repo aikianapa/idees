@@ -1,7 +1,14 @@
 <!DOCTYPE html><html>
 <head><title></title></head>
 
-<body><header class="header container">
+<body>
+    
+
+    
+
+    
+
+<header class="header container">
   <script>
     if (localStorage.getItem('darkTheme')) document.querySelector('body').classList.add('dark');
   </script>
@@ -17,7 +24,7 @@
     </svg>
   </a>
 
-  <a class="header__button-link header__button-link--express" href="./special.html">экспресс - дизайн</a>
+  <a class="header__button-link header__button-link--express" href="/special">экспресс - дизайн</a>
 
   
     <button class="header__button-link header__button-link--theme js-theme" type="button" aria-label="Меню">
@@ -39,14 +46,7 @@
     </button>
 </header><link rel="manifest" href="/assets/manifest.webmanifest"><link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" href="/assets/img/favicons/icon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.ico"><link rel="preload" href="/assets/fonts/GrandisExtended-Bold.woff2" as="font" crossorigin="anonymous"><link rel="preload" href="/assets/fonts/GrandisExtended-Medium.woff2" as="font" crossorigin="anonymous"><link rel="preload" href="/assets/fonts/GrandisExtended-Regular.woff2" as="font" crossorigin="anonymous"><link rel="stylesheet" href="/assets/styles/index.css"><meta name="description" content="Branding и digital решения для современных компаний. Предлагаем услуги по созданию брендов, веб-сайтов, презентаций, дизайна и видео."><meta name="keywords" content="Проведение исследований,аналитика,разработка позиционирования и стратегии бренда,Нейминг,регистрация ТЗ (торгового знака) в ФИПС,слоган,дескриптор,копирайт,Айдентика,логотип,фирменный стиль,дизайн носители,брендбук,Веб-сайты,лендинги,веб-сервисы,Буклеты,презентации,иллюстрации,видеоролики"><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><title>
     Айдис - агентство по созданию брендов и цифровых продуктов
-  </title>
-    
-
-    
-
-    
-
-<main class="page__main">
+  </title><main class="page__main">
       
 <section class="glosario container">
   <div class="page__title-container glosario__title-container">
@@ -196,7 +196,7 @@
 
 </section>
 
-    </main><footer class="footer">
+    </main><body></body><footer class="footer">
   <div class="container">
     <div class="footer__top-section">
       <p class="footer__text">
@@ -262,9 +262,7 @@
         <use xlink:href="/assets/img/sprite.svg#menu-cross"></use>
       </svg>
     </button>
-  
 
-  
 </header>
 
 
@@ -447,12 +445,14 @@
         <use xlink:href="/assets/img/sprite.svg#menu-cross"></use>
       </svg>
     </button>
-  
 </header>
 
+    
 
-  <h2 class="visually-hidden">Меню сайта</h2>
-  <div class="menu__container container">
+  <div class="menu__bottom-panel">
+    <button class="menu__accept-button js-form-open" type="button">Начать проект</button>
+  </div>
+<h2 class="visually-hidden">Меню сайта</h2><div class="menu__container container">
     <nav class="menu__navigation">
       <ul class="menu__list">
         <li class="menu__item menu__item--projects">
@@ -537,12 +537,7 @@
         </li>
       </ul>
     </div>
-  </div>
-
-  <div class="menu__bottom-panel">
-    <button class="menu__accept-button js-form-open" type="button">Начать проект</button>
-  </div>
-</section><div class="cookies-block">
+  </div></section><div class="cookies-block">
   <div class="container cookies-block__container">
     <div class="cookies-block__wrapper">
       <svg class="cookies-block__icon" width="30" height="30" aria-hidden="true">
@@ -582,5 +577,90 @@
   <svg class="up-button__icon" width="28" height="28" aria-hidden="true">
     <use xlink:href="/assets/img/sprite.svg#arrow-top"></use>
   </svg>
-</button><script src="/assets/scripts/libs/img-comparison-slider.js"></script><script src="/assets/scripts/libs/parallax.js"></script><script type="module" src="/assets/scripts/index.js"></script></body>
+</button><script src="/assets/scripts/libs/img-comparison-slider.js"></script><script src="/assets/scripts/libs/parallax.js"></script><script type="module" src="/assets/scripts/index.js"></script><h2 class="visually-hidden">Меню сайта</h2><div class="menu__container container">
+    <nav class="menu__navigation">
+      <ul class="menu__list">
+        <li class="menu__item menu__item--projects">
+          <a class="menu__link" href="/projects">проекты</a>
+        </li>
+
+        <li class="menu__item menu__item--vacancies">
+          <a class="menu__link" href="/vacancies">вакансии</a>
+        </li>
+
+        <li class="menu__item menu__item--documents">
+          <a class="menu__link" href="/documents">документы</a>
+        </li>
+
+        <li class="menu__item menu__item--contacts">
+          <a class="menu__link" href="/contacts">контакты</a>
+        </li>
+
+        <li class="menu__item menu__item--with-sub-list menu__item--services">
+          <a class="menu__link" href="/services">услуги</a>
+
+          <ul class="menu__sub-list">
+            <li class="menu__sub-item">
+              <a class="menu__sub-link" href="/category">стратегия</a>
+            </li>
+            <li class="menu__sub-item">
+              <a class="menu__sub-link" href="/category">брендинг</a>
+            </li>
+            <li class="menu__sub-item">
+              <a class="menu__sub-link" href="/category">разработка</a>
+            </li>
+            <li class="menu__sub-item">
+              <a class="menu__sub-link" href="/category">дизайн</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu__item menu__item--with-sub-list menu__item--agency">
+          <a class="menu__link" href="/agency">агентство</a>
+
+          <ul class="menu__sub-list">
+            <li class="menu__sub-item">
+              <a class="menu__sub-link" href="/feedback">отзывы</a>
+            </li>
+            <li class="menu__sub-item">
+              <a class="menu__sub-link" href="/products">продукты</a>
+            </li>
+            <li class="menu__sub-item">
+              <a class="menu__sub-link" href="/partners">партнерам</a>
+            </li>
+            <li class="menu__sub-item">
+              <a class="menu__sub-link" href="/brand">бренд</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu__item menu__item--with-sub-list menu__item--blog">
+          <a class="menu__link" href="/blog">блог</a>
+
+          <ul class="menu__sub-list">
+            <li class="menu__sub-item">
+              <a class="menu__sub-link" href="/glosario">глоссарий</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="menu__contacts">
+      <a class="menu__contact-link" href="email:info@idees.ru">info@idees.ru</a>
+      <a class="menu__contact-link" href="tel:+74951966585">+7 (495) 196-65-85</a>
+
+      <ul class="menu__socials-list">
+        <li class="menu__socials-item">
+          <a class="menu__socials-link" href="#">Whatsapp</a>
+        </li>
+        <li class="menu__socials-item">
+          <a class="menu__socials-link" href="#">Telegram</a>
+        </li>
+        <li class="menu__socials-item">
+          <a class="menu__socials-link" href="#">Messenger</a>
+        </li>
+      </ul>
+    </div>
+  </div></body>
 </html>
