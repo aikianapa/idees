@@ -5,7 +5,7 @@
         <div class="modal-content">
             <div class="modal-header row">
                 <div class="col-5">
-                    <h5>Редактирование новости</h5>
+                    <h5>Редактирование проекта</h5>
                 </div>
                 <div class="col-7">
                     <h5 class='header'></h5>
@@ -23,7 +23,7 @@
                                         <input type="checkbox" class="custom-control-input" name="active"
                                             id="{{_form}}SwitchItemActive">
                                         <label class="custom-control-label" for="{{_form}}SwitchItemActive">Отображать
-                                            новость</label>
+                                            проект</label>
                                     </div>
                                 </div>
                             </div>
