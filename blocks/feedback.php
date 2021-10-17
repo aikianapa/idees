@@ -3,7 +3,7 @@
   <div class="feedback-section__title-container container">
     <h2 class="feedback-section__title">{{header}}</h2>
 
-    <a class="button feedback-section__button" href="/feedback.html">
+    <a class="button feedback-section__button" href="/feedback">
       <span class="button__icon-wrapper">
         <svg class="button__icon" width="24" height="24" aria-hidden="true">
           <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
