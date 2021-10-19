@@ -1,5 +1,6 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
+@import url(custom.css);
 @-webkit-keyframes bg-animation {
     0% {
         width: 0;
