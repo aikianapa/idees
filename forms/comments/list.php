@@ -13,20 +13,29 @@
             <tr>
                 <th>Дата</th>
                 <th>Тема</th>
-                <th>Обращение</th>
-                <th>Статус</th>
+                <th>Автор</th>
+                <th>Главн.</th>
                 <th></th>
             </tr>
         </thead>
         <tbody id="{{_form}}List">
-            <wb-foreach wb="table={{_form}}&sort=_created:d&bind=cms.list.{{_form}}"
+            <wb-foreach wb="table={{_form}}&sort=_created:d&bind=cms.list.{{_form}}&size={{_sett.page_size}}"
                 wb-filter="{'login':'{{_sess.user.login}}' }">
                 <tr>
-                    <td>{{_created}}</td>
-                    <td>{{subject}}</td>
-                    <td>{{msg}}</td>
-                    <td>{{active}}</td>
+                    <td>{{wbDate("d.m.y",{{_created}})}}</td>
+                    <td>{{title}}</td>
+                    <td>{{name}}<div class="tx-12">{{position}}</div></td>
                     <td>
+                        <input wb-module="swico" name="home"
+                            data-ico-on="checkmark-sqaure.1"
+                            data-ico-off="square"
+                            data-color="323232"
+                            onchange="wbapp.save($(this),{'table':'{{_form}}','id':'{{_id}}','field':'home','silent':true})">                        
+                    </td>
+                    <td>
+                        <input wb-module="swico" name="active"
+                                id="{{_form}}SwitchItemActive{{_idx}}"
+                                onchange="wbapp.save($(this),{'table':'{{_form}}','id':'{{_id}}','field':'active','silent':true})">
                         <a href="javascript:"
                             data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/{{id}}','html':'#yongerSpace modals'}"
                             class="d-inline">

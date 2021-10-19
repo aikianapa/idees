@@ -1,102 +1,69 @@
 <view>
-<section class="feedback-section">
-  <div class="feedback-section__title-container container">
-    <h2 class="feedback-section__title">{{header}}</h2>
+<div class="feedback-page container">
 
-    <a class="button feedback-section__button" href="/feedback">
-      <span class="button__icon-wrapper">
-        <svg class="button__icon" width="24" height="24" aria-hidden="true">
-          <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
-        </svg>
-      </span>
-
-      <span class="button__text">все отзывы</span>
-    </a>
+  <div class="feedback-page__title-container">
+    <h1 class="page__title">{{header}}</h1>
   </div>
 
+  <ul class="feedback-page__list" id="feedbackList">
+    <wb-foreach wb="table=comments&sort=_created:d&size=2&bind=cms.list.feedback&more=true:ещё" wb-filter="active=on">
+    <li class="feedback-page__item feedback-page__item--full">
+      <blockquote class="feedback">
+        <h2 class="feedback__title">{{title}}</h2>
 
-  <div class="feedback-section__list-container">
-    <div class="container">
-      <ul class="feedback-section__list">
-        <li class="feedback-section__item feedback-section__item--active">
-          <blockquote class="feedback">
-            <h3 class="feedback__title">Мосдерм</h3>
+        <p class="feedback__text --feedback__text--small feedback__text--single">
+          {{text}}
+        </p>
 
-            <p class="feedback__text">
-              Заказывал разработку корпоративного стиля и сайта для крупнейшего в Европе центра дерматовенерологии www.mosderm.ru. Остался крайне доволен взаимодействием. На каждом этапе работ предлагалась масса вариантов решения, зачастую больше, чем прописано в техническом задании. Правки делались оперативно. Остались только положительные эмоции.
-            </p>
+        <cite class="feedback__author">
+              <img class="feedback__author-avatar" width="72" height="72" src="/thumbc/72x72/src{{avatar.0.img}}" srcset="/thumbc/144x144/src{{avatar.0.img}} 2x" alt="{{name}}" wb-if="'{{avatar}}'>''">
+              <img class="feedback__author-avatar" width="72" height="72" src="/module/myicons/72/323232/users-06.svg" srcset="/assets/img/feedback1@2x.jpg 2x" alt="{{name}}" wb-if="'{{avatar}}'==''">
+          <span class="feedback__name">{{name}}</span>
+          <span class="feedback__role">{{position}}</span>
+        </cite>
 
-            <cite class="feedback__author">
-              <img class="feedback__author-avatar" width="72" height="72" src="/assets/img/feedback1@1x.jpg" srcset="/assets/img/feedback1@2x.jpg 2x" alt="Александр Игнатьев">
-              <span class="feedback__name">Александр Игнатьев</span>
-              <span class="feedback__role">Директор по развитию</span>
-            </cite>
+        <div class="feedback__actions">
+          <a class="feedback__watch-link" wb-if="'{{youtube}}'>''" href="{{youtube}}" target="_blank" rel="noreferrer noopener nofollow">
+            <svg class="feedback__watch-link-icon" width="24" height="24" aria-hidden="true">
+              <use xlink:href="/assets/img/sprite.svg#play"></use>
+            </svg>
 
-            <div class="feedback__actions">
-              <a class="feedback__watch-link" href="#" target="_blank" rel="noreferrer noopener nofollow">
-                <svg class="feedback__watch-link-icon" width="24" height="24" aria-hidden="true">
-                  <use xlink:href="/assets/img/sprite.svg#play"></use>
-                </svg>
+            <span class="feedback__watch-link-text">смотреть отзыв</span>
+          </a>
 
-                <span class="feedback__watch-link-text">смотреть отзыв</span>
-              </a>
+          <a class="feedback__facebook-link" wb-if="'{{facebook}}'>''" href="{{facebook}}" target="_blank" rel="noreferrer noopener nofollow">
+            читать на facebook
+          </a>
+        </div>
+      </blockquote>
+    </li>
+    </wb-foreach>
+  </ul>
 
-              <a class="feedback__facebook-link" href="#" target="_blank" rel="noreferrer noopener nofollow">
-                читать на facebook
-              </a>
-
-              <button class="button feedback__next-button" type="button" aria-label="Следующий отзыв">
-                <svg class="feedback__next-button-icon" width="24" height="24" aria-hidden="true">
-                  <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
-                </svg>
-              </button>
-            </div>
-          </blockquote>
-        </li>
-
-        <li class="feedback-section__item">
-          <blockquote class="feedback">
-            <h3 class="feedback__title">Мосдерм</h3>
-
-            <p class="feedback__text">
-              Заказывал разработку корпоративного стиля и сайта для крупнейшего в Европе центра дерматовенерологии www.mosderm.ru. Остался крайне доволен взаимодействием. На каждом этапе работ предлагалась масса вариантов решения, зачастую больше, чем прописано в техническом задании. Правки делались оперативно. Остались только положительные эмоции.
-            </p>
-
-            <cite class="feedback__author">
-              <img class="feedback__author-avatar" width="72" height="72" src="/assets/img/feedback1@1x.jpg" srcset="/assets/img/feedback1@2x.jpg 2x" alt="Александр Игнатьев">
-              <span class="feedback__name">Александр Игнатьев</span>
-              <span class="feedback__role">Директор по развитию</span>
-            </cite>
-
-            <div class="feedback__actions">
-              <a class="feedback__watch-link" href="#" target="_blank" rel="noreferrer noopener nofollow">
-                <svg class="feedback__watch-link-icon" width="24" height="24" aria-hidden="true">
-                  <use xlink:href="/assets/img/sprite.svg#play"></use>
-                </svg>
-
-                <span class="feedback__watch-link-text">смотреть отзыв</span>
-              </a>
-
-              <a class="feedback__facebook-link" href="#" target="_blank" rel="noreferrer noopener nofollow">
-                читать на facebook
-              </a>
-
-              <button class="button feedback__next-button" type="button" aria-label="Следующий отзыв">
-                <svg class="feedback__next-button-icon" width="24" height="24" aria-hidden="true">
-                  <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
-                </svg>
-              </button>
-            </div>
-          </blockquote>
-        </li>
-      </ul>
-    </div>
+  <div class="page__spinner-block visually-hidden">
+    <img class="page__spinner page__spinner--active" src="/assets/img/spinner.svg" alt="" aria-hidden="true">
   </div>
-</section>
+</div>
+<wb-snippet wb="name=wbapp" />
+<script type="wbapp">
+    $("#feedbackList").on('wb-ajax-start',function(ev,params) {
+        if (params.target !== "#feedbackList") return;
+        if (params._params !== undefined && params._params.more !== undefined) {
+            $('.page__spinner-block').removeClass('visually-hidden');
+        }
+    });
+    $("#feedbackList").on('wb-ajax-done',function(ev,params) {
+        if (params.target !== "#feedbackList") return;
+        if (params._params !== undefined && params._params.more !== undefined) {
+            $('.page__spinner-block').addClass('visually-hidden');
+        }
+    });
+</script>
 </view>
 
-<edit header="Виджет отзывов">
+<edit header="Список отзывов">
     <div>
         <wb-module wb="module=yonger&mode=edit&block=common.inc" />
     </div>
+
 </edit>

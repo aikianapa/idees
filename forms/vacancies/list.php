@@ -29,7 +29,7 @@
                     <td>Дата</td>
                     <td>Вакансия</td>
                     <td>Теги</td>
-                    <td class="text-center">Удалённо</td>
+                    <td class="text-center">Удалёнка</td>
                     <td class="text-right">Действия</td>
                 </tr>
             </thead>
@@ -55,21 +55,17 @@
                             </wb-foreach>
                         </td>
                         <td class="text-center">
-                            <div class="custom-control custom-switch d-inline">
-                                <input type="checkbox" class="custom-control-input" name="distance"
-                                    id="{{_form}}SwitchItemDistance{{_idx}}"
-                                    onchange="wbapp.save($(this),{'table':'{{_form}}','id':'{{_id}}','field':'distance','silent':true})">
-                                <label class="custom-control-label" for="{{_form}}SwitchItemDistance{{_idx}}">&nbsp;</label>
-                            </div>
+                        <input wb-module="swico" name="distance"
+                            data-ico-on="checkmark-sqaure.1"
+                            data-ico-off="square"
+                            data-color="323232"
+                            onchange="wbapp.save($(this),{'table':'{{_form}}','id':'{{_id}}','field':'distance','silent':true})">   
                         </td>
                         <td class="text-right">
-                            <div class="custom-control custom-switch d-inline">
-                                <input type="checkbox" class="custom-control-input" name="active"
+                                <input wb-module="swico" name="active"
                                     id="{{_form}}SwitchItemActive{{_idx}}"
                                     onchange="wbapp.save($(this),{'table':'{{_form}}','id':'{{_id}}','field':'active','silent':true})">
-                                <label class="custom-control-label"
-                                    for="{{_form}}SwitchItemActive{{_idx}}">&nbsp;</label>
-                            </div>
+
                             <a href="javascript:"
                                 data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/{{_id}}','update':'cms.list.{{_form}}','html':'#yongerSpace modals'}"
                                 class=" d-inline"><img src="/module/myicons/24/323232/content-edit-pen.svg" width="24"

@@ -2902,7 +2902,8 @@ ol.document__list--alpha {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    list-style: none
+    list-style: none;
+    transition: transform .5s
 }
 
 @media (min-width:860px) {
@@ -2924,7 +2925,7 @@ ol.document__list--alpha {
         margin-right: 170px;
         padding: 10px
     }
-    .feedback-section__item:not(.slick-active) {
+    .feedback-section__item:not(.active) {
         opacity: .3;
         filter: blur(4px)
     }
@@ -6358,6 +6359,7 @@ ol.document__list--alpha {
     padding: 0;
     overflow: hidden;
     list-style: none;
+    transition: transform .5s;
     counter-reset: slider
 }
 
@@ -6379,22 +6381,21 @@ ol.document__list--alpha {
         width: calc((100% - 120px)/4);
         margin-right: 40px
     }
-    .brand__slider-item:not(.brand__slider-item-active) {
+    .brand__slider-item:not(.active) {
         opacity: .3;
         filter: blur(4px)
     }
 }
 
-.brand__slider-item::before {
+.brand__slider-item-number {
     display: block;
     margin-bottom: 30px;
     font-size: 18px;
-    line-height: 24px;
-    content: counter(slider, decimal-leading-zero) " "
+    line-height: 24px
 }
 
 @media (min-width:800px) {
-    .brand__slider-item::before {
+    .brand__slider-item-number {
         color: var(--typo-secondary-color)
     }
 }
@@ -7376,6 +7377,7 @@ ol.document__list--alpha {
     padding: 0;
     overflow: hidden;
     list-style: none;
+    transition: transform .5s;
     counter-reset: slider
 }
 
@@ -7397,22 +7399,21 @@ ol.document__list--alpha {
         width: calc((100% - 120px)/4);
         margin-right: 40px
     }
-    .special__slider-item:not(.special__slider-item--active) {
+    .special__slider-item:not(.active) {
         opacity: .3;
         filter: blur(4px)
     }
 }
 
-.special__slider-item::before {
+.special__slider-item-number {
     display: block;
     margin-bottom: 30px;
     font-size: 18px;
-    line-height: 24px;
-    content: counter(slider, decimal-leading-zero) " "
+    line-height: 24px
 }
 
 @media (min-width:800px) {
-    .special__slider-item::before {
+    .special__slider-item-number {
         color: var(--typo-secondary-color)
     }
 }

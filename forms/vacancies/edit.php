@@ -41,7 +41,7 @@
                         </div>
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <label for="my-input">Удалённо</label>
+                                <label for="my-input">Удалёнка</label>
                                 <input wb-module="module=switch" name="distance">
                             </div>
                         </div>
