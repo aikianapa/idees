@@ -32,7 +32,7 @@
                             data-color="323232"
                             onchange="wbapp.save($(this),{'table':'{{_form}}','id':'{{_id}}','field':'home','silent':true})">                        
                     </td>
-                    <td>
+                    <td class="text-right">
                         <input wb-module="swico" name="active"
                                 id="{{_form}}SwitchItemActive{{_idx}}"
                                 onchange="wbapp.save($(this),{'table':'{{_form}}','id':'{{_id}}','field':'active','silent':true})">

@@ -52,14 +52,14 @@
             </li>
             </wb-foreach>
         </ul>
-        <script type="wbapp">
+        <script wb-app remove>
             $(document).delegate("a.documents__menu-link","click",function(){
                 let type = $(this).attr('data-type');
                 if (type == "all") {
-                    $(this).parents('.documents__container').find('.documents__item').show();
+                    $(this).parents('.documents__container').find('.documents__item').removeClass('d-none');
                 } else {
-                    $(this).parents('.documents__container').find('.documents__item').hide();
-                    $(this).parents('.documents__container').find('.documents__item[data-type='+type+']').show();
+                    $(this).parents('.documents__container').find('.documents__item').addClass('d-none');
+                    $(this).parents('.documents__container').find('.documents__item[data-type='+type+']').removeClass('d-none');
                 }
                 $(this).parents('.documents__menu').find('.documents__menu-link').removeClass('documents__menu-link--current');
                 $(this).addClass('documents__menu-link--current');

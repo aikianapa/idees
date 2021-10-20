@@ -1,3 +1,15 @@
 .pb-0 {
     padding-bottom: 0!important;
 }
+
+.d-none {
+    display: none;
+}
+
+.glosario__item-list {
+    align-self: self-start;
+}
+
+input {
+    outline-width: 0;
+}
