@@ -2,6 +2,10 @@
     padding-bottom: 0!important;
 }
 
+.pt-0 {
+    padding-top: 0!important;
+}
+
 .d-none {
     display: none;
 }
@@ -12,4 +16,31 @@
 
 input {
     outline-width: 0;
+}
+
+.text-break {
+    white-space: break-spaces;
+}
+
+.top-section {
+    padding-top: 80px!important;
+}
+
+@media (min-width:800px) {
+    .top-section {
+        padding-top: 200px!important;
+    }
+}
+
+.top-section-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px 40px;
+    margin-bottom: 80px!important;
+}
+
+@media (min-width:800px) {
+    .top-section-container {
+        grid-template-columns: 1fr 1fr
+    }
 }

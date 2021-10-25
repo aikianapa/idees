@@ -1,6 +1,5 @@
 <view>
 <section class="feedback-section">
-<section class="feedback-section">
   <div class="feedback-section__title-container container">
     <h2 class="feedback-section__title">{{header}}</h2>
 

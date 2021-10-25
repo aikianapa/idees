@@ -4,12 +4,12 @@
     <div class="modal-dialog modal-xxl" role="document">
         <div class="modal-content">
             <div class="modal-header row">
-                <div class="col-5">
+                <div class="col-4">
                     <h5 wb-if="'{{_route.id}}' !== '_header' && '{{_route.id}}' !== '_footer'">Редактирование страницы</h5>
                     <h5 wb-if="'{{_route.id}}' == '_header'">Шапка сайта</h5>
                     <h5 wb-if="'{{_route.id}}' == '_footer'">Подвал сайта</h5>
                 </div>
-                <div class="col-7">
+                <div class="col-8">
                     <h5 class='header'></h5>
                 </div>
                 <i class="fa fa-close r-20 position-absolute cursor-pointer" data-dismiss="modal"
@@ -17,7 +17,7 @@
             </div>
             <div class="modal-body pd-20">
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 col-lg-4">
                         <form id="{{_form}}EditForm">
                             <div wb-if="'{{_route.id}}' !== '_header' && '{{_route.id}}' !== '_footer'">
                             <div class="form-group row">
@@ -73,7 +73,7 @@
                         </form>
                     </div>
 
-                    <div class="col-7">
+                    <div class="col-7 col-lg-8">
                         <div id="yongerBlocksForm">
                             <form method="post">
 
