@@ -1,13 +1,14 @@
 <view>
     <section class="services-section container">
-        <div class="services-section__container">
+        <wb-var mb80="mb-80" wb-if="'{{btntext}}'==''" else="" />
+        <div class="services-section__container {{_var.mb80}}">
             <h2 class="services-section__title">{{header}}</h2>
 
-            <div class="services-section__descrpiption-container">
+            <div class="services-section__descrpiption-container" wb-if="'{{text}}'>''">
                 <p class="services-section__descrpiption" style="white-space: break-spaces;">{{text}}</p>
             </div>
 
-            <button class="button services-section__button js-form-open" type="button">
+            <button class="button services-section__button js-form-open" type="button" wb-if="'{{btntext}}'>''">
                 <span class="button__icon-wrapper">
                     <svg class="button__icon" width="24" height="24" aria-hidden="true">
                         <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
