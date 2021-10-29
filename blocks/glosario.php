@@ -126,6 +126,8 @@
 </view>
 
 <edit>
-
+<div class="alert alert-info">
+    Глоссарий редактируется в Формы -> Разделы -> Глоссарий
+</div>
 
 </edit>
