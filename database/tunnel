@@ -1,0 +1,2 @@
+#!/bin/sh
+ssh -fN -L 9998:localhost:27017 root:xb8VZzJ6@193.164.150.139 -p 22
