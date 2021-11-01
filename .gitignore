@@ -2,3 +2,4 @@ engine/
 uploads/_cache/
 uploads/_remote/
 database/_cache/
+database/_driver.ini
