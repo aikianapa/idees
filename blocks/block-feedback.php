@@ -1,5 +1,4 @@
-<view>
-<section class="feedback-section">
+<view><section class="feedback-section">
   <div class="feedback-section__title-container container">
     <h2 class="feedback-section__title">{{header}}</h2>
 
@@ -18,7 +17,7 @@
   <div class="feedback-section__list-container js-feedback-slider">
     <div class="container">
       <ul class="feedback-section__list js-feedback-slider-list">
-        <wb-foreach wb="table=comments&sort=_created:d&tpl=false" wb-filter="active=on&home=on">
+        <wb-foreach wb="table=comments&amp;sort=_created:d&amp;tpl=false" wb-filter="active=on&amp;home=on">
         <li class="feedback-section__item">
           <blockquote class="feedback">
             <h3 class="feedback__title">{{title}}</h3>
@@ -28,15 +27,14 @@
             </p>
 
             <cite class="feedback__author">
-              <img class="feedback__author-avatar" width="72" height="72" src="/thumbc/72x72/src{{avatar.0.img}}" srcset="/thumbc/144x144/src{{avatar.0.img}} 2x" alt="{{name}}" wb-if="'{{avatar}}'>''">
+              <img class="feedback__author-avatar" width="72" height="72" src="/thumbc/72x72/src%7B%7Bavatar.0.img%7D%7D" srcset="/thumbc/144x144/src{{avatar.0.img}} 2x" alt="{{name}}" wb-if="'{{avatar}}'&gt;''">
               <img class="feedback__author-avatar" width="72" height="72" src="/module/myicons/72/323232/users-06.svg" srcset="/assets/img/feedback1@2x.jpg 2x" alt="{{name}}" wb-if="'{{avatar}}'==''">
               <span class="feedback__name">{{name}}</span>
               <span class="feedback__role">{{position}}</span>
             </cite>
 
             <div class="feedback__actions">
-              <a class="feedback__watch-link" href="{{youtube}}" target="_blank" rel="noreferrer noopener nofollow"
-                wb-if="'{{youtube}}'>''">
+              <a class="feedback__watch-link" href="%7B%7Byoutube%7D%7D" target="_blank" rel="noreferrer noopener nofollow" wb-if="'{{youtube}}'&gt;''">
                 <svg class="feedback__watch-link-icon" width="24" height="24" aria-hidden="true">
                   <use xlink:href="/assets/img/sprite.svg#play"></use>
                 </svg>
@@ -44,8 +42,7 @@
                 <span class="feedback__watch-link-text">смотреть отзыв</span>
               </a>
 
-              <a class="feedback__facebook-link" href="{{facebook}}" target="_blank" rel="noreferrer noopener nofollow"
-                wb-if="'{{facebook}}'>''">
+              <a class="feedback__facebook-link" href="%7B%7Bfacebook%7D%7D" target="_blank" rel="noreferrer noopener nofollow" wb-if="'{{facebook}}'&gt;''">
                 читать на facebook
               </a>
 
@@ -61,11 +58,9 @@
       </ul>
     </div>
   </div>
-</section>
-</view>
-
-<edit header="Виджет отзывов">
-    <div>
-        <wb-module wb="module=yonger&mode=edit&block=common.inc" />
+</section></view><edit header="Виджет отзывов"><div>
+        <wb-module wb="module=yonger&amp;mode=edit&amp;block=common.inc"></wb-module>
     </div>
-</edit>
+<div class="alert alert-info">
+  Данные берутся из таблицы comments
+</div></edit>

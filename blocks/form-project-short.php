@@ -1,6 +1,4 @@
-<view>
-
-<section class="page__form-section container">
+<view><section class="page__form-section container">
   <h2 class="page__section-title">{{header}}</h2>
 
   <form class="form" method="POST" action="https://echoacademy.ru/">
@@ -59,11 +57,9 @@
       Отправляя заявку, я соглашаюсь передать свои персональные данные, содержащиеся в анкете и всех приложенных файлах. Я понимаю и соглашаюсь, что мои данные будут храниться и обрабатываться в течение пяти лет, в соответствии с Федеральным законом «О персональных данных».
     </p>
   </form>
-</section>
-</view>
-
-<edit header="Анкета проекта - короткая">
-    <div>
-        <wb-module wb="module=yonger&mode=edit&block=common.inc" />
-    </div>
-</edit>
+</section></view><edit header="Анкета проекта - короткая"><div>
+        <wb-module wb="module=yonger&amp;mode=edit&amp;block=common.inc"></wb-module>
+ </div>
+<div class="alert alert-info">
+          Нажмите кнопку <a href="#" onclick="$('#yongerEditorBtnEdit').trigger('click')">Редактор</a>, чтобы редактировать форму.  
+      	</div></edit>

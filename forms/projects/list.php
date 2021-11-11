@@ -26,7 +26,7 @@
         <table class="table table-striped table-hover tx-15">
             <thead>
                 <tr>
-                    <td>Дата</td>
+                    <td>&nbsp;</td>
                     <td>Наименование</td>
                     <td>Теги</td>
                     <td class="text-center">На главной</td>
@@ -42,14 +42,14 @@
                             'filter': {'_site':'{{_sett.site}}'}
                 }">
                     <tr class="bg-transparent">
-                        <td data-ajax="{'url':'/cms/ajax/form/projects/edit/{{_id}}','html':'#yongerSpace modals'}">
-                            <span class="tx-13 tx-inverse tx-semibold mg-b-0">{{date}}</span>
+                        <td data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/{{_id}}','html':'#yongerSpace modals'}" class="cursor-pointer">
+                            <img data-src="/thumb/50x30/src{{cover.0.img}}" class="img-fluid rounded" />
                         </td>
                         <td class="w-25">
-                            {{header}}
+                            {{name}}
                         </td>
                         <td class="w-25">
-                            <wb-foreach wb="call=explode(',','{{blocks.seo.lang.{{_sess.lang}}.keywords}}')">
+                            <wb-foreach wb-from="tags">
                                 <small class="d-flex-inline p-1 mr-1 bg-light text-dark"
                                     wb-if="'{{_val}}'>''">{{_val}}</small>
                             </wb-foreach>
@@ -64,11 +64,7 @@
                         </td>
                         <td class="text-right">
                             <div class="custom-control custom-switch d-inline">
-                                <input type="checkbox" class="custom-control-input" name="active"
-                                    id="{{_form}}SwitchItemActive{{_idx}}"
-                                    onchange="wbapp.save($(this),{'table':'{{_form}}','id':'{{_id}}','field':'active','silent':true})">
-                                <label class="custom-control-label"
-                                    for="{{_form}}SwitchItemActive{{_idx}}">&nbsp;</label>
+                                <input wb="module=swico" name="active"  onchange="wbapp.save($(this),{'table':'{{_form}}','id':'{{_id}}','field':'active','silent':true})">
                             </div>
                             <a href="javascript:"
                                 data-ajax="{'url':'/cms/ajax/form/projects/edit/{{_id}}','update':'cms.list.{{_form}}','html':'#yongerSpace modals'}"
