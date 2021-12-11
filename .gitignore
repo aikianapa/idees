@@ -5,3 +5,5 @@ database/_cache/
 database/_driver.ini
 
 uploads/
+
+database/
