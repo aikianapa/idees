@@ -1,5 +1,6 @@
 <view><section class="page__form-section container">
-  <h2 class="page__section-title">{{header}}</h2>
+  <wb-var header="Начать проект" wb-if="'{{header}}'==''" else="{{header}}" />
+  <h2 class="page__section-title">{{_var.header}}</h2>
 
   <form class="form" method="POST" action="https://echoacademy.ru/">
     <div class="form__field-wrapper">

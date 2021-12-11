@@ -26,7 +26,6 @@
         <table class="table table-striped table-hover tx-15">
             <thead>
                 <tr>
-                    <td>&nbsp;</td>
                     <td>Наименование</td>
                     <td>Теги</td>
                     <td class="text-center">На главной</td>
@@ -42,9 +41,6 @@
                             'filter': {'_site':'{{_sett.site}}'}
                 }">
                     <tr class="bg-transparent">
-                        <td data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/{{_id}}','html':'#yongerSpace modals'}" class="cursor-pointer">
-                            <img data-src="/thumb/50x30/src{{cover.0.img}}" class="img-fluid rounded" />
-                        </td>
                         <td class="w-25">
                             {{name}}
                         </td>
