@@ -29,7 +29,6 @@
                     <td>&nbsp;</td>
                     <td>Наименование</td>
                     <td>Теги</td>
-                    <td class="text-center">На главной</td>
                     <td class="text-right">Действия</td>
                 </tr>
             </thead>
@@ -45,7 +44,7 @@
                         <td data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/{{_id}}','html':'#yongerSpace modals'}" class="cursor-pointer">
                             <img data-src="/thumbc/50x30/src{{cover.0.img}}" class="img-fluid rounded" />
                         </td>
-                        <td class="w-25">
+                        <td class="w-50">
                             {{name}}
                         </td>
                         <td class="w-25">
@@ -54,14 +53,7 @@
                                     wb-if="'{{_val}}'>''">{{_val}}</small>
                             </wb-foreach>
                         </td>
-                        <td class="text-center">
-                            <div class="custom-control custom-switch d-inline">
-                                <input type="checkbox" class="custom-control-input" name="home"
-                                    id="{{_form}}SwitchItemHome{{_idx}}"
-                                    onchange="wbapp.save($(this),{'table':'{{_form}}','id':'{{_id}}','field':'home','silent':true})">
-                                <label class="custom-control-label" for="{{_form}}SwitchItemHome{{_idx}}">&nbsp;</label>
-                            </div>
-                        </td>
+
                         <td class="text-right">
                             <div class="custom-control custom-switch d-inline">
                                 <input wb="module=swico" name="active"  onchange="wbapp.save($(this),{'table':'{{_form}}','id':'{{_id}}','field':'active','silent':true})">
