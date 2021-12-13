@@ -6,8 +6,10 @@
   </div>
 
   <ul class="feedback-page__list" id="feedbackList">
-    <wb-foreach wb="table=comments&sort=_created:d&size=2&bind=cms.list.feedback&more=true:ещё" wb-filter="active=on">
-    <li class="feedback-page__item feedback-page__item--full">
+    <wb-var triple="1" />
+    <wb-foreach wb="table=comments&sort=_created:d&size=3&bind=cms.list.feedback&more=true:ещё" wb-filter="active=on">
+    <wb-var full="feedback-page__item--full" wb-if="'{{_var.triple}}'=='3'" />
+    <li class="feedback-page__item {{_var.full}}">
       <blockquote class="feedback">
         <h2 class="feedback__title">{{title}}</h2>
 
@@ -37,6 +39,7 @@
         </div>
       </blockquote>
     </li>
+    <wb-var triple="1" wb-if="'{{_var.triple}}' > '3'" else="{{_var.triple*1 + 1}}" />
     </wb-foreach>
   </ul>
 
