@@ -9,11 +9,12 @@
     <wb-var triple="1" />
     <wb-foreach wb="table=comments&sort=_created:d&size=3&bind=cms.list.feedback&more=true:ещё" wb-filter="active=on">
     <wb-var full="feedback-page__item--full" wb-if="'{{_var.triple}}'=='3'" />
+    <wb-var text="feedback__text--single" wb-if="'{{_var.triple}}'=='3'" else="feedback__text--small" />
     <li class="feedback-page__item {{_var.full}}">
       <blockquote class="feedback">
         <h2 class="feedback__title">{{title}}</h2>
 
-        <p class="feedback__text --feedback__text--small feedback__text--single">
+        <p class="feedback__text {{_var.text}}">
           {{text}}
         </p>
 
