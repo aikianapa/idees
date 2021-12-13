@@ -30,7 +30,7 @@
                             <div class="col-12">
                                 <div class="form-group row">
                                     <div class="col-12">
-                                        <label class="form-control-label">Наименование проекта</label>
+                                        <label class="form-control-label">Наименование статьи</label>
                                         <input type="text" name="name" class="form-control" required>
                                     </div>
                                     <div class="col-12">

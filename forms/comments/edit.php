@@ -43,8 +43,12 @@
 
                     <div class="form-group row">
                         <label class="col-sm-3">На главной</label>
-                        <div class="col-sm-9">
+                        <div class="col-sm-3">
                             <input class="form-control" wb-module="switch" name="home">
+                        </div>
+                        <label class="col-sm-3">Индекс сортировки</label>
+                        <div class="col-sm-3">
+                            <input class="form-control" type="number" name="sort">
                         </div>
                     </div>
 

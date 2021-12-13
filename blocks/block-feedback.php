@@ -17,7 +17,7 @@
   <div class="feedback-section__list-container js-feedback-slider">
     <div class="container">
       <ul class="feedback-section__list js-feedback-slider-list">
-        <wb-foreach wb="table=comments&amp;sort=_created:d&amp;tpl=false" wb-filter="active=on&amp;home=on">
+        <wb-foreach wb="table=comments&amp;sort=_created:d;sort&tpl=false" wb-filter="active=on&amp;home=on">
         <li class="feedback-section__item">
           <blockquote class="feedback">
             <h3 class="feedback__title">{{title}}</h3>

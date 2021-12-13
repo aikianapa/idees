@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody id="{{_form}}List">
-            <wb-foreach wb="table={{_form}}&sort=_created:d&bind=cms.list.{{_form}}&size={{_sett.page_size}}"
+            <wb-foreach wb="table={{_form}}&sort=_created:d;sort&bind=cms.list.{{_form}}&size={{_sett.page_size}}"
                 wb-filter="{'_site':null}">
                 <tr>
                     <td>{{wbDate("d.m.y",{{_created}})}}</td>
