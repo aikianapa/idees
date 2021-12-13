@@ -23,7 +23,7 @@
                             <div class="form-group row">
                                 <div class="col-12 mb-2">
                                     <input name="cover" wb="module=filepicker&mode=single&width=650&height=215"
-                                        wb-path="/uploads/projects/cover" class="pt-0">
+                                        wb-path="/uploads/идщп/cover" class="pt-0">
                                 </div>
                             </div>
                         <div class="row">
