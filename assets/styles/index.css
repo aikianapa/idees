@@ -4740,7 +4740,7 @@ ol.document__list--alpha {
 }
 
 .article--special .article__link {
-    color: var(--white)
+    /*color: var(--white)*/
 }
 
 @media (min-width:800px) {

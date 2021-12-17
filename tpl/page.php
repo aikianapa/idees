@@ -1,6 +1,6 @@
 <html class="page" lang="ru">
 <head>
-    <title>{{title}}</title>
+    <title>{{header}}</title>
 </head>
 
 <body>

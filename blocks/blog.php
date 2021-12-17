@@ -68,10 +68,11 @@
       </a>
     </section>
 
-    <ul class="blog__list">
-        <wb-foreach wb="table=blog&minimal=20">
+    <ul class="blog__list" id="blogList">
+        <wb-foreach wb="table=blog&size=6&bind=pages.blog&more=true:ещё">
       <li class="blog__item">
-        <article class="article">
+          <wb-var spec="article--special" wb-if="'{{spec}}'=='on'" else=""/>
+        <article class="article {{_var.spec}}">
           <span class="article__tag">Дизайн</span>
 
           <div class="article__info">
@@ -98,40 +99,6 @@
       </li>
       </wb-foreach>
     </ul>
-    <wb-jq wb="$dom->find('.blog__list li:eq(5) article')->addClass('article article--special');"/>
-    
-  </div>
-
-  <section class="blog__section">
-    <h2 class="blog__section-title">Рассылка</h2>
-    <p class="blog__section-text">Самые свежие новости мы еженедельно отправляем на вашу почту, без спама и лишней информации</p>
-
-    <form class="blog__form" action="https://echoacademy.ru/courses" method="post">
-      <label class="visually-hidden" for="email-field-blog">Email</label>
-      <input class="blog__input" id="email-field-blog" type="email" name="email" placeholder="введите свой email" required>
-
-      <button class="button" type="submit">
-        <span class="button__icon-wrapper">
-          <svg class="button__icon" width="24" height="24" aria-hidden="true">
-            <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
-          </svg>
-        </span>
-
-        <span class="button__text">подписаться</span>
-      </button>
-    </form>
-  </section>
-
-  <div class="blog__button-container">
-    <button class="button" type="button">
-      <span class="button__icon-wrapper">
-        <svg class="button__icon" width="24" height="24" aria-hidden="true">
-          <use xlink:href="/assets/img/sprite.svg#arrow-down"></use>
-        </svg>
-      </span>
-
-      <span class="button__text">загрузить ещё</span>
-    </button>
   </div>
 </section>
 
@@ -139,5 +106,7 @@
 </view>
 
 <edit header="Страница - Блог">
-
+    <div>
+        <wb-module wb="module=yonger&mode=edit&block=common.inc" />
+    </div>
 </edit>
