@@ -17,7 +17,7 @@
     </a>
   </div>
 
-  <img class="products__image" width="1620" height="745" src="/thumb/1620x745/src{{image.0.img}}" srcset="/thumb/3240x1490/src{{image.0.img}} 2x" alt="Проект Yonger">
+  <img class="products__image" width="1620" height="745" data-src="/thumb/1620x745/src{{image.0.img}}" srcset="/thumb/3240x1490/src{{image.0.img}} 2x" alt="Проект Yonger">
 </section>
 
 

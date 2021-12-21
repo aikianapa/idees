@@ -597,15 +597,19 @@
     $(document).ready(function() {
         wbapp.on('wb-verify-false', function(ev, el) {
             $(el).addClass('form__text-field--warning');
-        });
+        })
 
         wbapp.on('wb-verify-true', function(ev, el) {
             $(el).removeClass('form__text-field--warning');
-        });
+        })
 
         wbapp.on('wb-ajax-done', function(ev, el, data) {
             if (el.url == '/ajax/mail' && el.data.error == false) {
                 $(el.form)[0].reset();
             }
+        })
+
+        $('.blog__tags.tags .tags__item .tag').click(function() {
+            $('html, body').animate({ scrollTop: document.getElementById('articlesList').offsetTop - 70 }, '50');
         })
     });
