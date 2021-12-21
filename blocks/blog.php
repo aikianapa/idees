@@ -43,7 +43,7 @@
 
           <img class="article__image" width="790" height="500" src="/thumbc/790x500/src{{cover.0.img}}" srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x" alt="{{name}}">
 
-          <a class="button article__link" href="/article">
+          <a class="button article__link" href="/blog/{{_id}}/{{wbFurlGenerate({{name}})}}">
             <span class="button__icon-wrapper">
               <svg class="button__icon" width="24" height="24" aria-hidden="true">
                 <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
@@ -84,9 +84,9 @@
 
           <p class="article__description">{{descr}}</p>
 
-          <img class="article__image" width="790" height="500" src="/thumbc/790x500/src{{cover.0.img}}" srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x" alt="{{name}}">
+          <img class="article__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}" srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x" alt="{{name}}">
 
-          <a class="button article__link" href="/article">
+          <a class="button article__link" href="/blog/{{_id}}/{{wbFurlGenerate({{name}})}}">
             <span class="button__icon-wrapper">
               <svg class="button__icon" width="24" height="24" aria-hidden="true">
                 <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>

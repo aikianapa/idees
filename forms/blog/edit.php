@@ -14,16 +14,15 @@
             </div>
             <div class="modal-body pd-20">
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-12">
                         <form id="{{_form}}EditForm">
                             <input type="checkbox" class="custom-control-input" name="active" id="{{_form}}ValueItemActive">
                             <div class="form-group row">
-                                <div class="col-12 mb-2">
-                                    <input name="cover" wb="module=filepicker&mode=single&width=650&height=215" wb-path="/uploads/идщп/cover" class="pt-0">
+                                <div class="col-6 mb-2">
+                                    <input name="cover" wb="module=filepicker&mode=single&width=650&height=215" wb-path="/uploads/blog/cover" class="pt-0">
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
+
+                                <div class="col-6">
                                     <div class="form-group row">
                                         <div class="col-12">
                                             <label class="form-control-label">Наименование статьи</label>
@@ -73,18 +72,11 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <wb-module wb="module=yonger&mode=structure" />
+                                    <wb-module wb="{'module':'jodit'}" name="text" />
                                 </div>
                             </div>
                         </form>
 
-                    </div>
-                    <div class="col-7">
-                        <div id="yongerBlocksForm">
-                            <form method="post">
-
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>

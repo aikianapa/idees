@@ -82,13 +82,15 @@
                         });
                     });
             */
-            fileInput.addEventListener('change', function() {
-                if (this.value) {
-                    this.classList.add('form__input-file--attached');
-                } else {
-                    this.classList.remove('form__input-file--attached');
-                }
-            });
+            if (fileInput) {
+                fileInput.addEventListener('change', function() {
+                    if (this.value) {
+                        this.classList.add('form__input-file--attached');
+                    } else {
+                        this.classList.remove('form__input-file--attached');
+                    }
+                });
+            }
         }
 
     }
