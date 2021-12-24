@@ -612,4 +612,18 @@
         $('.blog__tags.tags .tags__item .tag').click(function() {
             $('html, body').animate({ scrollTop: document.getElementById('articlesList').offsetTop - 70 }, '50');
         })
+
+        $('form').submit(function(ev) {
+            if ($(this).attr('action') == 'quotes') {
+                ev.stopPropagation();
+                let form = this;
+                let data = $(form).serializeJson();
+                data.pathname = document.location.pathname;
+                wbapp.post('/form/quotes/submit', data, function() {
+                    $(form)[0].reset();
+                })
+                return false;
+            }
+        });
+
     });

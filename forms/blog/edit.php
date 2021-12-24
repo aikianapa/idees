@@ -72,7 +72,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <wb-module wb="{'module':'jodit'}" name="text" />
+                                    <wb-module wb="module=editor" name="text" />
                                 </div>
                             </div>
                         </form>

@@ -8,7 +8,6 @@
   <wb-data wb="table=catalogs&item=projects">
     <wb-var prjtype="{{_current.tree.data}}" />
   </wb-data>
-
   <div>
     <wb-module wb="module=yonger&mode=render&view=header" />
   </div>
@@ -23,7 +22,7 @@
           </span>
         </wb-foreach>
         <time class="article__date" datetime="{{_created}}">{{datetext({{_created}})}}</time>
-        <span class="article__views">1559</span>
+        <span class="article__views" wb="module=autoinc&table=blog&field={{id}}&increase=true&ajax=true"></span>
       </div>
 
       <h1 class="page__title article-page__title">{{name}}</h1>
@@ -50,7 +49,7 @@
 
             <div class="article__info">
               <time class="article__date" datetime="{{_created}}">{{datetext({{_created}})}}</time>
-              <span class="article__views">1559</span>
+              <span class="article__views" wb="module=autoinc&table=blog&field={{id}}"></span>
             </div>
 
             <h3 class="article__title">{{name}}</h3>
@@ -90,7 +89,7 @@
 
               <div class="article__info">
                 <time class="article__date" datetime="{{_created}}">{{datetext({{_created}})}}</time>
-                <span class="article__views">1559</span>
+                <span class="article__views" wb="module=autoinc&table=blog&field={{id}}"></span>
               </div>
 
               <h3 class="article__title">{{name}}</h3>

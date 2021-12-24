@@ -27,7 +27,7 @@
 
             <div class="article__info">
               <time class="article__date" datetime="{{_created}}">{{datetext({{_created}})}}</time>
-              <span class="article__views">1559</span>
+              <span class="article__views" wb="module=autoinc&table=blog&field={{id}}"></span>
             </div>
 
             <h3 class="article__title">{{name}}</h3>
@@ -66,7 +66,7 @@
           <wb-var prjtype="{{_current.tree.data}}" />
         </wb-data>
         <ul class="blog__list" id="articlesList">
-          <wb-foreach wb="table=blog&size=12&bind=pages.blog&more=true:ещё">
+          <wb-foreach wb="table=blog&size=12&bind=pages.blog&_more=true:ещё">
             <li class="blog__item">
               <wb-var spec="article--special" wb-if="'{{spec}}'=='on'" else="" />
               <article class="article {{_var.spec}}">
@@ -78,7 +78,7 @@
 
                 <div class="article__info">
                   <time class="article__date" datetime="{{_created}}">{{datetext({{_created}})}}</time>
-                  <span class="article__views">1559</span>
+                  <span class="article__views" wb="module=autoinc&table=blog&field={{id}}&ajax=true"></span>
                 </div>
 
                 <h3 class="article__title">{{name}}</h3>

@@ -3,36 +3,36 @@
         <wb-var header="Начать проект" wb-if="'{{header}}'==''" else="{{header}}" />
         <h2 class="page__section-title">{{_var.header}}</h2>
 
-        <form class="form">
+        <form class="form" method="POST" action="quotes">
             <div class="form__field-wrapper">
                 <label class="form__text-field-label" for="shrot-form-name">имя и фамилия</label>
-                <input class="form__text-field" type="text" id="shrot-form-name" name="shrot-form-name" done="">
+                <input class="form__text-field" type="text" id="shrot-form-name" name="name" done="">
             </div>
 
             <div class="form__field-wrapper">
                 <label class="form__text-field-label" for="shrot-form-company">компания</label>
-                <input class="form__text-field" type="text" id="shrot-form-company" name="shrot-form-company" done="">
+                <input class="form__text-field" type="text" id="shrot-form-company" name="company" done="">
             </div>
 
             <div class="form__field-wrapper">
                 <label class="form__text-field-label" for="shrot-form-email">email</label>
-                <input class="form__text-field" type="email" id="shrot-form-email" name="shrot-form-email" required
+                <input class="form__text-field" type="email" id="shrot-form-email" name="email" required
                     autocomplete="on" done="">
             </div>
 
             <div class="form__field-wrapper">
                 <label class="form__text-field-label" for="shrot-form-phone">телефон</label>
-                <input class="form__text-field" type="tel" id="shrot-form-phone" name="shrot-form-phone" required
+                <input class="form__text-field" type="tel" id="shrot-form-phone" name="phone" required
                     pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" autocomplete="on" done="">
             </div>
 
             <div class="form__field-wrapper">
                 <label class="form__text-field-label" for="shrot-form-task">описание задачи</label>
-                <input class="form__text-field" type="text" id="shrot-form-task" name="shrot-form-task" done="">
+                <input class="form__text-field" type="text" id="shrot-form-task" name="task" done="">
             </div>
 
             <div class="form__row form__row--bottom form__row--submit">
-                <button class="button" type="button" data-ajax="/ajax/mail">
+                <button class="button" type="submit">
                     <span class="button__icon-wrapper">
                         <svg class="button__icon" width="24" height="24">
                             <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>

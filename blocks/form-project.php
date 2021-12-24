@@ -32,27 +32,27 @@
             </p>
         </div>
 
-        <form class="form" method="POST" action="https://echo.htmlacademy.ru/">
+        <form class="form" method="POST" action="quotes">
             <fieldset class="form__fieldset">
                 <legend class="form__legend">Тип проекта</legend>
 
                 <div class="form__row">
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="comlex-project" name="comlex-project" done="">
+                    <input class="form__checkbox visually-hidden" type="checkbox" id="comlex-project" name="project-comlex" done="">
                     <label class="form__checkbox-label" for="comlex-project">Комплексный проект</label>
 
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="strategy-project" name="strategy-project" done="">
+                    <input class="form__checkbox visually-hidden" type="checkbox" id="strategy-project" name="project-strategy" done="">
                     <label class="form__checkbox-label" for="strategy-project">Стратегия</label>
 
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="branding-project" name="branding-project" done="">
+                    <input class="form__checkbox visually-hidden" type="checkbox" id="branding-project" name="project-branding" done="">
                     <label class="form__checkbox-label" for="branding-project">Брендинг</label>
 
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="disign-project" name="disign-project" done="">
+                    <input class="form__checkbox visually-hidden" type="checkbox" id="disign-project" name="project-disign" done="">
                     <label class="form__checkbox-label" for="disign-project">Дизайн</label>
 
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="develop-project" name="develop-project" done="">
+                    <input class="form__checkbox visually-hidden" type="checkbox" id="develop-project" name="project-develop" done="">
                     <label class="form__checkbox-label" for="develop-project">Разработка</label>
 
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="other-project" name="other-project" done="">
+                    <input class="form__checkbox visually-hidden" type="checkbox" id="other-project" name="project-other" done="">
                     <label class="form__checkbox-label" for="other-project">Другое</label>
                 </div>
             </fieldset>
@@ -61,19 +61,19 @@
                 <legend class="form__legend">Бюджет</legend>
 
                 <div class="form__row">
-                    <input class="form__checkbox visually-hidden" type="radio" id="up-200" name="budget" done="">
+                    <input class="form__checkbox visually-hidden" type="radio" id="up-200" value="up-200" name="budget" done="">
                     <label class="form__checkbox-label" for="up-200">До 200 тыс</label>
 
-                    <input class="form__checkbox visually-hidden" type="radio" id="200-500" name="budget" done="">
+                    <input class="form__checkbox visually-hidden" type="radio" id="200-500" value="200-500" name="budget" done="">
                     <label class="form__checkbox-label" for="200-500">200 тыс - 500 тыс</label>
 
-                    <input class="form__checkbox visually-hidden" type="radio" id="500-1000" name="budget" done="">
+                    <input class="form__checkbox visually-hidden" type="radio" id="500-1000" value="500-1000" name="budget" done="">
                     <label class="form__checkbox-label" for="500-1000">500 тыс - 1 млн</label>
 
-                    <input class="form__checkbox visually-hidden" type="radio" id="1000-2000" name="budget" done="">
+                    <input class="form__checkbox visually-hidden" type="radio" id="1000-2000" value="1000-2000" name="budget" done="">
                     <label class="form__checkbox-label" for="1000-2000">1 млн - 2 млн</label>
 
-                    <input class="form__checkbox visually-hidden" type="radio" id="from-2000" name="budget" done="">
+                    <input class="form__checkbox visually-hidden" type="radio" id="from-2000" value="from-2000" name="budget" done="">
                     <label class="form__checkbox-label" for="from-2000">от 2 млн</label>
                 </div>
             </fieldset>
@@ -122,19 +122,19 @@
                 <legend class="form__legend">как вы узнали о нас?</legend>
 
                 <div class="form__row">
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="social" name="social" done="">
+                    <input class="form__checkbox visually-hidden" type="checkbox" id="social" name="source-social" done="">
                     <label class="form__checkbox-label" for="social">Соцсети</label>
 
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="advertisement" name="advertisement" done="">
+                    <input class="form__checkbox visually-hidden" type="checkbox" id="advertisement" name="source-advertisement" done="">
                     <label class="form__checkbox-label" for="advertisement">Реклама</label>
 
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="recommendations" name="recommendations" done="">
+                    <input class="form__checkbox visually-hidden" type="checkbox" id="recommendations" name="source-recommendations" done="">
                     <label class="form__checkbox-label" for="recommendations">Рекомендации</label>
 
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="internet" name="internet" done="">
+                    <input class="form__checkbox visually-hidden" type="checkbox" id="internet" name="source-internet" done="">
                     <label class="form__checkbox-label" for="internet">Интернет</label>
 
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="mass-media" name="mass-media" done="">
+                    <input class="form__checkbox visually-hidden" type="checkbox" id="mass-media" name="source-massmedia" done="">
                     <label class="form__checkbox-label" for="mass-media">СМИ</label>
                 </div>
             </fieldset>
