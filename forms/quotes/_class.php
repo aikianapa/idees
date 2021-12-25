@@ -22,10 +22,24 @@ class quotesClass extends cmsFormsClass {
                 isset($item[$fld[0]]) ? null : $item[$fld[0]] = [];
                 $value == 'on' ? $item[$fld[0]][] = $fld[1] : null;
                 unset($item[$key]);
+            } else if (preg_match("/^data:.*;base64,/m",$value)) {
+                
+                $mime = substr($value, 0, 30);
+                $base = strpos($mime, ';base64');
+                $mime = substr($mime, 0, $base);
+                $mime = substr($mime, 5);
+                $atch = base64_decode(substr($value, $base + 8));
+                header('Content-Type: '.$mime);
+
+                $ext = $this->app->mimeExt($mime);
+                $file = '/uploads/quotes/'.wbNewId().'.'.$ext;
+                wbPutContents($this->app->vars('_env.path_app').$file, $atch);
+                $item[$key] = [['img'=>$file,'title'=>'','alt'=>'']];
             }
         }
+
         $item['number'] = $qnum->inc('quotes', 'number', 1000);
-        //$item = $this->app->itemSave('quotes', $item, true);
+        $item = $this->app->itemSave('quotes', $item, true);
         $res = ['error'=>false,'item'=>$item];
         return json_encode($res);
 

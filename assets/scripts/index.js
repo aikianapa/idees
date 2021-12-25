@@ -615,14 +615,26 @@
 
         $('form').submit(function(ev) {
             if ($(this).attr('action') == 'quotes') {
+                let error = false;
                 ev.stopPropagation();
                 let form = this;
-                let data = $(form).serializeJson();
+                var data = $(form).serializeJson();
+
                 data.pathname = document.location.pathname;
-                wbapp.post('/form/quotes/submit', data, function() {
-                    $(form)[0].reset();
-                })
+
+
+                if (error) {
+                    wbapp.toast('Ошибка', error, { bgcolor: 'warning' });
+                    return false;
+                }
+
+                setTimeout(function() {
+                    wbapp.post('/form/quotes/submit', data, function() {
+                        $(form)[0].reset();
+                    })
+                }, 300)
                 return false;
+
             }
         });
 

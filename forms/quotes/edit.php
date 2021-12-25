@@ -57,7 +57,7 @@
                     <div class="col-lg-6">
                         <h5>{{_lang.appends}}</h5>
                         <div>
-                            <wb-module name="attaches" wb="{
+                            <wb-module name="file" wb="{
                                 'module':'filepicker',
                                 'mode':'multi',
                                 'original': true
