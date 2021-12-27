@@ -42,7 +42,7 @@
                     <span class="button__text">отправить заявку</span>
                 </button>
 
-                <input class="visually-hidden" id="short-form-file" type="file" name="_attach" done="">
+                <input class="visually-hidden" id="short-form-file" type="file" name="file" done="">
                 <label class="form__file" for="short-form-file">
                     <span class="form__file-icon-wrapper">
                         <svg class="form__file-icon" width="24" height="24">
@@ -52,7 +52,7 @@
 
                     <span class="form__file-text">
                         прикрепить файл<br>
-                        <small>не более 10mb</small>
+                        <small>не более  {{_env.max_post}}</small>
                     </span>
                 </label>
             </div>

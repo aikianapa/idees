@@ -12,19 +12,22 @@
         <thead>
             <tr>
                 <th>Дата</th>
-                <th>Тема</th>
+                <th>Клиент</th>
                 <th>Обращение</th>
                 <th>Статус</th>
                 <th></th>
             </tr>
         </thead>
         <tbody id="quotesList">
-            <wb-foreach wb="table=quotes&sort=_created:d&bind=cms.list.quotes&size={{_sett.page_size}}"
+            <wb-foreach wb="table=quotes&sort=_created:d&render=server&bind=cms.list.quotes&size={{_sett.page_size}}"
                 wb-filter="{'_site' : {'$in': [null,'{{_sett.site}}']}}">
                 <tr>
-                    <td>{{_created}}</td>
-                    <td>{{subject}}</td>
-                    <td>{{message}}</td>
+                    <td>{{wbDate("d.m.y H:i",{{_created}})}}</td>
+                    <td>
+                        {{name}}
+                        <div class="tx-12">{{phone}} / {{email}}</div>
+                    </td>
+                    <td class="tx-12">{{wbGetWords({{task}},15)}}</td>
                     <td>{{status}}</td>
                     <td>
                         <a href="javascript:"

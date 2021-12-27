@@ -7,6 +7,12 @@ class quotesClass extends cmsFormsClass {
         isset($item['status']) ? null : $item['status'] = 'new';
     }
 
+
+    function beforeItemShow(&$item)
+    {
+        $item['phone'] = wbPhoneFormat($item['phone']);
+    }
+
     function submit() {
         header('Content-Type: application/json; charset=utf-8');
         $res = [];
@@ -29,8 +35,6 @@ class quotesClass extends cmsFormsClass {
                 $mime = substr($mime, 0, $base);
                 $mime = substr($mime, 5);
                 $atch = base64_decode(substr($value, $base + 8));
-                header('Content-Type: '.$mime);
-
                 $ext = $this->app->mimeExt($mime);
                 $file = '/uploads/quotes/'.wbNewId().'.'.$ext;
                 wbPutContents($this->app->vars('_env.path_app').$file, $atch);

@@ -1,7 +1,7 @@
 <html>
 <div class="modal fade effect-scale show removable" id="modalQuotesEdit" data-backdrop="static" tabindex="-1"
     role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header row">
                 <div class="col-5">
@@ -23,38 +23,84 @@
                                 placeholder="{{_lang.date}}" required>
                         </div>
 
-                        <div class="form-group">
-                            <label class="form-control-label">{{_lang.name}}</label>
-                            <input type="text" name="name" class="form-control" placeholder="{{_lang.name}}" required>
+                        <div class="form-group row">
+                            <div class="form-group col-md-6">
+                                <label class="form-control-label">{{_lang.name}}</label>
+                                <input type="text" name="name" class="form-control" placeholder="{{_lang.name}}"
+                                    required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="form-control-label">Сайт</label>
+                                <input type="text" name="site" class="form-control" placeholder="Сайт">
+                            </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label class="form-control-label">{{_lang.email}}</label>
-                                <input type="email" name="email" class="form-control" placeholder="{{_lang.email}}"
-                                    required>
+                                <input type="email" name="email" class="form-control" placeholder="{{_lang.email}}">
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label class="form-control-label">{{_lang.phone}}</label>
-                                <input wb-module="mask" wb-mask="+7 (999) 999-99-99" name="phone" class="form-control"
-                                    placeholder="{{_lang.phone}}" required>
+                                <input type="text" name="phone" class="form-control" placeholder="{{_lang.phone}}">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="form-control-label">{{_lang.subject}}</label>
-                            <input type="text" name="subject" class="form-control" placeholder="{{_lang.subject}}"
-                                required>
+                        <div class="form-group row">
+                            <div class="form-group col-md-6">
+                                <label class="form-control-label">Город</label>
+                                <input type="text" name="city" class="form-control" placeholder="Город">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="form-control-label">Компания</label>
+                                <input type="text" name="subject" class="form-control" placeholder="Компания">
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-control-label">{{_lang.msg}}</label>
-                            <textarea name="message" rows="auto" class="form-control" placeholder="{{_lang.msg}}"
-                                required></textarea>
+                                <label class="form-control-label">Бюджет</label>
+                                <input type="text" name="budget" class="form-control" placeholder="Бюджет">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-control-label">Тип проекта</label>
+                            <wb-data wb="table=catalogs&item=projects&field=tree">
+                                <select name="project" class="form-control" wb-select2 multiple>
+                                    <wb-foreach wb-from="data">
+                                        <option value="{{_id}}" selected
+                                            wb-if="'{{in_array({{_id}},{{_parent._parent.project}})}}'=='1'">
+                                            {{name}}</option>
+                                        <option value="{{_id}}"
+                                            wb-if="'{{in_array({{_id}},{{_parent._parent.project}})}}'!='1'">
+                                            {{name}}</option>
+                                    </wb-foreach>
+                                </select>
+                            </wb-data>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-control-label">Источник</label>
+                            <wb-data wb="table=catalogs&item=sources&field=tree">
+                                <select name="source" class="form-control" wb-select2 multiple>
+                                    <wb-foreach wb-from="data">
+                                        <option value="{{_id}}" selected
+                                            wb-if="'{{in_array({{_id}},{{_parent._parent.source}})}}'=='1'">
+                                            {{name}}</option>
+                                        <option value="{{_id}}"
+                                            wb-if="'{{in_array({{_id}},{{_parent._parent.source}})}}'!='1'">
+                                            {{name}}</option>
+                                    </wb-foreach>
+                                </select>
+                            </wb-data>
                         </div>
 
                     </div>
                     <div class="col-lg-6">
+                        <div class="form-group">
+                            <h5>Задача</h5>
+                            <textarea name="message" rows="auto" class="form-control" placeholder="Задача"
+                                required></textarea>
+                        </div>
                         <h5>{{_lang.appends}}</h5>
                         <div>
                             <wb-module name="file" wb="{
