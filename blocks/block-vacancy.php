@@ -1,15 +1,14 @@
 <view>
     <wb-var vacancy='' />
-    <wb-data wb="table=vacancies&item={{_route.query_string}}">
+    <wb-data wb="table=vacancies&item={{_route.item}}">
         <wb-var vacancy='{{_current}}' />
     </wb-data>
-    <meta http-equiv="refresh" content="0;url=/404" wb-if="'{{_var.vacancy.active}}'==''" />
     <div class="vacancy container" wb-if="'{{_var.vacancy.active}}'=='on'">
         <h1 class="page__title">{{_var.vacancy.name}}</h1>
         <title>Вакансия - {{_var.vacancy.name}}</title>
         <div class="vacancy__container">
             <section class="vacancy__content">
-                <p style="white-space: break-spaces;">{{text}}</p>
+                <p style="text-break">{{_var.vacancy.text}}</p>
 
                 <h3>Задачи</h3>
                 <ul>
@@ -29,7 +28,7 @@
                 <h3>Условия</h3>
 
                 <ul>
-                    <wb-foreach wb="from=enviroment">
+                    <wb-foreach wb="from=_var.vacancy.enviroment">
                         <li>{{_val}}</li>
                     </wb-foreach>
                 </ul>

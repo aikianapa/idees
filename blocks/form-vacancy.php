@@ -20,6 +20,12 @@
     </div>
 
     <div class="form__field-wrapper">
+      <label class="form__text-field-label" for="shrot-form-portfolio">Ссылка на резюме/портфолио</label>
+      <input class="form__text-field" type="text" id="shrot-form-portfolio" name="portfolio" required>
+    </div>
+
+
+    <div class="form__field-wrapper">
       <label class="form__text-field-label" for="shrot-form-addition">дополнительные сведения</label>
       <input class="form__text-field" type="text" id="shrot-form-addition" name="addition">
     </div>

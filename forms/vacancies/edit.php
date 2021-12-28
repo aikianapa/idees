@@ -20,6 +20,11 @@
                             <input class="form-control" type="text" name="name">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <h5>Описание</h5>
+                        <textarea name="text" rows="auto" class="form-control" placeholder="Описание"
+                            required></textarea>
+                    </div>
                     <div class="form-group row">
                         <label class="col-sm-3">Зарплата от</label>
                         <div class="col-sm-9">
@@ -56,6 +61,12 @@
                         <label class="col-sm-3">Требования</label>
                         <div class="col-sm-9">
                             <wb-multiinput name="skils" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3">Условия</label>
+                        <div class="col-sm-9">
+                            <wb-multiinput name="enviroment" />
                         </div>
                     </div>
                 </form>
