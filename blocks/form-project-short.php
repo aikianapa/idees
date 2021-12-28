@@ -2,7 +2,7 @@
     <section class="page__form-section container">
         <wb-var header="Начать проект" wb-if="'{{header}}'==''" else="{{header}}" />
         <h2 class="page__section-title">{{_var.header}}</h2>
-<wb-data from="_cleardata">
+<wb-data wb-from="_cleardata">
         <form class="form" method="POST" action="quotes">
             <input type="hidden" name="quote" value="project">
             <div class="form__field-wrapper">

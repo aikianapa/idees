@@ -31,7 +31,7 @@
                 <a class="form-section__phone-link" href="tel:+{{wbDigitsOnly({{_sett.phone}})}}">{{_sett.phone}}</a>
             </p>
         </div>
-
+<wb-data wb-from="_cleardata">
         <form class="form" method="POST" action="quotes">
             <input type="hidden" name="quote" value="project">
             <fieldset class="form__fieldset">
@@ -78,7 +78,7 @@
 
                 <div class="form__field-wrapper">
                     <label class="form__text-field-label" for="name">имя и фамилия</label>
-                    <input class="form__text-field" type="text" id="name" name="name" value="freecode" done="">
+                    <input class="form__text-field" type="text" id="name" name="name" done="">
                 </div>
 
                 <div class="form__field-wrapper">
@@ -154,6 +154,7 @@
                 законом «О персональных данных».
             </p>
         </form>
+</wb-data>
     </div>
 </section>
 </view>
