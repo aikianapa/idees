@@ -28,33 +28,23 @@
 
             <p class="form-section__phone">
                 <span>Или свяжитесь с нами:</span>
-                <a class="form-section__phone-link" href="tel:+74951966585">+7 (495) 196 65 85</a>
+                <a class="form-section__phone-link" href="tel:+{{wbDigitsOnly({{_sett.phone}})}}">{{_sett.phone}}</a>
             </p>
         </div>
 
         <form class="form" method="POST" action="quotes">
+            <input type="hidden" name="quote" value="project">
             <fieldset class="form__fieldset">
                 <legend class="form__legend">Тип проекта</legend>
-
+                
+                <wb-data wb="table=catalogs&item=projects&field=tree">
                 <div class="form__row">
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="comlex-project" name="project-comlex" done="">
-                    <label class="form__checkbox-label" for="comlex-project">Комплексный проект</label>
-
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="strategy-project" name="project-strategy" done="">
-                    <label class="form__checkbox-label" for="strategy-project">Стратегия</label>
-
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="branding-project" name="project-branding" done="">
-                    <label class="form__checkbox-label" for="branding-project">Брендинг</label>
-
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="disign-project" name="project-disign" done="">
-                    <label class="form__checkbox-label" for="disign-project">Дизайн</label>
-
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="develop-project" name="project-develop" done="">
-                    <label class="form__checkbox-label" for="develop-project">Разработка</label>
-
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="other-project" name="project-other" done="">
-                    <label class="form__checkbox-label" for="other-project">Другое</label>
+                    <wb-foreach wb="from=data&tpl=false">
+                    <input class="form__checkbox visually-hidden" type="checkbox" id="project-{{id}}" name="project-{{id}}" done="">
+                    <label class="form__checkbox-label" for="project-{{id}}">{{name}}</label>
+                    </wb-foreach>
                 </div>
+                </wb-data>
             </fieldset>
 
             <fieldset class="form__fieldset">
@@ -121,22 +111,14 @@
             <fieldset class="form__fieldset">
                 <legend class="form__legend">как вы узнали о нас?</legend>
 
+                <wb-data wb="table=catalogs&item=sources&field=tree">
                 <div class="form__row">
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="social" name="source-social" done="">
-                    <label class="form__checkbox-label" for="social">Соцсети</label>
-
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="advertisement" name="source-advertisement" done="">
-                    <label class="form__checkbox-label" for="advertisement">Реклама</label>
-
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="recommendations" name="source-recommendations" done="">
-                    <label class="form__checkbox-label" for="recommendations">Рекомендации</label>
-
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="internet" name="source-internet" done="">
-                    <label class="form__checkbox-label" for="internet">Интернет</label>
-
-                    <input class="form__checkbox visually-hidden" type="checkbox" id="mass-media" name="source-massmedia" done="">
-                    <label class="form__checkbox-label" for="mass-media">СМИ</label>
+                    <wb-foreach wb="from=data&tpl=false">
+                    <input class="form__checkbox visually-hidden" type="checkbox" id="{{id}}" name="source-{{id}}" done="">
+                    <label class="form__checkbox-label" for="{{id}}">{{name}}</label>
+                    </wb-foreach>
                 </div>
+                </wb-data>
             </fieldset>
 
             <div class="form__row form__row--bottom form__row--submit">
@@ -150,7 +132,7 @@
                     <span class="button__text">отправить заявку</span>
                 </button>
 
-                <input class="visually-hidden" id="file" type="file" accept=".jpg, .jpeg, .pdf" name="file" done="">
+                <input class="visually-hidden" id="file" type="file" accept="{{_sett.attach}}" name="file" done="">
                 <label class="form__file" for="file">
                     <span class="form__file-icon-wrapper">
                         <svg class="form__file-icon" width="24" height="24">
@@ -179,5 +161,9 @@
 <edit header="Анкета проекта">
     <div>
         <wb-module wb="module=yonger&mode=edit&block=common.inc" />
+    </div>
+    <div class="alert alert-info">
+        Нажмите кнопку <a href="#" onclick="$('#yongerEditorBtnEdit').trigger('click')">Редактор</a>, чтобы
+        редактировать форму.
     </div>
 </edit>

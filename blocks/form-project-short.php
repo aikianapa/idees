@@ -2,8 +2,9 @@
     <section class="page__form-section container">
         <wb-var header="Начать проект" wb-if="'{{header}}'==''" else="{{header}}" />
         <h2 class="page__section-title">{{_var.header}}</h2>
-
+<wb-data from="_cleardata">
         <form class="form" method="POST" action="quotes">
+            <input type="hidden" name="quote" value="project">
             <div class="form__field-wrapper">
                 <label class="form__text-field-label" for="shrot-form-name">имя и фамилия</label>
                 <input class="form__text-field" type="text" id="shrot-form-name" name="name" done="">
@@ -42,7 +43,7 @@
                     <span class="button__text">отправить заявку</span>
                 </button>
 
-                <input class="visually-hidden" id="short-form-file" type="file" name="file" done="">
+                <input class="visually-hidden" id="short-form-file" type="file" accept="{{_sett.attach}}" name="file" done="">
                 <label class="form__file" for="short-form-file">
                     <span class="form__file-icon-wrapper">
                         <svg class="form__file-icon" width="24" height="24">
@@ -63,6 +64,7 @@
                 пяти лет, в соответствии с Федеральным законом «О персональных данных».
             </p>
         </form>
+</wb-data>
     </section>
 </view>
 <edit header="Анкета проекта - короткая">

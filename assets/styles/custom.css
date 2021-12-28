@@ -1,4 +1,4 @@
-img {
+img::before {
     background-color: var(--border-color);
 }
 

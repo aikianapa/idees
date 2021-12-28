@@ -98,7 +98,7 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <h5>Задача</h5>
-                            <textarea name="message" rows="auto" class="form-control" placeholder="Задача"
+                            <textarea name="task" rows="auto" class="form-control" placeholder="Задача"
                                 required></textarea>
                         </div>
                         <h5>{{_lang.appends}}</h5>
