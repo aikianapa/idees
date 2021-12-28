@@ -5,7 +5,9 @@
 </head>
 
 <body class="page__body">
+  <div>
     <wb-module wb="module=yonger&mode=render&view=header" />
+  </div>
 
     <main class="page__main">
 
