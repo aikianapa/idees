@@ -1,7 +1,7 @@
 <view>
 
     <section class="page__section page__section--grey">
-        <h2 class=&quot;visually-hidden&quot;>{{header}}</h2>
+        <h2 class="visually-hidden">{{header}}</h2>
         <div class="special__section-container container">
             <p class="special__big-text">
                 {{title}}
