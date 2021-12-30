@@ -81,14 +81,18 @@
                   <span class="article__views" wb="module=autoinc&table=blog&field={{id}}&ajax=true"></span>
                 </div>
 
-                <h3 class="article__title">{{name}}</h3>
+                <h3 class="article__title">
+                  <a class="button article__link" href="/blog/{{_id}}/{{wbFurlGenerate({{name}})}}">
+                    {{name}}
+                  </a>
+                </h3>
 
-                <p class="article__description">{{descr}}</p>
+                <p class="article__description" wb-if="'{{spec}}'==''">{{descr}}</p>
 
                 <img class="article__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}" srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
                   alt="{{name}}">
 
-                <a class="button article__link" href="/blog/{{_id}}/{{wbFurlGenerate({{name}})}}">
+                <a class="button article__link" href="/blog/{{_id}}/{{wbFurlGenerate({{name}})}}"  wb-if="'{{spec}}'==''">
                   <span class="button__icon-wrapper">
                     <svg class="button__icon" width="24" height="24" aria-hidden="true">
                       <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
