@@ -1,6 +1,5 @@
-<view>
-    <section class="page__form-section container">
-        <wb-var header="Начать проект" wb-if="'{{header}}'==''" else="{{header}}" />
+<view><section class="page__form-section container">
+        <wb-var header="Начать проект" wb-if="'{{header}}'==''" else="{{header}}"></wb-var>
         <h2 class="page__section-title">{{_var.header}}</h2>
 <wb-data wb-from="_cleardata">
         <form class="form" method="POST" action="quotes">
@@ -17,14 +16,12 @@
 
             <div class="form__field-wrapper">
                 <label class="form__text-field-label" for="shrot-form-email">email</label>
-                <input class="form__text-field" type="email" id="shrot-form-email" name="email" required
-                    autocomplete="on" done="">
+                <input class="form__text-field" type="email" id="shrot-form-email" name="email" required autocomplete="on" done="">
             </div>
 
             <div class="form__field-wrapper">
                 <label class="form__text-field-label" for="shrot-form-phone">телефон</label>
-                <input class="form__text-field" type="tel" id="shrot-form-phone" name="phone" required
-                    pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" autocomplete="on" done="">
+                <input class="form__text-field" type="tel" id="shrot-form-phone" name="phone" required pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" autocomplete="on" done="">
             </div>
 
             <div class="form__field-wrapper">
@@ -65,14 +62,10 @@
             </p>
         </form>
 </wb-data>
-    </section>
-</view>
-<edit header="Анкета проекта - короткая">
-    <div>
+    </section></view><edit header="Анкета проекта - короткая"><div>
         <wb-module wb="module=yonger&amp;mode=edit&amp;block=common.inc"></wb-module>
     </div>
-    <div class="alert alert-info">
+<div class="alert alert-info">
         Нажмите кнопку <a href="#" onclick="$('#yongerEditorBtnEdit').trigger('click')">Редактор</a>, чтобы
         редактировать форму.
-    </div>
-</edit>
+    </div></edit>

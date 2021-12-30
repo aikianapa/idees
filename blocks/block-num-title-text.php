@@ -15,7 +15,7 @@
 </section>
 </view>
 
-<edit header="Список номер+заколовок+текст">
+<edit header="Список номер+заголовок+текст">
     <div>
         <wb-module wb="module=yonger&mode=edit&block=common.inc" />
     </div>
