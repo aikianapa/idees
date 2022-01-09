@@ -49,7 +49,7 @@
                     <input class="form-control" type="text" name="blk_title" placeholder="Заголовок блока">
                 </div>
                 <div class="col-sm-5">
-                    <input class="form-control" type="text" name="blk_title_link" placeholder="Ссылка заголовка">
+                    <input class="form-control" type="text" name="blk_title_link" placeholder="Ссылка заголовка" wb="module=yonpageselect">
                 </div>
                 <label class="col-sm-3">Текст</label>
                 <div class="col-sm-9">
@@ -59,7 +59,7 @@
                 <div class="col-sm-9">
                     <wb-multiinput name="links">
                         <input class="form-control col-sm-6 mb-1" name="lnk_label" placeholder="Текст ссылки">
-                        <input class="form-control col-sm-6 mb-1" name="lnk_text" placeholder="Ссылка">
+                        <input class="form-control col-sm-6 mb-1" name="lnk_text" placeholder="Ссылка" wb="module=yonpageselect">
                     </wb-multiinput>
                 </div>
             </div>
