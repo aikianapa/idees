@@ -59,7 +59,7 @@
                 <div class="col-sm-9">
                     <wb-multiinput name="links">
                         <input class="form-control col-sm-6 mb-1" name="lnk_label" placeholder="Текст ссылки">
-                        <input class="form-control col-sm-6 mb-1" name="lnk_text" placeholder="Ссылка" wb="module=yonpageselect">
+                        <input class="form-control col-sm-6 mb-1" name="lnk_text" placeholder="Ссылка" wb="module=yonpageselect" wb-url="/services">
                     </wb-multiinput>
                 </div>
             </div>
