@@ -27,8 +27,8 @@
             </p>
 
             <cite class="feedback__author">
-              <img class="feedback__author-avatar" width="72" height="72" src="/thumbc/72x72/src%7B%7Bavatar.0.img%7D%7D" srcset="/thumbc/144x144/src{{avatar.0.img}} 2x" alt="{{name}}" wb-if="'{{avatar}}'&gt;''">
-              <img class="feedback__author-avatar" width="72" height="72" src="/module/myicons/72/323232/users-06.svg" srcset="/assets/img/feedback1@2x.jpg 2x" alt="{{name}}" wb-if="'{{avatar}}'==''">
+              <img class="feedback__author-avatar" width="72" height="72" data-src="/thumbc/72x72/src%7B%7Bavatar.0.img%7D%7D" data-srcset="/thumbc/144x144/src{{avatar.0.img}} 2x" alt="{{name}}" wb-if="'{{avatar}}'&gt;''">
+              <img class="feedback__author-avatar" width="72" height="72" data-src="/module/myicons/72/323232/users-06.svg" data-srcset="/assets/img/feedback1@2x.jpg 2x" alt="{{name}}" wb-if="'{{avatar}}'==''">
               <span class="feedback__name">{{name}}</span>
               <span class="feedback__role">{{position}}</span>
             </cite>

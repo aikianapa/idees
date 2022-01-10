@@ -9,7 +9,7 @@
             <p class="case__description">{{descr}}</p>
           </a>
           <a class="case__image-wrapper" href="/projects/%7B%7B_id%7D%7D/%7B%7BwbFurlGenerate(%7B%7Bname%7D%7D)%7D%7D">
-            <img class="case__image" width="790" height="500" data-src="/thumbc/790x500/src/{{cover.0.img}}" srcset="/thumbc/1580x1000/src/{{cover.0.img}} 2x" alt="{{name}}">
+            <img class="case__image" width="790" height="500" data-src="/thumbc/790x500/src/{{cover.0.img}}" data-srcset="/thumbc/1580x1000/src/{{cover.0.img}} 2x" alt="{{name}}">
           </a>
 
           <a class="button case__link" href="/projects/%7B%7B_id%7D%7D/%7B%7BwbFurlGenerate(%7B%7Bname%7D%7D)%7D%7D">
