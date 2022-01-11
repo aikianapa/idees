@@ -35,23 +35,26 @@
             </section>
 
             <aside class="vacancy__contacts">
-                <wb-data wb="table=pages" wb-filter="name=vacancy">
-                <wb-foreach wb="from=blocks&tpl=false&limit=1" wb-filter="{'name':'block-vacancy'}">
-                <h2 class="vacancy__contacts-title" wb-if="'{{title}}'==''">Контакты отдела HR:</h2>
-                <h2 class="vacancy__contacts-title" wb-if="'{{title}}'> ''">{{title}}</h2>
+                <div>
+                    <wb-data wb="table=pages" wb-filter="name=vacancy">
+                        <wb-foreach wb="from=blocks&tpl=false&limit=1" wb-filter="{'name':'block-vacancy'}">
+                            <h2 class="vacancy__contacts-title" wb-if="'{{title}}'==''">Контакты отдела HR:</h2>
+                            <h2 class="vacancy__contacts-title" wb-if="'{{title}}'> ''">{{title}}</h2>
 
-                <ul class="vacancy__contacts-list">
-                    <li class="vacancy__contacts-item" wb-if="'{{phone}}'> ''">
-                        <a class="vacancy__contacts-link" href="tel:+{{wbDigitsOnly({{phone}})}}" target="_blank">{{phone}}</a>
-                    </li>
-                    <li class="vacancy__contacts-item">
-                        <a class="vacancy__contacts-link" href="email:{{email}}" target="_blank">{{email}}</a>
-                    </li>
-                    <li class="vacancy__contacts-item">
-                        <a class="vacancy__contacts-link" href="https://t.me/{{telegram}}" target="_blank">@{{telegram}}</a>
-                    </li>
-                </ul>
-                </wb-data>
+                            <ul class="vacancy__contacts-list">
+                                <li class="vacancy__contacts-item" wb-if="'{{phone}}'> ''">
+                                    <a class="vacancy__contacts-link" href="tel:+{{wbDigitsOnly({{phone}})}}" target="_blank">{{phone}}</a>
+                                </li>
+                                <li class="vacancy__contacts-item">
+                                    <a class="vacancy__contacts-link" href="email:{{email}}" target="_blank">{{email}}</a>
+                                </li>
+                                <li class="vacancy__contacts-item">
+                                    <a class="vacancy__contacts-link" href="https://t.me/{{telegram}}" target="_blank">@{{telegram}}</a>
+                                </li>
+                            </ul>
+                    </wb-data>
+                    </wb-foreach>
+                </div>
                 <a class="button vacancy__contacts-button" href="#vacancy-form">
                     <span class="button__icon-wrapper">
                         <svg class="button__icon" width="24" height="24">
@@ -61,7 +64,6 @@
 
                     <span class="button__text">отправить заявку</span>
                 </a>
-                </wb-foreach>
             </aside>
 
         </div>

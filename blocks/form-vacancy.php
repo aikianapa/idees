@@ -1,5 +1,5 @@
 <view>
-<section class="page__form-section container">
+<section class="page__form-section container" id="vacancy-form">
   <h2 class="page__section-title">Расскажите о себе</h2>
 <wb-data wb-from="_cleardata">
   <form class="form" method="POST" action="quotes">
