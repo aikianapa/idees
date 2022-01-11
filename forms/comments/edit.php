@@ -91,7 +91,16 @@
         </div>
     </div>
 </div>
-
+<wb-lang>
+    [ru]
+    header = Отзывы
+    search = Поиск
+    create = Создать
+    [en]
+    header = Отзывы
+    search = Search
+    create = Создать
+</wb-lang>
 
 
 </html>

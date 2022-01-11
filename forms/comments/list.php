@@ -63,11 +63,11 @@
 
     <wb-lang>
         [ru]
-        header = Комментарии
+        header = Отзывы
         search = Поиск
         create = Создать
         [en]
-        header = Комментарии
+        header = Отзывы
         search = Search
         create = Создать
     </wb-lang>
