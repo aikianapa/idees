@@ -42,7 +42,7 @@
 
 
         <div class="project__controls container">
-            <a class="button" href="#">
+            <a class="button" href="/projects/{{prev_item.id}}/{{wbFurlGenerate({{prev_item.name}})}}">
                 <span class="button__icon-wrapper">
                     <svg class="button__icon" width="24" height="24" aria-hidden="true">
                         <use xlink:href="/assets/img/sprite.svg#arrow-left"></use>
@@ -52,9 +52,9 @@
                 <span class="button__text project__controls-text">предыдущий проект</span>
             </a>
 
-            <a class="project__back-link" href="">вернуться в портфолио</a>
+            <a class="project__back-link" href="/projects">вернуться в портфолио</a>
 
-            <a class="button" href="#">
+            <a class="button" href="/projects/{{next_item.id}}/{{wbFurlGenerate({{next_item.name}})}}">
                 <span class="button__text project__controls-text">следующий проект</span>
 
                 <span class="button__icon-wrapper">
