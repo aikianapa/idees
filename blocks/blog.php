@@ -34,7 +34,7 @@
 
             <p class="article__description">{{descr}}</p>
 
-            <img class="article__image" width="790" height="500" src="/thumbc/790x500/src{{cover.0.img}}" srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
+            <img class="article__image" width="790" height="500" src="/thumbc/790x500/src{{cover.0.img}}" data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
               alt="{{name}}">
 
             <a class="button article__link" href="/blog/{{_id}}/{{wbFurlGenerate({{name}})}}">
@@ -92,7 +92,7 @@
 
                 <p class="article__description" wb-if="'{{spec}}'==''">{{descr}}</p>
 
-                <img class="article__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}" srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
+                <img class="article__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}" data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
                   alt="{{name}}">
 
                 <a class="button article__link" href="/blog/{{_id}}/{{wbFurlGenerate({{name}})}}"  wb-if="'{{spec}}'==''">

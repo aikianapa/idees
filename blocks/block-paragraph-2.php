@@ -8,7 +8,7 @@
     <p class="brand__section-text">{{text}}</p>
   </div>
   <img class="brand__image" width="1920" height="900" src="/thumb/1920x900/src/{{image.0.img}}" 
-    srcset="/thumb/3840x1800/src/{{image.0.img}} 2x" alt="{{title}}"
+    data-srcset="/thumb/3840x1800/src/{{image.0.img}} 2x" alt="{{title}}"
     wb-if="'{{image.0.img}}'>''">
 </section>
 </view>

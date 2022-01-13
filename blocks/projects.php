@@ -44,7 +44,7 @@
                                     <p class="case__description">{{descr}}</p>
                                 </a>
                                 <a class="case__image-wrapper" href="/projects/{{_id}}/{{wbFurlGenerate({{name}})}}">
-                                    <img class="case__image" width="790" height="500" data-src="/thumbc/790x500/src/{{cover.0.img}}" srcset="/thumbc/1580x1000/src/{{cover.0.img}} 2x"
+                                    <img class="case__image" width="790" height="500" data-src="/thumbc/790x500/src/{{cover.0.img}}" data-srcset="/thumbc/1580x1000/src/{{cover.0.img}} 2x"
                                         alt="{{name}}">
                                 </a>
 

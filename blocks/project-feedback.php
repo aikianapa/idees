@@ -10,8 +10,8 @@
             </p>
 
             <cite class="feedback__author">
-                <img class="feedback__author-avatar" width="72" height="72" src="/thumbc/72x72/src{{avatar.0.img}}"
-                    srcset="/thumbc/144x144/src{{avatar.0.img}} 2x" alt="{{author}}">
+                <img class="feedback__author-avatar" width="72" height="72" data-src="/thumbc/72x72/src{{avatar.0.img}}"
+                    data-srcset="/thumbc/144x144/src{{avatar.0.img}} 2x" alt="{{author}}">
                 <span class="feedback__name">{{author}}</span>
                 <span class="feedback__role">{{position}}</span>
             </cite>
