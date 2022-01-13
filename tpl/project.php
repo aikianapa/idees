@@ -69,7 +69,7 @@
             <h2 class="page__section-title">Похожие проекты</h2>
 
             <ul class="project__similar-list">
-                <wb-foreach wb="from=similar&tpl=false">
+                <wb-foreach wb="from=similar&tpl=false&limit=2&rand=true">
                     <wb-data wb="table=projects&item={{_val}}">
                         <wb-var link="/projects/{{id}}/{{wbFurlGenerate({{name}})}}"/>
                 <li class="project__similar-item">
