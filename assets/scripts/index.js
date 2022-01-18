@@ -570,7 +570,8 @@
         }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
+    $(document).ready(function() {
+
         setModal('.modal', '.form-section', '.js-form-open', '.js-form-close');
         setModal('.modal', '.menu', '.js-menu-open', '.js-menu-close');
 
@@ -592,9 +593,11 @@
         if (scene) {
             new Parallax(scene);
         }
-    });
 
-    $(document).ready(function() {
+
+
+        if (localStorage.getItem('darkTheme')) document.querySelector('body').classList.add('dark');
+
         wbapp.on('wb-verify-false', function(ev, el) {
             $(el).addClass('form__text-field--warning');
         })

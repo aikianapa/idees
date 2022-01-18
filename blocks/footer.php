@@ -40,6 +40,23 @@
             </div>
         </div>
     </footer>
+    <button class="up-button js-scroll-top" type="button">
+        <svg class="up-button__icon" width="28" height="28" aria-hidden="true">
+            <use xlink:href="/assets/img/sprite.svg#arrow-top"></use>
+        </svg>
+    </button>
+
+    <load>
+        <wb-snippet name="wbapp" />
+        <wb-scripts src="idees">
+            [ "/engine/modules/yonger/common/blocks/assets/slick/slick.min.js" ,"/assets/scripts/libs/img-comparison-slider.js" ,"/assets/scripts/libs/parallax.js"
+            ,"/assets/scripts/index.js" ]
+        </wb-scripts>
+        <wb-styles src="slick">
+            [ "/engine/modules/yonger/common/blocks/assets/slick/slick.min.css" ,"/engine/modules/yonger/common/blocks/assets/slick/slick-theme.css"
+            ]
+        </wb-styles>
+    </load>
 </view>
 
 <edit header="Подвал сайта">
