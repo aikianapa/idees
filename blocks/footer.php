@@ -40,7 +40,6 @@
             </div>
         </div>
     </footer>
-    <wb-include wb-snippet="wbapp"></wb-include>
 </view>
 
 <edit header="Подвал сайта">
