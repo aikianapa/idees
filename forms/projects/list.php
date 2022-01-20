@@ -71,9 +71,14 @@
                                 class=" d-inline"><img src="/module/myicons/24/323232/content-edit-pen.svg" width="24"
                                     height="24"></a>
                             <a href="javascript:"
-                                data-ajax="{'url':'/ajax/rmitem/{{_form}}/{{_id}}','update':'cms.list.{{_form}}','html':'#yongerSpace modals'}"
-                                class=" d-inline"><img src="/module/myicons/24/323232/trash-delete-bin.2.svg" width="24"
-                                    height="24"></a>
+                                data-ajax="{'url':'/ajax/copy/{{_form}}/{{_id}}/','update':'cms.list.{{_form}}','html':'#yongerSpace modals'}"
+                                class=" d-inline">
+                                <img src="/module/myicons/24/323232/copy-paste-select-add-plus.svg" width="24" height="24" class="dd-copy" wb-allow="admin">
+                            </a>
+                            <a href="javascript:"
+                                onclick="wbapp.confirm('Удаление','Удалить запись с идентификатором {{_id}} из таблицы {{_form}} ?').on('confirm',()=>{
+                                    wbapp.ajax({'url':'/ajax/rmitem/{{_form}}/{{_id}}/?_confirm','update':'cms.list.{{_form}}','html':'#yongerSpace modals'});
+                                })" class=" d-inline"><img src="/module/myicons/24/323232/trash-delete-bin.2.svg" width="24" height="24"></a>
                         </td>
                     </tr>
                 </wb-foreach>
