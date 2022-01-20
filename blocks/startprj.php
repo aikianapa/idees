@@ -57,7 +57,7 @@
             <input class="form-control mb-1" type="text" name="title" placeholder="Заголовок">
         </div>
         <div class="col-sm-4">
-            <input class="form-control mb-1" type="text" name="link" placeholder="Ссылка">
+            <input class="form-control mb-1" type="text" name="link" placeholder="Ссылка" wb="module=yonpageselect">
         </div>
         <div class="col-sm-4">
 <select name="sprite" placeholder="Спрайт" class="form-control">

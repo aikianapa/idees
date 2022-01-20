@@ -146,7 +146,7 @@
         </div>
         <div class="col-6">
           <label>Ссылка</label>
-          <input class="form-control" type="text" name="link">
+          <input class="form-control" type="text" name="link" wb="module=yonpageselect">
         </div>
       </div>
     </div>

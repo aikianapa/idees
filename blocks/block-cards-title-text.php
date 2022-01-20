@@ -29,6 +29,6 @@
         <input class="form-control mb-1" type="text" name="title" placeholder="Заголовок">
         <textarea class="form-control mb-1" rows="auto" name="text" placeholder="Текст"></textarea>
         <input class="form-control col-sm-6 mb-1" type="text" name="btntext" placeholder="Текст кнопки">
-        <input class="form-control col-sm-6 mb-1" type="text" name="btnlink" placeholder="Ссылка кнопки">
+        <input class="form-control col-sm-6 mb-1" type="text" name="btnlink" placeholder="Ссылка кнопки" wb="module=yonpageselect">
     </wb-multiinput>
 </edit>

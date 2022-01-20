@@ -41,7 +41,7 @@
     </div>
     <div class="col-sm-6">
         <label>Ссылка</label>
-        <input class="form-control" type="text" name="link" placeholder="Ссылка">
+        <input class="form-control" type="text" name="link" placeholder="Ссылка" wb="module=yonpageselect">
     </div>
   </div>
 </edit>

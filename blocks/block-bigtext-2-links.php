@@ -47,7 +47,7 @@
     </div>
     <wb-multiinput name="links">
         <input class="form-control col-5" type="text" name="label" placeholder="Надпись">
-        <input class="form-control col-5" type="text" name="link" placeholder="Ссылка">
+        <input class="form-control col-5" type="text" name="link" placeholder="Ссылка" wb="module=yonpageselect">
         <div class="col-2 tx-center">
             <wb-module wb="module=swico" name="download" data-ico-on="download-circle" data-ico-off="attachment-link-arrows" data-size="36" />
         </div>

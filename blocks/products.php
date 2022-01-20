@@ -42,7 +42,7 @@
   <div class="form-group row">
     <label class="col-sm-3">Ссылка кнопки перехода</label>
     <div class="col-sm-9">
-    <input class="form-control" type="text" name="btnlink" placeholder="Ссылка кнопки">      
+    <input class="form-control" type="text" name="btnlink" placeholder="Ссылка кнопки" wb="module=yonpageselect">      
     </div>
   </div>
   <div class="form-group row">
