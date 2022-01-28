@@ -8,7 +8,8 @@
                 <ul class="projects__tags tags">
                     <wb-data wb="table=catalogs&item=projects&field=tree&tpl=false">
                         <li class="tags__item">
-                            <button class="tag tag--active" type="button" data-type="all" data-ajax="{'target':'#projectsList','clear':'true','filter_remove':'tags'}">Все проекты</button>
+                            <button class="tag tag--active" type="button" data-type="all" data-ajax="{'target':'#projectsList','clear':'true','filter_remove':'tags'}">Все проекты
+                            </button>
                         </li>
                         <wb-foreach wb-from="data">
                             <li class="tags__item" data-type="{{id}}">
@@ -106,4 +107,7 @@
             <input class="form-control" type="text" name="title" placeholder="Заголовок">
         </div>
     </div>
+
+    <wb-include wb="form=projects&mode=list"></wb-include>
+
 </edit>

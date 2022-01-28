@@ -3,7 +3,7 @@
     <nav class="nav navbar navbar-expand-md col">
         <h3 class="tx-bold tx-spacing--2 order-1">Блог</h3>
         <div class="ml-auto order-2 float-right">
-            <a href="#" data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/_new','html':'#yongerSpace modals'}"
+            <a href="#" data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/_new','html':'modals'}"
                 class="btn btn-primary">
                 <img src="/module/myicons/24/FFFFFF/item-select-plus-add.svg" width="24" height="24" /> Добавить статью
             </a>
@@ -41,7 +41,7 @@
                             'filter': {'_site':'{{_sett.site}}'}
                 }">
                     <tr class="bg-transparent">
-                        <td data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/{{_id}}','html':'#yongerSpace modals'}" class="cursor-pointer">
+                        <td data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/{{_id}}','html':'modals'}" class="cursor-pointer">
                             <img data-src="/thumbc/50x30/src{{cover.0.img}}" class="img-fluid rounded" />
                         </td>
                         <td class="w-50">
@@ -59,11 +59,11 @@
                                 <input wb="module=swico" name="active"  onchange="wbapp.save($(this),{'table':'{{_form}}','id':'{{_id}}','field':'active','silent':true})">
                             </div>
                             <a href="javascript:"
-                                data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/{{_id}}','update':'cms.list.{{_form}}','html':'#yongerSpace modals'}"
+                                data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/{{_id}}','update':'cms.list.{{_form}}','html':'modals'}"
                                 class=" d-inline"><img src="/module/myicons/24/323232/content-edit-pen.svg" width="24"
                                     height="24"></a>
                             <a href="javascript:"
-                                data-ajax="{'url':'/ajax/rmitem/{{_form}}/{{_id}}','update':'cms.list.{{_form}}','html':'#yongerSpace modals'}"
+                                data-ajax="{'url':'/ajax/rmitem/{{_form}}/{{_id}}','update':'cms.list.{{_form}}','html':'modals'}"
                                 class=" d-inline"><img src="/module/myicons/24/323232/trash-delete-bin.2.svg" width="24"
                                     height="24"></a>
                         </td>
@@ -73,7 +73,6 @@
         </table>
 
     </div>
-    <modals></modals>
 </div>
 
 </html>

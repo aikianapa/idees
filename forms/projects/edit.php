@@ -1,5 +1,5 @@
 <html>
-<div class="modal effect-scale show removable" id="modalPagesEdit" data-backdrop="static" tabindex="-1" role="dialog"
+<div class="modal effect-scale show removable" id="modalProjectsEdit" data-backdrop="static" tabindex="-1" role="dialog"
     aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
@@ -8,32 +8,32 @@
                 <h6>Редактирование проекта</h6>
                 <div class="">
                     <div class="custom-control custom-switch d-inline-block mr-3">
-                        <input type="checkbox" class="custom-control-input" name="yonger" id="{{_form}}SwitchItemYonger"
-                            onchange="$('#{{_form}}ValueItemYonger').prop('checked',$(this).prop('checked'));">
-                        <label class="custom-control-label" for="{{_form}}SwitchItemYonger">Yonger</label>
+                        <input type="checkbox" class="custom-control-input" name="yonger" id="projectsSwitchItemYonger"
+                            onchange="$('#projectsValueItemYonger').prop('checked',$(this).prop('checked'));">
+                        <label class="custom-control-label" for="projectsSwitchItemYonger">Yonger</label>
                     </div>
                     <div class="custom-control custom-switch d-inline-block">
-                        <input type="checkbox" class="custom-control-input" name="active" id="{{_form}}SwitchItemActive"
-                            onchange="$('#{{_form}}ValueItemActive').prop('checked',$(this).prop('checked'));">
-                        <label class="custom-control-label" for="{{_form}}SwitchItemActive">Активен</label>
+                        <input type="checkbox" class="custom-control-input" name="active" id="projectsSwitchItemActive"
+                            onchange="$('#projectsValueItemActive').prop('checked',$(this).prop('checked'));">
+                        <label class="custom-control-label" for="projectsSwitchItemActive">Активен</label>
                     </div>
                 </div>
             </div>
             <div class="modal-body pd-20">
                 <div class="row">
                     <div class="col-5">
-                        <form id="{{_form}}EditForm">
+                        <form id="projectsEditForm">
                             <input type="checkbox" class="custom-control-input" name="active"
-                                id="{{_form}}ValueItemActive">
+                                id="projectsValueItemActive">
                             <input type="checkbox" class="custom-control-input" name="yonger"
-                                id="{{_form}}ValueItemYonger">
+                                id="projectsValueItemYonger">
 
                             <div class="form-group row">
 
-        <div class="col-12 mb-2">
-            <input name="cover" wb="module=filepicker&mode=single&width=650&height=215"
-                wb-path="/uploads/projects/cover" class="pt-0">
-        </div>
+                                <div class="col-12 mb-2">
+                                    <input name="cover" wb="module=filepicker&mode=single&width=650&height=215"
+                                        wb-path="/uploads/projects/cover" class="pt-0">
+                                </div>
                                 <div class="col-12">
                                     <div class="form-group row">
                                         <div class="col-12">
@@ -48,7 +48,7 @@
                                     </div>
                                 </div>
 
-                            <div class="col-8">
+                                <div class="col-8">
                                     <label>Клиент</label>
                                     <input class="form-control" type="text" name="client">
                                 </div>
@@ -86,28 +86,28 @@
                             <div class="form-group row">
                                 <label class="col-sm-2">Похожие</label>
                                 <div class="col-sm-10">
-                                        <select name="similar" class="form-control" wb-select2 multiple>
-                                            <wb-foreach wb="table=projects" wb-filter="active=on">
-                                                <option value="{{_id}}" selected
-                                                    wb-if="'{{in_array({{_id}},{{_parent._parent.tags}})}}'=='1'">
-                                                    {{name}}</option>
-                                                <option value="{{_id}}"
-                                                    wb-if="'{{in_array({{_id}},{{_parent._parent.tags}})}}'!='1'">
-                                                    {{name}}</option>
-                                            </wb-foreach>
-                                        </select>
+                                    <select name="similar" class="form-control" wb-select2 multiple>
+                                        <wb-foreach wb="table=projects" wb-filter="active=on">
+                                            <option value="{{_id}}" selected
+                                                wb-if="'{{in_array({{_id}},{{_parent._parent.tags}})}}'=='1'">
+                                                {{name}}</option>
+                                            <option value="{{_id}}"
+                                                wb-if="'{{in_array({{_id}},{{_parent._parent.tags}})}}'!='1'">
+                                                {{name}}</option>
+                                        </wb-foreach>
+                                    </select>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <wb-module wb="module=yonger&mode=structure" />
+                                    <wb-module wb="module=yonger&mode=structure&target=#projectsBlocksForm" />
                                 </div>
                             </div>
                         </form>
 
                     </div>
                     <div class="col-7">
-                        <div id="yongerBlocksForm">
+                        <div id="projectsBlocksForm">
                             <form method="post">
 
                             </form>
@@ -121,26 +121,6 @@
         </div>
     </div>
 </div>
-<div class="modal effect-slide-in-right left w-50" id="modalPagesEditBlocks" data-backdrop="true" tabindex="-1">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <i></i>
-                <i class="fa fa-close cursor-pointer" data-dismiss="modal" aria-label="Close"></i>
-            </div>
-            <div class="modal-body p-0 pb-5 scroll-y">
-                <div class="list-group" id="{{_form}}EditFormListBlocks">
-                    <wb-foreach wb="ajax=/module/yonger/blocklist&render=client&bind=yonger.blocks">
-                        <a class="list-group-item list-group-item-action" href="javascript:void(0)" data-name="{{name}}"
-                            onclick="yonger.yongerPageBlockAdd('{{id}}')">
-                            <span>{{name}}</span>
-                            <span class="d-block tx-11 text-muted">{{header}}</span>
-                        </a>
-                    </wb-foreach>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 </html>

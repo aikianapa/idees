@@ -2,7 +2,7 @@
 <div class="m-3" id="yongerSpace">
     <nav class="nav navbar navbar-expand-md col">
         <h3 class="tx-bold tx-spacing--2 order-1">{{_lang.header}}</h3>
-        <a href="#" data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/_new','html':'#yongerSpace modals'}"
+        <a href="#" data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/_new','html':'modals'}"
             class="ml-auto order-2 float-right btn btn-primary">
             <img src="/module/myicons/item-select-plus-add.svg?size=24&stroke=FFFFFF" /> {{_lang.create}}
         </a>
@@ -37,12 +37,12 @@
                                 id="{{_form}}SwitchItemActive{{_idx}}"
                                 onchange="wbapp.save($(this),{'table':'{{_form}}','id':'{{_id}}','field':'active','silent':true})">
                         <a href="javascript:"
-                            data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/{{id}}','html':'#yongerSpace modals'}"
+                            data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/{{id}}','html':'modals'}"
                             class="d-inline">
                             <img src="/module/myicons/24/323232/content-edit-pen.svg">
                         </a>
                         <a href="javascript:"
-                            data-ajax="{'url':'/ajax/rmitem/{{_form}}/{{id}}','update':'cms.list.comments','html':'#yongerSpace modals'}"
+                            data-ajax="{'url':'/ajax/rmitem/{{_form}}/{{id}}','update':'cms.list.comments','html':'modals'}"
                             class="d-inline">
                             <img src="/module/myicons/24/323232/trash-delete-bin.2.svg" class="d-inline">
                         </a>
@@ -56,9 +56,6 @@
             </tr>
         </tfoot>
     </table>
-
-
-    <modals></modals>
 </div>
 
     <wb-lang>

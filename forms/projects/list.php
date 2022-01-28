@@ -3,7 +3,7 @@
     <nav class="nav navbar navbar-expand-md col">
         <h3 class="tx-bold tx-spacing--2 order-1">Проекты</h3>
         <div class="ml-auto order-2 float-right">
-            <a href="#" data-ajax="{'url':'/cms/ajax/form/projects/edit/_new','html':'#yongerSpace modals'}"
+            <a href="#" data-ajax="{'url':'/cms/ajax/form/projects/edit/_new','html':'modals'}"
                 class="btn btn-primary">
                 <img src="/module/myicons/24/FFFFFF/item-select-plus-add.svg" width="24" height="24" /> Добавить проект
             </a>
@@ -16,7 +16,7 @@
                 <span clsss="row">
                     <div class="col-3">
                     <input class="form-control" type="search" placeholder="Поиск..."
-                    data-ajax="{'target':'#{{_form}}List','filter_add':{'$or':[{ 'header': {'$like' : '$value'} }, { 'tags': {'$like' : '$value'} }  ]} }">
+                    data-ajax="{'target':'#projectsList','filter_add':{'$or':[{ 'header': {'$like' : '$value'} }, { 'tags': {'$like' : '$value'} }  ]} }">
                     </div>
                 </span>
             </div>
@@ -33,23 +33,23 @@
                     <td class="text-right">Действия</td>
                 </tr>
             </thead>
-            <tbody id="{{_form}}List">
-                <wb-foreach wb="{'ajax':'/api/query/{{_form}}/',
+            <tbody id="projectsList">
+                <wb-foreach wb="{'ajax':'/api/query/projects/',
                             'render':'server',
-                            'bind':'cms.list.{{_form}}',
+                            'bind':'cms.list.projects',
                             'sort':'date:d',
                             'size':'{{_sett.page_size}}',
                             'filter': {'_site':'{{_sett.site}}'}
                 }">
                     <tr class="bg-transparent">
-                        <td data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/{{_id}}','html':'#yongerSpace modals'}" class="cursor-pointer">
+                        <td data-ajax="{'url':'/cms/ajax/form/projects/edit/{{_id}}','append':'modals'}" class="cursor-pointer">
                             <img data-src="/thumbc/50x30/src{{cover.0.img}}" class="img-fluid rounded" />
                         </td>
                         <td class="w-25">
                             {{name}}
                         </td>
                         <td class="w-25">
-                            <wb-foreach wb-from="tags">
+                            <wb-foreach wb-from="tags" wb-tpl="false">
                                 <small class="d-flex-inline p-1 mr-1 bg-light text-dark"
                                     wb-if="'{{_val}}'>''">{{_val}}</small>
                             </wb-foreach>
@@ -57,27 +57,27 @@
                         <td class="text-center">
                             <div class="custom-control custom-switch d-inline">
                                 <input type="checkbox" class="custom-control-input" name="home"
-                                    id="{{_form}}SwitchItemHome{{_idx}}"
-                                    onchange="wbapp.save($(this),{'table':'{{_form}}','id':'{{_id}}','field':'home','silent':true})">
-                                <label class="custom-control-label" for="{{_form}}SwitchItemHome{{_idx}}">&nbsp;</label>
+                                    id="projectsSwitchItemHome{{_idx}}"
+                                    onchange="wbapp.save($(this),{'table':'projects','id':'{{_id}}','field':'home','silent':true})">
+                                <label class="custom-control-label" for="projectsSwitchItemHome{{_idx}}">&nbsp;</label>
                             </div>
                         </td>
                         <td class="text-right">
                             <div class="custom-control custom-switch d-inline">
-                                <input wb="module=swico" name="active"  onchange="wbapp.save($(this),{'table':'{{_form}}','id':'{{_id}}','field':'active','silent':true})">
+                                <input wb="module=swico" name="active"  onchange="wbapp.save($(this),{'table':'projects','id':'{{_id}}','field':'active','silent':true})">
                             </div>
                             <a href="javascript:"
-                                data-ajax="{'url':'/cms/ajax/form/projects/edit/{{_id}}','update':'cms.list.{{_form}}','html':'#yongerSpace modals'}"
+                                data-ajax="{'url':'/cms/ajax/form/projects/edit/{{_id}}','update':'cms.list.projects','append':'modals'}"
                                 class=" d-inline"><img src="/module/myicons/24/323232/content-edit-pen.svg" width="24"
                                     height="24"></a>
                             <a href="javascript:"
-                                data-ajax="{'url':'/ajax/copy/{{_form}}/{{_id}}/','update':'cms.list.{{_form}}','html':'#yongerSpace modals'}"
+                                data-ajax="{'url':'/ajax/copy/projects/{{_id}}/','update':'cms.list.projects','append':'modals'}"
                                 class=" d-inline">
                                 <img src="/module/myicons/24/323232/copy-paste-select-add-plus.svg" width="24" height="24" class="dd-copy" wb-allow="admin">
                             </a>
                             <a href="javascript:"
-                                onclick="wbapp.confirm('Удаление','Удалить запись с идентификатором {{_id}} из таблицы {{_form}} ?').on('confirm',()=>{
-                                    wbapp.ajax({'url':'/ajax/rmitem/{{_form}}/{{_id}}/?_confirm','update':'cms.list.{{_form}}','html':'#yongerSpace modals'});
+                                onclick="wbapp.confirm('Удаление','Удалить запись с идентификатором {{_id}} из таблицы projects ?').on('confirm',()=>{
+                                    wbapp.ajax({'url':'/ajax/rmitem/projects/{{_id}}/?_confirm','update':'cms.list.projects','append':'modals'});
                                 })" class=" d-inline"><img src="/module/myicons/24/323232/trash-delete-bin.2.svg" width="24" height="24"></a>
                         </td>
                     </tr>
@@ -86,7 +86,6 @@
         </table>
 
     </div>
-    <modals></modals>
 </div>
 
 </html>
