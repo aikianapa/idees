@@ -150,4 +150,5 @@
         </div>
       </div>
     </div>
+    <wb-include wb="form=blog&mode=list"></wb-include>
 </edit>

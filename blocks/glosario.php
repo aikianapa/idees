@@ -126,8 +126,9 @@
 </view>
 
 <edit>
-<div class="alert alert-info">
-    Глоссарий редактируется в Формы -> Разделы -> Глоссарий
-</div>
+  <div>
+    <wb-module wb="module=yonger&mode=edit&block=common.inc" />
+  </div>
+  <wb-include wb="form=glosario&mode=list"></wb-include>
 
 </edit>

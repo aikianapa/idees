@@ -3,7 +3,7 @@
     <nav class="nav navbar navbar-expand-md col">
         <h3 class="tx-bold tx-spacing--2 order-1">Проекты</h3>
         <div class="ml-auto order-2 float-right">
-            <a href="#" data-ajax="{'url':'/cms/ajax/form/projects/edit/_new','html':'modals'}"
+            <a href="#" data-ajax="{'url':'/cms/ajax/form/projects/edit/_new','append':'modals'}"
                 class="btn btn-primary">
                 <img src="/module/myicons/24/FFFFFF/item-select-plus-add.svg" width="24" height="24" /> Добавить проект
             </a>
