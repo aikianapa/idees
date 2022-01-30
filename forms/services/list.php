@@ -4,7 +4,7 @@
         <h3 class="tx-bold tx-spacing--2 order-1">{{_lang.services}}</h3>
         <a href="#" data-ajax="{'url':'/cms/ajax/form/services/edit/_new','html':'modals'}"
             class="ml-auto order-2 float-right btn btn-primary">
-            <img src="/module/myicons/item-select-plus-add.svg?size=24&stroke=FFFFFF" /> {{_lang.newService}}
+            <img src="/module/myicons/item-select-plus-add.svg?size=24&stroke=FFFFFF" /> {{_lang.newServ}}
         </a>
     </nav>
 

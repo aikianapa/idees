@@ -72,26 +72,10 @@
     <div>
         <wb-module wb="module=yonger&mode=edit&block=common.inc" />
     </div>
+
     <div class="form-group row">
-        <label class="col-sm-3">Заголовок</label>
-        <div class="col-sm-9">
-            <input class="form-control mb-1" type="text" name="title" placeholder="Заголовок">
-        </div>
-        <label class="col-sm-3">Текст</label>
-        <div class="col-sm-9">
-            <textarea class="form-control mb-1" rows="auto" name="text" placeholder="Текст"></textarea>
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-sm-6">
-            <div class="divider-text">Этапы</div>
-            <wb-multiinput name="list">
-                <input class="form-control mb-1" type="text" name="list_title" placeholder="Заголовок">
-                <textarea class="form-control mb-1" rows="auto" name="list_text" placeholder="Текст"></textarea>
-            </wb-multiinput>
-        </div>
-        <div class="col-sm-6">
-            <div class="divider-text">Подробности</div>
+        <div class="col-12">
+            <div class="divider-text">Самое важное</div>
             <div class="form-group row">
                 <label class="col-sm-3">Цена от</label>
                 <div class="col-sm-9">
@@ -102,6 +86,15 @@
                     <input class="form-control mb-1" type="text" name="days" placeholder="Срок от">
                 </div>
             </div>
+        </div>
+        <div class="col-12">
+            <div class="divider-text">Этапы</div>
+            <wb-multiinput name="list">
+                <input class="form-control mb-1" type="text" name="list_title" placeholder="Заголовок">
+                <textarea class="form-control mb-1" rows="auto" name="list_text" placeholder="Текст"></textarea>
+            </wb-multiinput>
+        </div>
+        <div class="col-12">
             <div class="divider-text">Может потребоваться</div>
             <wb-multiinput name="list1">
                 <input class="form-control mb-1" type="text" name="list1" placeholder="Наименование">
