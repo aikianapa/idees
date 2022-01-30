@@ -11,7 +11,7 @@
                             <button class="tag tag--active" type="button" data-type="all" data-ajax="{'target':'#projectsList','clear':'true','filter_remove':'tags'}">Все проекты
                             </button>
                         </li>
-                        <wb-foreach wb-from="data">
+                        <wb-foreach wb-from="data" wb-tpl="false">
                             <li class="tags__item" data-type="{{id}}">
                                 <button class="tag" data-type="{{id}}" type="button" data-ajax="{'target':'#projectsList','clear':'true','filter_remove': 'tags','filter_add':{ 'tags': { '$like': '{{id}}'}}}">
                                     {{name}}</button>

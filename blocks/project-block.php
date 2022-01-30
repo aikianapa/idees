@@ -1,10 +1,9 @@
 <view>
         <div class="project__content-block">
         <div class="project__content-text-block project__content-text-block--steacky">
-            <h3 class="project__content-title">Проблема</h3>
+            <h3 class="project__content-title">{{title}}</h3>
 
-            <p class="project__content-text">Изначально ставили задачу обновить сайт, так как он сильно и давно устарел. На второй встрече было принято решение
-                проводить полноценное обновление фирменного стиля, включая новый дизайн сайтам.</p>
+            <p class="project__content-text text-break">{{text}}</p>
         </div>
 
 
