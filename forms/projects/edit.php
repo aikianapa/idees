@@ -100,7 +100,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <wb-module wb="module=yonger&mode=structure&target=#projectsBlocksForm" />
+                                    <wb-module wb="module=yonger&mode=structure&preset=project&target=#projectsBlocksForm" />
                                 </div>
                             </div>
                         </form>
