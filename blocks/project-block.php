@@ -8,11 +8,9 @@
 
 
         <img-comparison-slider wb-if="'{{before.0.img}}'>'' AND '{{after.0.img}}'>''">
-            <img class="project__content-image" width="928" height="600" src="/thumbc/928x600/src{{before.0.img}}" srcset="/thumbc/1856x1200/src{{before.0.img}} 2x" alt="{{alt}}"
-                slot="first">
+            <img class="project__content-image" width="928" height="600" data-src="/thumbc/928x600/src{{before.0.img}}" data-srcset="/thumbc/1856x1200/src{{before.0.img}} 2x" alt="{{alt}}" slot="first">
 
-            <img class="project__content-image" width="928" height="600" src="/thumbc/928x600/src{{after.0.img}}" srcset="/thumbc/1856x1200/src{{before.0.img}} 2x"
-                alt="{{alt}}" slot="second">
+            <img class="project__content-image" width="928" height="600" data-src="/thumbc/928x600/src{{after.0.img}}" data-srcset="/thumbc/1856x1200/src{{after.0.img}} 2x" alt="{{alt}}" slot="second">
         </img-comparison-slider>
 
         <wb-foreach wb="from=video&tpl=false">
