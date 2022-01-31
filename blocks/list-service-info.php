@@ -1,11 +1,8 @@
-<view>
-    <div class="service-page__section service-page__section--top container">
+<view><div class="service-page__section service-page__section--top container">
         <div class="service-page__title-container">
-            <h1 class="page__title">Корпоративные сайты</h1>
+            <h1 class="page__title">{{_parent.name}}</h1>
 
-            <p class="service-page__description">
-                Основная функция корпоративных сайтов, это четко, последовательно и красиво презентавать услуги компании
-            </p>
+            <p class="service-page__description">{{_parent.descr}}</p>
 
             <svg class="service-page__icon" width="360" height="120" aria-hidden="true">
                 <use xlink:href="/assets/img/sprite.svg#develop"></use>
@@ -17,7 +14,7 @@
                 <h2 class="visually-hidden">Этапы работы</h2>
 
                 <ul class="service-page__stages">
-                    <wb-foreach wb="from=list&tpl=false">
+                    <wb-foreach wb="from=list&amp;tpl=false">
                     <li class="service-page__stage">
                         <h3 class="service-page__stage-title">{{list_title}}</h3>
                         <p class="service-page__stage-description">{{list_text}}</p>
@@ -54,7 +51,7 @@
                     <h3 class="service-page__aside-title">Может потребоваться: *</h3>
 
                     <ul class="servise-page__aside-list">
-                        <wb-foreach wb="from=list1&tpl=false">
+                        <wb-foreach wb="from=list1&amp;tpl=false">
                         <li class="service-page__aside-list-item">{{_val}}</li>
                         </wb-foreach>
                     </ul>
@@ -65,15 +62,10 @@
                 </p>
             </aside>
         </div>
+    </div></view><edit header="Услуги - описание "><div>
+        <wb-module wb="module=yonger&amp;mode=edit&amp;block=common.inc"></wb-module>
     </div>
-</view>
-
-<edit header="Услуги - описание ">
-    <div>
-        <wb-module wb="module=yonger&mode=edit&block=common.inc" />
-    </div>
-
-    <div class="form-group row">
+<div class="form-group row">
         <div class="col-12">
             <div class="divider-text">Самое важное</div>
             <div class="form-group row">
@@ -104,5 +96,4 @@
                 <textarea class="form-control mb-1" rows="auto" name="alert" placeholder="Текст сноски"></textarea>
             </div>
         </div>
-    </div>
-</edit>
+    </div></edit>
