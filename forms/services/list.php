@@ -22,6 +22,7 @@
                 <tr>
                     <td>
                         {{name}}
+                        <div class="tx-12">{{tags}}</div>
                     </td>
                     <td class="tx-12 w-50">{{wbGetWords({{descr}},10)}}</td>
                         <td class="text-right">
