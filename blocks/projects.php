@@ -40,16 +40,16 @@
                     <wb-foreach wb="table=projects&size=2&bind=cms.list.projects&render=server&more=true:" wb-filter="active=on">
                         <li class="cases-section__item">
                             <article class="case">
-                                <a class="case__title-link-wrapper" href="/projects/{{_id}}/{{wbFurlGenerate({{name}})}}">
+                                <a class="case__title-link-wrapper" href="/projects/{{wbFurlGenerate({{name}})}}">
                                     <h3 class="case__title">{{name}}</h3>
                                     <p class="case__description">{{descr}}</p>
                                 </a>
-                                <a class="case__image-wrapper" href="/projects/{{_id}}/{{wbFurlGenerate({{name}})}}">
+                                <a class="case__image-wrapper" href="/projects/{{wbFurlGenerate({{name}})}}">
                                     <img class="case__image" width="790" height="500" data-src="/thumbc/790x500/src/{{cover.0.img}}" data-srcset="/thumbc/1580x1000/src/{{cover.0.img}} 2x"
                                         alt="{{name}}">
                                 </a>
 
-                                <a class="button case__link" href="/projects/{{_id}}/{{wbFurlGenerate({{name}})}}">
+                                <a class="button case__link" href="/projects/{{wbFurlGenerate({{name}})}}">
                                     <span class="button__icon-wrapper">
                                         <svg class="button__icon" width="24" height="24" aria-hidden="true">
                                             <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>

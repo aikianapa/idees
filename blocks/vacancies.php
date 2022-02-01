@@ -27,7 +27,7 @@
   <ul class="vacancies__list" id="vacanciesListing">
       <wb-foreach wb="table=vacancies&sort=_created:d" wb-filter="active=on">
     <li class="vacancies__item" data-tags="{{tags}}">
-      <a class="vacancies__link" href="/vacancies/{{_id}}/{{wbFurlGenerate({{name}})}}">
+      <a class="vacancies__link" href="/vacancies/{{wbFurlGenerate({{name}})}}">
         <span class="vacancies__name">{{name}}</span>
         <span class="vacancies__descr">
           <span>{{str_replace(","," / ",{{places}})}}<add wb-if="'{{distance}}'=='on'"> / Удаленка</add></span>

@@ -42,7 +42,7 @@
 
 
         <div class="project__controls container">
-            <a class="button" href="/projects/{{prev_item.id}}/{{wbFurlGenerate({{prev_item.name}})}}">
+            <a class="button" href="/projects/{{wbFurlGenerate({{prev_item.name}})}}">
                 <span class="button__icon-wrapper">
                     <svg class="button__icon" width="24" height="24" aria-hidden="true">
                         <use xlink:href="/assets/img/sprite.svg#arrow-left"></use>
@@ -54,7 +54,7 @@
 
             <a class="project__back-link" href="/projects">вернуться в портфолио</a>
 
-            <a class="button" href="/projects/{{next_item.id}}/{{wbFurlGenerate({{next_item.name}})}}">
+            <a class="button" href="/projects/{{wbFurlGenerate({{next_item.name}})}}">
                 <span class="button__text project__controls-text">следующий проект</span>
 
                 <span class="button__icon-wrapper">
@@ -71,7 +71,7 @@
             <ul class="project__similar-list">
                 <wb-foreach wb="from=similar&tpl=false&limit=2&rand=true">
                     <wb-data wb="table=projects&item={{_val}}">
-                        <wb-var link="/projects/{{id}}/{{wbFurlGenerate({{name}})}}"/>
+                        <wb-var link="/projects/{{wbFurlGenerate({{name}})}}"/>
                 <li class="project__similar-item">
                     <article class="case">
                         <a class="case__title-link-wrapper" href="{{_var.link}}">

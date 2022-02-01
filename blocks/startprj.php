@@ -14,7 +14,7 @@
                             <use xlink:href="/assets/img/sprite.svg#{{sprite}}"></use>
                         </svg>
                         <p class="service__description">{{descr}}</p>
-                        <a class="service__link" href="/services/{{_id}}/{{wbFurlGenerate({{name}})}}">Подробнее</a>
+                        <a class="service__link" href="/services/{{wbFurlGenerate({{name}})}}">Подробнее</a>
                     </article>
                 </li>
             </wb-foreach>

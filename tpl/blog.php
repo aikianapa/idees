@@ -59,7 +59,7 @@
             <img class="article__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}" data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
               alt="{{name}}">
 
-            <a class="button article__link" href="/blog/{{_id}}/{{wbFurlGenerate({{name}})}}">
+            <a class="button article__link" href="/blog/{{wbFurlGenerate({{name}})}}">
               <span class="button__icon-wrapper">
                 <svg class="button__icon" width="24" height="24" aria-hidden="true">
                   <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
@@ -99,7 +99,7 @@
               <img class="article__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}" data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
                 alt="{{name}}">
 
-              <a class="button article__link" href="/blog/{{_id}}/{{wbFurlGenerate({{name}})}}">
+              <a class="button article__link" href="/blog/{{wbFurlGenerate({{name}})}}">
                 <span class="button__icon-wrapper">
                   <svg class="button__icon" width="24" height="24" aria-hidden="true">
                     <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
