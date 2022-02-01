@@ -14,6 +14,10 @@ img::before {
     margin-top: 150px;
 }
 
+.bd-b {
+    border-bottom: 1px solid var(--border-color);
+}
+
 .mb-80 {
     margin-bottom: 80px!important;
 }

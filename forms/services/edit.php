@@ -1,7 +1,6 @@
 <html>
-<div class="modal fade effect-scale show removable" id="modalServicesEdit" data-backdrop="static" tabindex="-1" role="dialog"
-    aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+<div class="modal fade effect-scale show removable" id="modalServicesEdit" data-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-xxl" role="document">
         <div class="modal-content">
             <div class="modal-header row">
                 <div class="col-5">
@@ -27,6 +26,23 @@
                                             <label class="form-control-label">Краткое описание</label>
                                             <textarea type="text" name="descr" class="form-control" required></textarea>
                                         </div>
+
+                                <div class="col-12">
+                                    <label class="form-control-label">Раздел</label>
+                                    <wb-data wb="table=catalogs&item=projects&field=tree">
+                                        <select name="tags" class="form-control" wb-select2>
+                                            <wb-foreach wb-from="data">
+                                                <option value="{{_id}}" selected
+                                                    wb-if="'{{in_array({{_id}},{{_parent._parent.tags}})}}'=='1'">
+                                                    {{name}}</option>
+                                                <option value="{{_id}}"
+                                                    wb-if="'{{in_array({{_id}},{{_parent._parent.tags}})}}'!='1'">
+                                                    {{name}}</option>
+                                            </wb-foreach>
+                                        </select>
+                                    </wb-data>
+                                </div>
+
                             </div>
                             <div class="row">
                                 <div class="col-12">
@@ -50,8 +66,17 @@
     </div>
 </div>
 <wb-lang>
-    [ru] date = Дата name = Имя email = Эл.почта phone = Телефон service = Услуга subject = Тема msg = Обращение info = Информация
-    appends = Вложения actions = Действия
+    [ru]
+    date = Дата 
+    name = Имя 
+    email = Эл.почта 
+    phone = Телефон 
+    service = Услуга 
+    subject = Тема 
+    msg = Обращение 
+    info = Информация
+    appends = Вложения 
+    actions = Действия
 </wb-lang>
 
 </html>

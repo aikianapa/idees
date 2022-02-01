@@ -23,7 +23,7 @@
                     <td>
                         {{name}}
                     </td>
-                    <td class="tx-12">{{wbGetWords({{descr}},10)}}</td>
+                    <td class="tx-12 w-50">{{wbGetWords({{descr}},10)}}</td>
                         <td class="text-right">
                             <div class="custom-control custom-switch d-inline">
                                 <input wb="module=swico" name="active"  onchange="wbapp.save($(this),{'table':'services','id':'{{_id}}','field':'active','silent':true})">
