@@ -54,16 +54,16 @@
                             </wb-foreach>
                         </td>
 
-                        <td class="text-right">
+                        <td class="text-right nobr">
                             <div class="custom-control custom-switch d-inline">
                                 <input wb="module=swico" name="active"  onchange="wbapp.save($(this),{'table':'blog','id':'{{_id}}','field':'active','silent':true})">
                             </div>
                             <a href="javascript:"
-                                data-ajax="{'url':'/cms/ajax/form/blog/edit/{{_id}}','update':'cms.list.blog','append':'modals'}"
+                                data-ajax="{'url':'/cms/ajax/form/blog/edit/{{_id}}','bind':'cms.list.blog','append':'modals'}"
                                 class=" d-inline"><img src="/module/myicons/24/323232/content-edit-pen.svg" width="24"
                                     height="24"></a>
                             <a href="javascript:"
-                                data-ajax="{'url':'/ajax/rmitem/blog/{{_id}}','update':'cms.list.blog','append':'modals'}"
+                                data-ajax="{'url':'/ajax/rmitem/blog/{{_id}}','bind':'cms.list.blog','append':'modals'}"
                                 class=" d-inline"><img src="/module/myicons/24/323232/trash-delete-bin.2.svg" width="24"
                                     height="24"></a>
                         </td>

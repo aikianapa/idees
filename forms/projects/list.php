@@ -62,7 +62,7 @@
                                 <label class="custom-control-label" for="projectsSwitchItemHome{{_idx}}">&nbsp;</label>
                             </div>
                         </td>
-                        <td class="text-right">
+                        <td class="text-right nobr">
                             <div class="custom-control custom-switch d-inline">
                                 <input wb="module=swico" name="active"  onchange="wbapp.save($(this),{'table':'projects','id':'{{_id}}','field':'active','silent':true})">
                             </div>
