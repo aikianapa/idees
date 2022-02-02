@@ -36,7 +36,7 @@
                                                     wb-if="'{{_id}}' == '{{_parent._parent.tags}}'">
                                                     {{name}}</option>
                                                 <option value="{{_id}}"
-                                                    wb-if="'{{_id}}' == '{{_parent._parent.tags}}'">
+                                                    wb-if="'{{_id}}' !== '{{_parent._parent.tags}}'">
                                                     {{name}}</option>
                                             </wb-foreach>
                                         </select>

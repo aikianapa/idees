@@ -8,6 +8,12 @@ class quotesClass extends cmsFormsClass {
     }
 
 
+    function afterItemSave(&$item)
+    {
+        $this->app->shadow('/cms/ajax/form/pages/list');
+    }
+
+
     function beforeItemShow(&$item)
     {
         $item['phone'] = wbPhoneFormat($item['phone']);

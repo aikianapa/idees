@@ -9,6 +9,8 @@ class newsClass extends cmsFormsClass {
     }
 
     function afterItemSave($item) {
+        $this->app->shadow('/cms/ajax/form/pages/list');
+/*
         if (!isset($item['_table']) OR  $item['_table'] == '') return;
         if (!isset($item['_id']) OR  $item['_id'] == '') return;
         $app = $this->app;
@@ -32,6 +34,7 @@ class newsClass extends cmsFormsClass {
         $index[$item['_table']] = $idx;
         $index = json_encode($index);
         file_put_contents($app->vars('_env.dba').'/url.idx',$index,  LOCK_EX);
+        */
     }
 }
 ?>
