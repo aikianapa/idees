@@ -21,7 +21,7 @@
                     <ul class="services__sub-list">
                         <wb-foreach wb="table={{_parent.attach}}&tpl=false" wb-filter="{{_parent.attach_filter}}">
                         <li class="services__sub-list-item">
-                            <a class="services__item-link" href="{{_parent._parent.url}}/{{id}}/{{wbFurlGenerate({{name}})}}">{{name}}</a>
+                            <a class="services__item-link" href="{{_parent._parent.url}}/{{wbFurlGenerate({{name}})}}">{{name}}</a>
                         </li>
                         </wb-foreach>
                     </ul>

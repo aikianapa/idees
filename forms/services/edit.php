@@ -33,10 +33,10 @@
                                         <select name="tags" class="form-control" wb-select2>
                                             <wb-foreach wb-from="data">
                                                 <option value="{{_id}}" selected
-                                                    wb-if="'{{in_array({{_id}},{{_parent._parent.tags}})}}'=='1'">
+                                                    wb-if="'{{_id}}' == '{{_parent._parent.tags}}'">
                                                     {{name}}</option>
                                                 <option value="{{_id}}"
-                                                    wb-if="'{{in_array({{_id}},{{_parent._parent.tags}})}}'!='1'">
+                                                    wb-if="'{{_id}}' == '{{_parent._parent.tags}}'">
                                                     {{name}}</option>
                                             </wb-foreach>
                                         </select>
