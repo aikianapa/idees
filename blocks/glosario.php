@@ -89,7 +89,6 @@
             $('.glosario__search').on('keyup',function(){
                 $(this).trigger('change');
             });
-
             $('.glosario__search').on('change',function(){
                 let str = $(this).val();
                 str = str.toLowerCase();
@@ -114,11 +113,18 @@
                     })
                 })
 
-                if (str.trim() <= " ") {
-                    $(this).parents('.glosario__container').find('.glosario__menu-item').show();
-                }
+                str.trim() == "" ? $(this).parents('.glosario__container').find('.glosario__menu-item').show() : null;
             });
 
+            var glosario_standalone = function() {
+                let item = '{{_route.item}}';
+                $(`.glosario__collapse-menu [data-id='${item}']`).trigger('click');
+                console.log(item);
+
+            }
+            setTimeout(function(){
+                glosario_standalone();
+            }, 100);
 
         </script>
     </section>
