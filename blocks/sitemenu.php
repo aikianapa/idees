@@ -31,11 +31,11 @@
     <div class="menu__container container">
       <nav class="menu__navigation">
         <ul class="menu__list">
-          <wb-foreach wb="table=pages&tpl=false" wb-filter="{'active':'on','menu':'on','path':''}">
+          <wb-foreach wb="table=pages&tpl=false&sort=_sort" wb-filter="{'active':'on','menu':'on','path':''}">
             <li class="menu__item menu__item--{{name}}">
               <a class="menu__link" href="{{url}}">{{menu_title}}</a>
               <ul class="menu__sub-list">
-                <wb-foreach wb="table=pages&tpl=false" wb-filter="{'active':'on','menu':'on','path':'{{url}}'}">
+                <wb-foreach wb="table=pages&tpl=false&sort=_sort" wb-filter="{'active':'on','menu':'on','path':'{{url}}'}">
                   <li class="menu__sub-item">
                     <a class="menu__sub-link" href="{{url}}">{{menu_title}}</a>
                   </li>
