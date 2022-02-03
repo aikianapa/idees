@@ -31,13 +31,13 @@
     <div class="menu__container container">
       <nav class="menu__navigation">
         <ul class="menu__list">
-          <wb-foreach wb="from=_var.menu">
-            <li class="menu__item menu__item--{{id}}" wb-if='yongerIsPage("{{data.link}}")'>
-              <a class="menu__link" href="%7B%7Bdata.link%7D%7D">{{name}}</a>
-              <ul class="menu__sub-list" wb-if="'{{children}}'&gt;''">
-                <wb-foreach wb="from=children">
-                  <li class="menu__sub-item" wb-if='yongerIsPage("{{data.link}}")'>
-                    <a class="menu__sub-link" href="%7B%7Bdata.link%7D%7D">{{name}}</a>
+          <wb-foreach wb="table=pages&tpl=false" wb-filter="{'active':'on','menu':'on','path':''}">
+            <li class="menu__item menu__item--{{name}}">
+              <a class="menu__link" href="{{url}}">{{menu_title}}</a>
+              <ul class="menu__sub-list">
+                <wb-foreach wb="table=pages&tpl=false" wb-filter="{'active':'on','menu':'on','path':'{{url}}'}">
+                  <li class="menu__sub-item">
+                    <a class="menu__sub-link" href="{{url}}">{{menu_title}}</a>
                   </li>
                 </wb-foreach>
               </ul>
@@ -47,18 +47,18 @@
       </nav>
 
       <div class="menu__contacts">
-        <a class="menu__contact-link" href="email:%7B%7B_var.email%7D%7D" target="_blank">{{_var.email}}</a>
-        <a class="menu__contact-link" href="tel:+%7B%7BwbDigitsOnly(%7B%7B_var.phone%7D%7D)%7D%7D">{{_var.phone}}</a>
+        <a class="menu__contact-link" href="email:{{_var.email}}" target="_blank">{{_var.email}}</a>
+        <a class="menu__contact-link" href="tel:+{{wbDigitsOnly({{_var.phone}})}}">{{_var.phone}}</a>
 
         <ul class="menu__socials-list">
           <li class="menu__socials-item">
-            <a class="menu__socials-link" href="%7B%7B_var.whatsapp%7D%7D">Whatsapp</a>
+            <a class="menu__socials-link" href="{{_var.whatsapp}}">Whatsapp</a>
           </li>
           <li class="menu__socials-item">
-            <a class="menu__socials-link" href="%7B%7B_var.telegram%7D%7D">Telegram</a>
+            <a class="menu__socials-link" href="{{_var.telegram}}">Telegram</a>
           </li>
           <li class="menu__socials-item">
-            <a class="menu__socials-link" href="%7B%7B_var.messenger%7D%7D">Messenger</a>
+            <a class="menu__socials-link" href="{{_var.messenger}}">Messenger</a>
           </li>
         </ul>
       </div>
