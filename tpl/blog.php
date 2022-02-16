@@ -79,7 +79,7 @@
       <ul class="article-page__similar-list" id="similarArticles">
         <wb-foreach wb="from=similar&size=6&limit=18&more=true:ещё">
           <li class="article-page__similar-item">
-            <wb-data wb="table=blog&item={{_val}}">
+
             <article class="article">
               <wb-foreach wb="from=tags&tpl=false&limit=1">
                 <span class="article__tag">
@@ -109,7 +109,7 @@
                 <span class="button__text">читать статью</span>
               </a>
             </article>
-            </wb-data>
+
           </li>
         </wb-foreach>
       </ul>

@@ -1,5 +1,9 @@
 <view>
   <main class="page__main">
+    <wb-var first=""/>
+    <wb-data wb="table=catalogs&item=projects">
+      <wb-var prjtype="{{_current.tree.data}}" />
+    </wb-data>
     <section class="blog container">
       <div class="blog__title-container">
         <h1 class="page__title">Блог</h1>
@@ -23,8 +27,12 @@
       <div class="blog__content">
         <wb-foreach wb="table=blog&tpl=false&limit=1">
           <article class="article article--main">
-            <span class="article__tag">Дизайн</span>
-
+                <wb-foreach wb="from=tags&tpl=false">
+                  <span class="article__tag">
+                    {{_var.prjtype.{{_val}}.name}}
+                  </span>
+                </wb-foreach>
+            <wb-var first="{{_id}}"/>
             <div class="article__info">
               <time class="article__date" datetime="{{_created}}">{{datetext({{_created}})}}</time>
               <span class="article__views" wb="module=autoinc&table=blog&field={{id}}"></span>
@@ -37,7 +45,7 @@
             <img class="article__image" width="790" height="500" src="/thumbc/790x500/src{{cover.0.img}}" data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
               alt="{{name}}">
 
-            <a class="button article__link" href="/blog/{{_id}}/{{wbFurlGenerate({{name}})}}">
+            <a class="button article__link" href="/blog/{{wbFurlGenerate({{name}})}}">
               <span class="button__icon-wrapper">
                 <svg class="button__icon" width="24" height="24" aria-hidden="true">
                   <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
@@ -62,15 +70,12 @@
           </a>
         </section>
 
-        <wb-data wb="table=catalogs&item=projects">
-          <wb-var prjtype="{{_current.tree.data}}" />
-        </wb-data>
         <ul class="blog__list" id="articlesList">
-          <wb-foreach wb="table=blog&size=12&bind=pages.blog&_more=true:ещё">
+          <wb-foreach wb="table=blog&size=12&bind=pages.blog&_more=true:ещё" wb-filter="{'_id':{'$ne':'{{_var.first}}'}}">
             <li class="blog__item">
               <wb-var spec="article--special" wb-if="'{{spec}}'=='on'" else="" />
               <article class="article {{_var.spec}}">
-                <wb-foreach wb="from=tags&tpl=false&limit=1">
+                <wb-foreach wb="from=tags&tpl=false">
                   <span class="article__tag">
                     {{_var.prjtype.{{_val}}.name}}
                   </span>
@@ -82,10 +87,10 @@
                 </div>
 
                 <h3 class="article__title">
-                  <a  wb-if="'{{spec}}'==''" class="button article__link" href="/blog/{{_id}}/{{wbFurlGenerate({{name}})}}">
+                  <a  wb-if="'{{spec}}'==''" class="button article__link" href="/blog/{{wbFurlGenerate({{name}})}}">
                     {{name}}
                   </a>
-                  <a  wb-if="'{{spec}}'=='on'" href="/blog/{{_id}}/{{wbFurlGenerate({{name}})}}">
+                  <a  wb-if="'{{spec}}'=='on'" href="/blog/{{wbFurlGenerate({{name}})}}">
                     {{name}}
                   </a>
                 </h3>
@@ -95,7 +100,7 @@
                 <img class="article__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}" data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
                   alt="{{name}}">
 
-                <a class="button article__link" href="/blog/{{_id}}/{{wbFurlGenerate({{name}})}}"  wb-if="'{{spec}}'==''">
+                <a class="button article__link" href="/blog/{{wbFurlGenerate({{name}})}}"  wb-if="'{{spec}}'==''">
                   <span class="button__icon-wrapper">
                     <svg class="button__icon" width="24" height="24" aria-hidden="true">
                       <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
