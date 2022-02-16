@@ -23,6 +23,32 @@ class quotesClass extends cmsFormsClass {
         $res = [];
         $item = $this->app->vars('_post');
 
+
+        if ($this->app->vars('_route.refferer')) {
+            $html = $this->app->fromFile($this->app->vars('_route.refferer'));
+            $msg = $this->app->fromString('<html><div class="mail"></div></html>');
+            //echo $html;
+            $msgbody = $msg->find('.mail');
+            foreach ($item as $fld => $val) {
+                if ($val > '' && $fld !== '__token') {
+                    $field = $html->find("[name={$fld}]")[0];
+                    if ($field->is('.form__checkbox')) {
+                        $label = $field->closest('fieldset')->find('legend')->text();
+                        $value = $field->next('label')->text();
+                    } elseif ($field->is('.form__text-field')) {
+                        $label = $field->prev('label')->text();
+                        $value = &$val;
+                    } elseif (!$field->is('[type=file]')) {
+                        $label = $fld;
+                        $value = &$val;
+                    }
+                    $line = '<div><b>'.$label.'</b>: '.$value.'</div>';
+                    $msgbody->append($line);
+                }
+            }
+        }
+
+
         header('Content-Type: application/json; charset=utf-8');
         if ($item['email'] == '') {
             $res = ['error'=>true,'msg'=>'Unknown error'];
@@ -49,42 +75,19 @@ class quotesClass extends cmsFormsClass {
                 $item[$key] = [['img'=>$file,'title'=>'','alt'=>'']];
             }
         }
-
         $item['number'] = $qnum->inc('quotes', 'number', 1000);
-        $item = $this->app->itemSave('quotes', $item, true);
 
 
-        if ($this->app->vars('_route.refferer')) {
-            $html = $this->app->fromFile($this->app->vars('_route.refferer'));
-            $msg = $this->app->fromString('<html><div class="mail"><h3>Заявка № <span></span></h3></div></html>');
-            //echo $html;
-            $msgbody = $msg->find('.mail');
-            foreach ($item as $fld => $val) {
-                if ($val > '' && $fld !== '__token') {
-                    $field = $html->find("[name={$fld}]")[0];
-                    if ($field->is('.form__checkbox')) {
-                        $label = $field->closest('fieldset')->find('legend')->text();
-                        $value = $field->next('label')->text();
-                    } elseif ($field->is('.form__text-field')) {
-                        $label = $field->prev('label')->text();
-                        $value = &$val;
-                    } elseif (!$field->is('[type=file]')) {
-                        $label = $fld;
-                        $value = &$val;
-                    }
-                    $line = '<div><b>'.$label.'</b>: '.$value.'</div>';
-                    $msgbody->append($line);
-                }
-            }
-            $msg->find('.mail > h3 span')->text($item['number']);
+        if (isset($msgbody)) {
+            $msgbody->prepend('<h3>Заявка №'.$item['number'].'</h3>');
             $subj = $msg->find('.mail > h3')->text();
             $from = $item['email'].';'.$item['name'];
-            $sent = $this->app->vars('_sett.email').';Idees';
-
-            $this->app->mail($from, $sent, $subj, $msg->html(),$file);
+            $sent = $this->app->vars('_sett.email');
+            $this->app->mail('tanden.anapa@gmail.com;Tanden', 'oleg_frolov@mail.ru;Oleg', $subj, $msg->html());
         }
 
-
+        $item['_created'] = date('Y-m-d H:i:s');
+        $item = $this->app->itemSave('quotes', $item, true);
 
         $res = ['error'=>false,'item'=>$item];
         return json_encode($res);
