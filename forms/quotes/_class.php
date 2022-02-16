@@ -20,14 +20,16 @@ class quotesClass extends cmsFormsClass {
     }
 
     function submit() {
-        header('Content-Type: application/json; charset=utf-8');
         $res = [];
         $item = $this->app->vars('_post');
+
+        header('Content-Type: application/json; charset=utf-8');
         if ($item['email'] == '') {
             $res = ['error'=>true,'msg'=>'Unknown error'];
             return json_encode($res);
         }
         $qnum = $this->app->module('autoinc');
+        $file = null;
         foreach($item as $key => $value) {
             if (preg_match("/^project-|source-/",$key)) {
                 $fld = explode('-', $key);
@@ -50,6 +52,40 @@ class quotesClass extends cmsFormsClass {
 
         $item['number'] = $qnum->inc('quotes', 'number', 1000);
         $item = $this->app->itemSave('quotes', $item, true);
+
+
+        if ($this->app->vars('_route.refferer')) {
+            $html = $this->app->fromFile($this->app->vars('_route.refferer'));
+            $msg = $this->app->fromString('<html><div class="mail"><h3>Заявка № <span></span></h3></div></html>');
+            //echo $html;
+            $msgbody = $msg->find('.mail');
+            foreach ($item as $fld => $val) {
+                if ($val > '' && $fld !== '__token') {
+                    $field = $html->find("[name={$fld}]")[0];
+                    if ($field->is('.form__checkbox')) {
+                        $label = $field->closest('fieldset')->find('legend')->text();
+                        $value = $field->next('label')->text();
+                    } elseif ($field->is('.form__text-field')) {
+                        $label = $field->prev('label')->text();
+                        $value = &$val;
+                    } elseif (!$field->is('[type=file]')) {
+                        $label = $fld;
+                        $value = &$val;
+                    }
+                    $line = '<div><b>'.$label.'</b>: '.$value.'</div>';
+                    $msgbody->append($line);
+                }
+            }
+            $msg->find('.mail > h3 span')->text($item['number']);
+            $subj = $msg->find('.mail > h3')->text();
+            $from = $item['email'].';'.$item['name'];
+            $sent = $this->app->vars('_sett.email').';Idees';
+
+            $this->app->mail($from, $sent, $subj, $msg->html(),$file);
+        }
+
+
+
         $res = ['error'=>false,'item'=>$item];
         return json_encode($res);
 
