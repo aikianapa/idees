@@ -5,7 +5,7 @@
         </div>
 
         <ol class="services__list">
-            <wb-foreach wb="table=pages&tpl=false" wb-filter="{
+            <wb-foreach wb="table=pages&tpl=false&sort=_sort" wb-filter="{
                 'active':'on',
                 'path':'\/services'
             }">

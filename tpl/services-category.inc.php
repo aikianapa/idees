@@ -1,5 +1,5 @@
         <ol class="services-section__list">
-            <wb-foreach wb="table=pages&tpl=false&sort=name" wb-filter="{'active':'on','path':'\/services'}">
+            <wb-foreach wb="table=pages&tpl=false&sort=_sort" wb-filter="{'active':'on','path':'\/services'}">
                 <li class="services-section__item">
                     <article class="service">
                         <h3 class="service__title">{{blocks.block_paragraph.title}}</h3>
