@@ -326,14 +326,19 @@ function setThemeButton() {
 
         if (localStorage.getItem('darkTheme')) {
           localStorage.removeItem('darkTheme');
+          let animationBlock = '';
 
-          const animationBlock = document.createElement('div');
-          animationBlock.classList.add('dark-light-animation');
           if (themeButton.classList.contains('js-theme--menu')) {
+            animationBlock = document.createElement('div');
+            document.querySelector('.modal-open').appendChild(animationBlock);
+            animationBlock.classList.add('dark-light-animation');
             animationBlock.classList.add('dark-light-animation--menu');
+          } else {
+            animationBlock = document.createElement('div');
+            animationBlock.classList.add('dark-light-animation');
+            body.append(animationBlock);
           }
           setElemPosition(animationBlock, themeButton.x, themeButton.y);
-          body.append(animationBlock);
           body.classList.add('light-button');
 
           setTimeout(() => {
@@ -353,14 +358,20 @@ function setThemeButton() {
           }, 1500);
         } else {
           localStorage.setItem('darkTheme', true);
+          let animationBlock = '';
 
-          const animationBlock = document.createElement('div');
-          animationBlock.classList.add('light-dark-animation');
           if (themeButton.classList.contains('js-theme--menu')) {
-            animationBlock.classList.add('dark-dark-animation--menu');
+            animationBlock = document.createElement('div');
+            document.querySelector('.modal-open').appendChild(animationBlock);
+            animationBlock.classList.add('light-dark-animation');
+            animationBlock.classList.add('light-dark-animation--menu');
+          } else {
+            animationBlock = document.createElement('div');
+            animationBlock.classList.add('light-dark-animation');
+            body.append(animationBlock);
           }
+
           setElemPosition(animationBlock, themeButton.x, themeButton.y);
-          body.append(animationBlock);
           body.classList.add('dark-button');
 
 
@@ -573,6 +584,7 @@ function setSlider() {
   }
 }
 
+//document.addEventListener('DOMContentLoaded', () => {
 $(document).ready(function() {
   setModal('.modal', '.form-section', '.js-form-open', '.js-form-close');
   setModal('.modal', '.menu', '.js-menu-open', '.js-menu-close');
