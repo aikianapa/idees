@@ -61,53 +61,30 @@ function mailingSubscribe() {
 
 function setFormValidation() {
   const form = document.querySelector('form');
-  form.querySelectorAll('input');
 
   if (form) {
-    //form.addEventListener('submit', (event) => {
-    //  let validateCounter = formInput.length;
-    //  console.log('submit');
+    const inputs = form.querySelectorAll('input[required]');
+    const button = form.querySelector('button[type="submit"]');
+    const fileInput = form.querySelector('input[type="file"]');
 
-    //  for (let input of formInput) {
-    //      if (!input.validity.valid === false) {
-    //        validateCounter -= 1;
-    //      }
-    //  }
-
-    //  if (validateCounter < 1) {
-    //      for (let input of formInput) {
-    //          input.value = ''
-    //      }
-    //      console.log('Done');
-    //  } else {
-    //      event.preventDefault()
-    //      console.log('Error');
-    //  }
-    //})
-
-      const inputs = form.querySelectorAll('input[required]');
-      const button = form.querySelector('button[type="submit"]');
-      const fileInput = form.querySelector('input[type="file"]');
-
-      button.addEventListener('click', () => {
-        inputs.forEach((elem) => {
-          if (!elem.value) {
-            elem.closest('.form__field-wrapper').classList.add('form__field-wrapper--warning');
-          }
-          if (elem.value) {
-            elem.closest('.form__field-wrapper').classList.remove('form__field-wrapper--warning');
-            console.log('Done');
-          }
-        });
-      });
-
-      fileInput.addEventListener('change', function() {
-        if (this.value) {
-          this.classList.add('form__input-file--attached');
-        } else {
-          this.classList.remove('form__input-file--attached');
+    button.addEventListener('click', () => {
+      inputs.forEach((elem) => {
+        if (!elem.value) {
+          elem.closest('.form__field-wrapper').classList.add('form__field-wrapper--warning');
+        }
+        if (elem.value) {
+          elem.closest('.form__field-wrapper').classList.remove('form__field-wrapper--warning');
         }
       });
+    });
+
+    fileInput.addEventListener('change', function() {
+      if (this.value) {
+        this.classList.add('form__input-file--attached');
+      } else {
+        this.classList.remove('form__input-file--attached');
+      }
+    });
   }
 
 }
