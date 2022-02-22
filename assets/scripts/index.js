@@ -584,7 +584,6 @@ function setSlider() {
   }
 }
 
-//document.addEventListener('DOMContentLoaded', () => {
 $(document).ready(function() {
   setModal('.modal', '.form-section', '.js-form-open', '.js-form-close');
   setModal('.modal', '.menu', '.js-menu-open', '.js-menu-close');
