@@ -30,7 +30,7 @@
                 </a>
 
                 <a class="header__button-link header__button-link--express" href="/special">экспресс - дизайн</a>
-                <button class="header__button-link header__button-link--theme js-theme" type="button" aria-label="Меню">
+                <button class="header__button-link header__button-link--theme js-theme js-theme--menu" type="button" aria-label="Меню">
                     <svg class="header__logo-icon" width="24" height="24" aria-hidden="true">
                         <use xlink:href="/assets/img/sprite.svg#logo"></use>
                     </svg>
