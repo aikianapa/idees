@@ -31,7 +31,7 @@
             <a class="header__button-link header__button-link--express" href="/special">экспресс - дизайн</a>
             <button class="header__button-link header__button-link--theme js-theme" type="button" aria-label="Меню">
                 <svg class="header__logo-icon" width="24" height="24" aria-hidden="true">
-                    <use xlink:href="img/sprite.svg#logo"></use>
+                    <use xlink:href="/assets/img/sprite.svg#logo"></use>
                 </svg>
             </button>
             <button class="header__button-link header__button-link--project js-form-open" type="button">Начать
