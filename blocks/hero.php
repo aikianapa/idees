@@ -10,11 +10,8 @@
 
   <h1 class="visually-hidden">{{_parent.header}}</h1>
 
-  <!--<p class="main-section__slogan">
-    {{text}}
-  </p>-->
   <p class="main-section__slogan">
-    Создаём бренды
+    {{text}}
   </p>
 
   <button class="button main-section__button js-form-open animation-target" type="button">
