@@ -19,7 +19,9 @@ class quotesClass extends cmsFormsClass {
         $item['phone'] = wbPhoneFormat($item['phone']);
     }
 
-    function submit() {
+
+    function submit()
+    {
         $res = [];
         $item = $this->app->vars('_post');
 
@@ -56,14 +58,13 @@ class quotesClass extends cmsFormsClass {
         }
         $qnum = $this->app->module('autoinc');
         $file = null;
-        foreach($item as $key => $value) {
-            if (preg_match("/^project-|source-/",$key)) {
+        foreach ($item as $key => $value) {
+            if (preg_match("/^project-|source-/", $key)) {
                 $fld = explode('-', $key);
                 isset($item[$fld[0]]) ? null : $item[$fld[0]] = [];
                 $value == 'on' ? $item[$fld[0]][] = $fld[1] : null;
                 unset($item[$key]);
-            } else if (preg_match("/^data:.*;base64,/m",$value)) {
-                
+            } elseif (preg_match("/^data:.*;base64,/m", $value)) {
                 $mime = substr($value, 0, 30);
                 $base = strpos($mime, ';base64');
                 $mime = substr($mime, 0, $base);
@@ -83,7 +84,7 @@ class quotesClass extends cmsFormsClass {
             $subj = $msg->find('.mail > h3')->text();
             $from = $item['email'].';'.$item['name'];
             $sent = $this->app->vars('_sett.email');
-            $this->app->mail('tanden.anapa@gmail.com;Tanden', 'oleg_frolov@mail.ru;Oleg', $subj, $msg->html());
+            $this->app->mail($from, $sent, $subj, $msg->html());
         }
 
         $item['_created'] = date('Y-m-d H:i:s');
@@ -91,7 +92,7 @@ class quotesClass extends cmsFormsClass {
 
         $res = ['error'=>false,'item'=>$item];
         return json_encode($res);
-
     }
+
 }
 ?>
