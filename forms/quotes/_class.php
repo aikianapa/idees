@@ -83,7 +83,7 @@ class quotesClass extends cmsFormsClass {
             $msgbody->prepend('<h3>Заявка №'.$item['number'].'</h3>');
             $subj = $msg->find('.mail > h3')->text();
             $from = $item['email'].';'.$item['name'];
-            $sent = $this->app->vars('_sett.email');
+            $sent = $this->app->vars('_sett.quote_email') > '' ? $this->app->vars('_sett.quote_email') : $this->app->vars('_sett.email');
             $this->app->mail($from, $sent, $subj, $msg->html());
         }
 
