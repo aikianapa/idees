@@ -19,7 +19,7 @@
                     <p class="services__item-description">{{text}}</p>
 
                     <ul class="services__sub-list">
-                        <wb-foreach wb="table={{_parent.attach}}&tpl=false" wb-filter="{{_parent.attach_filter}}">
+                        <wb-foreach wb="table={{_parent.attach}}&tpl=false" wb-filter="{'tags':'{{_parent.name}}' }">
                         <li class="services__sub-list-item">
                             <a class="services__item-link" href="{{_parent._parent.url}}/{{wbFurlGenerate({{name}})}}">{{name}}</a>
                         </li>
