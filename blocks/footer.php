@@ -50,7 +50,8 @@
         <wb-scripts src="idees">
             [ "/engine/modules/yonger/common/blocks/assets/slick/slick.min.js"
             ,"/assets/scripts/libs/img-comparison-slider.js" ,"/assets/scripts/libs/parallax.js"
-            ,"/assets/scripts/index.js" ]
+            ,"/assets/scripts/libs/locomotive-scroll.js", "/assets/scripts/libs/gsap.min.js"
+            ,"/assets/scripts/libs/ScrollTrigger.min.js", "/assets/scripts/index.js" ]
         </wb-scripts>
         <wb-styles src="slick">
             [ "/engine/modules/yonger/common/blocks/assets/slick/slick.min.css"

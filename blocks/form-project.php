@@ -39,7 +39,7 @@
                 </p>
             </div>
         <wb-data wb-from="_cleardata">
-            <form class="form" method="POST" action="quotes">
+            <form class="form form-project" method="POST" action="quotes">
                 <input type="hidden" name="quote" value="project">
                 <fieldset class="form__fieldset">
                     <legend class="form__legend">Тип проекта</legend>
@@ -79,8 +79,9 @@
                     <legend class="form__legend form__legend--big">Задача и контакты</legend>
 
                     <div class="form__field-wrapper">
-                        <input class="form__text-field" type="text" id="task" name="task" placeholder="описание задачи">
-                        <label class="form__text-field-label" for="task">описание задачи</label>
+                        <input class="form__text-field" type="text" id="task" required name="task" placeholder="описание задачи">
+                        <label class="form__text-field-label" for="task">описание задачи*</label>
+                        <span class="form__field-error">Пожалуйста, заполните это поле</span>
                     </div>
 
                     <div class="form__field-wrapper">
