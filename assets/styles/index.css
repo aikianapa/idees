@@ -3267,6 +3267,7 @@ ol.document__list--alpha {
    margin-bottom: 8px;
 }
 .project__content-main-image {
+   width: 100%;
    grid-column: 1/-1;
    height: 200px;
    -o-object-fit: cover;
