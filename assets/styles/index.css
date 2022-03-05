@@ -93,6 +93,10 @@ body {
    background-color: var(--bg-primary-color);
    overflow-anchor: none;
 }
+body.lock {
+   overflow: hidden !important;
+   transform: none !important;
+}
 details,
 main {
    display: block;

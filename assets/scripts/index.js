@@ -59,24 +59,7 @@ function mailingSubscribe() {
     }
 }
 
-gsap.registerPlugin(ScrollTrigger);
 
-const pageContainer = document.querySelector("body");
-
-/* SMOOTH SCROLL */
-const scroller = new LocomotiveScroll({
-    el: pageContainer,
-    smooth: true
-});
-
-scroller.on("scroll", ScrollTrigger.update);
-
-window.addEventListener("load", function () {
-
-    ScrollTrigger.addEventListener("refresh", () => scroller.update()); //locomotive-scroll
-
-    ScrollTrigger.refresh();
-});
 
 function setFormValidation() {
     const form = document.querySelector('.form');
@@ -219,15 +202,17 @@ function setPopupImages() {
         allImages.forEach((elem) => {
             elem.onclick = function () {
                 const image = this;
+                const body = document.querySelector('body')
                 const imgDataSrc = image.getAttribute('data-src');
                 const imgDataSrcSet = image.getAttribute('data-srcset');
                 const imgSrc = image.getAttribute('src');
                 const imgSrcSet = image.getAttribute('srcset');
-
                 const popupDrop = document.createElement('div');
                 popupDrop.classList.add('popup');
+                body.classList.add('lock');
                 popupDrop.onclick = () => {
                     popupDrop.remove();
+                    body.classList.remove('lock');
                 };
 
                 const button = document.createElement('button');
@@ -235,6 +220,7 @@ function setPopupImages() {
                 button.setAttribute('type', 'button');
                 button.onclick = (event) => {
                     event.preventDefault();
+                    body.classList.remove('lock');
                     popupDrop.remove();
                 };
 
@@ -602,6 +588,25 @@ function setSlider() {
         }
     }
 }
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const pageContainer = document.querySelector(".page__body");
+
+// /* SMOOTH SCROLL */
+// const scroller = new LocomotiveScroll({
+//     el: pageContainer,
+//     smooth: true
+// });
+
+// scroller.on("scroll", ScrollTrigger.update);
+
+// window.addEventListener("load", function () {
+
+//     ScrollTrigger.addEventListener("refresh", () => scroller.update()); //locomotive-scroll
+
+//     ScrollTrigger.refresh();
+// });
 
 $(document).ready(function () {
     setModal('.modal', '.form-section', '.js-form-open', '.js-form-close');
