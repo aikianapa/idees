@@ -5,7 +5,7 @@
                         <h3 class="service__title">{{blocks.block_paragraph.title}}</h3>
                         <svg class="service__icon" width="180" height="60" aria-hidden="true">
                             <use xlink:href="/assets/img/sprite.svg#{{name}}"></use>
-                        </svg>
+                        </svg> 
                         <p class="service__description">{{blocks.block_paragraph.text}}</p>
                         <a class="service__link" href="/services/{{wbFurlGenerate({{name}})}}">Подробнее</a>
                     </article>

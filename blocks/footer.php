@@ -45,7 +45,7 @@
             <use xlink:href="/assets/img/sprite.svg#arrow-top"></use>
         </svg>
     </button>
-    <load>
+    <load> 
         <wb-snippet name="wbapp"></wb-snippet>
         <wb-scripts src="idees">
             [ "/engine/modules/yonger/common/blocks/assets/slick/slick.min.js"

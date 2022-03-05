@@ -217,6 +217,7 @@ function setPopupImages() {
 
                 const button = document.createElement('button');
                 button.classList.add('popup__button');
+                button.innerHTML = '<svg class="header__cross-icon" width="24" height="24" aria-hidden="true"><use xlink:href="/assets/img/sprite.svg#menu-cross"></use></svg>'
                 button.setAttribute('type', 'button');
                 button.onclick = (event) => {
                     event.preventDefault();
