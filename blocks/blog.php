@@ -75,7 +75,7 @@
         <ul class="blog__list" id="articlesList">
           <wb-foreach wb="table=blog&size=12&bind=pages.blog&_more=true:ещё" wb-filter="{'_id':{'$ne':'{{_var.first}}'}}">
             <li class="blog__item">
-              <wb-var spec="article--special" wb-if="'{{spec}}'=='on'" else="" />
+              <wb-var spec="article--special" href="/blog/{{wbFurlGenerate({{name}})}}" wb-if="'{{spec}}'=='on'" else="" />
               <article class="article {{_var.spec}}">
                 <wb-foreach wb="from=tags&tpl=false">
                   <span class="article__tag">
@@ -83,10 +83,10 @@
                   </span>
                 </wb-foreach>
 
-                <div class="article__info">
+                <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__info">
                   <time class="article__date" datetime="{{_created}}">{{datetext({{_created}})}}</time>
-                  <span class="article__views" wb="module=autoinc&table=blog&field={{id}}&ajax=true"></span>
-                </div>
+                  <span class="article__views" wb="module=autoinc&table=blog&field={{id}}"></span>
+                </a>
 
                 <h3 class="article__title">
                   <a  wb-if="'{{spec}}'==''" class="button article__link" href="/blog/{{wbFurlGenerate({{name}})}}">
@@ -97,10 +97,12 @@
                   </a>
                 </h3>
 
-                <p class="article__description" wb-if="'{{spec}}'==''">{{descr}}</p>
+                <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__description" wb-if="'{{spec}}'==''">{{descr}}</a>
 
+                <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__img">
                 <img class="article__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}" data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
                   alt="{{name}}">
+                </a>
 
                 <a class="button article__link" href="/blog/{{wbFurlGenerate({{name}})}}"  wb-if="'{{spec}}'==''">
                   <span class="button__icon-wrapper">
