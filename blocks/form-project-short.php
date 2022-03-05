@@ -30,8 +30,8 @@
             </div>
 
             <div class="form__field-wrapper">
-                <input class="form__text-field" type="text" id="shrot-form-task" name="shrot-form-task" placeholder="описание задачи">
-                <label class="form__text-field-label" for="shrot-form-task">описание задачи</label>
+                <input class="form__text-field" type="text" id="shrot-form-task" required name="shrot-form-task" placeholder="описание задачи*">
+                <label class="form__text-field-label" for="shrot-form-task">описание задачи*</label>
             </div>
 
             <div class="form__row form__row--bottom form__row--submit">

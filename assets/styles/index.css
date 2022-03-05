@@ -4364,6 +4364,7 @@ ol.document__list--alpha {
 }
 .article-page__main-image {
    display: block;
+   width: 100%;
    height: 200px;
    margin-bottom: 80px;
    -o-object-fit: cover;

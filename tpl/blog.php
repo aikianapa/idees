@@ -47,17 +47,19 @@
               </span>
             </wb-foreach>
 
-            <div class="article__info">
+            <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__info">
               <time class="article__date" datetime="{{_created}}">{{datetext({{_created}})}}</time>
               <span class="article__views" wb="module=autoinc&table=blog&field={{id}}"></span>
-            </div>
+            </a>
 
-            <h3 class="article__title">{{name}}</h3>
+            <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__title">{{name}}</a>
 
-            <p class="article__description">{{descr}}</p>
+            <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__description">{{descr}}</a>
 
-            <img class="article__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}" data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
+            <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__img">
+              <img class="article__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}" data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
               alt="{{name}}">
+            </a>
 
             <a class="button article__link" href="/blog/{{wbFurlGenerate({{name}})}}">
               <span class="button__icon-wrapper">
@@ -87,17 +89,19 @@
                 </span>
               </wb-foreach>
 
-              <div class="article__info">
+              <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__info">
                 <time class="article__date" datetime="{{_created}}">{{datetext({{_created}})}}</time>
                 <span class="article__views" wb="module=autoinc&table=blog&field={{id}}"></span>
-              </div>
+              </a>
 
-              <h3 class="article__title">{{name}}</h3>
+              <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__title">{{name}}</a>
 
-              <p class="article__description">{{descr}}</p>
+              <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__description">{{descr}}</a>
 
-              <img class="article__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}" data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
+              <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__img">
+                <img class="article__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}" data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
                 alt="{{name}}">
+              </a>
 
               <a class="button article__link" href="/blog/{{wbFurlGenerate({{name}})}}">
                 <span class="button__icon-wrapper">

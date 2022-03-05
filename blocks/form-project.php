@@ -79,7 +79,7 @@
                     <legend class="form__legend form__legend--big">Задача и контакты</legend>
 
                     <div class="form__field-wrapper">
-                        <input class="form__text-field" type="text" id="task" required name="task" placeholder="описание задачи">
+                        <input class="form__text-field" type="text" id="task" required name="task" placeholder="описание задачи*">
                         <label class="form__text-field-label" for="task">описание задачи*</label>
                         <span class="form__field-error">Пожалуйста, заполните это поле</span>
                     </div>
