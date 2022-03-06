@@ -5,6 +5,12 @@ class blogClass extends cmsFormsClass
         $this->app->shadow('/cms/ajax/form/pages/list');
     }
 
+    function beforeItemSave(&$item)
+    {
+        if (!isset($item['_created'])) $item['_created'] = date('Y-m-d H:i:s');
+    }
+
+
     function beforeItemShow(&$item) {
         $this->similar($item);
     }

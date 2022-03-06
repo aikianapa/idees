@@ -43,7 +43,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm-2">Разделы</label>
+                                <label class="col-sm-2">Тэги</label>
                                 <div class="col-sm-10">
                                     <wb-data wb="table=catalogs&item=projects&field=tree">
                                         <select name="tags" class="form-control" wb-select2 multiple>
@@ -57,7 +57,7 @@
                                     </wb-data>
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <!--div class="form-group row">
                                 <label class="col-sm-2">Похожие</label>
                                 <div class="col-sm-10">
                                     <select name="similar" class="form-control" wb-select2 multiple>
@@ -69,7 +69,7 @@
                                         </wb-foreach>
                                     </select>
                                 </div>
-                            </div>
+                            </div-->
                             <div class="row">
                                 <div class="col-12">
                                     <wb-module wb="module=editor" name="text" />
