@@ -36,7 +36,7 @@
 
             <aside class="vacancy__contacts">
                 <div>
-                    <wb-data wb="table=pages" wb-filter="name=vacancy">
+                    <wb-data wb="table=pages" wb-filter="name=vacancies">
                         <wb-foreach wb="from=blocks&tpl=false&limit=1" wb-filter="{'name':'block-vacancy'}">
                             <h2 class="vacancy__contacts-title" wb-if="'{{title}}'==''">Контакты отдела HR:</h2>
                             <h2 class="vacancy__contacts-title" wb-if="'{{title}}'> ''">{{title}}</h2>
