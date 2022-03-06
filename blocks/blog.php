@@ -25,7 +25,7 @@
       </div>
 
       <div class="blog__content">
-        <wb-foreach wb="table=blog&tpl=false&limit=1">
+        <wb-foreach wb="table=blog&tpl=false&limit=1&sort=_created:d">
           <article class="article article--main">
                 <wb-foreach wb="from=tags&tpl=false">
                   <span class="article__tag">
@@ -73,7 +73,7 @@
         </section>
 
         <ul class="blog__list" id="articlesList">
-          <wb-foreach wb="table=blog&size=12&bind=pages.blog&_more=true:ещё" wb-filter="{'_id':{'$ne':'{{_var.first}}'}}">
+          <wb-foreach wb="table=blog&size=12&bind=pages.blog&sort=_created:d&_more=true:ещё" wb-filter="{'_id':{'$ne':'{{_var.first}}'}}">
             <li class="blog__item">
               <wb-var spec="article--special" href="/blog/{{wbFurlGenerate({{name}})}}" wb-if="'{{spec}}'=='on'" else="" />
               <article class="article {{_var.spec}}">
