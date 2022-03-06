@@ -10,7 +10,7 @@
         </div>
     </nav>
 
-    <div class="yonger-nested mb-1">
+    <div class="yonger-nested mb-1 col">
         <span class="bg-light">
             <div class="header p-2">
                 <span clsss="row">
@@ -27,6 +27,7 @@
             <thead>
                 <tr>
                     <td>&nbsp;</td>
+                    <td>Дата</td>
                     <td>Наименование</td>
                     <td>Теги</td>
                     <td class="text-right">Действия</td>
@@ -36,7 +37,7 @@
                 <wb-foreach wb="{'ajax':'/api/query/blog/',
                             'render':'server',
                             'bind':'cms.list.blog',
-                            'sort':'date:d',
+                            'sort':'_created:d',
                             'size':'{{_sett.page_size}}',
                             'filter': {'_site':'{{_sett.site}}'}
                 }">
@@ -44,10 +45,13 @@
                         <td data-ajax="{'url':'/cms/ajax/form/blog/edit/{{_id}}','append':'modals'}" class="cursor-pointer">
                             <img data-src="/thumbc/50x30/src{{cover.0.img}}" class="img-fluid rounded" />
                         </td>
-                        <td class="w-50">
+                        <td>
+                            {{wbDate("d.m.Y H:i",{{_created}})}}
+                        </td>
+                        <td class="w-30">
                             {{name}}
                         </td>
-                        <td class="w-25">
+                        <td class="w-20">
                             <wb-foreach wb-from="tags">
                                 <small class="d-flex-inline p-1 mr-1 bg-light text-dark"
                                     wb-if="'{{_val}}'>''">{{_val}}</small>
