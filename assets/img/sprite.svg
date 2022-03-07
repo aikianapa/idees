@@ -8,6 +8,10 @@
     <path d="M19.94 5L19 4.06l-7 7L4.94 4 4 4.94 11.06 12 4 19.06l.94.94L12 12.94 19.06 20l.94-.94L12.94 12l7-7z"/>
   </symbol>
 
+  <symbol id="popup-cross" viewBox="0 0 24 24">
+    <path fill="var(--white)" d="M19.94 5L19 4.06l-7 7L4.94 4 4 4.94 11.06 12 4 19.06l.94.94L12 12.94 19.06 20l.94-.94L12.94 12l7-7z"/>
+  </symbol>
+
   <symbol id="arrow-down" viewBox="0 0 24 24" fill="none">
     <path stroke-width="1.5" d="M12 4v16m0 0l6-7.11M12 20l-6-7.11"/>
   </symbol>

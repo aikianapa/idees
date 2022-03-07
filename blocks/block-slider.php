@@ -1,14 +1,18 @@
 <view>
 <div class="brand__slider-container js-slider">
     <div class="container">
-      <ul class="brand__slider js-slider-list">
-        <wb-foreach wb="from=list&tpl=false">
-            <li class="brand__slider-item">
-            <span class="brand__slider-item-number">{{sprintf("%02d", {{_ndx}})}}</span>
-            <span>{{text}}</span>
-            </li>
-        </wb-foreach>
-      </ul>
+      <div class="brand__swiper">
+        <ul class="brand__slider swiper-container js-slider-list">
+          <div class="brand__slider-wrapper swiper-wrapper">
+            <wb-foreach wb="from=list&tpl=false">
+                <li class="brand__slider-item swiper-slide">
+                <span data-swiper-parallax-opacity="0" data-swiper-parallax="-100" data-swiper-parallax-duration="1000"  class="brand__slider-item-number">{{sprintf("%02d", {{_ndx}})}}</span>
+                <span data-swiper-parallax-opacity="0.2" data-swiper-parallax-duration="1000" data-swiper-parallax="-400">{{text}}</span>
+                </li>
+            </wb-foreach>
+          </div>
+        </ul>
+      </div>
 
       <div class="brand__slider-buttons">
         <button class="button brand__slider-button js-slider-button--prev" type="button" aria-label="Назад">

@@ -9,7 +9,7 @@
                 <button class="button" type="button">
                     <span class="button__icon-wrapper">
                         <svg class="button__icon button__icon--fill" width="16" height="16" aria-hidden="true">
-                            <use xlink:href="/img/sprite.svg#refresh"></use>
+                            <use xlink:href="/assets/img/sprite.svg#refresh"></use>
                         </svg>
                     </span>
 
@@ -19,7 +19,7 @@
                 <a class="button" href="/">
                     <span class="button__icon-wrapper">
                         <svg class="button__icon" width="24" height="24" aria-hidden="true">
-                            <use xlink:href="/img/sprite.svg#arrow-right"></use>
+                            <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
                         </svg>
                     </span>
 

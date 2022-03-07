@@ -44,6 +44,7 @@
         <svg class="up-button__icon" width="28" height="28" aria-hidden="true">
             <use xlink:href="/assets/img/sprite.svg#arrow-top"></use>
         </svg>
+        <span class="up-button__text">Наверх</span>
     </button>
     <load> 
         <wb-snippet name="wbapp"></wb-snippet>
@@ -51,7 +52,8 @@
             [ "/engine/modules/yonger/common/blocks/assets/slick/slick.min.js"
             ,"/assets/scripts/libs/img-comparison-slider.js" ,"/assets/scripts/libs/parallax.js"
             ,"/assets/scripts/libs/locomotive-scroll.js", "/assets/scripts/libs/gsap.min.js"
-            ,"/assets/scripts/libs/ScrollTrigger.min.js", "/assets/scripts/index.js" ]
+            ,"/assets/scripts/libs/ScrollTrigger.min.js", "/assets/scripts/libs/dynamic.js"
+            ,"/assets/scripts/libs/swiper-bundle.min.js", "/assets/scripts/index.js" ]
         </wb-scripts>
         <wb-styles src="slick">
             [ "/engine/modules/yonger/common/blocks/assets/slick/slick.min.css"

@@ -2,6 +2,7 @@
 <section class="form-section modal">
     <div class="modal__wrap">
         <header class="header header--form container">
+            <div class="header--form__left">
             <a class="header__logo-link" href="/">
                 <svg class="header__logo-image" width="157" height="50" fill="none" viewbox="0 0 157 50">
                     <path d="M22.14 15.27a10.67 10.67 0 0 0-9.4-5.13C5.42 10.14 0 16.18 0 23.64c0 7.47 5.41 13.52 12.75 13.52 4.23 0 7.43-2 9.39-5.14v4.5h4.89V10.78h-4.89v4.5Zm-8.6 17.12a8.66 8.66 0 0 1-8.58-8.74 8.67 8.67 0 0 1 8.58-8.74 8.67 8.67 0 0 1 8.6 8.74 8.66 8.66 0 0 1-8.6 8.74Z"></path>
@@ -14,6 +15,8 @@
             </a>
 
             <a class="header__button-link header__button-link--express" href="/special">экспресс - дизайн</a>
+            </div>
+            <div class="header--form__right">
             <button class="header__button-link header__button-link--theme js-theme js-theme--menu" type="button" aria-label="Меню">
                 <svg class="header__logo-icon" width="24" height="24" aria-hidden="true">
                     <use xlink:href="/assets/img/sprite.svg#logo"></use>
@@ -25,6 +28,7 @@
                     <use xlink:href="/assets/img/sprite.svg#menu-cross"></use>
                 </svg>
             </button>
+            </div>
 
         </header>
 

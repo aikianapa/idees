@@ -66,37 +66,59 @@
         </div>
 
         <section class="project__similar container">
-            <h2 class="page__section-title">Похожие проекты</h2>
+            <div class="project__similar-top block-button-arrows">
+                <h2 class="page__section-title">Похожие проекты</h2>
+                <div class="project__slider-buttons">
+                    <button class="button project__slider-button js-project-slider-button--prev" type="button" aria-label="Назад">
+                    <span class="button__icon-wrapper">
+                        <svg class="button__icon" width="24" height="24">
+                        <use xlink:href="/assets/img/sprite.svg#arrow-left"></use>
+                        </svg>
+                    </span>
+                    </button>
 
-            <ul class="project__similar-list">
-                <wb-foreach wb="from=similar&tpl=false&limit=2&rand=true">
-                    <wb-data wb="table=projects&item={{_val}}">
-                        <wb-var link="/projects/{{wbFurlGenerate({{name}})}}"/>
-                <li class="project__similar-item">
-                    <article class="case">
-                        <a class="case__title-link-wrapper" href="{{_var.link}}">
-                            <h3 class="case__title">{{name}}</h3>
-                            <p class="case__description">{{descr}}</p>
-                        </a>
-                        <a class="case__image-wrapper" href="{{_var.link}}">
-                            <img class="case__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}"
-                                data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x" alt="{{name}}">
-                        </a>
+                    <button class="button project__slider-button js-project-slider-button--next" type="button" aria-label="Вперед">
+                    <span class="button__icon-wrapper">
+                        <svg class="button__icon" width="24" height="24">
+                        <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
+                        </svg>
+                    </span>
+                    </button>
+                </div>
+            </div>
+            <div class="project__similar-swiper">
+                <ul class="project__similar-list swiper-container">
+                    <div class="project__similar-slider-wrapper swiper-wrapper">
+                        <wb-foreach wb="from=similar&tpl=false&limit=2&rand=true">
+                            <wb-data wb="table=projects&item={{_val}}">
+                                <wb-var link="/projects/{{wbFurlGenerate({{name}})}}"/>
+                        <li class="project__similar-item swiper-slide">
+                            <article class="case">
+                                <a class="case__title-link-wrapper" href="{{_var.link}}">
+                                    <h3 class="case__title">{{name}}</h3>
+                                    <p class="case__description">{{descr}}</p>
+                                </a>
+                                <a class="case__image-wrapper" href="{{_var.link}}">
+                                    <img class="case__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}"
+                                        data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x" alt="{{name}}">
+                                </a>
 
-                        <a class="button case__link" href="{{_var.link}}">
-                            <span class="button__icon-wrapper">
-                                <svg class="button__icon" width="24" height="24" aria-hidden="true">
-                                    <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
-                                </svg>
-                            </span>
+                                <a class="button case__link" href="{{_var.link}}">
+                                    <span class="button__icon-wrapper">
+                                        <svg class="button__icon" width="24" height="24" aria-hidden="true">
+                                            <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </span>
 
-                            <span class="button__text">посмотреть кейс</span>
-                        </a>
-                    </article>
-                </li>
-                </wb-data>
-                </wb-foreach>
-            </ul>
+                                    <span class="button__text">посмотреть кейс</span>
+                                </a>
+                            </article>
+                        </li>
+                        </wb-data>
+                        </wb-foreach>
+                    </div>
+                </ul>
+            </div>
         </section>
 
         <wb-module wb="module=yonger&mode=render&view=form-project-short" />

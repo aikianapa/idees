@@ -217,7 +217,7 @@ function setPopupImages() {
 
                 const button = document.createElement('button');
                 button.classList.add('popup__button');
-                button.innerHTML = '<svg class="header__cross-icon" width="24" height="24" aria-hidden="true"><use xlink:href="/assets/img/sprite.svg#menu-cross"></use></svg>'
+                button.innerHTML = '<svg class="popup__cross-icon" width="24" height="24" aria-hidden="true"><use xlink:href="/assets/img/sprite.svg#popup-cross"></use></svg>'
                 button.setAttribute('type', 'button');
                 button.onclick = (event) => {
                     event.preventDefault();
@@ -406,193 +406,193 @@ function setThemeButton() {
     }
 }
 
-function setFeedbackSlider() {
-    const $slider = document.querySelector('.js-feedback-slider');
+// function setFeedbackSlider() {
+//     const $slider = document.querySelector('.js-feedback-slider');
 
-    if ($slider) {
-        const activeSlides = 1;
-        let $sliderList = $slider.querySelector('.js-feedback-slider-list');
+//     if ($slider) {
+//         const activeSlides = 1;
+//         let $sliderList = $slider.querySelector('.js-feedback-slider-list');
 
-        let isTransitionActive;
-        let slideWidth = $sliderList.children[1].getBoundingClientRect().left - $sliderList.children[0].getBoundingClientRect().left;
+//         let isTransitionActive;
+//         let slideWidth = $sliderList.children[1].getBoundingClientRect().left - $sliderList.children[0].getBoundingClientRect().left;
 
-        setActiveSlides($sliderList, activeSlides);
+//         setActiveSlides($sliderList, activeSlides);
 
-        window.addEventListener('resize', () => {
-            slideWidth = $sliderList.children[1].getBoundingClientRect().left - $sliderList.children[0].getBoundingClientRect().left;
-        });
+//         window.addEventListener('resize', () => {
+//             slideWidth = $sliderList.children[1].getBoundingClientRect().left - $sliderList.children[0].getBoundingClientRect().left;
+//         });
 
-        $slider.addEventListener('click', (evt) => {
-            if (evt.target.closest('.js-feedback-slider-button--next')) {
-                next();
-            }
-        });
+//         $slider.addEventListener('click', (evt) => {
+//             if (evt.target.closest('.js-feedback-slider-button--next')) {
+//                 next();
+//             }
+//         });
 
-        $slider.addEventListener('transitionend', () => {
-            if (isTransitionActive) {
-                removeSlide();
-            }
-        });
+//         $slider.addEventListener('transitionend', () => {
+//             if (isTransitionActive) {
+//                 removeSlide();
+//             }
+//         });
 
-        /*eslint-disable no-inner-declarations */
+//         /*eslint-disable no-inner-declarations */
 
-        function next() {
-            isTransitionActive = true;
-            const nextSlide = $sliderList.firstElementChild.cloneNode(true);
-            nextSlide.classList.remove('active');
+//         function next() {
+//             isTransitionActive = true;
+//             const nextSlide = $sliderList.firstElementChild.cloneNode(true);
+//             nextSlide.classList.remove('active');
 
-            $sliderList.append(nextSlide);
-            $sliderList.style.transform = `translateX(-${slideWidth}px)`;
+//             $sliderList.append(nextSlide);
+//             $sliderList.style.transform = `translateX(-${slideWidth}px)`;
 
-            $sliderList = $slider.querySelector('.js-feedback-slider-list');
-            setActiveSlides($sliderList, activeSlides);
-        }
+//             $sliderList = $slider.querySelector('.js-feedback-slider-list');
+//             setActiveSlides($sliderList, activeSlides);
+//         }
 
-        function removeSlide() {
-            $sliderList.firstElementChild.remove();
+//         function removeSlide() {
+//             $sliderList.firstElementChild.remove();
 
-            $sliderList.style.transition = 'none';
-            $sliderList.style.transform = 'translateX(0)';
-            isTransitionActive = false;
-            setTimeout(() => {
-                $sliderList.style.transition = 'transform 0.5s';
-            }, 50);
+//             $sliderList.style.transition = 'none';
+//             $sliderList.style.transform = 'translateX(0)';
+//             isTransitionActive = false;
+//             setTimeout(() => {
+//                 $sliderList.style.transition = 'transform 0.5s';
+//             }, 50);
 
-            $sliderList = $slider.querySelector('.js-feedback-slider-list');
-            setActiveSlides($sliderList, activeSlides);
-        }
+//             $sliderList = $slider.querySelector('.js-feedback-slider-list');
+//             setActiveSlides($sliderList, activeSlides);
+//         }
 
-        function setActiveSlides(list, number) {
-            for (let i = 0; i < number; i++) {
-                list.children[i].classList.add('active');
-            }
-        }
-    }
-}
+//         function setActiveSlides(list, number) {
+//             for (let i = 0; i < number; i++) {
+//                 list.children[i].classList.add('active');
+//             }
+//         }
+//     }
+// }
 
-function setSlider() {
-    const $slider = document.querySelector('.js-slider');
+// function setSlider() {
+//     const $slider = document.querySelector('.js-slider');
 
-    if ($slider) {
-        const activeSlides = window.innerWidth >= 860 ? 4 : 1;
+//     if ($slider) {
+//         const activeSlides = window.innerWidth >= 860 ? 4 : 1;
 
-        let $sliderList = $slider.querySelector('.js-slider-list');
+//         let $sliderList = $slider.querySelector('.js-slider-list');
 
-        let direction;
-        let clickPrev = prev;
-        let clickNext = next;
-        let slideWidth = $sliderList.children[1].getBoundingClientRect().left - $sliderList.children[0].getBoundingClientRect().left;
+//         let direction;
+//         let clickPrev = prev;
+//         let clickNext = next;
+//         let slideWidth = $sliderList.children[1].getBoundingClientRect().left - $sliderList.children[0].getBoundingClientRect().left;
 
-        setActiveSlides($sliderList, activeSlides);
-
-
-        window.addEventListener('resize', () => {
-            slideWidth = $sliderList.children[1].getBoundingClientRect().left - $sliderList.children[0].getBoundingClientRect().left;
-            setActiveSlides($sliderList, activeSlides);
-        });
-
-        $slider.addEventListener('click', (evt) => {
-            if (evt.target.closest('.js-slider-button--prev')) {
-                clickPrev();
-            }
-            if (evt.target.closest('.js-slider-button--next')) {
-                clickNext();
-            }
-        });
-
-        $slider.addEventListener('transitionend', () => {
-            if (direction) {
-                removeSlide();
-            }
-        });
-
-        /*eslint-disable no-inner-declarations */
-
-        function prev() {
-            direction = 1;
-            if (clickPrev === null) {
-                return;
-            } else {
-                clickPrev = null;
-                $sliderList.style.transition = 'none';
-                $sliderList.style.transform = `translateX(-${slideWidth}px)`;
-
-                const nextSlide = $sliderList.lastElementChild.cloneNode(true);
-                nextSlide.classList.add('active');
-                $sliderList.prepend(nextSlide);
-                setActiveSlides($sliderList, activeSlides);
+//         setActiveSlides($sliderList, activeSlides);
 
 
-                setTimeout(() => {
-                    $sliderList.style.transition = '0.5s';
-                    $sliderList.style.transform = 'translateX(0)';
+//         window.addEventListener('resize', () => {
+//             slideWidth = $sliderList.children[1].getBoundingClientRect().left - $sliderList.children[0].getBoundingClientRect().left;
+//             setActiveSlides($sliderList, activeSlides);
+//         });
 
-                }, 50);
+//         $slider.addEventListener('click', (evt) => {
+//             if (evt.target.closest('.js-slider-button--prev')) {
+//                 clickPrev();
+//             }
+//             if (evt.target.closest('.js-slider-button--next')) {
+//                 clickNext();
+//             }
+//         });
 
-                $sliderList = $slider.querySelector('.js-slider-list');
-            }
-        }
+//         $slider.addEventListener('transitionend', () => {
+//             if (direction) {
+//                 removeSlide();
+//             }
+//         });
 
-        function next() {
-            direction = -1;
-            if (clickNext === null) {
-                return;
-            } else {
-                const nextSlide = $sliderList.firstElementChild.cloneNode(true);
-                nextSlide.classList.remove('active');
+//         /*eslint-disable no-inner-declarations */
 
-                $sliderList.append(nextSlide);
-                $sliderList.style.transform = `translateX(-${slideWidth}px)`;
-                setActiveSlides($sliderList, activeSlides);
+//         function prev() {
+//             direction = 1;
+//             if (clickPrev === null) {
+//                 return;
+//             } else {
+//                 clickPrev = null;
+//                 $sliderList.style.transition = 'none';
+//                 $sliderList.style.transform = `translateX(-${slideWidth}px)`;
 
-                $sliderList = $slider.querySelector('.js-slider-list');
-                clickNext = null;
-            }
-        }
+//                 const nextSlide = $sliderList.lastElementChild.cloneNode(true);
+//                 nextSlide.classList.add('active');
+//                 $sliderList.prepend(nextSlide);
+//                 setActiveSlides($sliderList, activeSlides);
 
-        function removeSlide() {
 
-            if (direction === -1) {
-                $sliderList.firstElementChild.remove();
+//                 setTimeout(() => {
+//                     $sliderList.style.transition = '0.5s';
+//                     $sliderList.style.transform = 'translateX(0)';
 
-                $sliderList.style.transition = 'none';
-                $sliderList.style.transform = 'translateX(0)';
-                direction = undefined;
-                setTimeout(() => {
-                    $sliderList.style.transition = '0.5s';
-                    clickNext = next;
-                }, 50);
+//                 }, 50);
 
-            } else if (direction === 1) {
-                $sliderList.lastElementChild.remove();
-                clickPrev = prev;
-                direction = undefined;
-            }
+//                 $sliderList = $slider.querySelector('.js-slider-list');
+//             }
+//         }
 
-            $sliderList = $slider.querySelector('.js-slider-list');
-            setActiveSlides($sliderList, activeSlides);
-        }
+//         function next() {
+//             direction = -1;
+//             if (clickNext === null) {
+//                 return;
+//             } else {
+//                 const nextSlide = $sliderList.firstElementChild.cloneNode(true);
+//                 nextSlide.classList.remove('active');
 
-        function setActiveSlides(list, number) {
-            if (window.innerWidth < 1700) {
-                for (let i = 0; i < list.childElementCount; i++) {
-                    list.children[i].classList.add('active');
-                }
-            } else {
-                for (let i = 0; i < list.childElementCount; i++) {
-                    list.children[i].classList.remove('active');
-                    if (i < number) {
-                        list.children[i].classList.add('active');
-                    }
-                }
-            }
-        }
-    }
-}
+//                 $sliderList.append(nextSlide);
+//                 $sliderList.style.transform = `translateX(-${slideWidth}px)`;
+//                 setActiveSlides($sliderList, activeSlides);
+
+//                 $sliderList = $slider.querySelector('.js-slider-list');
+//                 clickNext = null;
+//             }
+//         }
+
+//         function removeSlide() {
+
+//             if (direction === -1) {
+//                 $sliderList.firstElementChild.remove();
+
+//                 $sliderList.style.transition = 'none';
+//                 $sliderList.style.transform = 'translateX(0)';
+//                 direction = undefined;
+//                 setTimeout(() => {
+//                     $sliderList.style.transition = '0.5s';
+//                     clickNext = next;
+//                 }, 50);
+
+//             } else if (direction === 1) {
+//                 $sliderList.lastElementChild.remove();
+//                 clickPrev = prev;
+//                 direction = undefined;
+//             }
+
+//             $sliderList = $slider.querySelector('.js-slider-list');
+//             setActiveSlides($sliderList, activeSlides);
+//         }
+
+//         function setActiveSlides(list, number) {
+//             if (window.innerWidth < 1700) {
+//                 for (let i = 0; i < list.childElementCount; i++) {
+//                     list.children[i].classList.add('active');
+//                 }
+//             } else {
+//                 for (let i = 0; i < list.childElementCount; i++) {
+//                     list.children[i].classList.remove('active');
+//                     if (i < number) {
+//                         list.children[i].classList.add('active');
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
 // gsap.registerPlugin(ScrollTrigger);
 
-// const pageContainer = document.querySelector(".page__body");
+// const pageContainer = document.querySelector("body");
 
 // /* SMOOTH SCROLL */
 // const scroller = new LocomotiveScroll({
@@ -609,6 +609,65 @@ function setSlider() {
 //     ScrollTrigger.refresh();
 // });
 
+new Swiper('.brand__slider', {
+    slidesPerGroup: 1,
+    loop: true,
+    navigation: {
+        nextEl: '.brand__slider-button.js-slider-button--next',
+        prevEl: '.brand__slider-button.js-slider-button--prev'
+    },
+    speed: 1200,
+    parallax: true,
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        860: {
+            spaceBetween: 40,
+            slidesPerView: 4,
+        }
+    },
+});
+
+new Swiper('.feedback-section__list', {
+    slidesPerGroup: 1,
+    loop: true,
+    navigation: {
+        nextEl: '.js-feedback-slider-button--next'
+    },
+    speed: 1200,
+    parallax: true,
+    autoHeight: true,
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        860: {
+            spaceBetween: 170,
+            slidesPerView: 1.25,
+        }
+    },
+});
+
+new Swiper('.project__similar-list', {
+    slidesPerGroup: 1,
+    loop: true,
+    navigation: {
+        nextEl: '.js-project-slider-button--next',
+        prevEl: '.js-project-slider-button--prev'
+    },
+    speed: 1200,
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        992: {
+            slidesPerView: 2,
+            spaceBetween: 40
+        }
+    },
+});
+
 $(document).ready(function () {
     setModal('.modal', '.form-section', '.js-form-open', '.js-form-close');
     setModal('.modal', '.menu', '.js-menu-open', '.js-menu-close');
@@ -623,8 +682,8 @@ $(document).ready(function () {
     setCollapseElements('.collapse-item__title-wrapper', '.collapse-item', '.collapse-item__button', '.collapse-item__container');
     setVideo();
     setThemeButton();
-    setFeedbackSlider();
-    setSlider();
+    // setFeedbackSlider();
+    // setSlider();
 
     const scene = document.getElementById('scene');
 
