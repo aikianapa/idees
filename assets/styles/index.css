@@ -3167,6 +3167,7 @@ body:not(.dark) .main-section__scene-video-white {
 .feedback-section__item {
    flex-shrink: 0;
    width: 100%;
+   transition: 0.3s;
 }
 @media (min-width: 860px) {
    .feedback-section__item {
@@ -3174,6 +3175,11 @@ body:not(.dark) .main-section__scene-video-white {
       padding: 10px;
    }
 }
+.feedback-section__item.swiper-slide-next {
+   filter: blur(8px);
+   transition: 0.3s;
+}
+
 .feedback {
    display: grid;
    grid-template-columns: 1fr;
