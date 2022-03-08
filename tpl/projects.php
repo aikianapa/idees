@@ -90,30 +90,30 @@
                 <ul class="project__similar-list swiper-container">
                     <div class="project__similar-slider-wrapper swiper-wrapper">
                         <wb-foreach wb="from=similar&tpl=false&limit=2&rand=true">
-                            <wb-data wb="table=projects&item={{_val}}">
-                                <wb-var link="/projects/{{wbFurlGenerate({{name}})}}"/>
-                        <li class="project__similar-item swiper-slide">
-                            <article class="case">
-                                <a class="case__title-link-wrapper" href="{{_var.link}}">
-                                    <h3 class="case__title">{{name}}</h3>
-                                    <p class="case__description">{{descr}}</p>
-                                </a>
-                                <a class="case__image-wrapper" href="{{_var.link}}">
-                                    <img class="case__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}"
-                                        data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x" alt="{{name}}">
-                                </a>
+                        <wb-data wb="table=projects&item={{_val}}">
+                        <wb-var link="/projects/{{wbFurlGenerate({{name}})}}"/>
+                            <li class="project__similar-item swiper-slide">
+                                <article class="case">
+                                    <a class="case__title-link-wrapper" href="{{_var.link}}">
+                                        <h3 class="case__title">{{name}}</h3>
+                                        <p class="case__description">{{descr}}</p>
+                                    </a>
+                                    <a class="case__image-wrapper" href="{{_var.link}}">
+                                        <img class="case__image" width="790" height="500" data-src="/thumbc/790x500/src{{cover.0.img}}"
+                                            data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x" alt="{{name}}">
+                                    </a>
 
-                                <a class="button case__link" href="{{_var.link}}">
-                                    <span class="button__icon-wrapper">
-                                        <svg class="button__icon" width="24" height="24" aria-hidden="true">
-                                            <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
-                                        </svg>
-                                    </span>
+                                    <a class="button case__link" href="{{_var.link}}">
+                                        <span class="button__icon-wrapper">
+                                            <svg class="button__icon" width="24" height="24" aria-hidden="true">
+                                                <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </span>
 
-                                    <span class="button__text">посмотреть кейс</span>
-                                </a>
-                            </article>
-                        </li>
+                                        <span class="button__text">посмотреть кейс</span>
+                                    </a>
+                                </article>
+                            </li>
                         </wb-data>
                         </wb-foreach>
                     </div>

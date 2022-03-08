@@ -651,7 +651,6 @@ new Swiper('.feedback-section__list', {
 
 new Swiper('.project__similar-list', {
     slidesPerGroup: 1,
-    loop: true,
     navigation: {
         nextEl: '.js-project-slider-button--next',
         prevEl: '.js-project-slider-button--prev'
@@ -667,6 +666,7 @@ new Swiper('.project__similar-list', {
         }
     },
 });
+
 
 $(document).ready(function () {
     setModal('.modal', '.form-section', '.js-form-open', '.js-form-close');
@@ -716,4 +716,20 @@ $(document).ready(function () {
         }
     });
 
+    var lastScrollTop = 0;
+    $(window).scroll(function (event) {
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop) {
+            $('.header--menu').addClass('bottom-scroll')
+        } else {
+            $('.header--menu').removeClass('bottom-scroll')
+        }
+        lastScrollTop = st;
+
+        if (st > $(window).height()) {
+            $('.header').addClass('header-scroll')
+        } else {
+            $('.header').removeClass('header-scroll')
+        }
+    });
 });
