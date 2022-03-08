@@ -814,6 +814,7 @@ img-comparison-slider:focus-visible {
 .dark .page__spinner {
    filter: invert(100%);
 }
+
 .page__section {
    padding-top: 50px;
    padding-bottom: 50px;
@@ -2527,12 +2528,40 @@ ol.document__list--alpha {
 }
 .main-section__scene {
    position: absolute;
+   overflow-x: hidden;
    top: 0;
    right: 0;
    bottom: 0;
    left: 0;
    z-index: -1;
-   filter: blur(40px);
+   filter: blur(3px);
+}
+.main-section__scene-video-black {
+   visibility: hidden;
+   opacity: 0;
+   transition: 0.3s;
+}
+.dark-typo .main-section__scene-video-black {
+   visibility: visible;
+   opacity: 1;
+   transition: 0.3s;
+}
+.dark .main-section__scene-video-black {
+   opacity: 1;
+   visibility: visible;
+}
+.dark.light-typo .main-section__scene-video-black {
+   opacity: 0;
+   visibility: hidden;
+}
+.dark.light-typo .main-section__scene-video-white {
+   visibility: visible;
+   opacity: 1;
+   transition: 0.3s;
+}
+body:not(.dark) .main-section__scene-video-white {
+   opacity: 1;
+   visibility: visible;
 }
 .main-section__scene-img {
    position: absolute !important;
@@ -2556,7 +2585,7 @@ ol.document__list--alpha {
    width: 100vw;
    position: absolute;
    top: 0;
-   left: -40px !important;
+   left: 0;
    height: 100%;
    object-fit: cover;
 }
