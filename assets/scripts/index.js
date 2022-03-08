@@ -725,11 +725,5 @@ $(document).ready(function () {
             $('.header--menu').removeClass('bottom-scroll')
         }
         lastScrollTop = st;
-
-        if (st > $(window).height()) {
-            $('.header').addClass('header-scroll')
-        } else {
-            $('.header').removeClass('header-scroll')
-        }
     });
 });
