@@ -22,20 +22,20 @@
             <wb-foreach wb="table=comments&amp;sort=_created:d;sort&tpl=false" wb-filter="active=on&amp;home=on">
             <li class="feedback-section__item swiper-slide">
               <blockquote class="feedback">
-                <h3 class="feedback__title" data-swiper-parallax-opacity="0.7s" data-swiper-parallax="-50" data-swiper-parallax-duration="1000">{{title}}</h3>
+                <h3 class="feedback__title" >{{title}}</h3>
 
-                <p class="feedback__text" data-swiper-parallax-opacity="0.7s" data-swiper-parallax="-30" data-swiper-parallax-duration="500"> 
+                <p class="feedback__text" > 
                   {{text}}
                 </p>
 
                 <cite class="feedback__author">
-                  <img class="feedback__author-avatar" data-swiper-parallax-opacity="0.7s" data-swiper-parallax="-80" data-swiper-parallax-duration="400" width="72" height="72" src="/thumbc/72x72/src%7B%7Bavatar.0.img%7D%7D" data-srcset="/thumbc/144x144/src{{avatar.0.img}} 2x" alt="{{name}}" wb-if="'{{avatar}}'&gt;''">
-                  <img class="feedback__author-avatar" data-swiper-parallax-opacity="0.7s" data-swiper-parallax="-80" data-swiper-parallax-duration="400" width="72" height="72" src="/module/myicons/72/323232/users-06.svg" data-srcset="/assets/img/feedback1@2x.jpg 2x" alt="{{name}}" wb-if="'{{avatar}}'==''">
-                  <span class="feedback__name" data-swiper-parallax-opacity="0.7s" data-swiper-parallax="-60" data-swiper-parallax-duration="700">{{name}}</span>
-                  <span class="feedback__role"data-swiper-parallax-opacity="0.7s" data-swiper-parallax="-90" data-swiper-parallax-duration="900">{{position}}</span>
+                  <img class="feedback__author-avatar"  width="72" height="72" src="/thumbc/72x72/src%7B%7Bavatar.0.img%7D%7D" data-srcset="/thumbc/144x144/src{{avatar.0.img}} 2x" alt="{{name}}" wb-if="'{{avatar}}'&gt;''">
+                  <img class="feedback__author-avatar"  width="72" height="72" src="/module/myicons/72/323232/users-06.svg" data-srcset="/assets/img/feedback1@2x.jpg 2x" alt="{{name}}" wb-if="'{{avatar}}'==''">
+                  <span class="feedback__name" >{{name}}</span>
+                  <span class="feedback__role" >{{position}}</span>
                 </cite>
 
-                <div class="feedback__actions" data-swiper-parallax-opacity="0.7s" data-swiper-parallax="-90" data-swiper-parallax-duration="300">
+                <div class="feedback__actions">
                   <a class="feedback__watch-link" href="%7B%7Byoutube%7D%7D" target="_blank" rel="noreferrer noopener nofollow" wb-if="'{{youtube}}'&gt;''">
                     <svg class="feedback__watch-link-icon" width="24" height="24" aria-hidden="true">
                       <use xlink:href="/assets/img/sprite.svg#play"></use>
