@@ -34,6 +34,11 @@
                             <use xlink:href="/assets/img/sprite.svg#menu-cross"></use>
                         </svg>
                     </button>
+                    <button class="header__button-link header__button-link--menu js-menu-open" type="button" aria-label="Меню">
+                        <svg class="header__burger-icon" width="40" height="10" aria-hidden="true">
+                            <use xlink:href="/assets/img/sprite.svg#menu-burger"></use>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </header>

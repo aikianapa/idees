@@ -68,7 +68,7 @@
         <section class="project__similar container">
             <div class="project__similar-top block-button-arrows">
                 <h2 class="page__section-title">Похожие проекты</h2>
-                <div class="project__slider-buttons">
+                <div class="project__slider-buttons swiper-slider-buttons">
                     <button class="button project__slider-button js-project-slider-button--prev" type="button" aria-label="Назад">
                     <span class="button__icon-wrapper">
                         <svg class="button__icon" width="24" height="24">
@@ -86,7 +86,7 @@
                     </button>
                 </div>
             </div>
-            <div class="project__similar-swiper">
+            <div class="project__similar-swiper slider-swiper">
                 <ul class="project__similar-list swiper-container">
                     <div class="project__similar-slider-wrapper swiper-wrapper">
                         <wb-foreach wb="from=similar&tpl=false&limit=2&rand=true">

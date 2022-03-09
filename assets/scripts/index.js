@@ -667,6 +667,27 @@ new Swiper('.project__similar-list', {
     },
 });
 
+new Swiper('.article-page__similar-list', {
+    slidesPerGroup: 1,
+    navigation: {
+        nextEl: '.js-article-slider-button--next',
+        prevEl: '.js-article-slider-button--prev'
+    },
+    speed: 1200,
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        800: {
+            slidesPerView: 2,
+        },
+        1200: {
+            slidesPerView: 3,
+            spaceBetween: 40
+        }
+    },
+});
+
 
 $(document).ready(function () {
     setModal('.modal', '.form-section', '.js-form-open', '.js-form-close');
