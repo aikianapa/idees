@@ -73,6 +73,11 @@ function setFormValidation() {
             inputs.forEach((elem) => {
                 if (!elem.value) {
                     elem.closest('.form__field-wrapper').classList.add('form__field-wrapper--warning');
+                    window.scrollBy({
+                        top: -200,
+                        left: 0,
+                        behavior: 'smooth'
+                    });
                 }
                 if (elem.value) {
                     elem.closest('.form__field-wrapper').classList.remove('form__field-wrapper--warning');
@@ -650,7 +655,7 @@ function setThemeButton() {
 
 // gsap.registerPlugin(ScrollTrigger);
 
-// const pageContainer = document.querySelector("body");
+// const pageContainer = document.querySelector(".wrapper");
 
 // /* SMOOTH SCROLL */
 // const scroller = new LocomotiveScroll({
@@ -699,6 +704,7 @@ new Swiper('.feedback-section__list', {
     breakpoints: {
         320: {
             slidesPerView: 1,
+            spaceBetween: 30
         },
         860: {
             spaceBetween: 170,
@@ -746,6 +752,109 @@ new Swiper('.article-page__similar-list', {
     },
 });
 
+function getActiveTab() {
+    const specialTab = document.querySelector('.special__tab-content')
+    if (specialTab) {
+        specialTab.classList.add('tab-content-active');
+    }
+}
+
+function setPopupSuccess() {
+    const body = document.querySelector('body');
+    const popupDrop = document.createElement('div');
+    popupDrop.classList.add('popup', 'form__popup');
+    body.classList.add('lock');
+    popupDrop.onclick = () => {
+        popupDrop.remove();
+        body.classList.remove('lock');
+    };
+
+    const button = document.createElement('button');
+    button.classList.add('form__popup-btn', 'button');
+    button.innerHTML = 'Готово'
+    button.setAttribute('type', 'button');
+    button.onclick = (event) => {
+        event.preventDefault();
+        body.classList.remove('lock');
+        popupDrop.remove();
+    };
+
+    body.append(popupDrop);
+    popupDrop.innerHTML = `<div class="form__popup-content">
+        <span>Ваша заявка успешно отправлена. <br/> Наши сотрудники свяжутся с вами в ближайшее время</span>
+    </div>`;
+    const formPopupContent = document.querySelector('.form__popup-content');
+    formPopupContent.append(button);
+}
+
+// function init() {
+//     new SmoothScroll(document, 100, 5)
+// }
+
+// function SmoothScroll(target, speed, smooth) {
+//     if (target === document)
+//         target = (document.scrollingElement
+//             || document.documentElement
+//             || document.body.parentNode
+//             || document.body) // cross browser support for document scrolling
+
+//     var moving = false
+//     var pos = target.scrollTop
+//     var frame = target === document.body
+//         && document.documentElement
+//         ? document.documentElement
+//         : target // safari is the new IE
+
+//     target.addEventListener('mousewheel', scrolled, { passive: false })
+//     target.addEventListener('DOMMouseScroll', scrolled, { passive: false })
+
+//     function scrolled(e) {
+//         e.preventDefault(); // disable default scrolling
+
+//         var delta = normalizeWheelDelta(e)
+
+//         pos += -delta * speed
+//         pos = Math.max(0, Math.min(pos, target.scrollHeight - frame.clientHeight)) // limit scrolling
+
+//         if (!moving) update()
+//     }
+
+//     function normalizeWheelDelta(e) {
+//         if (e.detail) {
+//             if (e.wheelDelta)
+//                 return e.wheelDelta / e.detail / 40 * (e.detail > 0 ? 1 : -1) // Opera
+//             else
+//                 return -e.detail / 3 // Firefox
+//         } else
+//             return e.wheelDelta / 120 // IE,Safari,Chrome
+//     }
+
+//     function update() {
+//         moving = true
+
+//         var delta = (pos - target.scrollTop) / smooth
+
+//         target.scrollTop += delta
+
+//         if (Math.abs(delta) > 0.5)
+//             requestFrame(update)
+//         else
+//             moving = false
+//     }
+
+//     var requestFrame = function () { // requestAnimationFrame cross browser
+//         return (
+//             window.requestAnimationFrame ||
+//             window.webkitRequestAnimationFrame ||
+//             window.mozRequestAnimationFrame ||
+//             window.oRequestAnimationFrame ||
+//             window.msRequestAnimationFrame ||
+//             function (func) {
+//                 window.setTimeout(func, 1000 / 50);
+//             }
+//         );
+//     }()
+// }
 
 $(document).ready(function () {
     setModal('.modal', '.form-section', '.js-form-open', '.js-form-close');
@@ -762,8 +871,10 @@ $(document).ready(function () {
     setCollapseElements('.collapse-item__title-wrapper', '.collapse-item', '.collapse-item__button', '.collapse-item__container');
     setVideo();
     setThemeButton();
+    getActiveTab();
     // setFeedbackSlider();
     // setSlider();
+
 
     const scene = document.getElementById('scene');
 
@@ -786,11 +897,16 @@ $(document).ready(function () {
                 return false;
             }
 
-            setTimeout(function () {
-                wbapp.post('/form/quotes/submit', data, function () {
-                    $(form)[0].reset();
-                })
-            }, 300)
+            wbapp.post('/form/quotes/submit', data, function () {
+                setPopupSuccess();
+                $(form)[0].reset();
+            })
+
+            // setTimeout(function () {
+            //     wbapp.post('/form/quotes/submit', data, function () {
+
+            //     })
+            // }, 300)
             return false;
 
         }
@@ -805,5 +921,15 @@ $(document).ready(function () {
             $('.header--menu').removeClass('bottom-scroll')
         }
         lastScrollTop = st;
+    });
+
+    $('ul.special__tabs').on('click', 'li:not(.special__tabs-item-active)', function () {
+        $(this)
+            .addClass('special__tabs-item-active').siblings().removeClass('special__tabs-item-active')
+            .closest('body').find('div.special__tab-content').removeClass('tab-content-active').eq($(this).index()).addClass('tab-content-active');
+    });
+
+    $('.special__tab-link').on('click', function (e) {
+        e.preventDefault();
     });
 });

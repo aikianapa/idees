@@ -1,5 +1,5 @@
 <view>
-<div class="brand__slider-container js-slider">
+  <div class="brand__slider-container js-slider">
     <div class="container">
       <div class="brand__swiper">
         <ul class="brand__slider swiper-container js-slider-list">

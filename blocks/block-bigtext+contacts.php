@@ -22,6 +22,7 @@
             </ul>
         </div>
     </section>
+    
 </view>
 
 <edit header="Большой текст + контакты">

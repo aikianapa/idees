@@ -1,18 +1,18 @@
 <view>
-<section class="page__section container">
-  <h2 class="partners__section-title">
-    {{title}}
-  </h2>
+  <section class="page__section container">
+    <h2 class="partners__section-title">
+      {{title}}
+    </h2>
 
-  <ul class="partners__work-list">
-    <wb-foreach wb="from=list&tpl=false">
-    <li class="partners__work-item">
-      <h3 class="partners__work-title">{{text1}}</h3>
-      <p class="partners__work-description text-break">{{text2}}</p>
-    </li>
-    </wb-foreach>
-  </ul>
-</section>
+    <ul class="partners__work-list">
+      <wb-foreach wb="from=list&tpl=false">
+      <li class="partners__work-item">
+        <h3 class="partners__work-title">{{text1}}</h3>
+        <p class="partners__work-description text-break">{{text2}}</p>
+      </li>
+      </wb-foreach>
+    </ul>
+  </section>
 </view>
 
 <edit header="Список номер+заголовок+текст">
