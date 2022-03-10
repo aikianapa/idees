@@ -21,8 +21,10 @@
             {{_var.prjtype.{{_val}}.name}}
           </span>
         </wb-foreach>
-        <time class="article__date" datetime="{{_created}}">{{datetext({{_created}})}}</time>
-        <span class="article__views" wb="module=autoinc&table=blog&field={{id}}&increase=true&ajax=true"></span>
+        <div class="article__tag-line-info">
+          <time class="article__date" datetime="{{_created}}">{{datetext({{_created}})}}</time>
+          <span class="article__views" wb="module=autoinc&table=blog&field={{id}}&increase=true&ajax=true"></span>
+        </div>
       </div>
 
       <h1 class="page__title article-page__title">{{name}}</h1>
@@ -42,7 +44,7 @@
         <wb-foreach wb="table=blog&tpl=false&limit=1&rand=true" wb-filter="{'active':'on','id':{'$ne':'{{_route.item}}'}}">
           <article class="article article--aside">
             <div class="article__name">Подходящие услуги</div>
-            <h3 class="article__item-title category__item-title">Стратегия</h3>
+            <a href="#" class="article__item-title category__item-title">Стратегия</a>
             <p class="article__item-description category__item-description">Создаем сильный и узнаваемый бренд с помощью позиционирования, стратегии и нейминга</p>
             <ul class="article__sub-list services__sub-list">
                 <li class="article__sub-list-item services__sub-list-item">

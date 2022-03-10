@@ -252,6 +252,64 @@ function setPopupImages() {
     });
 }
 
+function setPopupFeedbackVideos() {
+    const body = document.querySelector('body');
+    const allVideos = document.querySelectorAll('.popup-video');
+
+    function initPopupVideos() {
+        allVideos.forEach((elem) => {
+            elem.onclick = function (e) {
+                e.preventDefault();
+                const video = this;
+                const videoLink = video.getAttribute('href');
+                const realVideoLink = videoLink.replace('watch?v=', 'embed/');
+                const popupDrop = document.createElement('div');
+                popupDrop.classList.add('popup', 'popup__video');
+                body.classList.add('lock');
+                popupDrop.onclick = () => {
+                    popupDrop.remove();
+                    body.classList.remove('lock');
+                };
+
+                const button = document.createElement('button');
+                button.classList.add('popup__button');
+                button.innerHTML = '<svg class="popup__cross-icon" width="24" height="24" aria-hidden="true"><use xlink:href="/assets/img/sprite.svg#popup-cross"></use></svg>'
+                button.setAttribute('type', 'button');
+                button.onclick = (event) => {
+                    event.preventDefault();
+                    body.classList.remove('lock');
+                    popupDrop.remove();
+                };
+
+                body.append(popupDrop);
+                popupDrop.innerHTML = `<div class="feedback__popup-content">
+                    <iframe class="feedback__video-iframe" src="${realVideoLink}?autoplay=1&showinfo=0&controls=1" 
+                    frameborder="0" allowfullscreen></iframe>
+                </div>`;
+                popupDrop.append(button);
+            };
+        });
+    }
+
+    function removePopupVideos() {
+        allVideos.forEach((elem) => {
+            elem.onclick = null;
+        });
+    }
+
+    if (allVideos.length) {
+        initPopupVideos();
+    }
+
+    window.addEventListener('resize', () => {
+        if (allVideos.length) {
+            initPopupVideos();
+        } else {
+            removePopupVideos();
+        }
+    });
+}
+
 function setCollapseElements(titleClass, collapseItemClass, buttonClass, containerClass) {
     const collapseTitles = document.querySelectorAll(titleClass);
 
@@ -700,6 +758,7 @@ $(document).ready(function () {
     setScrollTop();
     setAnimation();
     setPopupImages();
+    setPopupFeedbackVideos();
     setCollapseElements('.collapse-item__title-wrapper', '.collapse-item', '.collapse-item__button', '.collapse-item__container');
     setVideo();
     setThemeButton();
