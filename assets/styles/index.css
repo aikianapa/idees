@@ -759,6 +759,7 @@ img-comparison-slider:focus-visible {
 }
 .page__main .cases-section__item:first-child {
    border-top: 1px solid var(--border-color);
+   border-bottom: 1px solid var(--border-color);
 }
 .page__main--full-height {
    display: flex;
