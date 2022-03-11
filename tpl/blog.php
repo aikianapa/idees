@@ -44,27 +44,19 @@
                   {{text}}
                 </div>
 
-                <wb-foreach wb="table=blog&tpl=false&limit=1&rand=true" wb-filter="{'active':'on','id':{'$ne':'{{_route.item}}'}}">
-                  <article class="article article--aside">
+                
+                  <article class="article article--aside" wb-if="'{{count({{tags}})}}'>'0'">
                     <div class="article__name">Подходящие услуги</div>
-                    <a href="#" class="article__item-title category__item-title">Стратегия</a>
-                    <p class="article__item-description category__item-description">Создаем сильный и узнаваемый бренд с помощью позиционирования, стратегии и нейминга</p>
+                    <wb-foreach wb="from=tags&tpl=false">
+                    <wb-foreach wb="table=pages&limit=1" wb-filter="{'url':'\/services\/{{_val}}'}">
+                    <a href="#" class="article__item-title category__item-title">{{blocks.block_paragraph.header}}</a>
+                    <p class="article__item-description category__item-description">{{blocks.block_paragraph.text}}</p>
                     <ul class="article__sub-list services__sub-list">
+                      <wb-foreach wb="table={{attach}}&tpl=false" wb-filter="{{attach_filter}}">
                         <li class="article__sub-list-item services__sub-list-item">
-                            <a class="article__item-link services__item-link" href="#">Кабинетные исследования</a>
+                            <a class="article__item-link services__item-link" href="{{_parent.url}}/{{wbFurlGenerate({{name}})}}">{{name}}</a>
                         </li>
-                        <li class="article__sub-list-item services__sub-list-item">
-                            <a class="article__item-link services__item-link" href="#">Позиционирование</a>
-                        </li>
-                        <li class="article__sub-list-item services__sub-list-item">
-                            <a class="article__item-link services__item-link" href="#">Платформа бренда</a>
-                        </li>
-                        <li class="article__sub-list-item services__sub-list-item">
-                            <a class="article__item-link services__item-link" href="#">Коммуникационная стратегия</a>
-                        </li>
-                        <li class="article__sub-list-item services__sub-list-item">
-                            <a class="article__item-link services__item-link" href="#">Аудит бренда</a>
-                        </li>
+                      </wb-foreach>
                     </ul>
                     <a class="button article__link category__link" href="#">
                         <span class="button__icon-wrapper">
@@ -75,8 +67,10 @@
 
                         <span class="button__text"> подробнее</span>
                     </a>
+                    </wb-foreach>
+                    <p wb-if="'{{_ndx}}' < '{{count({{_parent.tags}})}}'"><br></p>
+                    </wb-foreach>
                   </article>
-                </wb-foreach>
               </div>
             </section>
 

@@ -43,7 +43,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm-2">Тэги</label>
+                                <label class="col-sm-2">Подходящие услуги</label>
                                 <div class="col-sm-10">
                                     <wb-data wb="table=catalogs&item=projects&field=tree">
                                         <select name="tags" class="form-control" wb-select2 multiple>
