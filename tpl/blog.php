@@ -45,11 +45,10 @@
                 </div>
 
                 
-                  <article class="article article--aside" wb-if="'{{count({{tags}})}}'>'0'">
+                  <article class="article article--aside" wb-if="'{{serv}}'>''">
                     <div class="article__name">Подходящие услуги</div>
-                    <wb-foreach wb="from=tags&tpl=false">
-                    <wb-foreach wb="table=pages&limit=1" wb-filter="{'url':'\/services\/{{_val}}'}">
-                    <a href="#" class="article__item-title category__item-title">{{blocks.block_paragraph.header}}</a>
+                    <wb-foreach wb="table=pages&limit=1" wb-filter="{'url':'\/services\/{{serv}}'}">
+                    <a href="/services/{{_parent.serv}}" class="article__item-title category__item-title">{{blocks.block_paragraph.header}}</a>
                     <p class="article__item-description category__item-description">{{blocks.block_paragraph.text}}</p>
                     <ul class="article__sub-list services__sub-list">
                       <wb-foreach wb="table={{attach}}&tpl=false" wb-filter="{{attach_filter}}">
@@ -58,7 +57,7 @@
                         </li>
                       </wb-foreach>
                     </ul>
-                    <a class="button article__link category__link" href="#">
+                    <a class="button article__link category__link" href="/services/{{_parent.serv}}">
                         <span class="button__icon-wrapper">
                             <svg class="button__icon" width="24" height="24">
                                 <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
@@ -68,8 +67,7 @@
                         <span class="button__text"> подробнее</span>
                     </a>
                     </wb-foreach>
-                    <p wb-if="'{{_ndx}}' < '{{count({{_parent.tags}})}}'"><br></p>
-                    </wb-foreach>
+
                   </article>
               </div>
             </section>

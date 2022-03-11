@@ -38,12 +38,24 @@
                                                 <input wb="module=swico" name="spec" data-ico-on="interface-essential-112" data-ico-off="interface-essential-109">
                                             </div>
                                         </div>
+                                        <div class="col-12">
+                                            <label class="form-control-label">Услуга</label>
+                                                <select name="serv" class="form-control" wb-select2>
+                                                    <option value="">&nbsp;</option>
+                                                    <wb-foreach wb="table=pages&tpl=false" wb-filter="{'path':'/services'}">
+                                                        <option value="{{name}}" selected wb-if="'{{in_array({{_id}},{{_parent.serv}})}}'=='1'">
+                                                            {{header}}</option>
+                                                        <option value="{{name}}" wb-if="'{{in_array({{_id}},{{_parent.serv}})}}'!='1'">
+                                                            {{header}}</option>
+                                                    </wb-foreach>
+                                                </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm-2">Подходящие услуги</label>
+                                <label class="col-sm-2">Тэги</label>
                                 <div class="col-sm-10">
                                     <wb-data wb="table=catalogs&item=projects&field=tree">
                                         <select name="tags" class="form-control" wb-select2 multiple>
