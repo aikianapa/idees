@@ -5,23 +5,26 @@
 </head>
 
 <body class="page__body">
-  <div>
     <wb-module wb="module=yonger&mode=render&view=header" />
-  </div>
+    <div id="viewport-scroll" class="main-wrapper">
+      <div class="viewport">
+        <div id="scroll-container" class="scroll-container">
+            <main class="page__main">
+              <section>
+                  <wb-module wb="module=yonger&mode=render&view=block-vacancy" />
+              </section>
 
-    <main class="page__main">
-    <section>
-        <wb-module wb="module=yonger&mode=render&view=block-vacancy" />
-    </section>
+              <section>
+                  <wb-module wb="module=yonger&mode=render&view=form-vacancy" />
+              </section>    
+        
+            </main>
 
-    <section>
-        <wb-module wb="module=yonger&mode=render&view=form-vacancy" />
-    </section>    
-    
-    </main>
-
-
-    <wb-module wb="module=yonger&mode=render&view=footer" />
+            <wb-module wb="module=yonger&mode=render&view=footer" />
+        </div>
+      </div>
+    </div>
+  
 
 </body>
 

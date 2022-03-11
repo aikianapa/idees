@@ -47,6 +47,12 @@
          </div>
          </div>
    </header>
+   <button class="up-button js-scroll-top" type="button">
+      <svg class="up-button__icon" width="28" height="28" aria-hidden="true">
+         <use xlink:href="/assets/img/sprite.svg#arrow-top"></use>
+      </svg>
+      <span class="up-button__text">Наверх</span>
+   </button>
 </view>
 
 <edit header="Шапка сайта">

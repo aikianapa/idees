@@ -2,10 +2,10 @@
 <section class="main-section animation-section">
   <div id="scene" class="main-section__scene">
     <video class="main-section__scene-video main-section__scene-video-white" autoplay playsinline muted loop>
-        <source type="video/mp4" src="/assets/img/W_HR_v01.mp4">
+        <source type="video/mp4" src="/assets/img/W_HHR_v01.mp4">
     </video>
     <video class="main-section__scene-video main-section__scene-video-black" autoplay playsinline muted loop>
-        <source type="video/mp4" src="/assets/img/B_HR_v01.mp4">
+        <source type="video/mp4" src="/assets/img/B_HHR_v01.mp4">
     </video>
     <!-- <img class="main-section__scene-image" src="/assets/img/1x1_#676f51ff.png" alt="main-photo"> -->
   </div>
