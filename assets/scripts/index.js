@@ -600,23 +600,6 @@ function viewport() {
 };
 /* viewport width */
 
-const body = document.querySelector('body')
-const serviceLink = document.createElement('div')
-serviceLink.className = 'service__link'
-serviceLink.innerHTML = 'Подробнее'
-body.append(serviceLink)
-
-const serviceBlock = document.querySelector('.services-section__list')
-
-serviceBlock.onmousemove = function (event) {
-    serviceLink.style.display = 'block';
-    if (event.offsetY > 10) serviceLink.style.top = event.pageY + 20 + 'px';
-    if (event.offsetX > 10) serviceLink.style.left = event.pageX + 20 + 'px';
-}
-serviceBlock.onmouseleave = function () {
-    serviceLink.style.display = 'none';
-}
-
 $(document).ready(function () {
     setModal('.modal', '.form-section', '.js-form-open', '.js-form-close');
     setModal('.modal', '.menu', '.js-menu-open', '.js-menu-close');
