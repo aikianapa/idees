@@ -616,8 +616,6 @@ $(document).ready(function () {
     setVideo();
     setThemeButton();
     getActiveTab();
-    // setFeedbackSlider();
-    // setSlider();
 
 
     const scene = document.getElementById('scene');

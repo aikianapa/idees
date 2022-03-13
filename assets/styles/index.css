@@ -974,6 +974,12 @@ img-comparison-slider:focus-visible {
    }
 }
 @media (min-width: 1300px) {
+   .form-section.modal-open .header--menu__right,
+   .form-section.modal-open .header--form__right {
+      min-width: 550px;
+   }
+}
+@media (min-width: 1300px) {
    .header--menu__right,
    .header--form__right {
       min-width: 550px;
@@ -1221,11 +1227,6 @@ img-comparison-slider:focus-visible {
    backdrop-filter: blur(10px);
 }
 
-@media (min-width: 1200px) {
-   .header__button-link--express {
-      margin-left: 128px;
-   }
-}
 @media (min-width: 768px) {
    .menu__container .header__button-link--express {
       margin-bottom: 65px;
@@ -1236,6 +1237,11 @@ img-comparison-slider:focus-visible {
       display: flex;
       margin-left: 60px;
       margin-bottom: 0;
+   }
+}
+@media (min-width: 1200px) {
+   .header__button-link--express {
+      margin-left: 128px;
    }
 }
 @media (max-width: 767px) {
