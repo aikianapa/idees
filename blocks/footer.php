@@ -31,7 +31,12 @@
                 <div class="footer__bottom-section-wrapper">
                     <p class="footer__copy">{{copyright}} © {{year}} – {{date("Y")}}</p>
 
-                    <a class="footer__link" href="http://yonger.ru/" target="_blank">Built on Yonger</a>
+                    <a class="footer__link" href="http://yonger.ru/" target="_blank">
+                        Built on Yonger
+                        <svg viewBox="0 0 70 36">
+                            <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />
+                        </svg>
+                    </a>
                 </div>
 
                 <div class="footer__bottom-section-wrapper">
