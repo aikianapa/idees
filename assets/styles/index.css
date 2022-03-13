@@ -1405,11 +1405,11 @@ img-comparison-slider:focus-visible {
    justify-content: flex-start;
    align-items: center;
 }
-.footer__bottom-section-wrapper .footer__link:hover {
+.footer__bottom-section-wrapper:first-child .footer__link:hover {
    color: inherit;
 }
 @media (max-width: 767px) {
-   .footer__bottom-section-wrapper .footer__link:hover {
+   .footer__bottom-section-wrapper:first-child .footer__link:hover {
       color: var(--typo-ghost-color);
    }
 }
