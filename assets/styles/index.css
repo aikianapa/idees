@@ -1467,28 +1467,33 @@ img-comparison-slider:focus-visible {
    position: relative;
    text-decoration: none;
    color: inherit;
+}
+.footer__link span {
+   overflow: hidden;
    position: relative;
 }
 .footer__link svg {
-   width: 76px;
+   width: 67px;
    height: 40px;
    position: absolute;
-   left: 20px;
-   bottom: -4px;
-   transform: scale(1.9);
+   bottom: -9px;
+   right: -2px;
+   transform: scale(1);
    fill: none;
    stroke: var(--stroke, var(--line));
    stroke-linecap: round;
-   stroke-width: 1px;
+   stroke-width: 2px;
    stroke-dasharray: var(--offset, 69px) 278px;
    stroke-dashoffset: 361px;
    transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
 }
 @media (max-width: 960px) {
-   .footer__link svg {
-      left: -13px;
-      bottom: -5px;
-      transform: scale(1.2);
+   .footer__link span svg {
+      left: auto;
+      bottom: -17px;
+      transform: scale(1.3);
+      right: calc(100% - 9px);
+      stroke-width: 1px;
    }
 }
 @media (max-width: 767px) {
