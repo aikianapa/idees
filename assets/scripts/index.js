@@ -744,10 +744,7 @@ $(document).ready(function () {
             $('body > header').css('display', 'block');
         })
     }
-    var blockHeight = $('ul[data-pagination]').outerHeight(true);
-    $(window).resize(function () {
-        if (blockHeight != $('ul[data-pagination]').outerHeight(true)) {
-            handler();
-        }
+    $('ul[data-pagination]').bind("DOMSubtreeModified", function () {
+        handler();
     });
 });
