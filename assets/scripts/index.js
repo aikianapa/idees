@@ -708,6 +708,7 @@ $(document).ready(function () {
         }
     }
     $(window).resize(handler);
+    $('ul[data-pagination]').resize(handler);
     handler();
     var viewport_wid = viewport().width;
     if (viewport_wid >= 1024) {
@@ -744,6 +745,4 @@ $(document).ready(function () {
             $('body > header').css('display', 'block');
         })
     }
-    new ResizeSensor(jQuery('ul[data-pagination]'), handler);
-
 });
