@@ -1,5 +1,5 @@
 <view>
-    <div class="cookies-block">
+    <!-- <div class="cookies-block">
         <div class="container cookies-block__container">
             <div class="cookies-block__wrapper">
                 <svg class="cookies-block__icon" width="30" height="30" aria-hidden="true">
@@ -14,7 +14,7 @@
 
             <button class="cookies-block__accept-button" type="button">я согласен</button>
         </div>
-    </div>
+    </div> -->
 </view>
 
 <edit header="Блок Cookies">

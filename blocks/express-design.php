@@ -64,47 +64,6 @@
          </section>
 
          <section class="page__section page__section--grey">
-            <div class="container">
-               <h2 class="page__section-title">Особенности услуги</h2>
-            </div>
-
-            <div class="brand__slider-container js-slider">
-               <div class="container">
-                  <div class="brand__swiper">
-                     <ul class="brand__slider swiper-container js-slider-list">
-                        <div class="brand__slider-wrapper swiper-wrapper">
-                        <wb-foreach wb="from=list&tpl=false">
-                              <li class="brand__slider-item swiper-slide">
-                              <span data-swiper-parallax-opacity="0" data-swiper-parallax="-100" data-swiper-parallax-duration="1000"  class="brand__slider-item-number">{{sprintf("%02d", {{_ndx}})}}</span>
-                              <span data-swiper-parallax-opacity="0.2" data-swiper-parallax-duration="1000" data-swiper-parallax="-400">{{text}}</span>
-                              </li>
-                        </wb-foreach>
-                        </div>
-                     </ul>
-                  </div>
-
-                  <div class="brand__slider-buttons">
-                     <button class="button brand__slider-button js-slider-button--prev" type="button" aria-label="Назад">
-                        <span class="button__icon-wrapper">
-                        <svg class="button__icon" width="24" height="24">
-                           <use xlink:href="/assets/img/sprite.svg#arrow-left"></use>
-                        </svg>
-                        </span>
-                     </button>
-
-                     <button class="button brand__slider-button js-slider-button--next" type="button" aria-label="Вперед">
-                        <span class="button__icon-wrapper">
-                        <svg class="button__icon" width="24" height="24">
-                           <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
-                        </svg>
-                        </span>
-                     </button>
-                  </div>
-               </div>
-            </div>
-         </section>
-
-         <section class="page__section page__section--grey">
             <h2 class="visually-hidden">{{header}}</h2>
             <div class="special__section-container container">
                <p class="special__big-text">
@@ -140,6 +99,47 @@
                </li>
                </wb-foreach>
             </ul>
+         </section>
+
+         <section class="page__section page__section--grey">
+            <div class="container">
+               <h2 class="page__section-title">Особенности услуги</h2>
+            </div>
+
+            <div class="brand__slider-container js-slider">
+               <div class="container">
+                  <div class="brand__swiper">
+                     <ul class="brand__slider swiper-container js-slider-list">
+                        <div class="brand__slider-wrapper swiper-wrapper">
+                        <wb-foreach wb="from=list&tpl=false">
+                              <li class="brand__slider-item swiper-slide">
+                              <span class="brand__slider-item-number">{{sprintf("%02d", {{_ndx}})}}</span>
+                              <span>{{text}}</span>
+                              </li>
+                        </wb-foreach>
+                        </div>
+                     </ul>
+                  </div>
+
+                  <div class="brand__slider-buttons">
+                     <button class="button brand__slider-button js-slider-button--prev" type="button" aria-label="Назад">
+                        <span class="button__icon-wrapper">
+                        <svg class="button__icon" width="24" height="24">
+                           <use xlink:href="/assets/img/sprite.svg#arrow-left"></use>
+                        </svg>
+                        </span>
+                     </button>
+
+                     <button class="button brand__slider-button js-slider-button--next" type="button" aria-label="Вперед">
+                        <span class="button__icon-wrapper">
+                        <svg class="button__icon" width="24" height="24">
+                           <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
+                        </svg>
+                        </span>
+                     </button>
+                  </div>
+               </div>
+            </div>
          </section>
 
          <section class="page__section container">

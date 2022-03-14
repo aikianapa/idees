@@ -6,11 +6,7 @@
 
 <body class="page__body">
     <wb-module wb="module=yonger&mode=render&view=header" />
-
-    <div id="viewport-scroll" class="main-wrapper">
-        <div class="viewport">
-            <div id="scroll-container" class="scroll-container">
-                <main class="page__main">
+    <main class="page__main">
 
                     <section class="project container">
                         <div class="project__title-container">
@@ -126,9 +122,14 @@
                 </main>
 
                 <wb-module wb="module=yonger&mode=render&view=footer" />
+
+    <!-- <div id="viewport-scroll" class="main-wrapper">
+        <div class="viewport">
+            <div id="scroll-container" class="scroll-container">
+                
             </div>
         </div>
-    </div>
+    </div> -->
 
 </body>
 
