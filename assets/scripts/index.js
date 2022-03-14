@@ -744,11 +744,4 @@ $(document).ready(function () {
             $('body > header').css('display', 'block');
         })
     }
-    let elems = $('ul[data-pagination] > li').length;
-    function checkElems() {
-        if (elems < $('ul[data-pagination] > li').length) {
-            handler();
-        }
-    }
-    $(window).resize(checkElems);
 });
