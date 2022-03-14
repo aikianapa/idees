@@ -744,4 +744,6 @@ $(document).ready(function () {
             $('body > header').css('display', 'block');
         })
     }
+    new ResizeSensor(jQuery('ul[data-pagination]'), handler);
+
 });
