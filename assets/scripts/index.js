@@ -708,7 +708,6 @@ $(document).ready(function () {
         }
     }
     $(window).resize(handler);
-    $('ul[data-pagination]').resize(handler);
     handler();
     var viewport_wid = viewport().width;
     if (viewport_wid >= 1024) {
@@ -745,4 +744,10 @@ $(document).ready(function () {
             $('body > header').css('display', 'block');
         })
     }
+    var blockHeight = $('ul[data-pagination]').outerHeight(true);
+    $(window).resize(function () {
+        if (blockHeight != $('ul[data-pagination]').outerHeight(true)) {
+            handler();
+        }
+    });
 });
