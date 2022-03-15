@@ -747,4 +747,5 @@ $(document).ready(function () {
     $('ul[data-pagination]').bind("DOMSubtreeModified", function () {
         handler();
     });
+
 });

@@ -2457,6 +2457,11 @@ ol.document__list--alpha {
    padding-bottom: 140px;
    background-color: var(--bg-primary-color);
 }
+@media (max-width: 799px) {
+   .menu {
+      padding-bottom: 80px;
+   }
+}
 @media (min-width: 800px) {
    .menu {
       padding-bottom: 100px;

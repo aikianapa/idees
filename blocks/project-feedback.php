@@ -17,7 +17,7 @@
             </cite>
 
             <div class="feedback__actions">
-                <a class="feedback__watch-link" href="{{video}}" target="_blank" rel="noreferrer noopener nofollow" wb-if="'{{video}}'>''">
+                <a class="feedback__watch-link popup-video" href="{{video}}" rel="noreferrer noopener nofollow" wb-if="'{{video}}'>''">
                     <svg class="feedback__watch-link-icon" width="24" height="24" aria-hidden="true">
                         <use xlink:href="/assets/img/sprite.svg#play"></use>
                     </svg>
