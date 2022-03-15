@@ -6,11 +6,7 @@
 
 <body class="page__body">
     <wb-module wb="module=yonger&mode=render&view=header" />
-
-    <div id="viewport-scroll" class="main-wrapper">
-        <div class="viewport">
-            <div id="scroll-container" class="scroll-container">
-            <main class="page__main">
+    <main class="page__main">
         <section class="project container">
             <div class="project__title-container">
                 <h1 class="page__title">{{descr}}</h1>
@@ -89,7 +85,7 @@
             <div class="project__similar-swiper slider-swiper">
                 <ul class="project__similar-list swiper-container">
                     <div class="project__similar-slider-wrapper swiper-wrapper">
-                        <wb-foreach wb="from=similar&tpl=false&rand=true">
+                        <wb-foreach wb="from=similar&tpl=false&limit=2&rand=true">
                         <wb-data wb="table=projects&item={{_val}}">
                         <wb-var link="/projects/{{wbFurlGenerate({{name}})}}"/>
                             <li class="project__similar-item swiper-slide">
@@ -125,9 +121,14 @@
     </main>
 
     <wb-module wb="module=yonger&mode=render&view=footer" />
+
+    <!-- <div id="viewport-scroll" class="main-wrapper">
+        <div class="viewport">
+            <div id="scroll-container" class="scroll-container">
+                
             </div>
         </div>
-    </div>
+    </div> -->
 
 </body>
 
