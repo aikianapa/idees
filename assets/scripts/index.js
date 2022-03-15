@@ -706,5 +706,8 @@ $(document).ready(function () {
     $('ul[data-pagination]').bind("DOMSubtreeModified", function () {
         handler();
     });
+    $('ul.glosario__item-list').bind("DOMSubtreeModified", function () {
+        handler();
+    });
 
 });

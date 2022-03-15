@@ -55,6 +55,7 @@
             }
         }
         $(window).resize(handler);
+        $(window).scroll(handler)
         handler();
     </script>
 

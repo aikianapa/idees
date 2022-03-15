@@ -2713,6 +2713,7 @@ ol.document__list--alpha {
    background-color: rgba(255, 255, 255, 0.3);
    -webkit-backdrop-filter: blur(4px);
    backdrop-filter: blur(4px);
+   z-index: 100;
 }
 @media (min-width: 992px) {
    .menu__bottom-panel {
