@@ -481,6 +481,7 @@ new Swiper('.brand__slider', {
     breakpoints: {
         320: {
             slidesPerView: 1,
+            spaceBetween: 30
         },
         860: {
             spaceBetween: 40,
@@ -520,6 +521,7 @@ new Swiper('.project__similar-list', {
     breakpoints: {
         320: {
             slidesPerView: 1,
+            spaceBetween: 20
         },
         992: {
             slidesPerView: 2,
