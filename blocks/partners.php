@@ -10,7 +10,7 @@
     <p class="partners__addition-description text-break">{{text2}}</p>
   </div>
 
-  <div class="page__section page__section--grey">
+  <div class="page__section partners__bonus-section page__section--grey">
     <div class="partners__section-grey-container container">
       <dl class="parners__bonus-list">
         <dt class="partners__bonus-name">{{title1}}</dt>

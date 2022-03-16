@@ -121,22 +121,6 @@
     </main>
 
     <wb-module wb="module=yonger&mode=render&view=footer" />
-    <script>
-        /* viewport width */
-        function viewport() {
-            var e = window,
-                a = 'inner';
-            if (!('innerWidth' in window)) {
-                a = 'client';
-                e = document.documentElement || document.body;
-            }
-            return {
-                width: e[a + 'Width'],
-                height: e[a + 'Height']
-            }
-        };
-        /* viewport width */
-    </script>
 
     <!-- <div id="viewport-scroll" class="main-wrapper">
         <div class="viewport">

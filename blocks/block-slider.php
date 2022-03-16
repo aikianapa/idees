@@ -6,8 +6,8 @@
           <div class="brand__slider-wrapper swiper-wrapper">
             <wb-foreach wb="from=list&tpl=false">
                 <li class="brand__slider-item swiper-slide">
-                <span data-swiper-parallax-opacity="0" data-swiper-parallax="-100" data-swiper-parallax-duration="1000"  class="brand__slider-item-number">{{sprintf("%02d", {{_ndx}})}}</span>
-                <span data-swiper-parallax-opacity="0.2" data-swiper-parallax-duration="1000" data-swiper-parallax="-400">{{text}}</span>
+                <span class="brand__slider-item-number">{{sprintf("%02d", {{_ndx}})}}</span>
+                <span>{{text}}</span>
                 </li>
             </wb-foreach>
           </div>

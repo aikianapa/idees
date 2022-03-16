@@ -1,5 +1,5 @@
 <view>
-    <section class="page__section container">
+    <section class="page__section products__advantage-section container">
         <h2 class="page__section-title">
             {{header}}
         </h2>

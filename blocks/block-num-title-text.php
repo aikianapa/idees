@@ -1,5 +1,5 @@
 <view>
-  <section class="page__section container">
+  <section class="page__section partners__work-section container">
     <h2 class="partners__section-title">
       {{title}}
     </h2>
