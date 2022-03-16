@@ -7654,3 +7654,21 @@ body:not(.dark) .main-section__scene-video-white {
       overflow: auto;
    }
 }
+
+.page-link {
+   display: flex !important;
+   justify-content: center !important;
+   align-items: center !important;
+   padding: 15px 25px !important;
+   color: var(--dark-grey) !important;
+   white-space: nowrap !important;
+   background-color: var(--light) !important;
+   border-radius: 99em !important;
+   border: none !important;
+   transition: 0.2s !important;
+}
+
+.page-link:hover {
+   opacity: 0.5;
+   transition: 0.2s !important;
+}
