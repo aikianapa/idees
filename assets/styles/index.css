@@ -7655,7 +7655,7 @@ body:not(.dark) .main-section__scene-video-white {
    }
 }
 
-.page-link {
+.page-link.more {
    display: flex !important;
    justify-content: center !important;
    align-items: center !important;
@@ -7668,7 +7668,7 @@ body:not(.dark) .main-section__scene-video-white {
    transition: 0.2s !important;
 }
 
-.page-link:hover {
+.page-link.more:hover {
    opacity: 0.5;
    transition: 0.2s !important;
 }
