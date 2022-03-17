@@ -96,6 +96,14 @@
             });
         </script>
     </main>
+    <script>
+    const moreBtn = document.querySelector('.page-link.more')
+    moreBtn.innerHTML = `<span class="button__icon-wrapper">
+        <svg class="button__icon" width="24" height="24">
+            <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
+        </svg>
+        </span> загрузить еще`
+    </script>
 </view>
 <edit header="Список проектов">
     <div>

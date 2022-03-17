@@ -752,5 +752,4 @@ $(document).ready(function () {
     $('ul.glosario__item-list').bind("DOMSubtreeModified", function () {
         handler();
     });
-
 });
