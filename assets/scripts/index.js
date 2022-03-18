@@ -587,18 +587,18 @@ function setPopupSuccess() {
 }
 
 /* viewport width */
-function viewport() {
-    var e = window,
-        a = 'inner';
-    if (!('innerWidth' in window)) {
-        a = 'client';
-        e = document.documentElement || document.body;
-    }
-    return {
-        width: e[a + 'Width'],
-        height: e[a + 'Height']
-    }
-};
+// function viewport() {
+//     var e = window,
+//         a = 'inner';
+//     if (!('innerWidth' in window)) {
+//         a = 'client';
+//         e = document.documentElement || document.body;
+//     }
+//     return {
+//         width: e[a + 'Width'],
+//         height: e[a + 'Height']
+//     }
+// };
 /* viewport width */
 
 $(document).ready(function () {
@@ -685,71 +685,71 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
-    var scroller
-    var handler = function () {
+    // var scroller
+    // var handler = function () {
 
-        var height_footer = $('footer').height();
-        var height_header = $('header').height();
-        // $('.content').css({ 'padding-bottom': height_footer + 40, 'padding-top': height_header + 40 });
+    //     var height_footer = $('footer').height();
+    //     var height_header = $('header').height();
+    //     // $('.content').css({ 'padding-bottom': height_footer + 40, 'padding-top': height_header + 40 });
 
 
-        var viewport_wid = viewport().width;
-        var viewport_height = viewport().height;
-        if (viewport_wid <= 1279) {
-            staticWidth = 35
-        }
-        else {
-            staticWidth = 195
-        }
-        if (viewport_wid >= 1024) {
-            scroller = new SmoothScroll({
-                target: document.querySelector("#scroll-container"),
-                scrollEase: 0.05,
-            });
-        }
-    }
-    $(window).resize(handler);
-    handler();
+    //     var viewport_wid = viewport().width;
+    //     var viewport_height = viewport().height;
+    //     if (viewport_wid <= 1279) {
+    //         staticWidth = 35
+    //     }
+    //     else {
+    //         staticWidth = 195
+    //     }
+    //     if (viewport_wid >= 1024) {
+    //         scroller = new SmoothScroll({
+    //             target: document.querySelector("#scroll-container"),
+    //             scrollEase: 0.05,
+    //         });
+    //     }
+    // }
+    // $(window).resize(handler);
+    // handler();
 
-    var viewport_wid = viewport().width;
-    if (viewport_wid >= 1024) {
-        $('button.header__button-link--project, button.header__button-link--menu.js-menu-open, .main-section__button.js-form-open').on('click', function () {
-            const bodyModal = $('body').hasClass('has-modal')
-            if (bodyModal) {
-                $('#viewport-scroll').css('height', 'auto');
-                $('body > header').css('display', 'none')
-                $('.viewport').css('position', 'static')
-                $('.scroll-container').css({
-                    'position': 'static',
-                    'transform': 'none',
-                    'height': '100%'
-                })
-            }
-        });
-        $('button.header__button-link--menu-close, button.header__button-link--menu.js-form-close').on('click', function () {
-            const windowElem = $('#viewport-scroll');
-            const clientHeight = windowElem.attr('data-height');
-            $('#viewport-scroll').css('height', `${clientHeight}`);
-            $('body > header').css('display', 'block');
-            $('.viewport').css('position', 'fixed')
-            $('.scroll-container').css({
-                'position': 'absolute',
-                'transform': 'preserve-3d',
-                'height': 'auto'
-            })
-        });
-    } else {
-        $('button.header__button-link--project, button.header__button-link--menu.js-menu-open, .main-section__button.js-form-open').on('click', function () {
-            $('body > header').css('display', 'none')
-        });
-        $('button.header__button-link--menu-close, button.header__button-link--menu.js-form-close').on('click', function () {
-            $('body > header').css('display', 'block');
-        })
-    }
-    $('ul[data-pagination]').bind("DOMSubtreeModified", function () {
-        handler();
-    });
-    $('ul.glosario__item-list').bind("DOMSubtreeModified", function () {
-        handler();
-    });
+    // var viewport_wid = viewport().width;
+    // if (viewport_wid >= 1024) {
+    //     $('button.header__button-link--project, button.header__button-link--menu.js-menu-open, .main-section__button.js-form-open').on('click', function () {
+    //         const bodyModal = $('body').hasClass('has-modal')
+    //         if (bodyModal) {
+    //             $('#viewport-scroll').css('height', 'auto');
+    //             $('body > header').css('display', 'none')
+    //             $('.viewport').css('position', 'static')
+    //             $('.scroll-container').css({
+    //                 'position': 'static',
+    //                 'transform': 'none',
+    //                 'height': '100%'
+    //             })
+    //         }
+    //     });
+    //     $('button.header__button-link--menu-close, button.header__button-link--menu.js-form-close').on('click', function () {
+    //         const windowElem = $('#viewport-scroll');
+    //         const clientHeight = windowElem.attr('data-height');
+    //         $('#viewport-scroll').css('height', `${clientHeight}`);
+    //         $('body > header').css('display', 'block');
+    //         $('.viewport').css('position', 'fixed')
+    //         $('.scroll-container').css({
+    //             'position': 'absolute',
+    //             'transform': 'preserve-3d',
+    //             'height': 'auto'
+    //         })
+    //     });
+    // } else {
+    //     $('button.header__button-link--project, button.header__button-link--menu.js-menu-open, .main-section__button.js-form-open').on('click', function () {
+    //         $('body > header').css('display', 'none')
+    //     });
+    //     $('button.header__button-link--menu-close, button.header__button-link--menu.js-form-close').on('click', function () {
+    //         $('body > header').css('display', 'block');
+    //     })
+    // }
+    // $('ul[data-pagination]').bind("DOMSubtreeModified", function () {
+    //     handler();
+    // });
+    // $('ul.glosario__item-list').bind("DOMSubtreeModified", function () {
+    //     handler();
+    // });
 });

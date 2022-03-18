@@ -54,7 +54,7 @@
         <wb-scripts src="idees">
             [ "/engine/modules/yonger/common/blocks/assets/slick/slick.min.js"
             ,"/assets/scripts/libs/img-comparison-slider.js" ,"/assets/scripts/libs/parallax.js"
-            , "/assets/scripts/libs/dynamic.js", "/assets/scripts/libs/smooth-scroll.js"
+            , "/assets/scripts/libs/dynamic.js"
             ,"/assets/scripts/libs/swiper-bundle.min.js", "/assets/scripts/index.js" ]
         </wb-scripts>
         <wb-styles src="slick">
