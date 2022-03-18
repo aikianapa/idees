@@ -65,11 +65,7 @@
 </script>
 <script>
   const moreBtn = document.querySelector('.page-link.more')
-  moreBtn.innerHTML = `<span class="button__icon-wrapper">
-    <svg class="button__icon" width="24" height="24">
-        <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
-    </svg>
-    </span> загрузить еще`
+  moreBtn.innerHTML = `<span class="text-icon">загрузить еще</span> <span class="button__icon-wrapper"><svg class="button__icon" width="24" height="24"><use xlink:href="/assets/img/sprite.svg#arrow-right"></use></svg></span>`
 </script>
 </view>
 

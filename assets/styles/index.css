@@ -5244,7 +5244,7 @@ body:not(.dark) .main-section__scene-video-white {
    }
 }
 .article-page__content p {
-   margin: 0 0 8px;
+   margin: 0 0 50px;
    font-size: 14px;
    line-height: 18px;
 }
@@ -7691,9 +7691,18 @@ body:not(.dark) .main-section__scene-video-white {
 }
 
 .page-link.more .button__icon-wrapper {
-   margin-right: 8px;
+   margin-left: 8px;
 }
 
 .page-link.more .button__icon {
    transform: rotate(90deg);
+}
+
+.text-icon {
+   display: flex;
+   align-items: center;
+}
+
+.text__icon .button__icon-wrapper {
+   order: 0;
 }
