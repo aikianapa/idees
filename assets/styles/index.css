@@ -5244,9 +5244,18 @@ body:not(.dark) .main-section__scene-video-white {
    }
 }
 .article-page__content p {
-   margin: 0 0 50px;
    font-size: 14px;
    line-height: 18px;
+}
+.article-page__content p,
+.article-page__content ul,
+.article-page__content ol,
+.article-page__content h2,
+.article-page__content h3,
+.article-page__content h4,
+.article-page__content h5,
+.article-page__content h6 {
+   margin: 0 0 50px;
 }
 @media (min-width: 960px) {
    .article-page__content p {
