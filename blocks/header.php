@@ -96,12 +96,6 @@
 
 <edit header="Шапка сайта">
    <div>
-      <wb-module wb="module=yonger&amp;mode=edit&amp;block=common.inc"></wb-module>
-   </div>
-   <div>
-      <wb-module wb="module=yonger&mode=edit&block=common.inc" />
-   </div>
-   <div>
       <wb-module wb="module=yonger&mode=edit&block=common.inc" />
    </div>
 </edit>

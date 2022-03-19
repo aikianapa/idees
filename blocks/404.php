@@ -1,4 +1,4 @@
-<view header="Ошибка 404">
+<view>
     <main class="page__main page__main--full-height">
         <div class="page404">
             <h1 class="page404__title">404</h1>
@@ -30,6 +30,8 @@
     </main>
 </view>
 
-<edit>
+<edit header="Ошибка 404">
+    <div>
     <wb-module wb="module=yonger&mode=edit&block=common.inc" />
+    </div>
 </edit>
