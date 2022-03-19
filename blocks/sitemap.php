@@ -1,11 +1,8 @@
 <view>
     <main class="page__main">
-
         <section class="container map">
             <h1 class="page__title page__title-container">Карта сайта</h1>
-
             <div class="">
-
                 <ul class="map__section" wb-tree="call=yongerSiteMenu">
                     <li class="level-{{_lvl}}" wb-if="'{{id}}' !== '{{_var.pid}}'">
                         <a class="map__link" href="{{path}}">{{header.{{_sess.lang}}}}</a>
