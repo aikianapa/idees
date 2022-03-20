@@ -328,27 +328,4 @@
             </div>
         </div>
     </wb-multilang>
-
-
-    <div class="form-group">
-        <label for="my-input">Заголовок</label>
-        <input class="form-control col-12" type="text" name="title" placeholder="Заголовок" />
-    </div>
-    <wb-multiinput name="list">
-        <input class="form-control col-12 mb-1" name="text1" placeholder="Заголовок">
-        <textarea class="form-control col-12" rows="auto" name="text2" placeholder="Текст"></textarea>
-    </wb-multiinput>
-
-    <div class="form-group">
-        <label for="my-input">Заголовок</label>
-        <input class="form-control col-12" type="text" name="title" placeholder="Заголовок строки" />
-    </div>
-    <wb-multiinput name="list">
-        <textarea class="form-control col-12" rows="auto" name="text2" placeholder="Текст"></textarea>
-    </wb-multiinput>
-
-    <div class="form-group">
-        <label for="my-input">Текст внизу</label>
-        <textarea class="form-control" name="text1" placeholder="Текст внизу"></textarea>
-    </div>
 </edit>
