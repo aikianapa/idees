@@ -15,7 +15,7 @@
         <source type="video/mp4" src="{{video_dark.0.img}}" wb-if="'{{video_dark.0.img}}'>''">
     </video>
 
-    <!-- <img class="main-section__scene-image" src="/assets/img/1x1_#676f51ff.png" alt="main-photo"> -->
+    <!-- <img class="main-section__scene-image" src="" alt="main-photo"> -->
   </div>
 
   <div class="main-section animation-section container">
