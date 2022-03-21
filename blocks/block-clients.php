@@ -4,10 +4,11 @@
             {{title}}
         </h2>
         <wb-var clients1='{{explode(",",{{clients}})}}'></wb-var>
-        <wb-var clients2='{{explode(",",{{clients2}})}}'></wb-var>
-        <wb-var clients3='{{explode(",",{{clients3}})}}'></wb-var>
+        <wb-var clients2='{{explode(",",{{clients1}})}}'></wb-var>
+        <wb-var clients3='{{explode(",",{{clients2}})}}'></wb-var>
+
         <div class="agency__clients">
-            <div class="agency__clients-wrapper">
+            <div class="agency__clients-wrapper" wb-if="'{{clients}}'>''">
                 <ul class="agency__clients-list agency__clients-list--first">
                     <wb-foreach wb="from=_var.clients1&amp;tpl=false">
                         <li class="agency__client">{{_val}}</li>
@@ -15,7 +16,7 @@
                 </ul>
             </div>
 
-            <div class="agency__clients-wrapper" wb-if="'{{clients2}}'>''">
+            <div class="agency__clients-wrapper" wb-if="'{{clients1}}'>''">
                 <ul class="agency__clients-list agency__clients-list--second">
                     <wb-foreach wb="from=_var.clients2&amp;tpl=false">
                         <li class="agency__client">{{_val}}</li>
@@ -23,7 +24,7 @@
                 </ul>
             </div>
 
-            <div class="agency__clients-wrapper" wb-if="'{{clients3}}'>''">
+            <div class="agency__clients-wrapper" wb-if="'{{clients2}}'>''">
                 <ul class="agency__clients-list agency__clients-list--third">
                     <wb-foreach wb="from=_var.clients3&amp;tpl=false">
                         <li class="agency__client">{{_val}}</li>
