@@ -9,8 +9,9 @@
                 </li>
             </wb-foreach>
         </ul>
-
-        <wb-foreach wb="from=tabs&tpl=false">
+    </section>
+    <div class="special__content">
+    <wb-foreach wb="from=tabs&tpl=false">
             <div class="special__tab-content">
                 <section class="special__top-section container">
                     <div class="special__top-section-container">
@@ -160,7 +161,7 @@
 
             </div>
         </wb-foreach>
-    </section>
+    </div>
     <wb-jq wb=" $dom->find('.special__tabs > .special__tabs-item:first-child')->addClass('special__tabs-item-active');
                 $dom->find('.special__top-section > .special__tab-content:first-child')->addClass('tab-content-active');"
     />
