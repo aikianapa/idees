@@ -26,7 +26,6 @@
         <table class="table table-striped table-hover tx-15">
             <thead>
                 <tr>
-                    <td>&nbsp;</td>
                     <td>Наименование</td>
                     <td>Теги</td>
                     <td class="text-center">На главной</td>
@@ -42,10 +41,7 @@
                             'filter': {'_site':'{{_sett.site}}'}
                 }">
                     <tr class="bg-transparent">
-                        <td data-ajax="{'url':'/cms/ajax/form/projects/edit/{{_id}}','append':'modals'}" class="cursor-pointer">
-                            <img data-src="/thumbc/50x30/src{{cover.0.img}}" class="img-fluid rounded" />
-                        </td>
-                        <td class="w-25">
+                        <td  class="w-25 cursor-pointer" data-ajax="{'url':'/cms/ajax/form/projects/edit/{{_id}}','append':'modals'}" class="cursor-pointer">
                             {{name}}
                         </td>
                         <td class="w-25">

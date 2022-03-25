@@ -1,23 +1,27 @@
 <view>
 
-                <h2 class="visually-hidden">Описание проекта</h2>
+    <h2 class="visually-hidden">Описание проекта</h2>
 
-                <div class="project__content-block">
-                    <div class="project__content-text-block">
-                        <h3 class="project__content-title">{{title}}</h3>
+    <div class="project__content-block">
+        <div class="project__content-text-block">
+            <h3 class="project__content-title">{{title}}</h3>
 
-                        <p class="project__content-text text-break">{{text}}</p>
-                    </div>
+            <p class="project__content-text text-break">{{text}}</p>
+        </div>
 
-                    <img class="project__content-main-image" width="1620" height="600"
-                        data-src="/thumbc/1620x600/src{{_parent.cover.0.img}}" data-srcset="/thumbc/3240x1200/src{{_parent.cover.0.img}} 2x"
-                        alt="{{title}}">
-                </div>
+        <img class="project__content-main-image" width="1620" height="600" data-src="/thumbc/1620x600/src{{cover.0.img}}"
+            data-srcset="/thumbc/3240x1200/src{{cover.0.img}} 2x" alt="{{title}}" wb-if="'{{cover.0.img}}'>''">
+    </div>
 </view>
 
 <edit header="Описание проекта">
     <div>
         <wb-module wb="module=yonger&mode=edit&block=common.inc" />
+    </div>
+    <div class="form-group row">
+        <div class="col-12 mb-2">
+            <input name="cover" wb="module=filepicker&mode=single&width=650&height=215" wb-path="/uploads/projects/cover" class="pt-0">
+        </div>
     </div>
     <div class="form-group row">
         <div class="col-12 mb-2">
