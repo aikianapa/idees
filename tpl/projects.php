@@ -25,8 +25,8 @@
                             <li class="project__work-item">{{_var.tags.{{_val}}.name}}</li>
                         </wb-foreach>
                     </ul>
-
-                    <a class="project__link" href="{{link}}">{{link}}</a>
+                    <wb-var url="{{parse_url({{link}})}}" />
+                    <a class="project__link" href="{{link}}">{{_var.url.host}}</a>
                 </div>
             </div>
 

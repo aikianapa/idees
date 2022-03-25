@@ -11,7 +11,7 @@
 
                     <img class="project__content-main-image" width="1620" height="600"
                         data-src="/thumbc/1620x600/src{{_parent.cover.0.img}}" data-srcset="/thumbc/3240x1200/src{{_parent.cover.0.img}} 2x"
-                        alt="Проект компании ILM Group">
+                        alt="{{title}}">
                 </div>
 </view>
 
