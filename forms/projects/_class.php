@@ -20,7 +20,7 @@ class projectsClass extends cmsFormsClass
             'id'=>['$ne'=>$item['id']],
             'tags'=>['$like'=>$tags[0]]
         ]]);
-        $item['similar'] = array_keys($similar);
+        $this->similar($item);
     }
     function afterItemSave(&$item)
     {
@@ -29,7 +29,7 @@ class projectsClass extends cmsFormsClass
 
     function similar(&$item = null) {
         if (!$item) return;
-        $list = $this->app->itemList('projects')['list'];
+        $list = $this->app->itemList('projects',['filter'=>['active'=>'on']])['list'];
         $tags = $item['tags'];
         $similar = [];
         foreach($list as $art) {

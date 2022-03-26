@@ -61,7 +61,7 @@
             </a>
         </div>
 
-        <section class="project__similar container"  wb-if="'{{similar}}'>''">
+        <section class="project__similar container"  wb-if="'{{similar}}'>'[]'">
             <div class="project__similar-top block-button-arrows">
                 <h2 class="page__section-title">Похожие проекты</h2>
                 <div class="project__slider-buttons swiper-slider-buttons">
