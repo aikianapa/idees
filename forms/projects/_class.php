@@ -33,7 +33,7 @@ class projectsClass extends cmsFormsClass
         $tags = $item['tags'];
         $similar = [];
         foreach($list as $art) {
-            if ($art !== $item) {
+            if ($art['id'] !== $item['id']) {
                 $atags = $art['tags'];
                 $ints = array_intersect($tags,$atags);
                 if (count($ints)) {
