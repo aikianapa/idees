@@ -61,7 +61,7 @@
             </a>
         </div>
 
-        <section class="project__similar container">
+        <section class="project__similar container"  wb-if="'{{similar}}'>''">
             <div class="project__similar-top block-button-arrows">
                 <h2 class="page__section-title">Похожие проекты</h2>
                 <div class="project__slider-buttons swiper-slider-buttons">
@@ -85,8 +85,7 @@
             <div class="project__similar-swiper slider-swiper">
                 <ul class="project__similar-list swiper-container">
                     <div class="project__similar-slider-wrapper swiper-wrapper">
-                        <wb-foreach wb="from=similar&tpl=false&rand=true">
-                        <wb-data wb="table=projects&item={{_val}}">
+                        <wb-foreach wb="from=similar&size=6&limit=18&more=true:ещё">
                         <wb-var link="/projects/{{wbFurlGenerate({{name}})}}"/>
                             <li class="project__similar-item swiper-slide">
                                 <article class="case">
@@ -110,7 +109,6 @@
                                     </a>
                                 </article>
                             </li>
-                        </wb-data>
                         </wb-foreach>
                     </div>
                 </ul>

@@ -22,13 +22,26 @@ class projectsClass extends cmsFormsClass
         ]]);
         $item['similar'] = array_keys($similar);
     }
-}
-
-
     function afterItemSave(&$item)
     {
         $this->app->shadow('/cms/ajax/form/pages/list');
     }
 
-
+    function similar(&$item = null) {
+        if (!$item) return;
+        $list = $this->app->itemList('projects')['list'];
+        $tags = $item['tags'];
+        $similar = [];
+        foreach($list as $art) {
+            if ($art !== $item) {
+                $atags = $art['tags'];
+                $ints = array_intersect($tags,$atags);
+                if (count($ints)) {
+                    $similar[] = $art;
+                }
+            }
+        }
+        $item['similar'] = $similar;
+    }
+}
 ?>
