@@ -7,12 +7,4 @@ function datetext($date)
 {
     return strftime('%e %B %Y', strtotime($date));
 }
-
-
-function _afterItemSave(&$item)
-{
-    $_ENV['app']->shadow('/cms/ajax/form/pages/list');
-    return $item;
-}
-
 ?>
