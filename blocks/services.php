@@ -25,10 +25,9 @@
                         </li>
                         </wb-foreach>
                     </ul>
-
-                    <svg class="services__icon" width="180" height="60" aria-hidden="true">
-                        <use xlink:href="/assets/img/sprite.svg#strategy"></use>
-                    </svg>
+                    <svg class="service__icon" width="180" height="60" aria-hidden="true">
+                        <use xlink:href="/assets/img/sprite.svg#{{_parent.name}}"></use>
+                    </svg> 
                 </li>
                 </wb-data>
             </wb-foreach>
