@@ -1,11 +1,10 @@
 <view><div class="service-page__section service-page__section--top container">
         <div class="service-page__title-container">
             <h1 class="page__title">{{_parent.name}}</h1>
-
             <p class="service-page__description">{{_parent.descr}}</p>
 
             <svg class="service-page__icon" width="360" height="120" aria-hidden="true">
-                <use xlink:href="/assets/img/sprite.svg#develop"></use>
+                <use xlink:href="/assets/img/sprite.svg#{{_parent.tags}}"></use>
             </svg>
         </div>
 
