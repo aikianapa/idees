@@ -23,7 +23,7 @@
         </span>
 
         <wb-var types="" />
-        <wb-data wb="table=catalogs&item=glosario&field=tree">
+        <wb-data wb="table=catalogs&item=projects&field=tree">
             <wb-var types="{{data}}" />
         </wb-data>
 
