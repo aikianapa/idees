@@ -37,7 +37,7 @@
 
             <div class="cases-section projects__content">
                 <ul class="cases-section__list" id="projectsList">
-                    <wb-foreach wb="table=projects&size=2&bind=cms.list.projects&render=server&more=true:" wb-filter="active=on">
+                    <wb-foreach wb="table=projects&sort=_sort&size=2&bind=cms.list.projects&render=server&more=true:" wb-filter="active=on">
                         <li class="cases-section__item">
                             <article class="case">
                                 <a class="case__title-link-wrapper" href="/projects/{{wbFurlGenerate({{name}})}}">

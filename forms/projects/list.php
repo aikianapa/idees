@@ -36,7 +36,7 @@
                 <wb-foreach wb="{'ajax':'/api/query/projects/',
                             'render':'server',
                             'bind':'cms.list.projects',
-                            'sort':'date:d',
+                            'sort':'_sort',
                             'size':'{{_sett.page_size}}',
                             'filter': {'_site':'{{_sett.site}}'}
                 }">
