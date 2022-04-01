@@ -31,7 +31,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3">Разделы</label>
                         <div class="col-sm-9">
-                            <wb-data wb="table=catalogs&item=glosario&field=tree">
+                            <wb-data wb="table=catalogs&item=projects&field=tree">
                             <select name="tags" class="form-control" wb-select2 multiple>
                                 <wb-foreach wb-from="data">
                                     <option value="{{_id}}" selected wb-if="'{{in_array({{_id}},{{_parent._parent.tags}})}}'=='1'">{{name}}</option>

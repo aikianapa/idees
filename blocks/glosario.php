@@ -10,13 +10,13 @@
                 <input class="glosario__search" type="search" id="search" name="search" placeholder="Найти" done="">
 
                 <ul class="glosario__menu">
-                    <wb-data wb="table=catalogs&item=glosario&field=tree">
+                    <wb-data wb="table=catalogs&item=projects&field=tree">
                     <li class="glosario__menu-item">
-                        <a class="glosario__menu-link glosario__menu-link--current" data-type="all" href="#">Все</a>
+                        <a class="glosario__menu-link glosario__menu-link--current" data-type="all" href="javascript:void(0);">Все</a>
                     </li>
                     <wb-foreach wb-from="data">
                     <li class="glosario__menu-item" data-type="{{_id}}">
-                        <a class="glosario__menu-link" data-type="{{_id}}" href="#">{{name}}</a>
+                        <a class="glosario__menu-link" data-type="{{_id}}" href="javascript:void(0);">{{name}}</a>
                     </li>
                     </wb-foreach>
                     </wb-data>
