@@ -75,7 +75,7 @@
         </section>
 
         <ul class="blog__list" id="articlesList">
-          <wb-foreach wb="table=blog&size=12&bind=pages.blog&sort=_created:d&_more=true:ещё" wb-filter="{'_id':{'$ne':'{{_var.first}}'}}">
+          <wb-foreach wb="table=blog&size=12&bind=pages.blog&sort=_created:d&more=true:ещё" wb-filter="{'_id':{'$ne':'{{_var.first}}'}}">
             <li class="blog__item">
               <wb-var spec="article--special" href="/blog/{{wbFurlGenerate({{name}})}}" wb-if="'{{spec}}'=='on'" else="" />
               <article class="article {{_var.spec}}">
@@ -129,8 +129,25 @@
           </wb-foreach>
         </ul>
       </div>
+            <div class="page__spinner-block visually-hidden">
+                <img class="page__spinner page__spinner--active" src="/assets/img/spinner.svg" alt="" aria-hidden="true">
+            </div>
     </section>
+        <script wb-app remove>
 
+            $("#articlesList").on('wb-ajax-start', function(ev, params) {
+                if (params.target !== "#articlesList") return;
+                if (params._params !== undefined && params._params.more !== undefined) {
+                    $('.page__spinner-block').removeClass('visually-hidden');
+                }
+            });
+            $("#articlesList").on('wb-ajax-done', function(ev, params) {
+                if (params.target !== "#articlesList") return;
+                if (params._params !== undefined && params._params.more !== undefined) {
+                    $('.page__spinner-block').addClass('visually-hidden');
+                }
+            });
+        </script>
   </main>
 </view>
 
