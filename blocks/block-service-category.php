@@ -3,7 +3,7 @@
     <ul class="category__list">
       <wb-foreach wb="table={{_parent.attach}}&tpl=false" wb-filter="{{_parent.attach_filter}}">
             <li class="category__item">
-                <h3 class="category__item-title">{{name}}</h3>
+                <a class="category__item-title" href="{{_parent._parent.url}}/{{wbFurlGenerate({{name}})}}">{{name}}</h3>
                 <p class="category__item-description">{{descr}}</p>
 
                 <a class="button category__link" href="{{_parent._parent.url}}/{{wbFurlGenerate({{name}})}}">

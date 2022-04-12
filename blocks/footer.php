@@ -21,9 +21,9 @@
                     <li class="footer__socials-item">
                         <a class="footer__link footer__link--social" href="%7B%7B_var.telegram%7D%7D">Telegram</a>
                     </li>
-                    <li class="footer__socials-item">
-                        <a class="footer__link footer__link--social" href="%7B%7B_var.messenger%7D%7D">Messenger</a>
-                    </li>
+<!--                     <li class="footer__socials-item"> -->
+<!--                         <a class="footer__link footer__link--social" href="%7B%7B_var.messenger%7D%7D">Messenger</a> -->
+<!--                     </li> -->
                 </ul>
             </div>
 

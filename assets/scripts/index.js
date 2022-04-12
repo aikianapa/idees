@@ -159,7 +159,7 @@ function setScrollTop() {
 
     if (scrollTopButton) {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 800) {
+            if (window.scrollY > 1) {
                 scrollTopButton.classList.add('up-button--active');
             } else {
                 scrollTopButton.classList.remove('up-button--active');
@@ -660,8 +660,10 @@ $(document).ready(function () {
         var st = $(this).scrollTop();
         if (st > lastScrollTop) {
             $('.header--menu').addClass('bottom-scroll')
+            $('.up-button').removeClass('full-btn')
         } else {
             $('.header--menu').removeClass('bottom-scroll')
+            $('.up-button').addClass('full-btn')
         }
         lastScrollTop = st;
     });
@@ -684,6 +686,14 @@ $(document).ready(function () {
     $('.special__tab-link').on('click', function (e) {
         e.preventDefault();
     });
+
+    $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+        localStorage.setItem('activeTab', $(e.target).attr('href'));
+    });
+    var activeTab = localStorage.getItem('activeTab');
+    if(activeTab){
+        $('#myTab a[href="' + activeTab + '"]').tab('show');
+    }
 
     // var scroller
     // var handler = function () {

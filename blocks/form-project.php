@@ -56,10 +56,23 @@
             <div class="form-section__title-container">
                 <h2 class="form-section__title">Расскажите о вашем проекте</h2>
 
-                <p class="form-section__phone">
-                    <span>Или свяжитесь с нами:</span>
-                    <a class="form-section__phone-link" href="tel:+{{wbDigitsOnly({{_sett.phone}})}}">{{_sett.phone}}</a>
-                </p>
+                <div class="form-section__right">
+                    <p class="form-section__phone">
+                        <span>Или свяжитесь с нами:</span>
+                        <a class="form-section__phone-link" href="tel:+{{wbDigitsOnly({{_sett.phone}})}}">{{_sett.phone}}</a>
+                    </p>
+                    <ul class="form-section__list">
+                        <li class="form-section__item">
+                            <a class="form-section__link form-section__link--social" href="%7B%7B_var.whatsapp%7D%7D">Whatsapp</a>
+                        </li>
+                        <li class="form-section__-item">
+                            <a class="form-section__link form-section__link--social" href="%7B%7B_var.telegram%7D%7D">Telegram</a>
+                        </li>
+        <!--                         <li class="form-section__-item"> -->
+        <!--                             <a class="form-section__link form-section__link--social" href="%7B%7B_var.messenger%7D%7D">Messenger</a> -->
+        <!--                         </li> -->
+                    </ul>
+                </div>
             </div>
         <wb-data wb-from="_cleardata">
             <form class="form form-project" method="POST" action="quotes">

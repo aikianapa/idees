@@ -87,9 +87,9 @@
                         <li class="menu__socials-item">
                             <a class="menu__socials-link" href="{{_var.telegram}}">Telegram</a>
                         </li>
-                        <li class="menu__socials-item">
-                            <a class="menu__socials-link" href="{{_var.messenger}}">Messenger</a>
-                        </li>
+<!--                         <li class="menu__socials-item"> -->
+<!--                             <a class="menu__socials-link" href="{{_var.messenger}}">Messenger</a> -->
+<!--                         </li> -->
                     </ul>
                 </div>
             </div>
