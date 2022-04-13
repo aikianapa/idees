@@ -683,17 +683,29 @@ $(document).ready(function () {
             .closest('body').find('div.special__tab-content').removeClass('tab-content-active').eq($(this).index()).addClass('tab-content-active');
     });
 
-    $('.special__tab-link').on('click', function (e) {
+    $('.tabloid_navigation a').click(function(e){
         e.preventDefault();
+        if($(this).parent('li.special__tabs-item').hasClass('special__tabs-item-active')){
+            return true;
+        }
+        window.location.hash = e.target.hash;
+        $('li.special__tabs-item')
+            .addClass('special__tabs-item-active').siblings().removeClass('special__tabs-item-active')
+            .closest('body').find('div.special__tab-content').removeClass('tab-content-active').eq($(this).index()).addClass('tab-content-active');
+        $($(this).attr("href")).fadeIn(200);
     });
 
-    $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
-        localStorage.setItem('activeTab', $(e.target).attr('href'));
+    $(window).scroll(function() {
+        if(!$(window).scrollTop() == 0) {
+            $('.main-section__button.js-form-open.mobile-button').addClass('mobile-anim')
+            $('.main-section__button.js-form-open.pc-button').addClass('mobile-hidden')
+        } else {
+            $('.main-section__button.js-form-open.mobile-button').removeClass('mobile-anim')
+            $('.main-section__button.js-form-open.pc-button').removeClass('mobile-hidden')
+        }
     });
-    var activeTab = localStorage.getItem('activeTab');
-    if(activeTab){
-        $('#myTab a[href="' + activeTab + '"]').tab('show');
-    }
+    const siteMapTitle = $(".map__link:contains('Глоссарий')").addClass('new-title')
+    const siteMapTitleParent = $(".map__link:contains('Глоссарий')").parents('.map__list').addClass('new-elem')
 
     // var scroller
     // var handler = function () {

@@ -4,7 +4,7 @@
 
         <p class="page__big-text brand__big-text container text-break">{{text}}</p>
 
-        <div class="brand__actions" wb-if="'{{count({{links}})}}' > 0 AND '{{links.0.link}}' > ''">
+        <div class="brand__actions container" wb-if="'{{count({{links}})}}' > 0 AND '{{links.0.link}}' > ''">
             
             <wb-foreach wb="from=links&tpl=false">
                 <a class="button brand__link" href="{{link}}" download wb-if="'{{download}}'=='on'">

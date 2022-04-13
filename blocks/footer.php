@@ -32,8 +32,8 @@
                     <p class="footer__copy">{{copyright}} © {{year}} – {{date("Y")}}</p>
 
                     <a class="footer__link" href="http://yonger.ru/" target="_blank">
-                        Built on <span>
-                            Yonger
+                        Построен на <span>
+                            ёнгер
                             <svg viewBox="0 0 70 36">
                                 <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />
                             </svg>
@@ -54,6 +54,15 @@
             <use xlink:href="/assets/img/sprite.svg#arrow-top"></use>
         </svg>
         <span class="up-button__text">Наверх</span>
+    </button>
+    <button class="button main-section__button js-form-open animation-target mobile-button" type="button">
+      <span class="button__icon-wrapper">
+        <svg class="button__icon" width="24" height="24" aria-hidden="true">
+          <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
+        </svg>
+      </span>
+
+      <span class="button__text">начать проект</span>
     </button>
     <div class="cookies-block">
         <div class="container cookies-block__container">

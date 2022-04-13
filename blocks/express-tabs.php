@@ -4,8 +4,8 @@
 
         <ul class="special__tabs" id="myTab">
             <wb-foreach wb="from=tabs&tpl=false">
-                <li class="special__tabs-item" data-toggle="tab">
-                    <a class="special__tab-link" href="#">{{tab_title}}</a>
+                <li class="special__tabs-item">
+                    <a class="special__tab-link" href="#tab{{_idx}}">{{tab_title}}</a>
                 </li>
             </wb-foreach>
         </ul>

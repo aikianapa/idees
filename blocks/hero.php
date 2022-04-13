@@ -25,7 +25,7 @@
       {{text}}
     </p>
 
-    <button class="button main-section__button js-form-open animation-target" type="button">
+    <button class="button main-section__button js-form-open animation-target pc-button" type="button">
       <span class="button__icon-wrapper">
         <svg class="button__icon" width="24" height="24" aria-hidden="true">
           <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
