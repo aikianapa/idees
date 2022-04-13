@@ -16,11 +16,12 @@
 
                 <ul class="footer__socials-list">
                     <li class="footer__socials-item">
-                        <a class="footer__link footer__link--social" href="%7B%7B_var.whatsapp%7D%7D">Whatsapp</a>
-                    </li>
-                    <li class="footer__socials-item">
                         <a class="footer__link footer__link--social" href="%7B%7B_var.telegram%7D%7D">Telegram</a>
                     </li>
+                    <li class="footer__socials-item">
+                        <a class="footer__link footer__link--social" href="%7B%7B_var.whatsapp%7D%7D">Whatsapp</a>
+                    </li>
+
 <!--                     <li class="footer__socials-item"> -->
 <!--                         <a class="footer__link footer__link--social" href="%7B%7B_var.messenger%7D%7D">Messenger</a> -->
 <!--                     </li> -->

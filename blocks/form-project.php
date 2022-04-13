@@ -63,10 +63,10 @@
                     </p>
                     <ul class="form-section__list">
                         <li class="form-section__item">
-                            <a class="form-section__link form-section__link--social" href="%7B%7B_var.whatsapp%7D%7D">Whatsapp</a>
-                        </li>
-                        <li class="form-section__-item">
                             <a class="form-section__link form-section__link--social" href="%7B%7B_var.telegram%7D%7D">Telegram</a>
+                        </li>
+                        <li class="form-section__item">
+                            <a class="form-section__link form-section__link--social" href="%7B%7B_var.whatsapp%7D%7D">Whatsapp</a>
                         </li>
         <!--                         <li class="form-section__-item"> -->
         <!--                             <a class="form-section__link form-section__link--social" href="%7B%7B_var.messenger%7D%7D">Messenger</a> -->

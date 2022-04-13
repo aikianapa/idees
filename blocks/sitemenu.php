@@ -82,11 +82,12 @@
 
                     <ul class="menu__socials-list">
                         <li class="menu__socials-item">
-                            <a class="menu__socials-link" href="{{_var.whatsapp}}">Whatsapp</a>
-                        </li>
-                        <li class="menu__socials-item">
                             <a class="menu__socials-link" href="{{_var.telegram}}">Telegram</a>
                         </li>
+                        <li class="menu__socials-item">
+                            <a class="menu__socials-link" href="{{_var.whatsapp}}">Whatsapp</a>
+                        </li>
+
 <!--                         <li class="menu__socials-item"> -->
 <!--                             <a class="menu__socials-link" href="{{_var.messenger}}">Messenger</a> -->
 <!--                         </li> -->
