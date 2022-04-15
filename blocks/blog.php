@@ -93,7 +93,7 @@
                 </a>
 
                 <h3 class="article__title">
-                  <a  wb-if="'{{spec}}'==''" class="button article__link" href="/blog/{{wbFurlGenerate({{name}})}}">
+                  <a  wb-if="'{{spec}}'==''" class="article__link" href="/blog/{{wbFurlGenerate({{name}})}}">
                     {{name}}
                   </a>
                   <a  wb-if="'{{spec}}'=='on'" href="/blog/{{wbFurlGenerate({{name}})}}">
