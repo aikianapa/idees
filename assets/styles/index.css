@@ -2100,7 +2100,7 @@ ol.document__list--alpha {
    border-top: 1px solid var(--border-color);
    transform: translateY(100%);
    transition: 0.8s;
-   z-index: 4;
+   z-index: 5000;
 }
 .mailing-block--active {
    transform: translateY(0);
@@ -3115,6 +3115,7 @@ body:not(.dark) .main-section__scene-video-white {
       visibility: hidden;
       transform: scale(0);
       position: fixed;
+      z-index: 4;
       right: 20px;
       bottom: 20px;
       justify-content: flex-start;
