@@ -77,10 +77,6 @@
         </section>
         <wb-snippet wb="name=wbapp" />
         <script wb-app remove>
-            function changeLink() {
-                const moreBtn = document.querySelector('.page-link.more')
-                moreBtn.innerHTML = `<span class="text-icon">загрузить еще</span> <span class="button__icon-wrapper"><svg class="button__icon" width="24" height="24"><use xlink:href="/assets/img/sprite.svg#arrow-right"></use></svg></span>`
-            }
             $('.projects__tags').delegate('.tags__item', wbapp.evClick, function() {
                 $('.projects__tags .tag').removeClass('tag--active')
                 $(this).children('.tag').addClass('tag--active')
@@ -90,21 +86,25 @@
                 if (params.target !== "#projectsList") return;
                 if (params._params !== undefined && params._params.more !== undefined) {
                     $('.page__spinner-block').removeClass('visually-hidden');
-                    changeLink();
                 }
             });
             $("#projectsList").on('wb-ajax-done', function(ev, params) {
                 if (params.target !== "#projectsList") return;
                 if (params._params !== undefined && params._params.more !== undefined) {
                     $('.page__spinner-block').addClass('visually-hidden');
-                    changeLink();
                 }
             });
         </script>
     </main>
     <script>
-        const moreBtn = document.querySelector('.page-link.more')
-        moreBtn.innerHTML = `<span class="text-icon">загрузить еще</span> <span class="button__icon-wrapper"><svg class="button__icon" width="24" height="24"><use xlink:href="/assets/img/sprite.svg#arrow-right"></use></svg></span>`
+        function changeLink() {
+            const moreBtn = document.querySelector('.page-link.more')
+            moreBtn.innerHTML = `<span class="text-icon">загрузить еще</span> <span class="button__icon-wrapper"><svg class="button__icon" width="24" height="24"><use xlink:href="/assets/img/sprite.svg#arrow-right"></use></svg></span>`
+        }
+        $("#projectsList").bind("DOMSubtreeModified",function(){
+            changeLink();
+        });
+        changeLink()
     </script>
 </view>
 <edit header="Список проектов">
