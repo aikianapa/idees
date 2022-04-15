@@ -5352,6 +5352,13 @@ body:not(.dark) .main-section__scene-video-white {
    overflow: hidden;
    position: relative;
 }
+.article__image {
+   -o-object-fit: cover;
+   object-fit: cover;
+   height: 100%;
+   width: 100%;
+   transition: 0.5s;
+}
 .article__img:hover .article__image {
    transform: scale(1.03);
    transition: 0.5s;
