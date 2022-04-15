@@ -50,6 +50,15 @@
 </div>
 <wb-snippet wb="name=wbapp" />
 <script type="wbapp">
+    function changeLink() {
+        const moreBtn = document.querySelector('.page-link.more');
+        moreBtn.innerHTML = `<span class="text-icon">загрузить еще</span> <span class="button__icon-wrapper"><svg class="button__icon" width="24" height="24"><use xlink:href="/assets/img/sprite.svg#arrow-right"></use></svg></span>`
+    }
+
+    $("#feedbackList").bind("DOMSubtreeModified",function(){
+        changeLink();
+    });
+    changeLink();
     $("#feedbackList").on('wb-ajax-start',function(ev,params) {
         if (params.target !== "#feedbackList") return;
         if (params._params !== undefined && params._params.more !== undefined) {
@@ -63,18 +72,6 @@
         }
     });
 </script>
-<script>
-        function changeLink() {
-            const moreBtn = document.querySelector('.page-link.more');
-            moreBtn.innerHTML = `<span class="text-icon">загрузить еще</span> <span class="button__icon-wrapper"><svg class="button__icon" width="24" height="24"><use xlink:href="/assets/img/sprite.svg#arrow-right"></use></svg></span>`
-        }
-
-        $("#feedbackList").bind("DOMSubtreeModified",function(){
-            changeLink();
-        });
-        changeLink();
-
-    </script>
 </view>
 
 <edit header="Список отзывов">
