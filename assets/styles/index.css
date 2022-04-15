@@ -5561,6 +5561,9 @@ body:not(.dark) .main-section__scene-video-white {
    .blog__item .article {
       min-height: auto;
    }
+   .blog__item .article--special {
+      min-height: 500px;
+   }
 }
 .blog__title-container {
    display: flex;
