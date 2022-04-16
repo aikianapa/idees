@@ -9,7 +9,8 @@
         <source type="video/mp4" src="{{video_dark.0.img}}" wb-if="'{{video_dark.0.img}}'>'' AND '{{image_dark.0.img}}'==''">
     </video>
 
-    <img class="main-section__scene-image" src="{{image.0.img}}" alt="main-photo"  wb-if="'{{image.0.img}}'>'' "> 
+    <img class="main-section__scene-image main-section__scene-video-white" src="{{image_white.0.img}}" alt="main-photo"  wb-if="'{{image_white.0.img}}'>'' "> 
+    <img class="main-section__scene-image main-section__scene-video-black" src="{{image_dark.0.img}}" alt="main-photo"  wb-if="'{{image_dark.0.img}}'>'' "> 
   </div>
 
   <div class="main-section animation-section container">
