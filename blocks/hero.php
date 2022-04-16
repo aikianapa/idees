@@ -3,10 +3,10 @@
   <div id="scene" class="main-section__scene">
 
     <video class="main-section__scene-video main-section__scene-video-white" autoplay playsinline muted loop>
-        <source type="video/mp4" src="{{video_white.0.img}}" wb-if="'{{video_white.0.img}}'>'' AND '{{image.0.img}}'=='' ">
+        <source type="video/mp4" src="{{video_white.0.img}}" wb-if="'{{video_white.0.img}}'>'' AND '{{image_white.0.img}}'=='' ">
     </video>
     <video class="main-section__scene-video main-section__scene-video-black" autoplay playsinline muted loop>
-        <source type="video/mp4" src="{{video_dark.0.img}}" wb-if="'{{video_dark.0.img}}'>'' AND '{{image.0.img}}'==''">
+        <source type="video/mp4" src="{{video_dark.0.img}}" wb-if="'{{video_dark.0.img}}'>'' AND '{{image_dark.0.img}}'==''">
     </video>
 
     <img class="main-section__scene-image" src="{{image.0.img}}" alt="main-photo"  wb-if="'{{image.0.img}}'>'' "> 
@@ -49,16 +49,19 @@
   </div>
 
       <div class="form-group row">
-        <div class="col-sm-4">
-            <label>Изображение</label>
-            <wb-module wb="module=filepicker&mode=single&width=300&height=200&name=image" wb-ext="jpg,jpeg,webp" wb-path="/assets/img/" />
+        <div class="col-sm-6">
+            <label>Изображение White</label>
+            <wb-module wb="module=filepicker&mode=single&width=300&height=200&name=image_white" wb-ext="jpg,jpeg,webp" wb-path="/assets/img/" />
         </div>
-
-        <div class="col-sm-4">
+        <div class="col-sm-6">
+            <label>Изображение Dark</label>
+            <wb-module wb="module=filepicker&mode=single&width=300&height=200&name=image_dark" wb-ext="jpg,jpeg,webp" wb-path="/assets/img/" />
+        </div>
+        <div class="col-sm-6">
             <label>Видео White</label>
             <wb-module wb="module=filepicker&mode=single&width=300&height=200&name=video_white" wb-ext="mp4,avi,mpeg,webm" wb-path="/assets/img/" />
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
             <label>Видео Dark</label>
             <wb-module wb="module=filepicker&mode=single&width=300&height=200&name=video_dark" wb-ext="mp4,avi,mpeg,webm" wb-path="/assets/img/" />
         </div>
