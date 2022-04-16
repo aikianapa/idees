@@ -3,10 +3,10 @@
   <div id="scene" class="main-section__scene">
 
     <video class="main-section__scene-video main-section__scene-video-white" autoplay playsinline muted loop>
-        <source type="video/mp4" src="{{video_white.0.img}}" wb-if="'{{video_white.0.img}}'>'' AND '{{image_white.0.img}}'=='' ">
+        <source type="video/mp4" src="{{video_white.0.img}}" wb-if="'{{image_white.0.img}}'=='' ">
     </video>
     <video class="main-section__scene-video main-section__scene-video-black" autoplay playsinline muted loop>
-        <source type="video/mp4" src="{{video_dark.0.img}}" wb-if="'{{video_dark.0.img}}'>'' AND '{{image_dark.0.img}}'==''">
+        <source type="video/mp4" src="{{video_dark.0.img}}" wb-if="'{{image_dark.0.img}}'==''">
     </video>
 
     <img class="main-section__scene-image main-section__scene-video-white" src="{{image_white.0.img}}" alt="main-photo"  wb-if="'{{image_white.0.img}}'>'' "> 
