@@ -77,7 +77,7 @@
                 </nav>
 
                 <div class="menu__contacts">
-                    <a class="menu__contact-link" href="email:{{_var.email}}" target="_blank">{{_var.email}}</a>
+                    <a class="menu__contact-link" href="mailto:{{_var.email}}" target="_blank">{{_var.email}}</a>
                     <a class="menu__contact-link" href="tel:+{{wbDigitsOnly({{_var.phone}})}}">{{_var.phone}}</a>
 
                     <ul class="menu__socials-list">

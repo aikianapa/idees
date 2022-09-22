@@ -9,9 +9,8 @@
   <wb-data wb="table=catalogs&item=projects">
   <wb-var prjtype="{{_current.tree.data}}" />
   </wb-data>
-  
-  <main class="page__main">
 
+  <main class="page__main">
     <section class="article-page container">
       <div class="article__tag-line article-page__tag-line">
         <wb-foreach wb="from=tags&tpl=false">
@@ -30,10 +29,8 @@
       <p class="article-page__description">
         {{descr}}
       </p>
-
       <img class="article-page__main-image" width="1620" height="600" data-src="/thumbc/1620x600/src{{cover.0.img}}" data-srcset="/thumbc/3240x1200/src{{cover.0.img}} 2x"
         alt="{{name}}">
-
       <div class="article-page__container">
         <div class="article-page__content">
           {{text}}
@@ -160,5 +157,4 @@
     </div>
   </div> -->
 </body>
-
 </html>

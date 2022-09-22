@@ -22,7 +22,8 @@
 
       <div class="partners__grey-description-container text-break">{{text3}}</div>
 
-      <a class="button partners__link" href="#partners-form">
+
+      <a class="button partners__link" id="partner-link" href="#partners-form">
         <span class="button__icon-wrapper">
           <svg class="button__icon" width="24" height="24">
             <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
@@ -34,6 +35,11 @@
     </div>
   </div>
 </section>
+
+<script>
+    document.getElementById("partner-link").href = location.pathname + "#partners-form";
+</script>
+
 </view>
 
 <edit header="Промо блок">

@@ -23,7 +23,9 @@ class quotesClass extends cmsFormsClass {
     function submit()
     {
         $res = [];
-        $item = $this->app->vars('_post');
+        // $item = $this->app->vars('_post');
+        $item = json_decode(file_get_contents('php://input'), true);
+        // print(var_dump($item));
 
 
         if ($this->app->vars('_route.refferer')) {
@@ -53,7 +55,7 @@ class quotesClass extends cmsFormsClass {
 
         header('Content-Type: application/json; charset=utf-8');
         if ($item['email'] == '') {
-            $res = ['error'=>true,'msg'=>'Unknown error'];
+            $res = ['error'=>true, 'msg'=>'*** Unknown error ***'];
             return json_encode($res);
         }
         $qnum = $this->app->module('autoinc');

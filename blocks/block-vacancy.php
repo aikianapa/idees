@@ -46,7 +46,7 @@
                                     <a class="vacancy__contacts-link" href="tel:+{{wbDigitsOnly({{phone}})}}" target="_blank">{{phone}}</a>
                                 </li>
                                 <li class="vacancy__contacts-item">
-                                    <a class="vacancy__contacts-link" href="email:{{email}}" target="_blank">{{email}}</a>
+                                    <a class="vacancy__contacts-link" href="mailto:{{email}}" target="_blank">{{email}}</a>
                                 </li>
                                 <li class="vacancy__contacts-item">
                                     <a class="vacancy__contacts-link" href="https://t.me/{{telegram}}" target="_blank">@{{telegram}}</a>

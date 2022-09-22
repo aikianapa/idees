@@ -10,7 +10,7 @@
                     <button class="footer__link footer__link--form js-form-open">кнопка чтобы начать</button>
                 </p>
 
-                <a class="footer__link footer__link--contact" href="email:%7B%7B_var.email%7D%7D">{{_var.email}}</a>
+                <a class="footer__link footer__link--contact" href="mailto:%7B%7B_var.email%7D%7D">{{_var.email}}</a>
                 <a class="footer__link footer__link--contact"
                     href="tel:+%7B%7BwbDigitsOnly(%7B%7B_var.phone%7D%7D)%7D%7D">{{_var.phone}}</a>
 

@@ -7142,6 +7142,7 @@ body:not(.dark) .main-section__scene-video-white {
 @media (min-width: 1200px) {
    .partners__grey-description-container {
       grid-row: span 2;
+      margin-top: 15%;
    }
 }
 .partners__grey-description {

@@ -85,7 +85,7 @@ function setFormValidation() {
             });
         });
 
-        fileInput.addEventListener('change', function () {
+        fileInput.addEventListener('change', function() {
             if (this.value) {
                 this.classList.add('form__input-file--attached');
             } else {
@@ -205,7 +205,7 @@ function setPopupImages() {
 
     function initPopupImages() {
         allImages.forEach((elem) => {
-            elem.onclick = function () {
+            elem.onclick = function() {
                 const image = this;
                 const body = document.querySelector('body')
                 const imgDataSrc = image.getAttribute('data-src');
@@ -263,7 +263,7 @@ function setPopupFeedbackVideos() {
 
     function initPopupVideos() {
         allVideos.forEach((elem) => {
-            elem.onclick = function (e) {
+            elem.onclick = function(e) {
                 e.preventDefault();
                 const video = this;
                 const videoLink = video.getAttribute('href');
@@ -332,7 +332,7 @@ function setCollapseElements(titleClass, collapseItemClass, buttonClass, contain
         elem.collapseContainer.classList.remove('active');
         elem.collapseContainer.style.height = '0px';
 
-        elem.onclick = function (evt) {
+        elem.onclick = function(evt) {
             evt.preventDefault();
 
             collapseTitles.forEach((elem) => {
@@ -601,7 +601,27 @@ function setPopupSuccess() {
 // };
 /* viewport width */
 
-$(document).ready(function () {
+
+function serialize(data) {
+    let obj = {};
+
+    for (let [key, value] of data) {
+        if (obj[key] !== undefined) {
+            if (!Array.isArray(obj[key])) {
+                obj[key] = [obj[key]];
+            }
+            obj[key].push(value);
+        } else {
+            obj[key] = value;
+        }
+    }
+    return obj;
+}
+
+
+
+
+$(document).ready(function() {
     setModal('.modal', '.form-section', '.js-form-open', '.js-form-close');
     setModal('.modal', '.menu', '.js-menu-open', '.js-menu-close');
 
@@ -625,25 +645,43 @@ $(document).ready(function () {
         new Parallax(scene);
     }
 
-    $('form').submit(function (ev) {
+    $('form').submit(function(ev) {
         if ($(this).attr('action') == 'quotes') {
             let error = false;
             ev.stopPropagation();
+
             let form = this;
-            var data = $(form).serializeJson();
-
+            // var data = $(form).serializeJson();
+            let data = new FormData(form);
             data.pathname = document.location.pathname;
-
+            data = JSON.stringify(serialize(data));
 
             if (error) {
                 wbapp.toast('Ошибка', error, { bgcolor: 'warning' });
                 return false;
             }
 
+            /*
             wbapp.post('/form/quotes/submit', data, function () {
                 setPopupSuccess();
                 $(form)[0].reset();
             })
+            */
+
+            $.ajax({
+                url: '/form/quotes/submit',
+                type: 'POST',
+                data: data,
+                contentType: 'application/json',
+                // processData: false,
+                success: function(data) {
+                    console.log('----------------------- /form/quotes/submit -> success ----------------');
+                    setPopupSuccess();
+                    $(form)[0].reset();
+                    ym(17921479, 'reachGoal', 'send_form');
+                },
+                error: function(data) {}
+            });
 
             // setTimeout(function () {
             //     wbapp.post('/form/quotes/submit', data, function () {
@@ -656,7 +694,7 @@ $(document).ready(function () {
     });
 
     var lastScrollTop = 0;
-    $(window).scroll(function (event) {
+    $(window).scroll(function(event) {
         var st = $(this).scrollTop();
         if (st > lastScrollTop) {
             $('.header--menu').addClass('bottom-scroll')
@@ -667,7 +705,7 @@ $(document).ready(function () {
         }
         lastScrollTop = st;
     });
-    $('.modal__wrap').scroll(function (event) {
+    $('.modal__wrap').scroll(function(event) {
         var st = $(this).scrollTop();
         if (st > lastScrollTop) {
             $('.header--form').addClass('bottom-scroll')
@@ -677,15 +715,15 @@ $(document).ready(function () {
         lastScrollTop = st;
     });
 
-    $('ul.special__tabs').on('click', 'li:not(.special__tabs-item-active)', function () {
+    $('ul.special__tabs').on('click', 'li:not(.special__tabs-item-active)', function() {
         $(this)
             .addClass('special__tabs-item-active').siblings().removeClass('special__tabs-item-active')
             .closest('body').find('div.special__tab-content').removeClass('tab-content-active').eq($(this).index()).addClass('tab-content-active');
     });
 
-    $('.tabloid_navigation a').click(function(e){
+    $('.tabloid_navigation a').click(function(e) {
         e.preventDefault();
-        if($(this).parent('li.special__tabs-item').hasClass('special__tabs-item-active')){
+        if ($(this).parent('li.special__tabs-item').hasClass('special__tabs-item-active')) {
             return true;
         }
         window.location.hash = e.target.hash;
@@ -696,7 +734,7 @@ $(document).ready(function () {
     });
 
     $(window).scroll(function() {
-        if(!$(window).scrollTop() == 0) {
+        if (!$(window).scrollTop() == 0) {
             $('.main-section__button.js-form-open.mobile-button').addClass('mobile-anim')
             $('.main-section__button.js-form-open.pc-button').addClass('mobile-hidden')
         } else {
@@ -706,6 +744,10 @@ $(document).ready(function () {
     });
     const siteMapTitle = $(".map__link:contains('Глоссарий')").addClass('new-title')
     const siteMapTitleParent = $(".map__link:contains('Глоссарий')").parents('.map__list').addClass('new-elem')
+
+    $("a[href*='mailto:']").attr("onclick", "ym(17921479,'reachGoal','send_mail');")
+    $("a[href*='tel:']").attr("onclick", "ym(17921479,'reachGoal','click_phon');")
+    $("[class*='socials-item'] a").attr("onclick", "ym(17921479,'reachGoal','click_msngr');")
 
     // var scroller
     // var handler = function () {

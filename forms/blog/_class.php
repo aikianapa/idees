@@ -13,6 +13,13 @@ class blogClass extends cmsFormsClass
 
     function beforeItemShow(&$item) {
         $this->similar($item);
+        if (isset($item['seo'])) {
+			$seo = false;
+			if (isset($item['seo']['title'])) {$item['meta_title'] = $item['seo']['title'];$seo=true;}
+			if (isset($item['seo']['keywords'])) {$item['meta_keywords'] = $item['seo']['keywords'];$seo=true;}
+			if (isset($item['seo']['descr'])) {$item['meta_description'] = $item['seo']['descr'];$seo=true;}
+			if ($seo) $item['seo'] = 'on';
+		}
     }
 
     function similar(&$item = null) {

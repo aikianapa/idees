@@ -25,7 +25,7 @@
             <aside class="service-page__aside">
                 <h2 class="visually-hidden">Дополнительные требования</h2>
                 <div class="service-page__aside-block service-page__aside-block--grey">
-                    <h3 class="service-page__aside-title">Самое важное</h3>
+                    <h3 class="service-page__aside-title">Стоимость и сроки</h3>
 
                     <dl class="service-page__aside-params">
                         <dt class="service-page__aside-params-name">Стоимость</dt>

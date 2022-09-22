@@ -5,7 +5,7 @@
         <ul class="special__tabs" id="myTab">
             <wb-foreach wb="from=tabs&tpl=false">
                 <li class="special__tabs-item">
-                    <a class="special__tab-link" href="#tab{{_idx}}">{{tab_title}}</a>
+                    <a class="special__tab-link" tab-num="{{_idx}}" href="#tab{{_idx}}">{{tab_title}}</a>
                 </li>
             </wb-foreach>
         </ul>
@@ -165,7 +165,17 @@
     <wb-jq wb=" $dom->find('.special__tabs > .special__tabs-item:first-child')->addClass('special__tabs-item-active');
                 $dom->find('.special__top-section > .special__tab-content:first-child')->addClass('tab-content-active');"
     />
+
+<script>
+    const allInBody = document.querySelectorAll('.special__tab-link');
+    for (const element of allInBody) {
+        element.href = location.pathname + "#tab" + element.getAttribute("tab-num");
+    }
+</script>
+
 </view>
+
+
 
 <edit header="Экспресс-дизайн блок с табами">
     <div>
@@ -330,3 +340,4 @@
         </div>
     </wb-multilang>
 </edit>
+

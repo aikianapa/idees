@@ -1,28 +1,28 @@
-<view><section class="page__form-section container">
+<view><section class="page__form-section container" id="partners-form">
         <wb-var header="Начать проект" wb-if="'{{header}}'==''" else="{{header}}"></wb-var>
         <h2 class="page__section-title">{{_var.header}}</h2>
 <wb-data wb-from="_cleardata">
-        <form class="form" method="POST" action="quotes">
+        <form class="form" method="POST" action="quotes" >
             <input type="hidden" name="quote" value="project">
             <div class="form__field-wrapper">
-                <input class="form__text-field" type="text" id="shrot-form-name" name="shrot-form-name" placeholder="имя и фамилия">
+                <input class="form__text-field" type="text" id="shrot-form-name" name="name" placeholder="имя и фамилия">
                 <label class="form__text-field-label" for="shrot-form-name">имя и фамилия</label>
             </div>
 
             <div class="form__field-wrapper">
-                <input class="form__text-field" type="text" id="shrot-form-company" name="shrot-form-company" placeholder="компания">
+                <input class="form__text-field" type="text" id="shrot-form-company" name="quote" placeholder="компания">
                 <label class="form__text-field-label" for="shrot-form-company">компания</label>
             </div>
 
             <div class="form__field-wrapper">
-                <input class="form__text-field" type="email" id="shrot-form-email" name="shrot-form-email" required
+                <input class="form__text-field" type="email" id="shrot-form-email" name="email" required
                         autocomplete="on" placeholder="email*">
                 <label class="form__text-field-label" for="shrot-form-email">email*</label>
                 <span class="form__field-error">Пожалуйста, заполните это поле</span>
             </div>
 
             <div class="form__field-wrapper">
-                <input class="form__text-field" type="tel" id="shrot-form-phone" name="shrot-form-phone" required
+                <input class="form__text-field" type="tel" id="shrot-form-phone" name="phone" required
                         pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
                         autocomplete="on" placeholder="телефон*">
                 <label class="form__text-field-label" for="shrot-form-phone">телефон*</label>
@@ -30,7 +30,7 @@
             </div>
 
             <div class="form__field-wrapper">
-                <input class="form__text-field" type="text" id="shrot-form-task" required name="shrot-form-task" placeholder="описание задачи*">
+                <input class="form__text-field" type="text" id="shrot-form-task" name="task" placeholder="описание задачи*">
                 <label class="form__text-field-label" for="shrot-form-task">описание задачи*</label>
                 <span class="form__field-error">Пожалуйста, заполните это поле</span>
             </div>

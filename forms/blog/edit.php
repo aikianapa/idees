@@ -69,6 +69,28 @@
                                     </wb-data>
                                 </div>
                             </div>
+                            <div class="divider-text">Параметры SEO</div>
+        <div class="form-group row">
+            <label class="form-control-label col-md-3">Заголовок (title)</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" name="seo.title" placeholder="Заголовок (title)">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="form-control-label col-md-3">Описание (description)</label>
+            <div class="col-md-9">
+                <textarea class="form-control" name="seo.descr" rows="auto" placeholder="Описание (description)"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="form-control-label col-md-3">Ключевые слова</label>
+            <div class="col-9">
+                <input type="text" class="form-control" name="seo.keywords" placeholder="Ключевые слова"
+                    wb-module="tagsinput">
+            </div>
+        </div>
+                            
                             <!--div class="form-group row">
                                 <label class="col-sm-2">Похожие</label>
                                 <div class="col-sm-10">
