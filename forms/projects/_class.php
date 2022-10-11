@@ -20,6 +20,7 @@ class projectsClass extends cmsFormsClass
             'id'=>['$ne'=>$item['id']],
             'tags'=>['$like'=>$tags[0]]
         ]]);
+        $item['header'] = $item['name'];
         $this->similar($item);
     }
     function afterItemSave(&$item)

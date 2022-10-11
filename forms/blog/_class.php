@@ -13,6 +13,7 @@ class blogClass extends cmsFormsClass
 
     function beforeItemShow(&$item) {
         $this->similar($item);
+        $item['header'] = $item['name'];
         if (isset($item['seo'])) {
 			$seo = false;
 			if (isset($item['seo']['title'])) {$item['meta_title'] = $item['seo']['title'];$seo=true;}
