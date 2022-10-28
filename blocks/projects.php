@@ -8,12 +8,14 @@
                 <ul class="projects__tags tags">
                     <wb-data wb="table=catalogs&item=projects&field=tree&tpl=false">
                         <li class="tags__item">
-                            <button class="tag tag--active" type="button" data-type="all" data-ajax="{'target':'#projectsList','clear':'true','filter_remove':'tags'}">Все проекты
+                            <button class="tag tag--active" type="button" data-type="all"
+                                data-ajax="{'target':'#projectsList','clear':'true','filter_remove':'tags'}">Все проекты
                             </button>
                         </li>
                         <wb-foreach wb-from="data" wb-tpl="false">
                             <li class="tags__item" data-type="{{id}}">
-                                <button class="tag" data-type="{{id}}" type="button" data-ajax="{'target':'#projectsList','clear':'true','filter_remove': 'tags','filter_add':{ 'tags': { '$like': '{{id}}'}}}">
+                                <button class="tag" data-type="{{id}}" type="button"
+                                    data-ajax="{'target':'#projectsList','clear':'true','filter_remove': 'tags','filter_add':{ 'tags': { '$like': '{{id}}'}}}">
                                     {{name}}</button>
                             </li>
                         </wb-foreach>
@@ -21,7 +23,8 @@
                 </ul>
 
                 <div class="projects__toogle-container">
-                    <button class="projects__toogle-button js-toogle-blocks" type="button" aria-label="Показать плиткой">
+                    <button class="projects__toogle-button js-toogle-blocks" type="button"
+                        aria-label="Показать плиткой">
                         <svg class="button__icon" width="24" height="24" aria-hidden="true">
                             <use xlink:href="/assets/img/sprite.svg#sort-blocks"></use>
                         </svg>
@@ -34,10 +37,15 @@
                     </button>
                 </div>
             </div>
-
             <div class="cases-section projects__content">
+                <wb-var cover="" />
                 <ul class="cases-section__list" id="projectsList">
-                    <wb-foreach wb="table=projects&sort=_sort&size=2&bind=cms.list.projects&render=server&more=true:" wb-filter="active=on">
+                    <wb-foreach wb="table=projects&sort=_sort&size=2&bind=cms.list.projects&render=server&more=true:"
+                        wb-filter="active=on">
+                        <wb-foreach wb="from=blocks&tpl=false" wb-filter="name=project-descr">
+                            <wb-var cover="{{cover.0.img}}" wb-if="'{{_var.cover}}' == ''" />
+                        </wb-foreach>
+                        
                         <li class="cases-section__item">
                             <article class="case">
                                 <a class="case__title-link-wrapper" href="/projects/{{wbFurlGenerate({{name}})}}">
@@ -45,7 +53,9 @@
                                     <p class="case__description">{{descr}}</p>
                                 </a>
                                 <a class="case__image-wrapper" href="/projects/{{wbFurlGenerate({{name}})}}">
-                                    <img class="case__image" width="790" height="500" data-src="/thumbc/790x500/src/{{blocks.project_descr.cover.0.img}}" data-srcset="/thumbc/1580x1000/src/{{blocks.project_descr.cover.0.img}} 2x"
+                                    <img class="case__image" width="790" height="500"
+                                        data-src="/thumbc/790x500/src/{{_var.cover}}"
+                                        data-srcset="/thumbc/1580x1000/src/{{_var.cover}} 2x"
                                         alt="{{name}}">
                                 </a>
 
@@ -67,43 +77,46 @@
                                 </article>
                             </li>
                         </wb-empty>
+                        <wb-var cover="" />
                     </wb-foreach>
                 </ul>
             </div>
 
             <div class="page__spinner-block visually-hidden">
-                <img class="page__spinner page__spinner--active" src="/assets/img/spinner.svg" alt="" aria-hidden="true">
+                <img class="page__spinner page__spinner--active" src="/assets/img/spinner.svg" alt=""
+                    aria-hidden="true">
             </div>
         </section>
         <wb-snippet wb="name=wbapp" />
         <script wb-app remove>
-            function changeLink() {
-                const moreBtn = document.querySelector('.page-link.more');
-                moreBtn.innerHTML = `<span class="text-icon">загрузить еще</span> <span class="button__icon-wrapper"><svg class="button__icon" width="24" height="24"><use xlink:href="/assets/img/sprite.svg#arrow-right"></use></svg></span>`
-                moreBtn.href = 'javascript:void(0)';
-            }
+        function changeLink() {
+            const moreBtn = document.querySelector('.page-link.more');
+            moreBtn.innerHTML =
+                `<span class="text-icon">загрузить еще</span> <span class="button__icon-wrapper"><svg class="button__icon" width="24" height="24"><use xlink:href="/assets/img/sprite.svg#arrow-right"></use></svg></span>`
+            moreBtn.href = 'javascript:void(0)';
+        }
 
-            $("#projectsList").bind("DOMSubtreeModified",function(){
-                changeLink();
-            });
+        $("#projectsList").bind("DOMSubtreeModified", function() {
             changeLink();
-            $('.projects__tags').delegate('.tags__item', wbapp.evClick, function() {
-                $('.projects__tags .tag').removeClass('tag--active')
-                $(this).children('.tag').addClass('tag--active')
-            });
+        });
+        changeLink();
+        $('.projects__tags').delegate('.tags__item', wbapp.evClick, function() {
+            $('.projects__tags .tag').removeClass('tag--active')
+            $(this).children('.tag').addClass('tag--active')
+        });
 
-            $("#projectsList").on('wb-ajax-start', function(ev, params) {
-                if (params.target !== "#projectsList") return;
-                if (params._params !== undefined && params._params.more !== undefined) {
-                    $('.page__spinner-block').removeClass('visually-hidden');
-                }
-            });
-            $("#projectsList").on('wb-ajax-done', function(ev, params) {
-                if (params.target !== "#projectsList") return;
-                if (params._params !== undefined && params._params.more !== undefined) {
-                    $('.page__spinner-block').addClass('visually-hidden');
-                }
-            });
+        $("#projectsList").on('wb-ajax-start', function(ev, params) {
+            if (params.target !== "#projectsList") return;
+            if (params._params !== undefined && params._params.more !== undefined) {
+                $('.page__spinner-block').removeClass('visually-hidden');
+            }
+        });
+        $("#projectsList").on('wb-ajax-done', function(ev, params) {
+            if (params.target !== "#projectsList") return;
+            if (params._params !== undefined && params._params.more !== undefined) {
+                $('.page__spinner-block').addClass('visually-hidden');
+            }
+        });
         </script>
     </main>
 </view>
