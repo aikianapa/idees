@@ -3,20 +3,26 @@
         <h2 class="service-page__section-title" wb-if="'{{title}}'&gt;''">{{title}}</h2>
 
         <ul class="cases-section__list cases-section__list--blocks cases-section__list--without-top-borders">
+            <wb-var cover="" />
             <wb-foreach wb="from=projects&amp;tpl=false">
                 <li class="cases-section__item">
+                        <wb-foreach wb="from=blocks&tpl=false" wb-filter="name=project-descr">
+                            <wb-var cover="{{cover.0.img}}" wb-if="'{{_var.cover}}' == ''" />
+                        </wb-foreach>
+
                     <wb-data wb="table=projects&amp;item={{_val}}">
                         <article class="case">
-                            <a class="case__title-link-wrapper" href="/projects/%7B%7B_id%7D%7D/%7B%7BwbFurlGenerate(%7B%7Bname%7D%7D)%7D%7D">
+                            <a class="case__title-link-wrapper" href="/projects/{{_id}}/{{wbFurlGenerate({{name}})}}">
                                 <h3 class="case__title">{{name}}</h3>
                                 <p class="case__description">{{descr}}</p>
                             </a>
-                            <a class="case__image-wrapper" href="/projects/%7B%7B_id%7D%7D/%7B%7BwbFurlGenerate(%7B%7Bname%7D%7D)%7D%7D">
-                                <img class="case__image" width="790" height="500" data-src="/thumbc/790x500/src/{{cover.0.img}}" data-srcset="/thumbc/1580x1000/src/{{cover.0.img}} 2x" alt="{{name}}">
+                            <a class="case__image-wrapper" href="/projects/{{_id}}/{{wbFurlGenerate({{name}})}}">
+                                <img class="case__image" width="790" height="500" data-src="/thumbc/790x500/src/{{_var.cover}}" data-srcset="/thumbc/1580x1000/src/{{_var.cover}} 2x" alt="{{name}}">
                             </a>
                         </article>
                     </wb-data>
                 </li>
+                <wb-var cover="" />
             </wb-foreach>
         </ul>
 
