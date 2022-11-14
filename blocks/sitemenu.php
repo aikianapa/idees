@@ -13,9 +13,12 @@
                 <div class="header__container container">
                     <div class="header--menu__left">
                         <a class="header__logo-link" href="/">
-                            <svg class="header__logo-link-icon" width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M-0.000738144 0.432616L-0.00073838 5.83802L20.2695 5.83802L20.2695 0.432617L-0.000738144 0.432616Z"/>
-                                <path d="M24.2375 12.7019L20.4153 8.87971L6.0821 23.213L9.9043 27.0352L24.2375 12.7019Z" />
+                            <svg class="header__logo-link-icon" width="33" height="33" viewBox="0 0 33 33" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M-0.000738144 0.432616L-0.00073838 5.83802L20.2695 5.83802L20.2695 0.432617L-0.000738144 0.432616Z" />
+                                <path
+                                    d="M24.2375 12.7019L20.4153 8.87971L6.0821 23.213L9.9043 27.0352L24.2375 12.7019Z" />
                                 <path d="M27.0273 32.865H32.4327V12.5947H27.0273V32.865Z" />
                             </svg>
                             <svg class="header__logo-image" width="157" height="50" fill="none" viewbox="0 0 157 50">
@@ -31,20 +34,27 @@
                                 <path
                                     d="M45.95 7.43A9.4 9.4 0 0 0 55.07 0h-4.7c-.66 2.17-2.2 3.48-4.42 3.48-2.23 0-3.77-1.3-4.44-3.48h-4.69a9.43 9.43 0 0 0 9.13 7.43Z">
                                 </path>
-                                <path d="M37.39 34.08V10.81h-4.96V36.5h8.66l13.42-23.27V36.5h4.95V10.8H50.8L37.4 34.08Z"></path>
-                                <path d="M102.25 34.08V10.81H97.3V36.5h8.66l13.42-23.27V36.5h4.94V10.8h-8.65l-13.42 23.27Z"></path>
+                                <path
+                                    d="M37.39 34.08V10.81h-4.96V36.5h8.66l13.42-23.27V36.5h4.95V10.8H50.8L37.4 34.08Z">
+                                </path>
+                                <path
+                                    d="M102.25 34.08V10.81H97.3V36.5h8.66l13.42-23.27V36.5h4.94V10.8h-8.65l-13.42 23.27Z">
+                                </path>
                             </svg>
                         </a>
 
-                        <a class="header__button-link header__button-link--express" data-da="menu__container,first,991" href="/special">экспресс - дизайн</a>
+                        <a class="header__button-link header__button-link--express" data-da="menu__container,first,991"
+                            href="/special">экспресс - дизайн</a>
                     </div>
                     <div class="header--menu__right">
-                        <button class="header__button-link header__button-link--theme js-theme js-theme--menu" type="button" aria-label="Меню">
+                        <button class="header__button-link header__button-link--theme js-theme js-theme--menu"
+                            type="button" aria-label="Меню">
                             <svg class="header__logo-icon" width="24" height="24" aria-hidden="true">
                                 <use xlink:href="/assets/img/sprite.svg#logo"></use>
                             </svg>
                         </button>
-                        <button class="header__button-link header__button-link--project js-form-open" type="button">Начать
+                        <button class="header__button-link header__button-link--project js-form-open"
+                            type="button">Начать
                             проект</button>
                         <button class="header__button-link header__button-link--menu-close js-menu-close" type="button"
                             aria-label="Закрыть меню">
@@ -62,15 +72,18 @@
             <div class="menu__container container">
                 <nav class="menu__navigation">
                     <ul class="menu__list">
-                        <wb-foreach wb="table=pages&tpl=false&sort=_sort" wb-filter="{'active':'on','menu':'on','path':''}">
+                        <wb-foreach wb="table=pages&tpl=false&sort=_sort"
+                            wb-filter="{'active':'on','menu':'on','path':''}">
                             <li class="menu__item menu__item--{{name}}">
                                 <a class="menu__link" href="{{url}}">{{menu_title}}</a>
-                                <ul class="menu__sub-list"><wb-foreach wb="table=pages&tpl=false&sort=_sort"
+                                <ul class="menu__sub-list">
+                                    <wb-foreach wb="table=pages&tpl=false&sort=_sort"
                                         wb-filter="{'active':'on','menu':'on','path':'{{url}}'}">
                                         <li class="menu__sub-item">
                                             <a class="menu__sub-link" href="{{url}}">{{menu_title}}</a>
                                         </li>
-                                    </wb-foreach></ul>
+                                    </wb-foreach>
+                                </ul>
                             </li>
                         </wb-foreach>
                     </ul>
@@ -88,9 +101,9 @@
                             <a class="menu__socials-link" href="{{_var.whatsapp}}">Whatsapp</a>
                         </li>
 
-<!--                         <li class="menu__socials-item"> -->
-<!--                             <a class="menu__socials-link" href="{{_var.messenger}}">Messenger</a> -->
-<!--                         </li> -->
+                        <!--                         <li class="menu__socials-item"> -->
+                        <!--                             <a class="menu__socials-link" href="{{_var.messenger}}">Messenger</a> -->
+                        <!--                         </li> -->
                     </ul>
                 </div>
             </div>
@@ -100,7 +113,7 @@
             </div>
         </div>
     </section>
-    <wb-jq wb="$dom->find('.menu .menu__sub-list:empty')->remove()"/>
+    <wb-jq wb="$dom->find('.menu .menu__sub-list:empty')->remove()" />
 </view>
 <edit header="Меню сайта">
     <div>
