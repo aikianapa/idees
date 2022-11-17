@@ -42,9 +42,6 @@
                                 </path>
                             </svg>
                         </a>
-
-                        <a class="header__button-link header__button-link--express" data-da="menu__container,first,991"
-                            href="/special">экспресс - дизайн</a>
                     </div>
                     <div class="header--menu__right">
                         <button class="header__button-link header__button-link--theme js-theme js-theme--menu"
@@ -85,6 +82,7 @@
                                     </wb-foreach>
                                 </ul>
                             </li>
+                            <wb-jq wb="$dom->find('ul:not(:parent)')->remove()"/>
                         </wb-foreach>
                     </ul>
                 </nav>
