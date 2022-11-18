@@ -7,7 +7,7 @@ class glosarioClass extends cmsFormsClass
     }
 
     function afterItemSave(&$item) {
-        $this->app->shadow('/cms/ajax/form/pages/list');
+        $this->app->vars('_route.mode') == 'save' ? $this->app->shadow('/module/yonger/yonmap') : null;
     }
 }
 

@@ -9,32 +9,7 @@ class newsClass extends cmsFormsClass {
     }
 
     function afterItemSave($item) {
-        $this->app->shadow('/cms/ajax/form/pages/list');
-/*
-        if (!isset($item['_table']) OR  $item['_table'] == '') return;
-        if (!isset($item['_id']) OR  $item['_id'] == '') return;
-        $app = $this->app;
-        $index = file_get_contents($app->vars('_env.dba').'/url.idx');
-        $index = json_decode($index,true);
-        $index ? null : $index = [];
-        $index[$item['_table']] ? $idx = $index[$item['_table']] : $idx = [];
-        foreach($idx as $u => $id) {
-            if ($id == $item['_id']) unset($idx[$u]);
-        }
-        foreach($item['header'] as $l => $h) {
-            if ($h > '') {
-                $url = '/news/'.$item['_id'].'/'.$app->furlGenerate($h);
-                break;
-            }
-        }
-        if (!isset($url)) {
-            $url = '/news/'.$item['_id'].'/'.date('Ymd_His');
-        }
-        $idx[$url] = $item['_id'];
-        $index[$item['_table']] = $idx;
-        $index = json_encode($index);
-        file_put_contents($app->vars('_env.dba').'/url.idx',$index,  LOCK_EX);
-        */
+        $this->app->vars('_route.mode') == 'save' ? $this->app->shadow('/module/yonger/yonmap') : null;
     }
 }
 ?>
