@@ -5,8 +5,8 @@
         <ul class="cases-section__list cases-section__list--blocks cases-section__list--without-top-borders">
             <wb-var cover="" />
             <wb-foreach wb="from=projects&tpl=false">
-                <li class="cases-section__item">
-                    <wb-data wb="table=projects&item={{_val}}">
+                <wb-data wb="table=projects&item={{_val}}">
+                <li class="cases-section__item" wb-if="'{{active}}'=='on'">
                         <wb-foreach wb="from=blocks&tpl=false" wb-filter="name=project-descr">
                             <wb-var cover="{{cover.0.img}}" wb-if="'{{_var.cover}}' == ''" />
                         </wb-foreach>
@@ -20,8 +20,8 @@
                                 <img class="case__image" width="790" height="500" data-src="/thumbc/790x500/src/{{_var.cover}}" data-srcset="/thumbc/1580x1000/src/{{_var.cover}} 2x" alt="{{name}}">
                             </a>
                         </article>
-                    </wb-data>
                 </li>
+                </wb-data>
                 <wb-var cover="" />
             </wb-foreach>
         </ul>
