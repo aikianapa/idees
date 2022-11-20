@@ -4,13 +4,13 @@
 
         <ul class="cases-section__list cases-section__list--blocks cases-section__list--without-top-borders">
             <wb-var cover="" />
-            <wb-foreach wb="from=projects&amp;tpl=false">
+            <wb-foreach wb="from=projects&tpl=false">
                 <li class="cases-section__item">
+                    <wb-data wb="table=projects&item={{_val}}">
                         <wb-foreach wb="from=blocks&tpl=false" wb-filter="name=project-descr">
                             <wb-var cover="{{cover.0.img}}" wb-if="'{{_var.cover}}' == ''" />
                         </wb-foreach>
 
-                    <wb-data wb="table=projects&amp;item={{_val}}">
                         <article class="case">
                             <a class="case__title-link-wrapper" href="/projects/{{_id}}/{{wbFurlGenerate({{name}})}}">
                                 <h3 class="case__title">{{name}}</h3>
@@ -27,7 +27,7 @@
         </ul>
 
     </section></view><edit header="Блок - Кейсы"><div>
-        <wb-module wb="module=yonger&amp;mode=edit&amp;block=common.inc"></wb-module>
+        <wb-module wb="module=yonger&mode=edit&block=common.inc"></wb-module>
     </div>
 <div class="form-group row">
         <div class="col-12">

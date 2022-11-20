@@ -113,7 +113,7 @@
             ,"/assets/scripts/libs/swiper-bundle.min.js", "/assets/scripts/index.js" ]
         </wb-scripts>
         <wb-styles src="slick">
-            [ "/engine/modules/yonger/common/blocks/assets/slick/slick.min.css"
+            ["/engine/modules/yonger/common/blocks/assets/slick/slick.min.css"
             ,"/engine/modules/yonger/common/blocks/assets/slick/slick-theme.css"
             ]
         </wb-styles>
