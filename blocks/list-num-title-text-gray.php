@@ -1,20 +1,18 @@
 <view>
-    <section class="page__section ">
-        <section class="service-page__section service-page__section--grey">
+    <section  class="gray-box">
             <div class="container">
-                <h2 class="service-page__section-title">{{title}}</h2>
+                <h2 class="sub-title">{{title}}</h2>
 
-                <ul class="service-page__develop-stages">
+                <div class="three-columns">
                     <wb-foreach wb="from=list&tpl=false">
-                        <li class="service-page__develop-stage">
-                            <h3 class="service-page__develop-stage-title">{{list_title}}</h3>
-                            <p class="service-page__develop-stage-description">{{list_text}}</p>
-                        </li>
+                        <div class="etap-block">
+                            <h3 class="sub-sub-title etap"><div class="etap-num"> {{_ndx}} </div>{{list_title}}</h3>
+                            <div class="ttext etap">{{list_text}}</div>
+                        </div>
                     </wb-foreach>
-                </ul>
+                </div>
             </div>
-
-        </section>
+    </section>
 </view>
 
 <edit header="Список номер+заголовок+текст (серый фон)">
