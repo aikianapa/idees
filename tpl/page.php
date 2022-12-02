@@ -4,7 +4,7 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="main-wrapper">
         <wb-module wb="module=yonger&mode=render&view=header" />
         <wb-module wb="module=yonger&mode=render" />
         <wb-module wb="module=yonger&mode=render&view=footer" />
