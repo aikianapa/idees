@@ -36,6 +36,7 @@
                 <div class="menu">
                     <wb-foreach wb="from=_var.menu&tpl=false">
                         <wb-var sub="sub" wb-if="'{{count({{children}})}}'>'0'" else="" />
+						<wb-var sub="" wb-if="'{{name}}'=='blog'" />
                         <a href="{{path}}" class="menu-item {{name}}-menu-item {{_var.sub}}" sub="{{name}}">
                             {{menu_title}}
                         </a>
