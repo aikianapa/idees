@@ -24,6 +24,7 @@ function setScrollTop() {
 
 
 function show_pop(pop) {
+    if ($(".popup[pop=" + pop + "]").is(':visible')) return;
     overlay2()
     $(".popup[pop=" + pop + "]").show()
 
