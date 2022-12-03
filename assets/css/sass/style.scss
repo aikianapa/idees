@@ -1239,6 +1239,95 @@ body {
     }
 }
 
+.cases-section {
+    .case {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "image""title""link";
+    }
+    @media (min-width: 860px) {
+        .case {
+            grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
+            grid-template-rows: min-content 1fr min-content;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "title image""link image";
+            -moz-column-gap: 40px;
+            column-gap: 40px;
+        }
+    }
+    .case__title {
+        margin: 0 0 8px;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 26px;
+        transition: 0.3s;
+    }
+    @media (min-width: 860px) {
+        .case__title {
+            margin-bottom: 8px;
+            font-size: 30px;
+            line-height: 36px;
+        }
+    }
+    .case__description:hover,
+    .case__title:hover {
+        color: var(--typo-ghost-color);
+    }
+    .case__description {
+        max-width: 515px;
+        margin: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        transition: 0.3s;
+    }
+    @media (min-width: 860px) {
+        .case__description {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+    .case__title-link-wrapper {
+        display: block;
+        grid-area: title;
+        margin-top: 24px;
+    }
+    @media (min-width: 860px) {
+        .case__title-link-wrapper {
+            margin-top: 40px;
+        }
+    }
+    .case__image-wrapper {
+        display: block;
+        grid-area: image;
+        min-width: 0;
+        overflow: hidden;
+    }
+    .case__image {
+        display: block;
+        width: 100%;
+        height: auto;
+        -o-object-fit: cover;
+        object-fit: cover;
+        transition: 0.5s;
+    }
+    .case__link {
+        grid-area: link;
+        justify-self: flex-start;
+        align-self: flex-end;
+        margin-top: 32px;
+    }
+    @media (min-width: 860px) {
+        .case__link {
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+    }
+    .case__image-wrapper:hover .case__image {
+        transform: scale(1.03);
+    }
+}
+
 
 /****************************************/
 
