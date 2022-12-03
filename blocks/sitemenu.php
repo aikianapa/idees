@@ -64,7 +64,8 @@
                         <div class="uslugi">
                             <wb-foreach wb="from=children&tpl=false">
                                 <div class="uslugi-item" wb-if="'{{name}}'!=='{{_parent.name}}'">
-                                    <div class="sub-sub-title"><a href="{{path}}" class="menu__sub-link"> {{menu_title}} </a></div>
+                                    <div class="sub-sub-title" wb-if="'{{_parent.name}}'=='services'"> {{menu_title}} </div>
+                                    <div class="sub-sub-title" wb-if="'{{_parent.name}}'!=='services'"><a href="{{path}}" class="menu__sub-link"> {{menu_title}} </a></div>
                                     <div class="ttext"></div>
 									<div class="tlist" wb-if="'{{count({{children}})}}'>'0'">
                                         <wb-foreach wb="from=children&tpl=false">
