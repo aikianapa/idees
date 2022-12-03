@@ -1,22 +1,25 @@
 <view>
-<section class="page__form-section">
+<section class="page__form-section pb-0">
 		<div class="slider-wrapper">
 			<div class="container">
-				<div class="bread"> <a href="#">Главная </a> / <a href="#">Услуги</a> / Корпоративные сайты </div>
+				<div class="bread"> <a href="/">Главная </a> / <a href="/services">Услуги</a> / Корпоративные сайты </div>
 			</div>
 
 			<div class="slider">
                 <wb-foreach wb="from=slider&tpl=false">
 				<div class="slide">
-                    <wb-var url="{{image.0.img}}" wb-if="image.0.img >''" else="/assets/img/slider/slide.jpg"/>
+                    <wb-data wb="table=projects&item={{_val}}">
+                    <wb-var url="{{cover.0.img}}" wb-if="cover.0.img >''" else="/assets/img/slider/slide.jpg"/>
+                    <wb-var link="/projects/{{wbFurlGenerate({{name}})}}"/>
 					<div class="slide-inner" style="background-image: url({{_var.url}})">
 						<div class="container">
-							<div class="slider-title"> {{title}}
+							<div class="slider-title"> {{descr}}
 							</div>
-							<a href="{{link}}" class="slider-button" wb-if="'{{_parent.button}}' == '' && '{{link}}' > ''"> Посмотреть проект </a>
-                            <a href="{{link}}" class="slider-button" wb-if="'{{_parent.button}}' > '' && '{{link}}' > ''"> {{_parent.button}} </a>
+							<a href="{{_var.link}}" class="slider-button" wb-if="'{{_parent.button}}' == '' && '{{_var.link}}' > ''"> Посмотреть проект </a>
+                            <a href="{{_var.link}}" class="slider-button" wb-if="'{{_parent.button}}' > '' && '{{_var.link}}' > ''"> {{_parent.button}} </a>
 						</div>
 					</div>
+                    </wb-data>
 				</div>
                 </wb-foreach>
 			</div>
@@ -37,23 +40,10 @@
         </div>
     </div>
 
-    <wb-multiinput name="slider">
-        <div class="col-sm-4">
-            <input wb="module=filepicker&mode=single&width=400&height=200"  wb-ext="webp,jpg,png,jpeg,svg" wb-path="/uploads/blocks/slider-counter" name="image" class="mr-2">
-        </div>
-        <div class="col-sm-8">
-            <div class="form-group row">
-                <div class="col-12">
-                    <label>Заголовок</label>
-                    <input class="form-control tx-bold" type="text" name="title" placeholder="Заголовок">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-12">
-                    <label>Ссылка</label>
-                    <input class="form-control tx-bold" type="text" name="link" placeholder="Ссылка">
-                </div>
-            </div>
-        </div>
-    </wb-multiinput>
+    <div class="form-group row">
+        <label class="col-sm-3">Проекты в слайдере</label>
+        <div class="col-sm-9">
+            <input wb-module="selectcases" name="slider" multiple>
+    </div>
+
 </edit>
