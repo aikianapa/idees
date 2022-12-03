@@ -2,7 +2,7 @@
     <div>
         <wb-module wb="module=yonger&mode=edit&block=common.inc" />
     </div>
-    <div class="divider-text">Левый блок</div>
+
     <div class="form-group row">
         <label class="col-sm-3">Заголовок</label>
         <div class="col-sm-9">
@@ -27,7 +27,65 @@
             <textarea name="text" wb-module="froalaeditor"></textarea>
         </div>
     </div>
-    <div class="divider-text">Правый блок</div>
+    <div class="divider-text">Средняя стоимость и сроки</div>
+    <div class="form-group row">
+        <div class="col-2">
+            <input class="form-control" name="prc_active" wb-module="switch">
+        </div>
+        <div class="col-5">
+            <input class="form-control" type="text" name="prc_price" placeholder="Стоимость">
+        </div>
+        <div class="col-5">
+            <input class="form-control" type="text" name="prc_term" placeholder="Срок">
+        </div>
+    </div>
+    <div class="divider-text">Что потребуется от вас</div>
+    <div class="form-group row">
+        <div class="col-2">
+            <input class="form-control" name="req_active" wb-module="switch">
+        </div>
+        <div class="col-10">
+            <wb-multiinput name="req_list"></wb-multiinput>
+        </div>
+    </div>
+    <div class="divider-text">Как начать сотрудничество</div>
+    <div class="form-group row">
+        <div class="col-2 mb-1">
+            <input class="form-control" name="how_active" wb-module="switch">
+        </div>
+        <div class="col-10 mb-1">
+            <input class="form-control" type="text" name="how_title" placeholder="Заголовок">
+        </div>
+        <div class="offset-2 col-10 mb-1">
+            <textarea class="form-control" rows="auto" name="how_text" placeholder="Текст"></textarea>
+        </div>
+        <div class="offset-2 col-5 mb-1">
+            <input class="form-control" type="text" name="how_btn" placeholder="Кнопка">
+        </div>
+        <div class="col-5">
+            <input class="form-control" type="text" name="how_link" placeholder="Ссылка">
+        </div>
+    </div>
+    <div class="divider-text">Блок ссылок</div>
+    <div class="form-group row">
+        <div class="col-2 mb-1">
+            <input class="form-control" name="links_active" wb-module="switch">
+        </div>
+        <div class="col-10 mb-1">
+            <input class="form-control" name="links_title" placeholder="Заголовок ссылки">
+        </div>
+        <div class="offset-2 col-10 mb-1">
+            <wb-multiinput name="links_links">
+                <div class="col-sm-6">
+                    <input class="form-control" name="links_header" placeholder="Заголовок ссылки">
+                </div>
+                <div class="col-sm-6">
+                    <input class="form-control" name="links_link" placeholder="Ссылка">
+                </div>
+            </wb-multiinput>
+        </div>
+    </div>
+    <div class="form-group row mb-5 pb-5"></div>
 </edit>
 
 <view>
@@ -122,74 +180,55 @@
             </div>
             <div class="two-side-2">
 
-                <div class="bblock">
+                <div class="bblock" wb-if="prc_active == 'on'">
                     <div class="btext"> Средняя стоимость и сроки </div>
                     <div class="bhtext"> Стоимость </div>
-                    <div class="btext"> от 300 000 </div>
+                    <div class="btext"> {{prc_price}} </div>
                     <div class="bhtext"> Сроки разработки </div>
-                    <div class="btext"> от 20 рабочих дней </div>
+                    <div class="btext"> {{prc_term}} </div>
                     <div class="ybutton zayav-button"> Отправить заявку </div>
                 </div>
 
 
-                <div class="bblock">
+                <div class="bblock" wb-if="req_active == 'on'">
                     <div class="btext"> Что потребуется от Вас: * </div>
 
                     <div class="tlist">
+                        <wb-foreach wb="from=req_list&tpl=false">
                         <div>
-                            — заполненный бриф;
+                            — {{_val}};
                         </div>
-                        <div>
-                            — техническое задание;
-                        </div>
-                        <div>
-                            — структура сайта (CJM);
-                        </div>
-                        <div>
-                            — логотип в векторе;
-                        </div>
-                        <div>
-                            — гайдбук и брендбук.
-                        </div>
+                        </wb-foreach>
                     </div>
 
                     <div class="ttext3"> *Если у вас есть этот набор материалов — это упростит работу по проекту. Если нет, то не пугайтесь. Мы
                         поможем вам с их формированием. </div>
                 </div>
 
-                <div class="bblock">
-                    <div class="btext"> Как начать сотрудничество </div>
-
-                    <div class="ttext3">
+                <div class="bblock" wb-if="how_active == 'on'">
+                    <div class="btext" wb-if="how_title == ''">Как начать сотрудничество</div>
+                    <div class="btext" wb-if="how_title > ''">{{how_title}}</div>
+                    <div class="ttext3" wb-if="how_text == ''">
                         Здесь Вы найдете все необходимое для начала сотрудничества, сможете ознакомиться с условиями и скачать типовые документы
                         и изучить четко описанные действия.
                     </div>
+                    <div class="ttext3" wb-if="how_text > ''">{{how_text}}</div>
 
-                    <button class="gbutton"> Посмотреть условия </button>
-
-
+                    <wb-var btn=" Посмотреть условия " wb-if="how_btn == ''" else="{{how_btn}}" />
+                    <wb-var link="/" wb-if="how_link == ''" else="{{how_link}}" />
+                    <a class="gbutton" href="{{_var.link}}">{{_var.btn}}</a>
                 </div>
 
 
-                <div class="bblock">
-                    <div class="btext"> Рекомендуем также услуги </div>
+                <div class="bblock" wb-if="links_active == 'on'">
+                    <div class="btext"> {{links_title}} </div>
 
                     <div class="tlist">
-                        <a href="#">
-                            Кабинетные исследования
+                        <wb-foreach wb="from=links_links&tpl=false">
+                        <a href="{{links_link}}" wb-if="'{{links_link}}'>'' && '{{links_header}}'>''">
+                            {{links_header}}
                         </a>
-                        <a href="#">
-                            Позиционирование
-                        </a>
-                        <a href="#">
-                            Платформа бренда
-                        </a>
-                        <a href="#">
-                            Коммуникационная стратегия
-                        </a>
-                        <a href="#">
-                            Аудит бренда
-                        </a>
+                        </wb-foreach>
                     </div>
                 </div>
             </div>
