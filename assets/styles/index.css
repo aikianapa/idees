@@ -307,6 +307,14 @@ img::before {
     padding-top: 0 !important;
 }
 
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
 .mt-150 {
     margin-top: 150px;
 }
@@ -2773,7 +2781,6 @@ ol.document__list--alpha {
 .form__field-wrapper--warning .form__field-error {
     display: block;
 }
-
 
 .form__field-error {
     display: none;
