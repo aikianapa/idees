@@ -21,9 +21,8 @@
 </edit>
 
 <view>
-<section>
-<div class="gray-box">
 
+<div class="gray-box">
 			<div class="command container">
 				<div>
 					<h2 class="sub-title"> Команда проекта </h2>
@@ -42,5 +41,4 @@
 
 			<div class="spacer"> </div>
 		</div>
-    </section>
 </view>

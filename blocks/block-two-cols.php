@@ -44,7 +44,10 @@
         <div class="col-2">
             <input class="form-control" name="req_active" wb-module="switch">
         </div>
-        <div class="col-10">
+        <div class="col-10 mb-1">
+            <input class="form-control" type="text" name="req_title" placeholder="Что потребуется от вас: *">
+        </div>
+        <div class="offset-2 col-10">
             <wb-multiinput name="req_list"></wb-multiinput>
         </div>
     </div>
@@ -191,7 +194,8 @@
 
 
                 <div class="bblock" wb-if="req_active == 'on'">
-                    <div class="btext"> Что потребуется от Вас: * </div>
+                    <div class="btext" wb-if="req_title == ''"> Что потребуется от Вас: * </div>
+                    <div class="btext" wb-if="req_title > ''"> {{req_title}} </div>
 
                     <div class="tlist">
                         <wb-foreach wb="from=req_list&tpl=false">
