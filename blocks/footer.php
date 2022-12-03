@@ -5,8 +5,6 @@
 			<div class="gray-box2">
 
 				<div class="container">
-
-
 					<div class="footer-top">
 						<div class="footer-top-left">
 							<div class="footer-phone"> <a  href="tel:+{{wbDigitsOnly({{_var.phone}})}}">{{str_replace("-"," ",{{_var.phone}})}}</a> </div>

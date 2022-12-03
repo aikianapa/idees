@@ -1,73 +1,66 @@
 <view>
-<section class="page__form-section container">
-  <h2 class="page__section-title">Свяжитесь с нами</h2>
-<wb-data wb-from="_cleardata">
-  <form class="form"  method="POST" action="quotes">
-    <input type="hidden" name="quote" value="contact">
-    <div class="form__field-wrapper">
-      <input class="form__text-field" type="text" id="shrot-form-name" name="name" placeholder="имя и фамилия">
-      <label class="form__text-field-label" for="shrot-form-name">имя и фамилия</label>
-    </div>
+  <div class="gray-box last">
+    <wb-data>
+      <div class="container">
+        <wb-var header="Заявка на услуги" wb-if="'{{header}}'==''" else="{{header}}"></wb-var>
+        <h2 class="sub-title"> {{_var.header}} </h2>
 
-    <div class="form__field-wrapper">
-      <input class="form__text-field" type="email" id="shrot-form-email" name="email" required
-              autocomplete="on" placeholder="email*">
-      <label class="form__text-field-label" for="shrot-form-email">email*</label>
-      <span class="form__field-error">Пожалуйста, заполните это поле</span>
-    </div>
+        <div class="zayav-form">
+          <form class="form" method="POST" action="quotes">
+            <div class="zayav-form-line1">
+              <div class="form-item">
+                <input type="text" name="name" required placeholder="Имя и фамилия" class="form__text-field" id="form2-name" />
+              </div>
 
-    <div class="form__field-wrapper">
-      <input class="form__text-field" type="tel" id="shrot-form-phone" name="phone" required
-            pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
-            autocomplete="on" placeholder="телефон*">
-      <label class="form__text-field-label" for="shrot-form-phone">телефон*</label>
-      <span class="form__field-error">Пожалуйста, заполните это поле</span>
-    </div>
+              <div class="form-item">
+                <input type="text" name="email" placeholder="E-mail" class="form__text-field" id="form2-email" />
+              </div>
 
-    <div class="form__field-wrapper">
-      <input class="form__text-field" type="text" id="shrot-form-addition" name="shrot-form-addition" placeholder="дополнительные сведения">
-      <label class="form__text-field-label" for="shrot-form-addition">дополнительные сведения</label>
-    </div>
+              <div class="form-item">
+                <input type="text" name="phone" placeholder="Телефон" required pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
+                  class="form__text-field" id="form2-phone" />
+              </div>
 
-    <div class="form__row form__row--bottom form__row--submit">
-      <button class="button" type="submit">
-        <span class="button__icon-wrapper">
-          <svg class="button__icon" width="24" height="24">
-            <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
-          </svg>
-        </span>
+            </div>
 
-        <span class="button__text">отправить заявку</span>
-      </button>
+            <div class="zayav-form-line2">
+              <div class="form-item">
+                <input type="text" name="description" required placeholder="Описание задачи" class="form__text-field" id="form2-description"
+                />
+              </div>
+            </div>
 
-      <input class="visually-hidden" id="short-form-file" type="file" accept="{{_sett.attach}}" name="file" done="">
-      <label class="form__file" for="short-form-file">
-        <span class="form__file-icon-wrapper">
-          <svg class="form__file-icon" width="24" height="24">
-            <use xlink:href="/assets/img/sprite.svg#add-file"></use>
-          </svg>
-        </span>
+            <div class="zayav-form-line3">
+              <label class="prikrepit-wrapper" for="file2">
+                <div>
+                  <img src="/assets/img/file.svg"> </div>
+                <div class="prikrepit"> Прикрепить файл
+                  <span class="ne-bolee"> Не более {{_env.max_post}} </span>
+                </div>
+              </label>
+              <div> </div>
+              <div class="agree"> Отправляя заявку, я соглашаюсь передать свои персональные данные, содержащиеся в анкете и всех приложенных
+                файлах. Я понимаю и соглашаюсь, что мои данные будут храниться и обрабатываться в соответствии с Федеральным
+                законом «О персональных данных» </div>
+            </div>
 
-        <span class="form__file-text">
-          прикрепить файл<br>
-          <small>не более {{_env.max_post}}</small>
-        </span>
-      </label>
-    </div>
+            <button  type="submit" class="gbutton">Отправить заяку </button>
 
-    <p class="form__text">
-      Отправляя заявку, я соглашаюсь передать свои персональные данные, содержащиеся в анкете и всех приложенных файлах. Я понимаю и соглашаюсь, что мои данные будут храниться и обрабатываться в течение пяти лет, в соответствии с Федеральным законом «О персональных данных».
-    </p>
-  </form>
-</wb-data>
-</section>
+            <input type="file" name="file" accept="{{_sett.attach}}" id="file2" />
+          </form>
+
+        </div>
+
+      </div>
+    </wb-data>
+  </div>
 </view>
 <edit header="Форма контакта">
-    <div>
-        <wb-module wb="module=yonger&mode=edit&block=common.inc" />
-    </div>
-    <div class="alert alert-info">
-        Нажмите кнопку <a href="#" onclick="$('#yongerEditorBtnEdit').trigger('click')">Редактор</a>, чтобы
-        редактировать форму.
-    </div>
+  <div>
+    <wb-module wb="module=yonger&mode=edit&block=common.inc" />
+  </div>
+  <div class="alert alert-info">
+    Нажмите кнопку
+    <a href="#" onclick="$('#yongerEditorBtnEdit').trigger('click')">Редактор</a>, чтобы редактировать форму.
+  </div>
 </edit>
