@@ -3151,6 +3151,7 @@ body:not(.dark) .main-section__scene-video-white {
     left: 0;
     height: 100%;
     object-fit: cover;
+    overflow: hidden;
 }
 
 @media (min-width: 1200px) {
