@@ -1875,42 +1875,36 @@ footer a:hover {
     right: 0;
     border: 0;
     z-index: -1;
-}
-
-.sub-menu {
-    position: absolute;
-    visibility: hidden;
-    top: 0;
-    left: 0;
-    z-index: 400;
-    width: 100%;
-    .gray-box {
-        margin-top: 0;
-        width: 100vw;
+    .sub-menu {
+        position: absolute;
+        visibility: hidden;
+        top: 0;
+        left: 0;
+        z-index: 400;
+        width: 100%;
+        .sub-inner {
+            position: absolute;
+            padding: 24px 24px;
+        }
+        .gray-box {
+            margin-top: 0;
+        }
+        height: 100%;
+        /* Черно-серый */
+        background: #23282B94;
+        &[sub=services] {
+            width: 100%;
+            .sub-inner {
+                width: 100%;
+                padding-top: 40px;
+            }
+        }
+        &[sub=agenstvo] {
+            .sub-inner {
+                width: fit-content;
+            }
+        }
     }
-    height: 100%;
-    /* Черно-серый */
-    background: #23282B94;
-}
-
-.sub-menu[sub=uslugi] {
-    width: 100%;
-}
-
-.sub-menu[sub=uslugi] .sub-inner {
-    width: 100%;
-    padding-top: 40px;
-}
-
-.sub-menu[sub=agenstvo] {
-    .sub-inner {
-        width: fit-content;
-    }
-}
-
-.sub-inner {
-    position: absolute;
-    padding: 24px 24px;
 }
 
 
