@@ -1,56 +1,55 @@
 <view>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__top-section">
-                <p class="footer__text">
-                    Есть задача
-                    <br> для обсуждения?
-                    <br>
 
-                    <button class="footer__link footer__link--form js-form-open">кнопка чтобы начать</button>
-                </p>
+		<footer>
 
-                <a class="footer__link footer__link--contact" href="mailto:%7B%7B_var.email%7D%7D">{{_var.email}}</a>
-                <a class="footer__link footer__link--contact" href="tel:+%7B%7BwbDigitsOnly(%7B%7B_var.phone%7D%7D)%7D%7D">{{_var.phone}}</a>
+			<div class="gray-box2">
 
-                <ul class="footer__socials-list">
-                    <li class="footer__socials-item">
-                        <a class="footer__link footer__link--social" href="%7B%7B_var.telegram%7D%7D">Telegram</a>
-                    </li>
-                    <li class="footer__socials-item">
-                        <a class="footer__link footer__link--social" href="%7B%7B_var.whatsapp%7D%7D">Whatsapp</a>
-                    </li>
+				<div class="container">
 
-                    <!--                     <li class="footer__socials-item"> -->
-                    <!--                         <a class="footer__link footer__link--social" href="%7B%7B_var.messenger%7D%7D">Messenger</a> -->
-                    <!--                     </li> -->
-                </ul>
-            </div>
 
-            <div class="footer__bottom-section">
-                <div class="footer__bottom-section-wrapper">
-                    <p class="footer__copy">{{copyright}} © {{year}} – {{date("Y")}}</p>
+					<div class="footer-top">
+						<div class="footer-top-left">
+							<div class="footer-phone"> <a  href="tel:+{{wbDigitsOnly({{_var.phone}})}}">{{str_replace("-"," ",{{_var.phone}})}}</a> </div>
+							<div class="footer-email"> <a href="mailto:{{_var.email}}">{{_var.email}}</a> </div>
+							<div class="footer-soc"> 
+                                <span wb-if="'{{_var.whatsapp}}'>''"> <a href="{{_var.whatsapp}}">Whatsapp</a> </span>
+								<span wb-if="'{{_var.telegram}}'>''"> <a href="{{_var.telegram}}"> Telegram </a></span>
+                                <span wb-if="'{{_var.vkontakte}}'>''"> <a href="{{_var.telegram}}"> ВКонтакте </a></span>
+							</div>
+						</div>
+						<div> </div>
+						<div class="footer-top-right">
+							<div class="big-gray davayte"> давайте </div>
+							<div class="big-gray sozdavat"> создавать </div>
+							<button class="ybutton footer-button zayav-button"> Оставить заявку </button>
+						</div>
+					</div>
 
-                    <a class="footer__link" href="http://yonger.ru/" target="_blank">
-                        Построен на
-                        <span>
-                            ёнгер
-                            <svg viewBox="0 0 70 36">
-                                <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527"
-                                />
-                            </svg>
-                        </span>
+					<div class="footer-bottom">
+						<div class="f1 ff"> {{copyright}} © {{year}} – {{date("Y")}} </div>
+						<a class="f2 ff footer__link" href="http://yonger.ru/"> Построен на
+							&nbsp;
+							<span>
+								ёнгер
+								<svg viewBox="0 0 70 36">
+									<path
+										d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527">
+									</path>
+								</svg>
+							</span>
+						</a>
+						<a href="/map" class="f3 ff"> Карта сайта</a>
+						<a href="/user-agreement" class="f4 ff"> Конфиденциальность</a>
 
-                    </a>
-                </div>
+					</div>
 
-                <div class="footer__bottom-section-wrapper">
-                    <a class="footer__link footer__link--map" href="/map">Карта сайта</a>
-                    <a class="footer__link" href="/user-agreement">Конфиденциальность</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+				</div> <!-- container -->
+
+			</div> <!-- gray-box2 -->
+
+
+		</footer>
+
     <button class="up-button js-scroll-top" type="button">
         <svg class="up-button__icon" width="28" height="28" aria-hidden="true">
             <use xlink:href="/assets/img/sprite.svg#arrow-top"></use>
