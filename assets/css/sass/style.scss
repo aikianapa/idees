@@ -490,8 +490,8 @@ body {
 
 .mob-menu-wrapper {
     position: fixed;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: 700;
     display: block;
     top: 0;
