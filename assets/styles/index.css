@@ -1708,7 +1708,6 @@ img-comparison-slider:focus-visible {
 }
 
 .footer__link span {
-    overflow: hidden;
     position: relative;
 }
 
@@ -3079,7 +3078,7 @@ ol.document__list--alpha {
 
 .main-section__scene {
     position: absolute;
-    overflow-x: hidden;
+    overflow: hidden;
     top: 0;
     right: 0;
     bottom: 0;
