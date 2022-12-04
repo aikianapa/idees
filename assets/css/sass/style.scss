@@ -760,6 +760,13 @@ body {
     background-size: cover;
     padding-top: 0.1px;
     height: 547px;
+    &::before {
+        content: '';
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(0 0 0 / 50%);
+        display: block;
+    }
 }
 
 .slider-title {
