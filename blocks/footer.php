@@ -12,7 +12,7 @@
 							<div class="footer-soc"> 
                                 <span wb-if="'{{_var.whatsapp}}'>''"> <a href="{{_var.whatsapp}}">Whatsapp</a> </span>
 								<span wb-if="'{{_var.telegram}}'>''"> <a href="{{_var.telegram}}"> Telegram </a></span>
-                                <span wb-if="'{{_var.vkontakte}}'>''"> <a href="{{_var.telegram}}"> ВКонтакте </a></span>
+                                <span wb-if="'{{_var.vkontakte}}'>''"> <a href="{{_var.vkontakte}}"> ВКонтакте </a></span>
 							</div>
 						</div>
 						<div> </div>
