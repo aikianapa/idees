@@ -303,14 +303,6 @@ $(function() {
             $('.main-section__button.js-form-open.pc-button').removeClass('mobile-hidden')
         }
     });
-
-
-
-
-
-
-
-
 })
 
 

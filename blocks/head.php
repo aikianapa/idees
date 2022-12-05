@@ -15,9 +15,6 @@
         <meta name="keywords" content="Проведение исследований,аналитика,разработка позиционирования и стратегии бренда,Нейминг,регистрация ТЗ (торгового знака) в ФИПС,слоган,дескриптор,копирайт,Айдентика,логотип,фирменный стиль,дизайн носители,брендбук,Веб-сайты,лендинги,веб-сервисы,Буклеты,презентации,иллюстрации,видеоролики">
         <meta name="description" content="Branding и digital решения для современных компаний. Предлагаем услуги по созданию брендов, веб-сайтов, презентаций, дизайна и видео.">
 
-        <link rel="stylesheet" href="/assets/styles/index.css">
-        <link rel="stylesheet" href="/assets/css/reset.css">
-        <link rel="stylesheet" href="/assets/css/fonts.css">
         <link rel="stylesheet" href="/assets/css/style.css">
         <link rel="preload" href="/assets/fonts/GrandisExtended-Regular.woff2" as="font" crossorigin="anonymous">
         <link rel="preload" href="/assets/fonts/GrandisExtended-Medium.woff2" as="font" crossorigin="anonymous">
