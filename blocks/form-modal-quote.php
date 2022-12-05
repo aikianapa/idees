@@ -19,7 +19,7 @@
                                 autocomplete="on" placeholder="Телефон">
                         </div>
                         <div class="form-item">
-                            <input type="text" name="shrot-form-addition" placeholder="Описание задачи" class="form__text-field" id="form1-description">
+                            <input type="text" name="description" placeholder="Описание задачи" class="form__text-field" id="form1-description">
                         </div>
 
                         <div class="agree-wrapper">

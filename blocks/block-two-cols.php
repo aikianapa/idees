@@ -66,7 +66,7 @@
             <input class="form-control" type="text" name="how_btn" placeholder="Кнопка">
         </div>
         <div class="col-5">
-            <input class="form-control" type="text" name="how_link" placeholder="Ссылка">
+            <input class="form-control" wb="module=yonger&mode=pageselect" type="text" name="how_link" placeholder="Ссылка">
         </div>
     </div>
     <div class="divider-text">Блок ссылок</div>
@@ -83,7 +83,7 @@
                     <input class="form-control" name="links_header" placeholder="Заголовок ссылки">
                 </div>
                 <div class="col-sm-6">
-                    <input class="form-control" name="links_link" placeholder="Ссылка">
+                    <input class="form-control" wb="module=selectservices&value=path" name="links_link" placeholder="Ссылка">
                 </div>
             </wb-multiinput>
         </div>
