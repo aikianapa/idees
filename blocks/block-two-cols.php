@@ -57,13 +57,13 @@
             <input class="form-control" name="how_active" wb-module="switch">
         </div>
         <div class="col-10 mb-1">
-            <input class="form-control" type="text" name="how_title" placeholder="Заголовок">
+            <input class="form-control" type="text" name="how_title" placeholder="Как начать сотрудничество">
         </div>
         <div class="offset-2 col-10 mb-1">
-            <textarea class="form-control" rows="auto" name="how_text" placeholder="Текст"></textarea>
+            <textarea class="form-control" rows="auto" name="how_text" placeholder="Здесь Вы найдете все необходимое для начала сотрудничества, сможете ознакомиться с условиями и скачать типовые документы и изучить четко описанные действия."></textarea>
         </div>
         <div class="offset-2 col-5 mb-1">
-            <input class="form-control" type="text" name="how_btn" placeholder="Кнопка">
+            <input class="form-control" type="text" name="how_btn" placeholder="Посмотреть условия">
         </div>
         <div class="col-5">
             <input class="form-control" wb="module=yonger&mode=pageselect" type="text" name="how_link" placeholder="Ссылка">
@@ -92,16 +92,13 @@
 </edit>
 
 <view>
-
     <div class="container">
-
         <div class="two-side">
-
             <div class="two-side-1">
                 <h1 class="title" wb-if="'{{title}}' > ''"> {{title}} </h1>
                 <h1 class="title" wb-if="'{{title}}' == '' AND '{{_parent.name}}'>''"> {{_parent.name}} </h1>
 
-                <div class="text-block block-corporate">
+                <div class="text-block block-corporate mb-0">
                     <h2 class="sub-title-text" wb-if="'{{subtitle}}' > ''"> {{subtitle}} </h2>
                     <h2 class="sub-title-text" wb-if="'{{subtitle}}' == '' && '{{_parent.descr}}'>''"> {{_parent.descr}} </h2>
                     <div class="ttext">
@@ -131,9 +128,9 @@
                 <div class="bblock" wb-if="prc_active == 'on'">
                     <div class="btext"> Средняя стоимость и сроки </div>
                     <div class="bhtext"> Стоимость </div>
-                    <div class="btext"> {{prc_price}} </div>
+                    <div class="btext"> от {{number_format({{prc_price}},0, "", " ")}} ₽ </div>
                     <div class="bhtext"> Сроки разработки </div>
-                    <div class="btext"> {{prc_term}} </div>
+                    <div class="btext"> от {{prc_term}} рабочих дней </div>
                     <div class="ybutton zayav-button"> Отправить заявку </div>
                 </div>
 

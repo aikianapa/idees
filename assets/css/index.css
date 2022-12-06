@@ -4966,13 +4966,6 @@ body:not(.dark) .main-section__scene-video-white {
     padding-bottom: 80px;
 }
 
-@media (min-width: 1200px) {
-    .service-page__section {
-        padding-top: 160px;
-        padding-bottom: 160px;
-    }
-}
-
 .service-page__section--grey {
     background-color: var(--bg-secondary-color);
 }
