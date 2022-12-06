@@ -28,7 +28,7 @@
 </section>
 </view>
 
-<edit header="Слайдер с каунтером">
+<edit header="Слайдер с проектами">
     <div>
         <wb-module wb="module=yonger&mode=edit&block=common.inc" />
     </div>

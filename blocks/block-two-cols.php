@@ -12,7 +12,7 @@
     <div class="form-group row">
         <label class="col-sm-3">Подзаголовок</label>
         <div class="col-sm-9">
-            <input class="form-control" type="text" name="subtitle" placeholder="Подзаголовок">
+            <textarea class="form-control" rows="auto" name="subtitle" placeholder="Подзаголовок"></textarea>
         </div>
     </div>
     <div class="form-group row">
@@ -24,7 +24,7 @@
     <div class="form-group row">
         <label class="col-12">Текст</label>
         <div class="col-12">
-            <textarea name="text" wb-module="froalaeditor"></textarea>
+            <textarea name="text" wb-module="summernote"></textarea>
         </div>
     </div>
     <div class="divider-text">Средняя стоимость и сроки</div>
@@ -98,12 +98,13 @@
         <div class="two-side">
 
             <div class="two-side-1">
-                <h1 class="title"> {{title}} </h1>
+                <h1 class="title" wb-if="'{{title}}' > ''"> {{title}} </h1>
+                <h1 class="title" wb-if="'{{title}}' == '' AND '{{_parent.name}}'>''"> {{_parent.name}} </h1>
 
                 <div class="text-block block-corporate">
-
-                    <h2 class="sub-title-text"> {{subtitle}} </h2>
-                    <div class="ttext">
+                    <h2 class="sub-title-text" wb-if="'{{subtitle}}' > ''"> {{subtitle}} </h2>
+                    <h2 class="sub-title-text" wb-if="'{{subtitle}}' == '' && '{{_parent.descr}}'>''"> {{_parent.descr}} </h2>
+                    <div class="ttext" wb-if="'{{count({{tags}})}}'>'0'">
                         <wb-foreach wb="from=tags&tpl=false">
                         <div class="bggray">
                             {{_val}}
