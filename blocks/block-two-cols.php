@@ -104,9 +104,9 @@
                 <div class="text-block block-corporate">
                     <h2 class="sub-title-text" wb-if="'{{subtitle}}' > ''"> {{subtitle}} </h2>
                     <h2 class="sub-title-text" wb-if="'{{subtitle}}' == '' && '{{_parent.descr}}'>''"> {{_parent.descr}} </h2>
-                    <div class="ttext" wb-if="'{{count({{tags}})}}'>'0'">
+                    <div class="ttext">
                         <wb-foreach wb="from=tags&tpl=false">
-                        <div class="bggray">
+                        <div class="bggray" wb-if="'{{_val}}'>''">
                             {{_val}}
                         </div>
                         </wb-foreach>
