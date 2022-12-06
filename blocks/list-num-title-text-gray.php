@@ -1,5 +1,5 @@
 <view>
-    <section  class="gray-box">
+    <section class="gray-box">
             <div class="container">
                 <h2 class="sub-title">{{title}}</h2>
 
