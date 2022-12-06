@@ -24,7 +24,7 @@
     <div class="form-group row">
         <label class="col-12">Текст</label>
         <div class="col-12">
-            <textarea name="text" wb-module="summernote"></textarea>
+            <textarea name="text" wb-module="editor"></textarea>
         </div>
     </div>
     <div class="divider-text">Средняя стоимость и сроки</div>
