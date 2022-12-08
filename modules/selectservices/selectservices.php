@@ -21,7 +21,6 @@ class modSelectservices
         $this->dom->attr('name') > '' ? $ui->find('select')->attr('name', $this->dom->attr('name')) : null;
         $this->dom->attr('placeholder') > '' ? $ui->find('select')->attr('placeholder',$this->dom->attr('placeholder')) : null;
         $this->dom->is('[multiple]') ? $ui->find('select')->attr('multiple', 1) : null;
-        isset($this->dom->params->value) && $this->dom->params->value>'' ? $ui->find('select option')->attr('value', '{{'.$this->dom->params->value.'}}') : null;
         $ui->fetch($this->dom->item);
         $this->dom->after($ui);
         $this->dom->remove();

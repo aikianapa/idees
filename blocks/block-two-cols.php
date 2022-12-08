@@ -60,32 +60,21 @@
             <input class="form-control" type="text" name="how_title" placeholder="Как начать сотрудничество">
         </div>
         <div class="offset-2 col-10 mb-1">
-            <textarea class="form-control" rows="auto" name="how_text" placeholder="Здесь Вы найдете все необходимое для начала сотрудничества, сможете ознакомиться с условиями и скачать типовые документы и изучить четко описанные действия."></textarea>
+            <textarea class="form-control" rows="auto" name="how_text"
+                placeholder="Здесь Вы найдете все необходимое для начала сотрудничества, сможете ознакомиться с условиями и скачать типовые документы и изучить четко описанные действия."></textarea>
         </div>
         <div class="offset-2 col-5 mb-1">
             <input class="form-control" type="text" name="how_btn" placeholder="Посмотреть условия">
         </div>
         <div class="col-5">
-            <input class="form-control" wb="module=yonger&mode=pageselect" type="text" name="how_link" placeholder="Ссылка">
+            <input class="form-control" wb="module=yonger&mode=pageselect" type="text" name="how_link"
+                placeholder="Ссылка">
         </div>
     </div>
-    <div class="divider-text">Блок ссылок</div>
+    <div class="divider-text">Рекомендуемые услуги</div>
     <div class="form-group row">
-        <div class="col-2 mb-1">
-            <input class="form-control" name="links_active" wb-module="switch">
-        </div>
-        <div class="col-10 mb-1">
-            <input class="form-control" name="links_title" placeholder="Заголовок ссылки">
-        </div>
-        <div class="offset-2 col-10 mb-1">
-            <wb-multiinput name="links_links">
-                <div class="col-sm-6">
-                    <input class="form-control" name="links_header" placeholder="Заголовок ссылки">
-                </div>
-                <div class="col-sm-6">
-                    <input class="form-control" wb="module=selectservices&value=path" name="links_link" placeholder="Ссылка">
-                </div>
-            </wb-multiinput>
+        <div class="col-12 mb-1">
+            <input class="form-control" name="links_srv" wb-module="selectservices" multiple placeholder="Услуги">
         </div>
     </div>
     <div class="form-group row mb-5 pb-5"></div>
@@ -100,12 +89,13 @@
 
                 <div class="text-block block-corporate mb-0">
                     <h2 class="sub-title-text" wb-if="'{{subtitle}}' > ''"> {{subtitle}} </h2>
-                    <h2 class="sub-title-text" wb-if="'{{subtitle}}' == '' && '{{_parent.descr}}'>''"> {{_parent.descr}} </h2>
+                    <h2 class="sub-title-text" wb-if="'{{subtitle}}' == '' && '{{_parent.descr}}'>''"> {{_parent.descr}}
+                    </h2>
                     <div class="ttext">
                         <wb-foreach wb="from=tags&tpl=false">
-                        <div class="bggray" wb-if="'{{_val}}'>''">
-                            {{_val}}
-                        </div>
+                            <div class="bggray" wb-if="'{{_val}}'>''">
+                                {{_val}}
+                            </div>
                         </wb-foreach>
                     </div>
 
@@ -116,7 +106,7 @@
                     $dom->find('.formated p')->addClass('ttext2');
                     $dom->find('.formated h2')->addClass('sub-title');
                     $dom->find('.formated h3')->addClass('sub-sub-title');
-                    "/>
+                    " />
                 </div>
             </div>
 
@@ -141,13 +131,14 @@
 
                     <div class="tlist">
                         <wb-foreach wb="from=req_list&tpl=false">
-                        <div>
-                            — {{_val}};
-                        </div>
+                            <div>
+                                — {{_val}};
+                            </div>
                         </wb-foreach>
                     </div>
 
-                    <div class="ttext3"> *Если у вас есть этот набор материалов — это упростит работу по проекту. Если нет, то не пугайтесь. Мы
+                    <div class="ttext3"> *Если у вас есть этот набор материалов — это упростит работу по проекту. Если
+                        нет, то не пугайтесь. Мы
                         поможем вам с их формированием. </div>
                 </div>
 
@@ -155,7 +146,8 @@
                     <div class="btext" wb-if="how_title == ''">Как начать сотрудничество</div>
                     <div class="btext" wb-if="how_title > ''">{{how_title}}</div>
                     <div class="ttext3" wb-if="how_text == ''">
-                        Здесь Вы найдете все необходимое для начала сотрудничества, сможете ознакомиться с условиями и скачать типовые документы
+                        Здесь Вы найдете все необходимое для начала сотрудничества, сможете ознакомиться с условиями и
+                        скачать типовые документы
                         и изучить четко описанные действия.
                     </div>
                     <div class="ttext3" wb-if="how_text > ''">{{how_text}}</div>
@@ -165,15 +157,16 @@
                     <a class="gbutton" href="{{_var.link}}">{{_var.btn}}</a>
                 </div>
 
-
-                <div class="bblock" wb-if="links_active == 'on'">
-                    <div class="btext"> {{links_title}} </div>
+                <div class="bblock" wb-if="count({{links_srv}})>0">
+                    <div class="btext">Рекомендуемые услуги</div>
 
                     <div class="tlist">
-                        <wb-foreach wb="from=links_links&tpl=false">
-                        <a href="{{links_link}}" wb-if="'{{links_link}}'>'' && '{{links_header}}'>''">
-                            {{links_header}}
-                        </a>
+                        <wb-foreach wb="from=links_srv&tpl=false">
+                            <wb-data wb="table=services&item={{_val}}">
+                                <a href="/services/{{tags}}/{{wbFurlGenerate({{header}})}}">
+                                    {{header}}
+                                </a>
+                            </wb-data>
                         </wb-foreach>
                     </div>
                 </div>
