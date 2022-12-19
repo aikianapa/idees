@@ -9,7 +9,7 @@
                 <wb-foreach wb="from=slider&tpl=false">
 				<div class="slide">
                     <wb-data wb="table=projects&item={{_val}}">
-                    <wb-var url="{{cover.0.img}}" wb-if="cover.0.img >''" else="/assets/img/slider/slide.jpg"/>
+                    <wb-var url="{{cover.0.img}}" wb-if="'{{cover.0.img}}' >''" else="/assets/img/slider/slide.jpg"/>
                     <wb-var link="/projects/{{wbFurlGenerate({{name}})}}"/>
 					<div class="slide-inner" style="background-image: url({{_var.url}})">
 						<div class="container">
