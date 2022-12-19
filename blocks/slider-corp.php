@@ -7,9 +7,13 @@
 
 			<div class="slider">
                 <wb-foreach wb="from=slider&tpl=false">
-				<div class="slide">
-                    <wb-data wb="table=projects&item={{_val}}">
-                    <wb-var url="{{cover.0.img}}" wb-if="'{{cover.0.img}}' >''" else="/assets/img/slider/slide.jpg"/>
+                <wb-data wb="table=projects&item={{_val}}">
+                    <wb-var descr="" />
+                    <wb-foreach wb="from=blocks" wb-filter="name=project-descr">
+                        <wb-var descr="{{_val}}" />
+                    </wb-foreach>
+				<div class="slide" wb-if="'{{active}}'=='on'">
+                    <wb-var url="{{_var.descr.cover.0.img}}" wb-if="'{{_var.descr.cover.0.img}}' >''" else="/assets/img/slider/slide.jpg"/>
                     <wb-var link="/projects/{{wbFurlGenerate({{name}})}}"/>
 					<div class="slide-inner" style="background-image: url({{_var.url}})">
 						<div class="container">
@@ -19,8 +23,9 @@
                             <a href="{{_var.link}}" class="slider-button" wb-if="'{{_parent.button}}' > '' && '{{_var.link}}' > ''"> {{_parent.button}} </a>
 						</div>
 					</div>
-                    </wb-data>
+                    
 				</div>
+                </wb-data>
                 </wb-foreach>
 			</div>
 
