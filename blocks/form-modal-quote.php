@@ -29,7 +29,8 @@
                             <label class="prikrepit-wrapper" file="file1" for="file1">
                                 <div>
                                     <img src="/assets/img/file.svg"> </div>
-                                <div class="prikrepit"> Прикрепить файл
+                                <div class="prikrepit">
+                                    <span class="prikrepit__line-1">Прикрепить файл</span>
                                     <span class="ne-bolee">Не более 10мб</span>
                                 </div>
                                 <div> </div>

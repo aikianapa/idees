@@ -34,8 +34,9 @@
               <label class="prikrepit-wrapper" for="file2">
                 <div>
                   <img src="/assets/img/file.svg"> </div>
-                <div class="prikrepit"> Прикрепить файл
-                  <span class="ne-bolee"> Не более {{_env.max_post}} </span>
+                <div class="prikrepit">
+                    <span class="prikrepit__line-1">Прикрепить файл</span>
+                    <span class="ne-bolee">Не более 10мб</span>
                 </div>
               </label>
               <div> </div>
