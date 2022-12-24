@@ -16,6 +16,8 @@
         <meta name="description" content="Branding и digital решения для современных компаний. Предлагаем услуги по созданию брендов, веб-сайтов, презентаций, дизайна и видео.">
 
         <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/style.scss">
+        <link rel="stylesheet" href="/assets/css/new-style.scss">
         <link rel="preload" href="/assets/fonts/GrandisExtended-Regular.woff2" as="font" crossorigin="anonymous">
         <link rel="preload" href="/assets/fonts/GrandisExtended-Medium.woff2" as="font" crossorigin="anonymous">
         <link rel="preload" href="/assets/fonts/GrandisExtended-Bold.woff2" as="font" crossorigin="anonymous">
