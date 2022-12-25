@@ -26,6 +26,8 @@
     --typo-secondary-color: var(--light-grey);
     --typo-contrast-color: var(--white);
     --typo-ghost-color: var(--grey);
+    --lg-bp: 1200px;
+    --md-bp: 768px;
 }
 
 :root {
@@ -1072,9 +1074,12 @@ body {
 }
 
 .block-corporate {
-    margin-bottom: 40px;
-    @media (min-width: 1450px) {
-        margin-bottom: 80px;
+    @media ((min-width: 577px) and (max-width: 866px)) {
+        margin-bottom: 40px;
+    }
+
+    @media (min-width: 867px) {
+        margin-bottom: -16px;
     }
 }
 
@@ -1177,6 +1182,10 @@ body {
     @media (max-width: 576px) {
         grid-template-columns: 1fr;
         grid-gap: 24px 20px;
+    }
+
+    .service-page__section & {
+        margin-bottom: -10px;
     }
 }
 
