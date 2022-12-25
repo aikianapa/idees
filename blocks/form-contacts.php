@@ -36,7 +36,7 @@
                   <img src="/assets/img/file.svg"> </div>
                 <div class="prikrepit">
                     <span class="prikrepit__line-1">Прикрепить файл</span>
-                    <span class="ne-bolee">Не более 10мб</span>
+                    <span class="prikrepit__line-2 ne-bolee">Не более 10мб</span>
                 </div>
               </label>
               <div> </div>

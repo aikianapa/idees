@@ -56,7 +56,7 @@
 
                     <span class="form__file-text">
                         прикрепить файл<br>
-                        <small>не более  {{_env.max_post}}</small>
+                        <span class="form__file-text-bottom">не более {{_env.max_post}}</span>
                     </span>
                 </label>
             </div>
