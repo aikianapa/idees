@@ -2273,6 +2273,13 @@ footer a:hover {
     z-index: 800;
     display: none;
 
+    &.popup--open {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
     .popup-inner {
         position: absolute;
         width: 624px;

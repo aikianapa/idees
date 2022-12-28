@@ -213,7 +213,7 @@ function setPopupImages() {
                 const imgSrc = image.getAttribute('src');
                 const imgSrcSet = image.getAttribute('srcset');
                 const popupDrop = document.createElement('div');
-                popupDrop.classList.add('popup');
+                popupDrop.classList.add('popup', 'popup--open');
                 body.classList.add('lock');
                 popupDrop.onclick = () => {
                     popupDrop.remove();
