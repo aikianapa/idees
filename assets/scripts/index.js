@@ -561,29 +561,41 @@ function getActiveTab() {
 function setPopupSuccess() {
     const body = document.querySelector('body');
     const popupDrop = document.createElement('div');
+    const popups = document.querySelector('.popups');
+    popups.classList.add('popups--hide');
     popupDrop.classList.add('popup', 'form__popup');
     body.classList.add('lock');
-    popupDrop.onclick = () => {
-        popupDrop.remove();
-        body.classList.remove('lock');
-    };
-
-    const button = document.createElement('button');
-    button.classList.add('form__popup-btn', 'button');
-    button.innerHTML = 'Готово'
-    button.setAttribute('type', 'button');
-    button.onclick = (event) => {
-        event.preventDefault();
-        body.classList.remove('lock');
-        popupDrop.remove();
-    };
 
     body.append(popupDrop);
-    popupDrop.innerHTML = `<div class="form__popup-content">
-        <span>Ваша заявка успешно отправлена. <br/> Наши сотрудники свяжутся с вами в ближайшее время</span>
+    popupDrop.innerHTML = `<div class="form__popup-content popup-inner">
+        <div class="krest form__popup-close"> </div>
+        <div class="popup__success">
+                    <div class="sub-title popup__title">
+                       Отправлено!
+                        <span class="popup__title-icon">
+                            <img src="/assets/img/ic-form-success.png" alt="">
+                        </span>
+                    </div>
+                    <p>
+                        Ваша заявка успешно отправлена нашим менеджерам.
+                        В ближайшее время мы свяжемся с вами для согласования всех нюансов вашего проекта.
+                    </p>
+                    <p class="popup-inner__p-small">
+                        На почту которую Вы указали при заполнении заявки было отправлено письмо с копией
+                        заполненной вами информации.
+                    </p>
+                    <div class="sub-title-inner">Спасибо за обращение!</div>
+                </div>
     </div>`;
-    const formPopupContent = document.querySelector('.form__popup-content');
-    formPopupContent.append(button);
+
+    const close = document.querySelector('.form__popup-close');
+    close.onclick = (event) => {
+        event.preventDefault();
+        body.classList.remove('lock');
+        popups.classList.remove('popups--hide');
+        popupDrop.remove();
+        body.classList.remove('lock');
+    };
 }
 
 /* viewport width */

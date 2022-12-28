@@ -2812,34 +2812,6 @@ ol.document__list--alpha {
     fill: var(--typo-primary-color);
 }
 
-.form__file-icon-wrapper {
-    display: flex;
-    flex-grow: 0;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border: 1px solid currentColor;
-    border-radius: 99em;
-}
-
-.form__file-icon {
-    fill: currentColor;
-}
-
-.form__file-text {
-    margin-left: 10px;
-    text-transform: lowercase;
-    font-size: 12px;
-    line-height: 16px;
-}
-
-.form__file-text-bottom {
-    font-size: 10px;
-    color: #ADBCC3;
-}
-
 .form__text {
     margin: 0;
     color: var(--typo-ghost-color);
@@ -8701,7 +8673,13 @@ body:not(.dark) .main-section__scene-video-white {
     }
 }
 
+.popup.form__popup {
+    position: fixed;
+    display: block;
+}
+
 .form__popup-content {
+    position: relative;
     background: var(--bg-primary-color);
     padding: 30px;
     max-width: 350px;
@@ -8714,6 +8692,7 @@ body:not(.dark) .main-section__scene-video-white {
     .form__popup-content {
         max-width: 800px;
         padding: 50px;
+        margin: 80px auto 0;
     }
 }
 

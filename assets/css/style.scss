@@ -1009,6 +1009,13 @@ body {
     }
 }
 
+.sub-title-inner {
+    margin-top: 40px;
+    color: #ADBCC3;
+    font-size: 24px;
+    line-height: 30px;
+}
+
 .sub-title-text {
     margin-bottom: 24px;
 }
@@ -1471,7 +1478,7 @@ input {
     }
 }
 
-.prikrepit-wrapper {
+.file-upload {
     cursor: pointer;
 }
 
@@ -1574,7 +1581,7 @@ input[type=file] {
     }
 }
 
-.prikrepit-wrapper {
+.file-upload {
     display: grid;
     grid-template-columns: 50px 150px;
     align-content: center;
@@ -1592,7 +1599,7 @@ input {
     outline: none;
 }
 
-.prikrepit {
+.file-upload__info {
     font-weight: 400;
     line-height: 15px;
     /* Черно-серый */
@@ -1603,7 +1610,7 @@ input {
     }
 }
 
-.prikrepit__line-1 {
+.file-upload__info-top-text {
     display: block;
     font-size: 12px;
 
@@ -1612,13 +1619,29 @@ input {
     }
 }
 
-.prikrepit__line-2 {
+.file-upload__info-bottom-text {
     font-size: 10px;
     color: #ADBCC3;
 
     @media (min-width: 1200px) {
         font-size: 12px;
     }
+}
+
+.file-upload__icon-wrapper {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid currentColor;
+    border-radius: 99em;
+}
+
+.file-upload__icon {
+    fill: currentColor;
 }
 
 .popup .agree-wrapper {
@@ -1641,7 +1664,7 @@ input {
     grid-area: button;
 }
 
-.popup .prikrepit-wrapper {
+.popup .file-upload {
     grid-area: prikrepit;
 }
 
@@ -2047,6 +2070,10 @@ footer a:hover {
     top: 0;
 }
 
+.popups--hide {
+    display: none;
+}
+
 .krest {
     background: url(../img/close.svg) no-repeat;
     width: 40px;
@@ -2239,13 +2266,13 @@ footer a:hover {
 }
 
 .popup {
-    position: absolute;
     height: 100%;
     /* Черно-серый */
     background: #23282B94;
     width: 100%;
     z-index: 800;
     display: none;
+
     .popup-inner {
         position: absolute;
         width: 624px;
@@ -2255,11 +2282,36 @@ footer a:hover {
         left: 0;
         right: 0;
         margin: 0 auto;
+        overflow-y: auto;
+        max-height: calc(100% - 100px);
+
         @media (max-width: 748px) {
             width: 100%;
             padding: 40px 16px;
         }
     }
+
+    .popup-inner p {
+        margin-bottom: 16px;
+        font-size: 14px;
+        line-height: 19px;
+
+        @media (min-width: 1024px) {
+            font-size: 14px;
+            line-height: 19px;
+        }
+    }
+
+    p.popup-inner__p-small {
+        font-size: 10px;
+        line-height: 13px;
+    }
+
+    .popup-inner__content {
+        height: 100%;
+        overflow-y: auto;
+    }
+
     .krest {
         position: absolute;
         background: url(../img/close.svg);
@@ -2272,7 +2324,29 @@ footer a:hover {
     }
 }
 
-.popup.zayavka {}
+.popup__title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    @media (min-width: 1024px) {
+        margin-bottom: 20px;
+    }
+}
+
+.popup__title-icon {
+    width: 40px;
+    height: 40px;
+
+    @media (min-width: 1024px) {
+        width: 80px;
+        height: 80px;
+    }
+
+    img {
+        width: 100%;
+    }
+}
 
 .overlay {
     position: absolute;

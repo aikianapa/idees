@@ -47,16 +47,16 @@
                 </button>
 
                 <input class="visually-hidden" id="short-form-file" type="file" accept="{{_sett.attach}}" name="file" done="">
-                <label class="form__file" for="short-form-file">
-                    <span class="form__file-icon-wrapper">
-                        <svg class="form__file-icon" width="24" height="24">
+                <label class="file-upload" for="short-form-file">
+                    <span class="file-upload__icon-wrapper">
+                        <svg class="file-upload__icon" width="24" height="24">
                             <use xlink:href="/assets/img/sprite.svg#add-file"></use>
                         </svg>
                     </span>
 
-                    <span class="form__file-text">
-                        прикрепить файл<br>
-                        <span class="form__file-text-bottom">не более {{_env.max_post}}</span>
+                    <span class="file-upload__info">
+                        <span class="file-upload__info-top-text">прикрепить файл</span>
+                        <span class="file-upload__info-bottom-text">Не более {{_env.max_post}}</span>
                     </span>
                 </label>
             </div>
