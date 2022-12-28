@@ -2,8 +2,14 @@
     <div class="popups">
         <div class="popup zayavka" pop="zayavka">
             <div class="popup-inner">
-                <div class="krest"> </div>
-                <div class="sub-title">Заявка на услуги</div>
+                <div class="popup-inner__content">
+                    <div class="krest"> </div>
+                    <div class="sub-title popup__title">Заявка на услуги
+                        <span class="popup__title-icon">
+                            <img src="/assets/img/ic-form.png" alt="">
+                        </span>
+                    </div>
+                </div>
                 <wb-data>
                     <form method="POST" action="quotes">
                         <input type="hidden" name="quote" value="contact">
@@ -26,11 +32,12 @@
                             <div class="agree"> Отправляя заявку, я соглашаюсь передать свои персональные данные, содержащиеся в анкете и всех
                                 приложенных файлах. Я понимаю и соглашаюсь, что мои данные будут храниться и обрабатываться
                                 в соответствии с Федеральным законом «О персональных данных» </div>
-                            <label class="prikrepit-wrapper" file="file1" for="file1">
+                            <label class="file-upload" file="file1" for="file1">
                                 <div>
                                     <img src="/assets/img/file.svg"> </div>
-                                <div class="prikrepit"> Прикрепить файл
-                                    <span class="ne-bolee">Не более 10мб</span>
+                                <div class="file-upload__info">
+                                    <span class="file-upload__info-top-text">Прикрепить файл</span>
+                                    <span class="file-upload__info-bottom-text">Не более 10мб</span>
                                 </div>
                                 <div> </div>
                             </label>

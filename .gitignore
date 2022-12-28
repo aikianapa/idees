@@ -17,3 +17,6 @@ engine
 forms/pages
 
 *.log
+.idea/*
+assets/css/main.css.css
+assets/css/style.map

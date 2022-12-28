@@ -31,11 +31,12 @@
             </div>
 
             <div class="zayav-form-line3">
-              <label class="prikrepit-wrapper" for="file2">
+              <label class="file-upload" for="file2">
                 <div>
                   <img src="/assets/img/file.svg"> </div>
-                <div class="prikrepit"> Прикрепить файл
-                  <span class="ne-bolee"> Не более {{_env.max_post}} </span>
+                <div class="file-upload__info">
+                    <span class="file-upload__info-top-text">Прикрепить файл</span>
+                    <span class="file-upload__info-bottom-text">Не более 10мб</span>
                 </div>
               </label>
               <div> </div>

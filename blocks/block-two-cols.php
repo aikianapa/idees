@@ -87,7 +87,7 @@
                 <h1 class="title" wb-if="'{{title}}' > ''"> {{title}} </h1>
                 <h1 class="title" wb-if="'{{title}}' == '' AND '{{_parent.name}}'>''"> {{_parent.name}} </h1>
 
-                <div class="text-block block-corporate mb-0">
+                <div class="text-block block-corporate">
                     <h2 class="sub-title-text" wb-if="'{{subtitle}}' > ''"> {{subtitle}} </h2>
                     <h2 class="sub-title-text" wb-if="'{{subtitle}}' == '' && '{{_parent.descr}}'>''"> {{_parent.descr}}
                     </h2>

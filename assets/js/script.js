@@ -27,15 +27,6 @@ function show_pop(pop) {
     if ($(".popup[pop=" + pop + "]").is(':visible')) return;
     overlay2()
     $(".popup[pop=" + pop + "]").show()
-
-    if ($(window).height() <= 640) {
-        $(".popup[pop=" + pop + "] .popup-inner").css('top', $(window).scrollTop())
-    } else {
-        $(".popup[pop=" + pop + "] .popup-inner").css('top', 50 + $(window).scrollTop())
-    }
-
-
-
 }
 
 function hide_pop(pop) {
@@ -135,6 +126,8 @@ $(function() {
 
 
     $(document).on('click', '#soverlay2', function() {
+        const popups = document.querySelector('.popups');
+        popups.classList.remove('popups--hide');
         hide_pop();
     })
 
