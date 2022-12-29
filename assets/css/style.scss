@@ -1354,6 +1354,33 @@ body {
     .case__image-wrapper:hover .case__image {
         transform: scale(1.03);
     }
+
+    @media (min-width: 860px) {
+        .cases-section__list--blocks .case,
+        .products__similar-list .case,
+        .project__similar-list .case {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas: "image" "title" "link";
+        }
+        .cases-section__list--blocks .case__title,
+        .products__similar-list .case__title,
+        .project__similar-list .case__title {
+            line-height: 26px;
+        }
+        .cases-section__list--blocks .case__image,
+        .products__similar-list .case__image,
+        .project__similar-list .case__image {
+            width: 100%;
+            height: 400px;
+        }
+        .cases-section__list--blocks .case__link,
+        .products__similar-list .case__link,
+        .project__similar-list .case__link {
+            margin-top: 64px;
+            margin-bottom: 0;
+        }
+    }
 }
 
 
