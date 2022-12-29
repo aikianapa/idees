@@ -48,7 +48,7 @@
     <img class="page__spinner page__spinner--active" src="/assets/img/spinner.svg" alt="" aria-hidden="true">
   </div>
 </div>
-<wb-snippet wb="name=wbapp" />
+
 <script type="wbapp">
     function changeLink() {
         const moreBtn = document.querySelector('.page-link.more');

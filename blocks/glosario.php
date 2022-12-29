@@ -128,7 +128,7 @@
 
         </script>
     </section>
-    <wb-snippet wb="name=wbapp" />
+    
 </view>
 
 <edit>
