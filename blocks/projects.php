@@ -87,7 +87,7 @@
                     aria-hidden="true">
             </div>
         </section>
-        <wb-snippet wb="name=wbapp" />
+
         <script wb-app remove>
         function changeLink() {
             const moreBtn = document.querySelector('.page-link.more');
