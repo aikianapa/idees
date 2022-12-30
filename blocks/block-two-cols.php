@@ -163,7 +163,7 @@
                     <div class="tlist">
                         <wb-foreach wb="from=links_srv&tpl=false">
                             <wb-data wb="table=services&item={{_val}}">
-                                <a href="/services/{{tags}}/{{wbFurlGenerate({{header}})}}">
+                                <a href="/services/{{tags}}/{{wbFurlGenerate({{header}})}}" class="menu__sub-link">
                                     {{header}}
                                 </a>
                             </wb-data>
