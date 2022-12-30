@@ -85,11 +85,18 @@ function setFormValidation() {
             });
         });
 
-        fileInput.addEventListener('change', function() {
+        fileInput.addEventListener('change', function(e) {
+            const fileWrapper = document.querySelector('.file-upload');
+            const fileText = $('.file-upload__info');
+            console.log(fileText)
+            $(this).prev().prev().find(fileText).html(e.target.files[0].name).addClass('file-upload__info--attached');
+            fileText.html(e.target.files[0].name);
             if (this.value) {
                 this.classList.add('form__input-file--attached');
+                fileWrapper.classList.add('file-upload--attached');
             } else {
                 this.classList.remove('form__input-file--attached');
+                fileWrapper.classList.remove('file-upload--attached');
             }
         });
     }

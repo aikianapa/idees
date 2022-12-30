@@ -5,32 +5,27 @@
         <wb-data wb-from="_cleardata">
             <form class="form" method="POST" action="quotes">
                 <input type="hidden" name="quote" value="project">
-                <div class="form__field-wrapper">
+                <div class="form__field-wrapper form-item">
                     <input class="form__text-field" type="text" id="shrot-form-name" name="name" placeholder="имя и фамилия">
-                    <label class="form__text-field-label" for="shrot-form-name">имя и фамилия</label>
                 </div>
 
-                <div class="form__field-wrapper">
+                <div class="form__field-wrapper form-item">
                     <input class="form__text-field" type="text" id="shrot-form-company" name="quote" placeholder="компания">
-                    <label class="form__text-field-label" for="shrot-form-company">компания</label>
                 </div>
 
-                <div class="form__field-wrapper">
+                <div class="form__field-wrapper form-item">
                     <input class="form__text-field" type="email" id="shrot-form-email" name="email" required autocomplete="on" placeholder="email*">
-                    <label class="form__text-field-label" for="shrot-form-email">email*</label>
                     <span class="form__field-error">Пожалуйста, заполните это поле</span>
                 </div>
 
-                <div class="form__field-wrapper">
+                <div class="form__field-wrapper form-item">
                     <input class="form__text-field" type="tel" id="shrot-form-phone" name="phone" required pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
                         autocomplete="on" placeholder="телефон*">
-                    <label class="form__text-field-label" for="shrot-form-phone">телефон*</label>
                     <span class="form__field-error">Пожалуйста, заполните это поле</span>
                 </div>
 
-                <div class="form__field-wrapper">
-                    <input class="form__text-field" type="text" id="shrot-form-task" name="task" placeholder="описание задачи*">
-                    <label class="form__text-field-label" for="shrot-form-task">описание задачи*</label>
+                <div class="form__field-wrapper form-item">
+                    <textarea required name="task" placeholder="описание задачи*" class="js-textarea form__text-field" id="shrot-form-task"></textarea>
                     <span class="form__field-error">Пожалуйста, заполните это поле</span>
                 </div>
 

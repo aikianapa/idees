@@ -25,8 +25,7 @@
 
             <div class="zayav-form-line2">
               <div class="form-item">
-                <input type="text" name="description" required placeholder="Описание задачи" class="form__text-field" id="form2-description"
-                />
+                  <textarea name="description" placeholder="Описание задачи" class="js-textarea form__text-field" id="form2-description"></textarea>
               </div>
             </div>
 
