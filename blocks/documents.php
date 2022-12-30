@@ -66,7 +66,6 @@
             })
         </script>
     </div>
-    <wb-snippet wb="name=wbapp" />
 </view>
 
 <edit header="Документы">
