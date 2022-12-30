@@ -131,6 +131,12 @@ $(function() {
         hide_pop();
     })
 
+    $(document).on('click', '.popup__overlay', function() {
+        const popups = document.querySelector('.popups');
+        popups.classList.remove('popups--hide');
+        hide_pop();
+    })
+
 
     $(document).on('click', '.gamburger', function() {
         $('.mob-menu-wrapper').toggleClass('d-none')

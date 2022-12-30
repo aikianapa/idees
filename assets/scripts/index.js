@@ -59,48 +59,44 @@ function mailingSubscribe() {
     }
 }
 
+const formsPage = document.querySelectorAll('.form');
+for (let index = 0; index < formsPage.length; index++) {
+    setFormValidation(formsPage[index]);
+}
 
+function setFormValidation(f) {
+    const inputs = f.querySelectorAll('input[required]');
+    const button = f.querySelector('button[type="submit"]');
+    const fileInput = f.querySelector('input[type="file"]');
 
-function setFormValidation() {
-    const form = document.querySelector('.form');
-
-    if (form) {
-        const inputs = form.querySelectorAll('input[required]');
-        const button = form.querySelector('button[type="submit"]');
-        const fileInput = form.querySelector('input[type="file"]');
-
-        button.addEventListener('click', () => {
-            inputs.forEach((elem) => {
-                if (!elem.value) {
-                    elem.closest('.form__field-wrapper').classList.add('form__field-wrapper--warning');
-                    window.scrollBy({
-                        top: -200,
-                        left: 0,
-                        behavior: 'smooth'
-                    });
-                }
-                if (elem.value) {
-                    elem.closest('.form__field-wrapper').classList.remove('form__field-wrapper--warning');
-                }
-            });
-        });
-
-        fileInput.addEventListener('change', function(e) {
-            const fileWrapper = document.querySelector('.file-upload');
-            const fileText = $('.file-upload__info');
-            console.log(fileText)
-            $(this).prev().prev().find(fileText).html(e.target.files[0].name).addClass('file-upload__info--attached');
-            fileText.html(e.target.files[0].name);
-            if (this.value) {
-                this.classList.add('form__input-file--attached');
-                fileWrapper.classList.add('file-upload--attached');
-            } else {
-                this.classList.remove('form__input-file--attached');
-                fileWrapper.classList.remove('file-upload--attached');
+    button.addEventListener('click', () => {
+        inputs.forEach((elem) => {
+            if (!elem.value) {
+                elem.closest('.form__field-wrapper').classList.add('form__field-wrapper--warning');
+                window.scrollBy({
+                    top: -200,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            }
+            if (elem.value) {
+                elem.closest('.form__field-wrapper').classList.remove('form__field-wrapper--warning');
             }
         });
-    }
+    });
 
+    fileInput.addEventListener('change', function (e) {
+        const fileWrapper = fileInput.parentElement.querySelector('.file-upload');
+        const fileText = fileInput.parentElement.querySelector('.file-upload__info');
+        fileText.innerHTML = e.target.files[0].name;
+        if (this.value) {
+            this.classList.add('form__input-file--attached');
+            fileWrapper.classList.add('file-upload--attached');
+        } else {
+            this.classList.remove('form__input-file--attached');
+            fileWrapper.classList.remove('file-upload--attached');
+        }
+    });
 }
 
 function setModal(allModalsClass, modalClass, buttonOpenClass, buttonCloseClass) {
@@ -620,7 +616,6 @@ function setPopupSuccess() {
 // };
 /* viewport width */
 
-
 function serialize(data) {
     let obj = {};
 
@@ -646,7 +641,6 @@ $(document).ready(function() {
 
     checkCookiesAccept();
     mailingSubscribe();
-    setFormValidation();
     setProjectsList();
     setScrollTop();
     setAnimation();
@@ -656,7 +650,6 @@ $(document).ready(function() {
     setVideo();
     setThemeButton();
     getActiveTab();
-
 
     const scene = document.getElementById('scene');
 

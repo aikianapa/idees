@@ -1,6 +1,7 @@
 <view>
     <div class="popups">
         <div class="popup zayavka" pop="zayavka">
+        <div class="popup__overlay"></div>
             <div class="popup-inner">
                 <div class="popup-inner__content">
                     <div class="krest"> </div>
@@ -11,7 +12,7 @@
                     </div>
                 </div>
                 <wb-data>
-                    <form method="POST" action="quotes">
+                    <form method="POST" action="quotes" class="form">
                         <input type="hidden" name="quote" value="contact">
 
                         <div class="form-item">
