@@ -33,8 +33,11 @@
                                 приложенных файлах. Я понимаю и соглашаюсь, что мои данные будут храниться и обрабатываться
                                 в соответствии с Федеральным законом «О персональных данных» </div>
                             <label class="file-upload" file="file1" for="file1">
-                                <div>
-                                    <img src="/assets/img/file.svg"> </div>
+                                <span class="file-upload__icon-wrapper">
+                                    <svg class="file-upload__icon" width="24" height="24">
+                                        <use xlink:href="/assets/img/sprite.svg#add-file"></use>
+                                    </svg>
+                                </span>
                                 <div class="file-upload__info">
                                     <span class="file-upload__info-top-text">Прикрепить файл</span>
                                     <span class="file-upload__info-bottom-text">Не более 10мб</span>
