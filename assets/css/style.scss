@@ -1489,15 +1489,17 @@ body {
     color: transparent;
 }
 
-input {
+input,
+.form__text-field {
     color: #ADBCC3;
     width: 100%;
     border: none;
     display: inline-block;
     border-bottom: 1px solid #ADBCC3;
-    padding: 16px 16px 16px 0px;
+    padding: 16px 16px 16px 0;
     background-color: transparent;
     margin-bottom: 24px;
+
     @media (max-width: 576px) {
         font-size: 12px;
         line-height: 15px;
@@ -1505,20 +1507,37 @@ input {
     }
 }
 
-.file-upload {
-    cursor: pointer;
+textarea,
+textarea.form__text-field {
+    padding: 10px 0 0 0;
+    resize: none;
+    height: 40px;
+    min-height: 40px;
+    overflow: hidden;
+
+    &.auto {
+        overflow-y: hidden;
+    }
+}
+
+textarea:focus {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    outline: none;
 }
 
 input[type=file] {
     display: none;
 }
 
-.form-item input:not(:placeholder-shown)+label {
+.form-item textarea:not(:placeholder-shown)+label,
+.form-item input:not(:placeholder-shown)+label, {
     transform: translate(-8%, -20px) scale(0.8);
     z-index: 20;
     transition-duration: 0.3s;
 }
 
+.form-item textarea:not(:-moz-placeholder-shown)+label,
 .form-item input:not(:-moz-placeholder-shown)+label {
     transform: translate(-8%, -20px) scale(0.8);
     z-index: 20;
@@ -1526,6 +1545,8 @@ input[type=file] {
 }
 
 .form-item input:focus+label,
+.form-item textarea:focus+label,
+.form-item textarea:not(:placeholder-shown)+label,
 .form-item input:not(:placeholder-shown)+label {
     transform: translate(-8%, -20px) scale(0.8);
     z-index: 20;
@@ -1608,14 +1629,8 @@ input[type=file] {
     }
 }
 
-.file-upload {
-    display: grid;
-    grid-template-columns: 50px 150px;
-    align-content: center;
-    align-items: center;
-}
-
-input {
+input,
+textarea {
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -1624,6 +1639,20 @@ input {
     /* Черно-серый */
     color: #23282B;
     outline: none;
+}
+
+.file-upload {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 50px 150px;
+    align-content: center;
+    align-items: center;
+
+    &:hover {
+        img {
+            filter: invert(0%);
+        }
+    }
 }
 
 .file-upload__info {

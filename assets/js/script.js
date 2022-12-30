@@ -210,13 +210,20 @@ $(function() {
             $(".slider-counter").text((currentSlide + 1) + '/' + $('.slider').slick('getSlick').slideCount);
             $(".slick-next").toggleClass('moved')
             $(".slick-prev").toggleClass('moved')
-
         });
 
         $(".slider").trigger("afterChange", [$('.slider').slick('getSlick'), 0, 2])
 
+        document.querySelectorAll('textarea').forEach(el => {
+            el.style.height = el.setAttribute('style', 'height: ' + el.scrollHeight + 'px');
+            el.classList.add('auto');
+            el.addEventListener('input', e => {
+                el.style.height = 'auto';
+                el.style.height = (el.scrollHeight) + 'px';
+            });
+        });
 
-        $('input[type=text]').each(function(n, item) {
+        $('.form__text-field').each(function(n, item) {
             pl = $(item).attr('placeholder')
             idd = $(item).attr('id')
 

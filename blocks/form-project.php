@@ -114,45 +114,38 @@
                 <fieldset class="form__fieldset">
                     <legend class="form__legend form__legend--big">Задача и контакты</legend>
 
-                    <div class="form__field-wrapper">
-                        <input class="form__text-field" type="text" id="task" required name="task" placeholder="описание задачи*">
-                        <label class="form__text-field-label" for="task">описание задачи*</label>
+                    <div class="form__field-wrapper form-item">
+                        <textarea required name="task" placeholder="описание задачи*" class="js-textarea form__text-field" id="task"></textarea>
                         <span class="form__field-error">Пожалуйста, заполните это поле</span>
                     </div>
 
-                    <div class="form__field-wrapper">
+                    <div class="form__field-wrapper form-item">
                         <input class="form__text-field" type="text" id="name" name="name" placeholder="имя и фамилия">
-                        <label class="form__text-field-label" for="name">имя и фамилия</label>
                     </div>
 
-                    <div class="form__field-wrapper">
+                    <div class="form__field-wrapper form-item">
                         <input class="form__text-field" type="tel" id="phone" name="phone" required
                                 pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
                                 autocomplete="on" placeholder="телефон*">
-                        <label class="form__text-field-label" for="phone">телефон*</label>
                         <span class="form__field-error">Пожалуйста, заполните это поле</span>
                     </div>
 
-                    <div class="form__field-wrapper">
+                    <div class="form__field-wrapper form-item">
                         <input class="form__text-field" type="email" id="email" name="email" required
                                 autocomplete="on" placeholder="email*">
-                        <label class="form__text-field-label" for="email">email*</label>
                         <span class="form__field-error">Пожалуйста, заполните это поле</span>
                     </div>
 
-                    <div class="form__field-wrapper">
+                    <div class="form__field-wrapper form-item">
                         <input class="form__text-field" type="text" id="city" name="city" placeholder="город">
-                        <label class="form__text-field-label" for="city">город</label>
                     </div>
 
-                    <div class="form__field-wrapper">
+                    <div class="form__field-wrapper form-item">
                         <input class="form__text-field" type="text" id="company" name="company" placeholder="компания">
-                        <label class="form__text-field-label" for="company">компания</label>
                     </div>
 
-                    <div class="form__field-wrapper">
+                    <div class="form__field-wrapper form-item">
                         <input class="form__text-field" type="text" id="site" name="site" placeholder="ссылка на сайт">
-                        <label class="form__text-field-label" for="site">ссылка на сайт</label>
                     </div>
                 </fieldset>
 
