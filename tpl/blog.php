@@ -37,30 +37,22 @@
         </div>
 
         
-          <article class="article article--aside" wb-if="'{{serv}}'>''">
-            <div class="article__name">Подходящие услуги</div>
-            <wb-foreach wb="table=pages&limit=1" wb-filter="{'url':'\/services\/{{serv}}'}">
-            <a href="/services/{{_parent.serv}}" class="article__item-title category__item-title">{{blocks.block_paragraph.header}}</a>
-            <p class="article__item-description category__item-description">{{blocks.block_paragraph.text}}</p>
-            <ul class="article__sub-list services__sub-list">
-              <wb-foreach wb="table={{attach}}&tpl=false" wb-filter="{{attach_filter}}">
-                <li class="article__sub-list-item services__sub-list-item">
-                    <a class="article__item-link services__item-link" href="{{_parent.url}}/{{wbFurlGenerate({{name}})}}">{{name}}</a>
-                </li>
-              </wb-foreach>
-            </ul>
-            <a class="button article__link category__link" href="/services/{{_parent.serv}}">
-                <span class="button__icon-wrapper">
-                    <svg class="button__icon" width="24" height="24">
-                        <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
-                    </svg>
-                </span>
 
-                <span class="button__text"> подробнее</span>
-            </a>
-            </wb-foreach>
+                <div class="bblock" wb-if="'{{serv}}'>''">
+                    <div class="btext">Подходящие услуги</div>
+                    <wb-foreach wb="table=pages&limit=1" wb-filter="{'url':'\/services\/{{serv}}'}">
+                    <!--a href="/services/{{_parent.serv}}" class="article__item-title category__item-title">{{blocks.block_paragraph.header}}</a-->
+                    <!--p class="article__item-description category__item-description">{{blocks.block_paragraph.text}}</p-->
+                    <div class="tlist">
+                        <wb-foreach wb="table={{attach}}&tpl=false" wb-filter="{{attach_filter}}">
+                            <div>
+                                — <a class="article__item-link services__item-link" href="{{_parent.url}}/{{wbFurlGenerate({{name}})}}">{{name}};</a>
+                            </div>
+                        </wb-foreach>
+                    </div>
 
-          </article>
+                    </wb-foreach>
+                </div>
       </div>
     </section>
 
