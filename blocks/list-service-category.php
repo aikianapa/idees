@@ -1,9 +1,9 @@
 <view>
     <section class="services-section container">
-        <div class="services-section__container">
-            <h2 class="services-section__title">{{title}}</h2>
+        <div class="services-section__container" wb-if="'{{title}}'>'' OR '{{text}}'>''">
+            <h2 class="services-section__title" wb-if="'{{title}}'>''" >{{title}}</h2>
 
-            <div class="services-section__descrpiption-container">
+            <div class="services-section__descrpiption-container" wb-if="'{{text}}'>''">
                 <p class="services-section__descrpiption text-break">{{text}}</p>
             </div>
 
