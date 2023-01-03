@@ -9,7 +9,12 @@
     <li class="agency__team-item" wb-if="'{{active}}'=='on'">
       <figure class="agency__member">
         <div class="agency__member-photo-wrapper">
-          <img class="agency__member-photo" width="513" height="470" data-src="/thumbc/513x470/src/{{data.image.0.img}}" data-srcset="/thumbc/1026x940/src/{{data.image.0.img}} 2x" alt="Владимир Ильичёв">
+          <img class="agency__member-photo b-lazy loading"
+               width="513" height="470"
+               src="/thumbc/513x470/src/{{data.image.0.img}}"
+               data-src="/thumbc/513x470/src/{{data.image.0.img}}"
+               data-srcset="/thumbc/1026x940/src/{{data.image.0.img}} 2x"
+               alt="Владимир Ильичёв">
         </div>
 
         <figcaption class="agency__member-name-container">

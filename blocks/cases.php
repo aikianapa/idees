@@ -14,10 +14,11 @@
                             <p class="case__description">{{descr}}</p>
                         </a>
                         <a class="case__image-wrapper" href="/projects/{{wbFurlGenerate({{name}})}}">
-                            <img class="case__image" width="790" height="500"
-                                data-src="/thumbc/790x500/src/{{_var.cover}}"
-                                data-srcset="/thumbc/1580x1000/src/{{_var.cover}} 2x"
-                                alt="{{name}}">
+                            <img class="b-lazy loading case__image" width="790" height="500"
+                                 src="/thumbc/790x500/src/{{_var.cover}}"
+                                 data-src="/thumbc/790x500/src/{{_var.cover}}"
+                                 data-srcset="/thumbc/1580x1000/src/{{_var.cover}} 2x"
+                                 alt="{{name}}">
                         </a>
 
                         <a class="button case__link" href="/projects/{{wbFurlGenerate({{name}})}}">
