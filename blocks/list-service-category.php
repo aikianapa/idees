@@ -1,9 +1,9 @@
 <view>
     <section class="services-section container">
-        <div class="services-section__container">
-            <h2 class="services-section__title">{{title}}</h2>
+        <div class="services-section__container" wb-if="'{{title}}'>'' OR '{{text}}'>''">
+            <h2 class="services-section__title" wb-if="'{{title}}'>''" >{{title}}</h2>
 
-            <div class="services-section__descrpiption-container">
+            <div class="services-section__descrpiption-container" wb-if="'{{text}}'>''">
                 <p class="services-section__descrpiption text-break">{{text}}</p>
             </div>
 
@@ -17,9 +17,8 @@
                 <span class="button__text">начать проект</span>
             </button>
         </div>
-
-        <wb-include wb-tpl="services-category.inc.php" />
     </section>
+    <wb-module wb="module=yonger&mode=render&view=block-services-list" />
 </view>
 <edit header="Список категорий услуг">
     <div>

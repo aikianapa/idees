@@ -16,4 +16,10 @@ function text2tel($str)
     }
     return $tel;
 }
+
+function beforeShow($out) {
+    $out = yongerLinks($out);
+    return $out;
+}
+
 ?>
