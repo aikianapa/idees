@@ -110,6 +110,7 @@
             "/assets/scripts/libs/parallax.js",
             "/assets/scripts/libs/dynamic.js",
             "/assets/scripts/libs/swiper-bundle.min.js",
+            "/assets/scripts/libs/blazy.min.js",
             "/assets/scripts/index.js",
             "/assets/js/script.js"]
         </wb-scripts>

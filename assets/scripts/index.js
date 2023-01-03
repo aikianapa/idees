@@ -64,6 +64,19 @@ for (let index = 0; index < formsPage.length; index++) {
     setFormValidation(formsPage[index]);
 }
 
+const bLazy = new Blazy({
+    breakpoints: [{
+        width: 420 // Max-width
+        , src: 'data-src-small'
+    }]
+    , success: function(element){
+        setTimeout(function(){
+            let parent = element.parentNode;
+            parent.className = parent.className.replace(/\bloading\b/,'');
+        }, 200);
+    }
+});
+
 function setFormValidation(f) {
     const inputs = f.querySelectorAll('input[required]');
     const button = f.querySelector('button[type="submit"]');
@@ -79,7 +92,7 @@ function setFormValidation(f) {
                     behavior: 'smooth'
                 });
             }
-            if (elem.value) {
+            if (elem.value && elem.classList.contains('form__field-wrapper--warning')) {
                 elem.closest('.form__field-wrapper').classList.remove('form__field-wrapper--warning');
             }
         });
@@ -566,11 +579,14 @@ function setPopupSuccess() {
     const popupDrop = document.createElement('div');
     const popups = document.querySelector('.popups');
     popups.classList.add('popups--hide');
-    popupDrop.classList.add('popup', 'form__popup');
+    const popup = document.querySelector('.popup');
+    popupDrop.classList.add('popup', 'form__popup', 'popup--success');
     body.classList.add('lock');
 
     body.append(popupDrop);
-    popupDrop.innerHTML = `<div class="form__popup-content popup-inner">
+    popupDrop.innerHTML = `
+        <div class="popup__overlay"></div>
+        <div class="form__popup-content popup-inner">
         <div class="krest form__popup-close"> </div>
         <div class="popup__success">
                     <div class="sub-title popup__title">
@@ -596,9 +612,23 @@ function setPopupSuccess() {
         event.preventDefault();
         body.classList.remove('lock');
         popups.classList.remove('popups--hide');
-        popupDrop.remove();
-        body.classList.remove('lock');
+        popupDrop.classList.add('popup--success-close');
+        setTimeout(async function() {
+            popupDrop.remove();
+        }, 3000);
     };
+
+    setTimeout(async function() {
+        body.classList.remove('lock');
+        popupDrop.classList.add('popup--success-close');
+        popup.style.display = 'none';
+        setTimeout(async function() {
+            popupDrop.remove();
+        }, 3000);
+        popups.classList.remove('popups--hide');
+        $('#soverlay2').remove();
+        body.classList.remove('lock');
+    }, 3000);
 }
 
 /* viewport width */

@@ -1339,8 +1339,8 @@ body {
         height: auto;
         -o-object-fit: cover;
         object-fit: cover;
-        transition: 0.5s;
     }
+
     .case__link {
         grid-area: link;
         justify-self: flex-start;
@@ -1385,6 +1385,24 @@ body {
     }
 }
 
+.b-lazy {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: all 1000ms ease-in-out 500ms;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}
+.b-lazy.loading {
+    background: url('../img/loader.gif') center center no-repeat;
+}
+
+.b-lazy.b-loaded {
+    transform: translateY(0);
+    opacity: 1;
+    width: auto;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+}
 
 /****************************************/
 
@@ -2432,6 +2450,26 @@ footer a:hover {
         right: 15px;
         top: 15px;
         cursor: pointer;
+    }
+}
+
+.popup--success-close .popup-inner {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDownInner;
+    animation-name: fadeInDownInner;
+}
+
+@keyframes fadeInDownInner {
+    0% {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
     }
 }
 

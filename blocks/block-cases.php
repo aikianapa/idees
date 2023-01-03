@@ -15,7 +15,11 @@
                         <wb-var cover="{{cover.0.img}}" wb-if="'{{_var.cover}}' == ''" />
                     </wb-foreach>
 					<a href="/projects/{{wbFurlGenerate({{name}})}}" class="case-image case__image-wrapper  ttext">
-						<img src="/thumbc/700x400/src{{_var.cover}}" class="case__image">
+						<img class="case__image b-lazy loading"
+                             src="/thumbc/700x400/src{{_var.cover}}"
+                             data-src="/thumbc/700x400/src{{_var.cover}}"
+                             alt="{{descr}}"
+                        >
 					</a>
 					<a href="/projects/{{wbFurlGenerate({{name}})}}" class="case-description  ttext">
 						{{descr}}
