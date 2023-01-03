@@ -17,9 +17,8 @@
                 <span class="button__text">начать проект</span>
             </button>
         </div>
-
-        <wb-include wb-tpl="services-category.inc.php" />
     </section>
+    <wb-module wb="module=yonger&mode=render&view=block-services-list" />
 </view>
 <edit header="Список категорий услуг">
     <div>
