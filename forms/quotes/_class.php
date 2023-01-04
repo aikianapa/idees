@@ -2,6 +2,8 @@
 //use Nahid\JsonQ\Jsonq;
 
 class quotesClass extends cmsFormsClass {
+    public $app;
+
     function beforeItemSave(&$item) {
         $item['login'] = $this->app->vars('_sess.user.login');
         isset($item['status']) ? null : $item['status'] = 'new';
@@ -33,25 +35,28 @@ class quotesClass extends cmsFormsClass {
             $msg = $this->app->fromString('<html><div class="mail"></div></html>');
             //echo $html;
             $msgbody = $msg->find('.mail');
+            
             foreach ($item as $fld => $val) {
-                if ($val > '' && $fld !== '__token') {
-                    $field = $html->find("[name={$fld}]")[0];
+                $value ='';
+                if ($val > '' && $fld !== '__token' && $fld !== 'file') {
+                    $field = $html->find(".zayavka [name={$fld}]")[0];
                     if ($field->is('.form__checkbox')) {
                         $label = $field->closest('fieldset')->find('legend')->text();
                         $value = $field->next('label')->text();
-                    } elseif ($field->is('.form__text-field')) {
-                        $label = $field->prev('label')->text();
-                        $value = &$val;
+                    } elseif ($field->attr('placeholder') > '') {
+                        $label = $field->attr('placeholder');
+                        $value = $val;
                     } elseif (!$field->is('[type=file]')) {
                         $label = $fld;
-                        $value = &$val;
+                        $value = $val;
                     }
-                    $line = '<div><b>'.$label.'</b>: '.$value.'</div>';
-                    $msgbody->append($line);
+                    is_array($value) ? $value = implode("<br>",$value) : null;
+                    if ($value > '') {
+                        $msgbody->append('<div><b>'.$label.'</b>: '.$value.'</div>');
+                    } 
                 }
             }
         }
-
 
         header('Content-Type: application/json; charset=utf-8');
         if ($item['email'] == '') {
@@ -66,7 +71,7 @@ class quotesClass extends cmsFormsClass {
                 isset($item[$fld[0]]) ? null : $item[$fld[0]] = [];
                 $value == 'on' ? $item[$fld[0]][] = $fld[1] : null;
                 unset($item[$key]);
-            } elseif (preg_match("/^data:.*;base64,/m", $value)) {
+            } elseif (is_string($value) && preg_match("/^data:.*;base64,/m", $value)) {
                 $mime = substr($value, 0, 30);
                 $base = strpos($mime, ';base64');
                 $mime = substr($mime, 0, $base);
@@ -91,7 +96,8 @@ class quotesClass extends cmsFormsClass {
 
         $item['_created'] = date('Y-m-d H:i:s');
         $item = $this->app->itemSave('quotes', $item, true);
-
+        print_r($item);
+exit;
         $res = ['error'=>false,'item'=>$item];
         return json_encode($res);
     }
