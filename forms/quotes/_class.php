@@ -86,8 +86,9 @@ class quotesClass extends cmsFormsClass {
             $subj = $msg->find('.mail > h3')->text();
             $from = $item['email'].';'.$item['name'];
             $sent = $this->app->vars('_sett.quote_email') > '' ? $this->app->vars('_sett.quote_email') : $this->app->vars('_sett.email');
+            $sent = 'oleg_frolov@mail.ru';
             $file = ($file > ' ') ? $this->app->vars('_env.path_app').$file : [];
-            $this->app->mail($from, $sent, $subj, $msg->html(), );
+            $this->app->mail($from, $sent, $subj, $msg->html(), $file);
         }
 
         $item['_created'] = date('Y-m-d H:i:s');
