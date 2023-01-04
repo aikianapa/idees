@@ -692,9 +692,7 @@ $(document).ready(function() {
         if ($(this).attr('action') == 'quotes') {
             let error = false;
             ev.stopPropagation();
-
             let form = this;
-            // var data = $(form).serializeJson();
             let data = new FormData(form);
             data.pathname = document.location.pathname;
             data = serialize(data);
