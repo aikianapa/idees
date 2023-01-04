@@ -67,12 +67,13 @@ for (let index = 0; index < formsPage.length; index++) {
 const bLazy = new Blazy({
     breakpoints: [{
         width: 420 // Max-width
-        , src: 'data-src-small'
-    }]
-    , success: function(element){
-        setTimeout(function(){
+            ,
+        src: 'data-src-small'
+    }],
+    success: function(element) {
+        setTimeout(function() {
             let parent = element.parentNode;
-            parent.className = parent.className.replace(/\bloading\b/,'');
+            parent.className = parent.className.replace(/\bloading\b/, '');
         }, 200);
     }
 });
@@ -98,7 +99,7 @@ function setFormValidation(f) {
         });
     });
 
-    fileInput.addEventListener('change', function (e) {
+    fileInput.addEventListener('change', function(e) {
         const fileWrapper = fileInput.parentElement.querySelector('.file-upload');
         const fileText = fileInput.parentElement.querySelector('.file-upload__info');
         fileText.innerHTML = e.target.files[0].name;
@@ -696,42 +697,46 @@ $(document).ready(function() {
             // var data = $(form).serializeJson();
             let data = new FormData(form);
             data.pathname = document.location.pathname;
-            data = JSON.stringify(serialize(data));
+            data = serialize(data);
 
-            if (error) {
-                wbapp.toast('Ошибка', error, { bgcolor: 'warning' });
-                return false;
-            }
-
-            /*
-            wbapp.post('/form/quotes/submit', data, function () {
-                setPopupSuccess();
-                $(form)[0].reset();
-            })
-            */
-
-            $.ajax({
-                url: '/form/quotes/submit',
-                type: 'POST',
-                data: data,
-                contentType: 'application/json',
-                // processData: false,
-                success: function(data) {
-                    console.log('----------------------- /form/quotes/submit -> success ----------------');
-                    setPopupSuccess();
-                    $(form)[0].reset();
-                    ym(17921479, 'reachGoal', 'send_form');
-                },
-                error: function(data) {}
+            let attaches = $(form).find('input[name][type=file]');
+            let reader = new FileReader();
+            $.each(attaches, function() {
+                let file = $(this)[0].files[0];
+                if (file) {
+                    let that = this;
+                    reader.readAsDataURL(file);
+                    reader.onload = function() {
+                        data[that.name] = reader.result.toString(); //base64encoded string 
+                    };
+                }
             });
+            setTimeout(function() {
+                console.log(data);
+                data = JSON.stringify(data)
 
-            // setTimeout(function () {
-            //     wbapp.post('/form/quotes/submit', data, function () {
+                $.ajax({
+                    url: '/form/quotes/submit',
+                    type: 'POST',
+                    data: data,
+                    contentType: 'application/json',
+                    // processData: false,
+                    success: function(data) {
+                        console.log('----------------------- /form/quotes/submit -> success ----------------');
+                        setPopupSuccess();
+                        $(form)[0].reset();
+                        ym(17921479, 'reachGoal', 'send_form');
+                    },
+                    error: function(data) {
+                        if (error) {
+                            wbapp.toast('Ошибка', 'Сообщение не отправлено', { bgcolor: 'warning' });
+                            return false;
+                        }
+                    }
+                });
+            }, 50)
 
-            //     })
-            // }, 300)
             return false;
-
         }
     });
 

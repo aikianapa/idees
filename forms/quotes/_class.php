@@ -28,14 +28,10 @@ class quotesClass extends cmsFormsClass {
         // $item = $this->app->vars('_post');
         $item = json_decode(file_get_contents('php://input'), true);
         // print(var_dump($item));
-
-
         if ($this->app->vars('_route.refferer')) {
             $html = $this->app->fromFile($this->app->vars('_route.refferer'));
-            $msg = $this->app->fromString('<html><div class="mail"></div></html>');
-            //echo $html;
+            $msg = $this->app->fromString('<html><div class="mail"><h3>Заявка с сайта</h3></div></html>');
             $msgbody = $msg->find('.mail');
-            
             foreach ($item as $fld => $val) {
                 $value ='';
                 if ($val > '' && $fld !== '__token' && $fld !== 'file') {
@@ -65,6 +61,7 @@ class quotesClass extends cmsFormsClass {
         }
         $qnum = $this->app->module('autoinc');
         $file = null;
+
         foreach ($item as $key => $value) {
             if (preg_match("/^project-|source-/", $key)) {
                 $fld = explode('-', $key);
@@ -96,8 +93,6 @@ class quotesClass extends cmsFormsClass {
 
         $item['_created'] = date('Y-m-d H:i:s');
         $item = $this->app->itemSave('quotes', $item, true);
-        print_r($item);
-exit;
         $res = ['error'=>false,'item'=>$item];
         return json_encode($res);
     }
