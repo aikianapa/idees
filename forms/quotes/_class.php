@@ -81,14 +81,13 @@ class quotesClass extends cmsFormsClass {
             }
         }
         $item['number'] = $qnum->inc('quotes', 'number', 1000);
-
-
         if (isset($msgbody)) {
             $msgbody->prepend('<h3>Заявка №'.$item['number'].'</h3>');
             $subj = $msg->find('.mail > h3')->text();
             $from = $item['email'].';'.$item['name'];
             $sent = $this->app->vars('_sett.quote_email') > '' ? $this->app->vars('_sett.quote_email') : $this->app->vars('_sett.email');
-            $this->app->mail($from, $sent, $subj, $msg->html());
+            $file = ($file > ' ') ? $this->app->vars('_env.path_app').$file : [];
+            $this->app->mail($from, $sent, $subj, $msg->html(), );
         }
 
         $item['_created'] = date('Y-m-d H:i:s');
