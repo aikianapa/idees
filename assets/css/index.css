@@ -6870,11 +6870,7 @@ body:not(.dark) .main-section__scene-video-white {
     transform: translateY(-50%);
     transition: 0.8s;
 }
-.agency__member-photo.b-lazy.b-loaded {
-    transform: translateY(-50%);
-}
 
-.agency__member-photo.b-lazy.b-loaded:hover,
 .agency__member-photo:hover {
     transform: translate(50%, -50%) scale(2);
 }
