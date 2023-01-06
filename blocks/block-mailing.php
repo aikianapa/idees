@@ -5,7 +5,7 @@
                 Полезная рассылка два раза в неделю: во вторник и пятницу
             </span>
 
-            <form class="mailing-block__form" action="https://echo.htmlacademy.ru/courses" method="post">
+            <form class="mailing-block__form" action="/mailing" method="post">
                 <label class="visually-hidden" for="email-field">Email</label>
                 <input class="mailing-block__input" id="email-field" type="email" name="email" placeholder="введите свой email" required
                     done="">
