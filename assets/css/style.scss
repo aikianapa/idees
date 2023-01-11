@@ -1198,6 +1198,33 @@ body {
     }
 }
 
+.lazy-wrapper {
+    background-image: url('../img/loader-img.svg');
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-color: #fff;
+    background-position: center;
+}
+
+.lazy-wrapper__img[src] {
+    animation-name: lazyFadeIn;
+    -webkit-animation-name: lazyFadeIn;
+    animation-duration: 2.0s;
+    -webkit-animation-duration: 2.0s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    visibility: visible !important;
+}
+
+@keyframes lazyFadeIn {
+    0% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .case__image-wrapper {
     display: block;
     grid-area: image;

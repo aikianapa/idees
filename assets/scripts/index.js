@@ -64,20 +64,6 @@ for (let index = 0; index < formsPage.length; index++) {
     setFormValidation(formsPage[index]);
 }
 
-const bLazy = new Blazy({
-    breakpoints: [{
-        width: 420 // Max-width
-            ,
-        src: 'data-src-small'
-    }],
-    success: function(element) {
-        setTimeout(function() {
-            let parent = element.parentNode;
-            parent.className = parent.className.replace(/\bloading\b/, '');
-        }, 200);
-    }
-});
-
 function setFormValidation(f) {
     const inputs = f.querySelectorAll('input[required]');
     const button = f.querySelector('button[type="submit"]');
