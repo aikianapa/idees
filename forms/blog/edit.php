@@ -40,58 +40,71 @@
                                         </div>
                                         <div class="col-12">
                                             <label class="form-control-label">Услуга</label>
-                                                <select name="serv" class="form-control" wb-select2>
-                                                    <option value="">&nbsp;</option>
-                                                    <wb-foreach wb="table=pages&tpl=false" wb-filter="{'path':'/services'}">
-                                                        <option value="{{name}}" selected wb-if="'{{in_array({{_id}},{{_parent.serv}})}}'=='1'">
-                                                            {{header}}</option>
-                                                        <option value="{{name}}" wb-if="'{{in_array({{_id}},{{_parent.serv}})}}'!='1'">
-                                                            {{header}}</option>
-                                                    </wb-foreach>
-                                                </select>
+                                            <select name="serv" class="form-control" wb-select2>
+                                                <option value="">&nbsp;</option>
+                                                <wb-foreach wb="table=pages&tpl=false" wb-filter="{'path':'/services'}">
+                                                    <option value="{{name}}" selected wb-if="'{{in_array({{_id}},{{_parent.serv}})}}'=='1'">
+                                                        {{header}}
+                                                    </option>
+                                                    <option value="{{name}}" wb-if="'{{in_array({{_id}},{{_parent.serv}})}}'!='1'">
+                                                        {{header}}
+                                                    </option>
+                                                </wb-foreach>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2">Рекомендуемые услуги</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group row">
+                                        <div class="col-12 mb-1">
+                                            <input class="form-control" name="links_srv" wb-module="selectservices" multiple placeholder="Услуги">
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <label class="col-sm-2">Тэги</label>
-                                <div class="col-sm-10">
-                                    <wb-data wb="table=catalogs&item=projects&field=tree">
-                                        <select name="tags" class="form-control" wb-select2 multiple>
-                                            <wb-foreach wb-from="data">
-                                                <option value="{{_id}}" selected wb-if="'{{in_array({{_id}},{{_parent._parent.tags}})}}'=='1'">
-                                                    {{name}}</option>
-                                                <option value="{{_id}}" wb-if="'{{in_array({{_id}},{{_parent._parent.tags}})}}'!='1'">
-                                                    {{name}}</option>
-                                            </wb-foreach>
-                                        </select>
-                                    </wb-data>
-                                </div>
-                            </div>
-                            <div class="divider-text">Параметры SEO</div>
-        <div class="form-group row">
-            <label class="form-control-label col-md-3">Заголовок (title)</label>
-            <div class="col-md-9">
-                <input type="text" class="form-control" name="seo.title" placeholder="Заголовок (title)">
-            </div>
-        </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2">Тэги</label>
+                                        <div class="col-sm-10">
+                                            <wb-data wb="table=catalogs&item=projects&field=tree">
+                                                <select name="tags" class="form-control" wb-select2 multiple>
+                                                    <wb-foreach wb-from="data">
+                                                        <option value="{{_id}}" selected wb-if="'{{in_array({{_id}},{{_parent._parent.tags}})}}'=='1'">
+                                                            {{name}}
+                                                        </option>
+                                                        <option value="{{_id}}" wb-if="'{{in_array({{_id}},{{_parent._parent.tags}})}}'!='1'">
+                                                            {{name}}
+                                                        </option>
+                                                    </wb-foreach>
+                                                </select>
+                                            </wb-data>
+                                        </div>
+                                    </div>
+                                    <div class="divider-text">Параметры SEO</div>
+                                    <div class="form-group row">
+                                        <label class="form-control-label col-md-3">Заголовок (title)</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="seo.title" placeholder="Заголовок (title)">
+                                        </div>
+                                    </div>
 
-        <div class="form-group row">
-            <label class="form-control-label col-md-3">Описание (description)</label>
-            <div class="col-md-9">
-                <textarea class="form-control" name="seo.descr" rows="auto" placeholder="Описание (description)"></textarea>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="form-control-label col-md-3">Ключевые слова</label>
-            <div class="col-9">
-                <input type="text" class="form-control" name="seo.keywords" placeholder="Ключевые слова"
-                    wb-module="tagsinput">
-            </div>
-        </div>
-                            
-                            <!--div class="form-group row">
+                                    <div class="form-group row">
+                                        <label class="form-control-label col-md-3">Описание (description)</label>
+                                        <div class="col-md-9">
+                                            <textarea class="form-control" name="seo.descr" rows="auto" placeholder="Описание (description)"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="form-control-label col-md-3">Ключевые слова</label>
+                                        <div class="col-9">
+                                            <input type="text" class="form-control" name="seo.keywords" placeholder="Ключевые слова" wb-module="tagsinput">
+                                        </div>
+                                    </div>
+
+                                    <!--div class="form-group row">
                                 <label class="col-sm-2">Похожие</label>
                                 <div class="col-sm-10">
                                     <select name="similar" class="form-control" wb-select2 multiple>
@@ -104,11 +117,11 @@
                                     </select>
                                 </div>
                             </div-->
-                            <div class="row">
-                                <div class="col-12">
-                                    <wb-module wb="module=editor" name="text" />
-                                </div>
-                            </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <wb-module wb="module=editor" name="text" />
+                                        </div>
+                                    </div>
                         </form>
 
                     </div>
