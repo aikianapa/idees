@@ -44,8 +44,8 @@
 
             <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__description">{{descr}}</a>
 
-            <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__img">
-                <img class="b-lazy loading article__image" width="790" height="500"
+            <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__img lazy-wrapper">
+                <img class="article__image loading lazy-wrapper__img" width="790" height="500"
                      src="/thumbc/790x500/src{{cover.0.img}}"
                      data-src="/thumbc/790x500/src{{cover.0.img}}"
                      data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
@@ -106,8 +106,8 @@
 
                 <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__description" wb-if="'{{spec}}'==''">{{descr}}</a>
 
-                <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__img">
-                    <img class="article__image"
+                <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__img lazy-wrapper">
+                    <img class="article__image loading lazy-wrapper__img"
                          width="790" height="500"
                          data-src="/thumbc/790x500/src{{cover.0.img}}"
                          data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"

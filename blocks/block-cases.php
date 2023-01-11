@@ -14,9 +14,8 @@
                     <wb-foreach wb="from=blocks&tpl=false" wb-filter="name=project-descr">
                         <wb-var cover="{{cover.0.img}}" wb-if="'{{_var.cover}}' == ''" />
                     </wb-foreach>
-					<a href="/projects/{{wbFurlGenerate({{name}})}}" class="case-image case__image-wrapper  ttext">
-						<img class="case__image b-lazy loading"
-                             src="/thumbc/700x400/src{{_var.cover}}"
+					<a href="/projects/{{wbFurlGenerate({{name}})}}" class="case-image case__image-wrapper lazy-wrapper ttext">
+						<img class="case__image loading lazy-wrapper__img"
                              data-src="/thumbc/700x400/src{{_var.cover}}"
                              alt="{{descr}}"
                         >
