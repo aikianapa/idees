@@ -90,12 +90,16 @@
                             <li class="project__similar-item swiper-slide">
                                 <article class="case">
                                     <a class="case__title-link-wrapper" href="{{_var.link}}">
-                                        <h3 class="case__title">{{name}}</h3>
-                                        <p class="case__description">{{descr}}</p>
+                                        <h3 class="case__title ttext">{{name}}</h3>
+                                        <p class="case-description">{{descr}}</p>
                                     </a>
-                                    <a class="case__image-wrapper" href="{{_var.link}}">
-                                        <img class="case__image" width="790" height="500" src="/thumbc/790x500/src{{cover.0.img}}"
-                                            data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x" alt="{{name}}">
+                                    <a class="case-image case__image-wrapper lazy-wrapper ttext" href="{{_var.link}}">
+                                        <div class="case-image__wrapper">
+                                            <img class="case__image loading lazy-wrapper__img"
+                                             width="790" height="500"
+                                             data-src="/thumbc/790x500/src{{_var.cover}}"
+                                             data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x" alt="{{name}}">
+                                        </div>
                                     </a>
 
                                     <a class="button case__link" href="{{_var.link}}">

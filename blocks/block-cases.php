@@ -15,10 +15,13 @@
                         <wb-var cover="{{cover.0.img}}" wb-if="'{{_var.cover}}' == ''" />
                     </wb-foreach>
 					<a href="/projects/{{wbFurlGenerate({{name}})}}" class="case-image case__image-wrapper lazy-wrapper ttext">
-						<img class="case__image loading lazy-wrapper__img"
-                             data-src="/thumbc/700x400/src{{_var.cover}}"
-                             alt="{{descr}}"
-                        >
+                        <div class="case-image__wrapper">
+                            <img class="case__image loading lazy-wrapper__img"
+                                 data-src="/thumbc/700x400/src{{_var.cover}}"
+                                 data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
+                                 alt="{{descr}}"
+                            >
+                        </div>
 					</a>
 					<a href="/projects/{{wbFurlGenerate({{name}})}}" class="case-description  ttext">
 						{{descr}}
