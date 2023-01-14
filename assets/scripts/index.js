@@ -602,7 +602,7 @@ function setPopupSuccess() {
         popupDrop.classList.add('popup--success-close');
         setTimeout(async function() {
             popupDrop.remove();
-        }, 3000);
+        }, 1000);
     };
 
     setTimeout(async function() {
@@ -611,7 +611,7 @@ function setPopupSuccess() {
         popup.style.display = 'none';
         setTimeout(async function() {
             popupDrop.remove();
-        }, 3000);
+        }, 1000);
         popups.classList.remove('popups--hide');
         $('#soverlay2').remove();
         body.classList.remove('lock');
@@ -648,7 +648,6 @@ function serialize(data) {
     }
     return obj;
 }
-
 
 
 

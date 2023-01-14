@@ -26,7 +26,7 @@
 
       <div class="blog__content">
         <wb-foreach wb="table=blog&tpl=false&limit=1&sort=_created:d">
-          <article class="article article--main">
+          <article class="article article--main js-article-main">
             <div class="article__tags">
               <wb-foreach wb="from=tags&tpl=false">
                 <span class="article__tag">
@@ -45,11 +45,12 @@
             <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__description">{{descr}}</a>
 
             <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__img lazy-wrapper">
-                <img class="article__image loading lazy-wrapper__img" width="790" height="500"
-                     src="/thumbc/790x500/src{{cover.0.img}}"
-                     data-src="/thumbc/790x500/src{{cover.0.img}}"
-                     data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
-                alt="{{name}}">
+                <div class="case-image__wrapper">
+                    <img class="article__image loading lazy-wrapper__img" width="790" height="500"
+                         data-src="/thumbc/790x500/src{{cover.0.img}}"
+                         data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
+                    alt="{{name}}">
+                </div>
             </a>
 
             <a class="button article__link" href="/blog/{{wbFurlGenerate({{name}})}}">
@@ -107,12 +108,14 @@
                 <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__description" wb-if="'{{spec}}'==''">{{descr}}</a>
 
                 <a href="/blog/{{wbFurlGenerate({{name}})}}" class="article__img lazy-wrapper">
-                    <img class="article__image loading lazy-wrapper__img"
-                         width="790" height="500"
-                         data-src="/thumbc/790x500/src{{cover.0.img}}"
-                         data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
-                         alt="{{name}}"
-                    >
+                    <div class="case-image__wrapper">
+                        <img class="article__image loading lazy-wrapper__img"
+                             width="790" height="500"
+                             data-src="/thumbc/790x500/src{{cover.0.img}}"
+                             data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
+                             alt="{{name}}"
+                        >
+                    </div>
                 </a>
 
                 <a class="button article__link" href="/blog/{{wbFurlGenerate({{name}})}}"  wb-if="'{{spec}}'==''">
