@@ -1,5 +1,4 @@
 wbapp.lazyload = async function () {
-    alert(1)
     let caseImgWrapper = $('.lazy-wrapper');
     let caseImg = $('.lazy-wrapper__img');
     $(caseImg).on('load', function () {
