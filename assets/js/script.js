@@ -1,5 +1,4 @@
 var current_sub;
-
 function setScrollTop() {
     const scrollTopButton = document.querySelector('.up-button');
 
@@ -103,12 +102,9 @@ function sub_hide(sub, flag) {
 
 }
 
-
-
 $(function() {
 
     setScrollTop();
-
 
     $('.mob-list li.sub a').click(function() {
         $(this).parent().find('ul').toggle(200)
