@@ -1,14 +1,14 @@
 wbapp.lazyload = async function () {
+    $('[data-src]:not([src])').attr('loading', 'lazy')
+    $('[data-src]:not([src])').lazyload()
     let caseImgWrapper = $('.lazy-wrapper');
     let caseImg = $('.lazy-wrapper__img');
-    $(caseImg).on('load', function () {
+    $(caseImg).on('load', async function () {
         $(caseImgWrapper).addClass('loaded')
         $(caseImg).addClass('loaded')
     })
-    $('[data-src]:not([src])').attr('loading', 'lazy')
-    $('[data-src]:not([src])').lazyload()
 }
-
+wbapp.lazyload()
 
 function checkCookiesAccept() {
     const cookieBlock = document.querySelector('.cookies-block');
