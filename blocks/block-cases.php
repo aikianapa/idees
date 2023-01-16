@@ -1,7 +1,7 @@
 <view>
     <section class="service-page__section container pt-0">
-        <h2  class="sub-title" wb-if="'{{title}}'==''">Кейсы</h2>
-        <h2  class="sub-title" wb-if="'{{title}}'&gt;''">{{title}}</h2>
+        <h2 class="sub-title" wb-if="'{{title}}'==''">Кейсы</h2>
+        <h2 class="sub-title" wb-if="'{{title}}'&gt;''">{{title}}</h2>
 
         <div class="cases">
             <wb-var cover="" />
@@ -10,23 +10,19 @@
 
 
 
-				<div class="case" wb-if="'{{active}}'=='on'">
-                    <wb-foreach wb="from=blocks&tpl=false" wb-filter="name=project-descr">
-                        <wb-var cover="{{cover.0.img}}" wb-if="'{{_var.cover}}' == ''" />
-                    </wb-foreach>
-					<a href="/projects/{{wbFurlGenerate({{name}})}}" class="case-image case__image-wrapper lazy-wrapper ttext">
-                        <div class="case-image__wrapper">
-                            <img class="case__image loading lazy-wrapper__img"
-                                 data-src="/thumbc/700x400/src{{_var.cover}}"
-                                 data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x"
-                                 alt="{{descr}}"
-                            >
-                        </div>
-					</a>
-					<a href="/projects/{{wbFurlGenerate({{name}})}}" class="case-description  ttext">
-						{{descr}}
-					</a>
-				</div>
+                    <div class="case" wb-if="'{{active}}'=='on'">
+                        <wb-foreach wb="from=blocks&tpl=false" wb-filter="name=project-descr">
+                            <wb-var cover="{{cover.0.img}}" wb-if="'{{_var.cover}}' == ''" />
+                        </wb-foreach>
+                        <a href="/projects/{{wbFurlGenerate({{name}})}}" class="case-image case__image-wrapper lazy-wrapper ttext">
+                            <div class="case-image__wrapper">
+                                <img class="case__image loading lazy-wrapper__img" data-src="/thumbc/700x400/src{{_var.cover}}" data-srcset="/thumbc/1580x1000/src{{_var.cover}} 2x" alt="{{descr}}">
+                            </div>
+                        </a>
+                        <a href="/projects/{{wbFurlGenerate({{name}})}}" class="case-description  ttext">
+                            {{descr}}
+                        </a>
+                    </div>
                 </wb-data>
                 <wb-var cover="" />
             </wb-foreach>
