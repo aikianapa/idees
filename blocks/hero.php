@@ -40,9 +40,7 @@
                                     <wb-foreach wb="from=list&tpl=false">
                                         <div class="root-slider__description-item swiper-slide">
                                             <div class="root-slider__description-content">
-                                                <p class="text-break">
-                                                    {{text}}
-                                                </p>
+                                                <p class="text-break">{{text}}</p>
                                                 <div class=" ybutton ybutton--invers zayav-button" data-service="{{label}}" data-index="1">{{_parent.btntext}}
                                             </div>
                                         </div>
