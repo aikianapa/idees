@@ -1,25 +1,35 @@
 <view>
-    <section class="service-page__section container pt-0">
-        <h2 class="sub-title" wb-if="'{{title}}'==''">Кейсы</h2>
-        <h2 class="sub-title" wb-if="'{{title}}'&gt;''">{{title}}</h2>
-
-        <div class="cases">
+    <section class="section container">
+        <div class="title-section">
+            <h2 class="title-section__title" wb-if="'{{title}}'==''">Проекты</h2>
+            <h2 class="sub-title" wb-if="'{{title}}'&gt;''">{{title}}</h2>
+            <a href="#" class="title-section__link big-link">
+                <div class="big-link__wrapper">
+                    <span class="big-link__text">Все <span class="big-link__text-all">проекты</span></span>
+                    <i class="big-link__icon-arrow">
+                        <svg class="big-link__icon-arrow-svg" width="34" height="9" aria-hidden="true">
+                            <use xlink:href="/assets/img/sprite.svg#big-arrow"></use>
+                        </svg>
+                    </i>
+                </div>
+            </a>
+        </div>
+        <div class="cases-new">
             <wb-var cover="" />
             <wb-foreach wb="from=projects&tpl=false">
                 <wb-data wb="table=projects&item={{_val}}">
-
-
-
-                    <div class="case" wb-if="'{{active}}'=='on'">
+                    <div class="cases-new__case" wb-if="'{{active}}'=='on'">
                         <wb-foreach wb="from=blocks&tpl=false" wb-filter="name=project-descr">
                             <wb-var cover="{{cover.0.img}}" wb-if="'{{_var.cover}}' == ''" />
                         </wb-foreach>
-                        <a href="/projects/{{wbFurlGenerate({{name}})}}" class="case-image case__image-wrapper lazy-wrapper ttext">
-                            <div class="case-image__wrapper">
-                                <img class="case__image loading lazy-wrapper__img" data-src="/thumbc/700x400/src{{_var.cover}}" data-srcset="/thumbc/1580x1000/src{{_var.cover}} 2x" alt="{{descr}}">
+                        <a href="/projects/{{wbFurlGenerate({{name}})}}" class="cases-new__img-link lazy-wrapper ttext">
+                            <div class="cases-new__img-wrapper">
+                                <img class="cases-new__img loading lazy-wrapper__img"
+                                     data-src="/thumbc/700x400/src{{_var.cover}}"
+                                     data-srcset="/thumbc/1580x1000/src{{_var.cover}} 2x" alt="{{descr}}">
                             </div>
                         </a>
-                        <a href="/projects/{{wbFurlGenerate({{name}})}}" class="case-description  ttext">
+                        <a href="/projects/{{wbFurlGenerate({{name}})}}" class="cases-new__description">
                             {{descr}}
                         </a>
                     </div>
@@ -27,7 +37,6 @@
                 <wb-var cover="" />
             </wb-foreach>
         </div>
-
     </section>
 </view>
 <edit header="Блок - Кейсы">
