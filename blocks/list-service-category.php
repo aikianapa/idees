@@ -1,21 +1,55 @@
 <view>
-    <section class="services-section container">
-        <div class="services-section__container" wb-if="'{{title}}'>'' OR '{{text}}'>''">
-            <h2 class="services-section__title" wb-if="'{{title}}'>''" >{{title}}</h2>
+    <section class="section-outer gray-box-clear">
+        <div class="services-section">
+            <div class="container">
+                <div class="services-section__container" wb-if="'{{title}}'>'' OR '{{text}}'>''">
+                    <h2 class="services-section__title" wb-if="'{{title}}'>''" >{{title}}</h2>
 
-            <div class="services-section__descrpiption-container" wb-if="'{{text}}'>''">
-                <p class="services-section__descrpiption text-break">{{text}}</p>
+                    <div class="services-section__descrpiption-container" wb-if="'{{text}}'>''">
+                        <p class="services-section__descrpiption text-break">{{text}}</p>
+                    </div>
+
+                    <button class="ybutton services-section__button js-form-open" type="button">
+                        начать проект
+                    </button>
+                </div>
             </div>
-
-            <button class="button services-section__button js-form-open" type="button">
-                <span class="button__icon-wrapper">
-                    <svg class="button__icon" width="24" height="24" aria-hidden="true">
-                        <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
-                    </svg>
-                </span>
-
-                <span class="button__text">начать проект</span>
-            </button>
+        </div>
+        <div class="about-regards">
+            <div class="container">
+                <div class="about-regards__list counter-list">
+                    <div class="about-regards__item">
+                        <div class="about-regards__item-count">
+                            <span class="about-regards__item-count-number">2012</span>
+                        </div>
+                        <div class="about-regards__item-title">Год основания</div>
+                        <div class="about-regards__item-description">
+                            Внимательно относимся к деталям, занимаемся сложными задачами и гарантировано исполняем свои
+                            обязательства. Не работаем формально, качество приоритетно.
+                        </div>
+                    </div>
+                    <div class="about-regards__item">
+                        <div class="about-regards__item-count">
+                            ><span class="about-regards__item-count-number">500</span>
+                        </div>
+                        <div class="about-regards__item-title">Реализованных проектов</div>
+                        <div class="about-regards__item-description">
+                            Внимательно относимся к деталям, занимаемся сложными задачами и гарантировано исполняем
+                            свои обязательства. Не работаем формально, качество приоритетно.
+                        </div>
+                    </div>
+                    <div class="about-regards__item">
+                        <div class="about-regards__item-count">
+                            <span class="about-regards__item-count-number">45</span> +
+                        </div>
+                        <div class="about-regards__item-title">Человек в команде</div>
+                        <div class="about-regards__item-description">
+                            Внимательно относимся к деталям, занимаемся сложными задачами и гарантировано исполняем
+                            свои обязательства. Не работаем формально, качество приоритетно.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <wb-module wb="module=yonger&mode=render&view=block-services-list" />

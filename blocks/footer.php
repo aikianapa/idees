@@ -1,9 +1,7 @@
 <view>
 
 		<footer>
-
 			<div class="gray-box2">
-
 				<div class="container">
 					<div class="footer-top">
 						<div class="footer-top-left">
@@ -24,8 +22,13 @@
 					</div>
 
 					<div class="footer-bottom">
-						<div class="f1 ff"> {{copyright}} © {{year}} – {{date("Y")}} </div>
-						<a class="f2 ff footer__link" href="http://yonger.ru/"> Построен на
+                        <div class="footer-bottom__col1">
+                            <div class="f1 ff"> {{copyright}} © {{year}} – {{date("Y")}} </div>
+                            <a href="/map" class="f3 ff"> Карта сайта</a>
+                        </div>
+                        <div class="footer-bottom__col2">
+                            <a href="/user-agreement" class="f4 ff"> Конфиденциальность</a>
+                            <a class="f2 ff footer-bottom__enger-logo footer__link" href="http://yonger.ru/"> Построен на
 							&nbsp;
 							<span>
 								ёнгер
@@ -36,9 +39,12 @@
 								</svg>
 							</span>
 						</a>
-						<a href="/map" class="f3 ff"> Карта сайта</a>
-						<a href="/user-agreement" class="f4 ff"> Конфиденциальность</a>
-
+                        </div>
+                        <i class="f5 footer-bottom__col3">
+                            <svg class="lets-create__icon" width="120" height="12" aria-hidden="true">
+                                <use xlink:href="/assets/img/sprite.svg#lets-create"></use>
+                            </svg>
+                        </i>
 					</div>
 
 				</div> <!-- container -->
@@ -106,15 +112,16 @@
         <wb-snippet name="wbapp"></wb-snippet>
         <wb-scripts src="idees">
             ["/assets/js/slick/slick.js",
-            "/assets/scripts/libs/img-comparison-slider.js",
             "/assets/scripts/libs/parallax.js",
             "/assets/scripts/libs/dynamic.js",
             "/assets/scripts/libs/swiper-bundle.min.js",
+            "/assets/scripts/libs/jquery.spincrement.min.js",
             "/assets/scripts/index.js",
             "/assets/js/script.js"]
         </wb-scripts>
         <wb-styles src="slick">
-            ["/assets/js/slick/slick.css" ,"/assets/js/slick/slick-theme.css" ]
+            [ "/assets/css/swiper-bundle.min.css"
+            ]
         </wb-styles>
 </view>
 <edit header="Подвал сайта">

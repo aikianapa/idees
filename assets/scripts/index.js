@@ -10,6 +10,127 @@ wbapp.lazyload = async function () {
 }
 wbapp.lazyload()
 
+const CheckboxDropdown = function(el) {
+    var _this = this;
+    this.isOpen = false;
+    this.areAllChecked = false;
+    this.$el = $(el);
+    this.$label = this.$el.find('.dropdown-label');
+    this.$checkAll = this.$el.find('[data-toggle="check-all"]').first();
+    this.$inputs = this.$el.find('[type="checkbox"]');
+
+    this.onCheckBox();
+
+    this.$label.on('click', function(e) {
+        e.preventDefault();
+        _this.toggleOpen();
+    });
+
+    this.$checkAll.on('click', function(e) {
+        e.preventDefault();
+        _this.onCheckAll();
+    });
+
+    this.$inputs.on('change', function(e) {
+        _this.onCheckBox();
+    });
+};
+
+CheckboxDropdown.prototype.onCheckBox = function() {
+    this.updateStatus();
+};
+
+CheckboxDropdown.prototype.updateStatus = function() {
+    var checked = this.$el.find(':checked');
+
+    this.areAllChecked = false;
+    this.$checkAll.html('Выбрать все');
+
+    if(checked.length <= 0) {
+        this.$label.html('Выбрать услугу');
+    }
+    else if(checked.length === 1) {
+        this.$label.html(checked.parent('label').text());
+    }
+    else if(checked.length === this.$inputs.length) {
+        this.$label.html('Все выбраны');
+        this.areAllChecked = true;
+        this.$checkAll.html('Cнять все');
+    }
+    else {
+        this.$label.html(checked.length + ' выбрано');
+    }
+};
+
+CheckboxDropdown.prototype.onCheckAll = function(checkAll) {
+    if(!this.areAllChecked || checkAll) {
+        this.areAllChecked = true;
+        this.$checkAll.html('Cнять все');
+        this.$inputs.prop('checked', true);
+    }
+    else {
+        this.areAllChecked = false;
+        this.$checkAll.html('Выбрать все');
+        this.$inputs.prop('checked', false);
+    }
+
+    this.updateStatus();
+};
+
+CheckboxDropdown.prototype.toggleOpen = function (forceOpen) {
+    var _this = this;
+
+    if(!this.isOpen || forceOpen) {
+        this.isOpen = true;
+        this.$el.addClass('on');
+    }
+    else {
+        this.isOpen = false;
+        this.$el.removeClass('on');
+    }
+    $(document).mouseup(function (e) {
+        let container = $(".dropdown");
+        if (container.has(e.target).length === 0){
+            container.removeClass('on');
+        }
+    });
+};
+
+var checkboxesDropdowns = document.querySelectorAll('[data-control="checkbox-dropdown"]');
+for(var i = 0, length = checkboxesDropdowns.length; i < length; i++) {
+    new CheckboxDropdown(checkboxesDropdowns[i]);
+}
+
+function servicesGetItem () {
+    const sliderWrapper = document.querySelector('.root-slider__wrapper')
+    if (sliderWrapper) {
+        const slides = sliderWrapper.querySelectorAll('.root-slider__description-item')
+
+        slides.forEach((slide) => {
+            const buttonReq = slide.querySelector('.zayav-button')
+            const dataButtonReqText = buttonReq.getAttribute('data-service')
+
+            buttonReq.onclick = () => {
+                getCheckboxes(dataButtonReqText)
+            }
+        })
+    }
+}
+
+function getCheckboxes (services) {
+    const checkboxParent = document.querySelector('.js-dropdown-list')
+    const checkboxes = checkboxParent.querySelectorAll('.js-dropdown-option-input')
+    let labelCheckboxActive = document.querySelector('.dropdown-label')
+    checkboxes.forEach((checkbox) => {
+        checkbox.checked = false
+
+        if (checkbox.value === services) {
+            checkbox.checked = true
+            labelCheckboxActive.innerHTML = services
+        }
+    })
+}
+
 function checkCookiesAccept() {
     const cookieBlock = document.querySelector('.cookies-block');
 
@@ -71,42 +192,45 @@ function mailingSubscribe() {
     }
 }
 
-const formsPage = document.querySelectorAll('.form');
-for (let index = 0; index < formsPage.length; index++) {
-    setFormValidation(formsPage[index]);
+function getFormsPage () {
+    const formsPage = document.querySelectorAll('.form');
+    for (let index = 0; index < formsPage.length; index++) {
+        setFormValidation(formsPage[index]);
+    }
 }
 
 function setFormValidation(f) {
     const inputs = f.querySelectorAll('input[required]');
     const button = f.querySelector('button[type="submit"]');
     const fileInput = f.querySelector('input[type="file"]');
+    const fileWrapper = fileInput.parentElement.querySelector('.file-upload');
+    const fileText = fileInput.parentElement.querySelector('.file-upload__info');
+    btnValidateStart (button, inputs)
+    fileInputAction (fileInput, fileWrapper, fileText)
+}
 
+function btnValidateStart (button, inputs) {
     button.addEventListener('click', () => {
         inputs.forEach((elem) => {
-            if (!elem.value) {
-                elem.closest('.form__field-wrapper').classList.add('form__field-wrapper--warning');
-                window.scrollBy({
-                    top: -200,
-                    left: 0,
-                    behavior: 'smooth'
-                });
-            }
-            if (elem.value && elem.classList.contains('form__field-wrapper--warning')) {
-                elem.closest('.form__field-wrapper').classList.remove('form__field-wrapper--warning');
-            }
+            const elemParent = elem.closest('.form__field-wrapper');
+
+            !elem.value && window.scrollBy({
+                top: -200,
+                left: 0,
+                behavior: 'smooth',
+            });
+
+            elemParent.classList[elem.value ? remove : add]('form__field-wrapper--warning');
         });
     });
+}
 
-    fileInput.addEventListener('change', function(e) {
-        const fileWrapper = fileInput.parentElement.querySelector('.file-upload');
-        const fileText = fileInput.parentElement.querySelector('.file-upload__info');
+function fileInputAction (fileInput, fileWrapper, fileText) {
+    fileInput.addEventListener('change', (e) => {
         fileText.innerHTML = e.target.files[0].name;
-        if (this.value) {
-            this.classList.add('form__input-file--attached');
+
+        if (e.target.value !== '') {
             fileWrapper.classList.add('file-upload--attached');
-        } else {
-            this.classList.remove('form__input-file--attached');
-            fileWrapper.classList.remove('file-upload--attached');
         }
     });
 }
@@ -505,26 +629,72 @@ new Swiper('.brand__slider', {
     },
 });
 
-new Swiper('.feedback-section__list', {
-    slidesPerGroup: 1,
+var swiper = new Swiper(".js-feedback-slider-list", {
+    slidesPerView: "auto",
+    spaceBetween: 30,
     loop: true,
-    navigation: {
-        nextEl: '.js-feedback-slider-button--next'
-    },
-    speed: 1200,
-    parallax: true,
-    autoHeight: true,
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-            spaceBetween: 30
-        },
-        860: {
-            spaceBetween: 170,
-            slidesPerView: 1.25,
-        }
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
     },
 });
+
+const sliderNav = new Swiper('.js-root-slider-nav', {
+    slidesPerView: "auto",
+    direction: "vertical",
+    spaceBetween: 0,
+    initialSlide: 3,
+    slideToClickedSlide: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    centeredSlides: true,
+    speed: 1200,
+});
+
+const sliderDescription = new Swiper('.js-root-slider-description', {
+    slidesPerView: 1,
+    effect: "fade",
+    spaceBetween: 0,
+    initialSlide: 3,
+    slideToClickedSlide: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    speed: 1200,
+});
+
+function countboxScroll () {
+    let show = true;
+    let countbox = ".counter-list";
+    $(window).on("scroll load resize", function () {
+        if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
+        let w_top = $(window).scrollTop(); // Количество пикселей на которое была прокручена страница
+        let e_top = $(countbox).offset().top; // Расстояние от блока со счетчиками до верха всего документа
+        let w_height = $(window).height(); // Высота окна браузера
+        let d_height = $(document).height(); // Высота всего документа
+        let e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
+        if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+            $('.about-regards__item-count-number').css('opacity', '1');
+            $('.about-regards__item-count-number').spincrement({
+                thousandSeparator: "",
+                duration: 1200
+            });
+            show = false;
+        }
+    });
+}
+
+sliderNav.on("slideChange", () => {
+    sliderDescription.slideTo(sliderNav.realIndex, 800);
+});
+
+sliderDescription.on("slideChange", () => {
+    sliderNav.slideTo(sliderDescription.realIndex, 800)
+});
+
 
 new Swiper('.project__similar-list', {
     slidesPerGroup: 1,
@@ -666,7 +836,7 @@ function serialize(data) {
 $(document).ready(function() {
     setModal('.modal', '.form-section', '.js-form-open', '.js-form-close');
     setModal('.modal', '.menu', '.js-menu-open', '.js-menu-close');
-
+    servicesGetItem();
     checkCookiesAccept();
     mailingSubscribe();
     setProjectsList();
@@ -678,6 +848,8 @@ $(document).ready(function() {
     setVideo();
     setThemeButton();
     getActiveTab();
+    getFormsPage();
+    countboxScroll();
 
     const scene = document.getElementById('scene');
 
@@ -707,7 +879,6 @@ $(document).ready(function() {
                 }
             });
             setTimeout(function() {
-                console.log(data);
                 data = JSON.stringify(data)
 
                 $.ajax({
