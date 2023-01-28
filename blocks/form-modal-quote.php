@@ -28,7 +28,57 @@
                         <div class="form-item">
                             <textarea name="description" placeholder="Описание задачи" class="js-textarea form__text-field" id="form1-description"></textarea>
                         </div>
+                        <div class="form-item">
+                            <div class="dropdown" data-control="checkbox-dropdown">
+                                <label class="dropdown-label">Выбрать услугу</label>
 
+                                <div class="dropdown-list js-dropdown-list">
+                                    <a href="#" data-toggle="check-all" class="dropdown-option">
+                                        Выбрать все
+                                    </a>
+
+                                    <label class="dropdown-option">
+                                        <input type="checkbox" name="services" value="стратегии в продвижении" class="js-dropdown-option-input" />
+                                        <span class="dropdown-option__fake-checkbox"></span>
+                                        стратегии в продвижении
+                                    </label>
+
+                                    <label class="dropdown-option">
+                                        <input type="checkbox" name="services" value="позиционирование" class="js-dropdown-option-input" />
+                                        <span class="dropdown-option__fake-checkbox"></span>
+                                        позиционирование
+                                    </label>
+
+                                    <label class="dropdown-option">
+                                        <input type="checkbox" name="services" value="знаки и логотипы" class="js-dropdown-option-input" />
+                                        <span class="dropdown-option__fake-checkbox"></span>
+                                        знаки и логотипы
+                                    </label>
+
+                                    <label class="dropdown-option">
+                                        <input type="checkbox" name="services" value="фирменный стиль" class="js-dropdown-option-input" />
+                                        <span class="dropdown-option__fake-checkbox"></span>
+                                        фирменный стиль
+                                    </label>
+
+                                    <label class="dropdown-option">
+                                        <input type="checkbox" name="services" value="корпоративные сайты" class="js-dropdown-option-input" />
+                                        <span class="dropdown-option__fake-checkbox"></span>
+                                        корпоративные сайты
+                                    </label>
+                                    <label class="dropdown-option">
+                                        <input type="checkbox" name="services" value="сложные веб приложения" class="js-dropdown-option-input" />
+                                        <span class="dropdown-option__fake-checkbox"></span>
+                                        сложные веб приложения
+                                    </label>
+                                    <label class="dropdown-option">
+                                        <input type="checkbox" name="services" value="интерфейсы сервисов" class="js-dropdown-option-input" />
+                                        <span class="dropdown-option__fake-checkbox"></span>
+                                        интерфейсы сервисов
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         <div class="agree-wrapper">
                             <div class="agree"> Отправляя заявку, я соглашаюсь передать свои персональные данные, содержащиеся в анкете и всех
                                 приложенных файлах. Я понимаю и соглашаюсь, что мои данные будут храниться и обрабатываться
