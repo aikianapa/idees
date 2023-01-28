@@ -43,7 +43,7 @@
                                                 <p>
                                                     {{text}}
                                                 </p>
-                                                <div class="ybutton ybutton--invers zayav-button" data-service="{{label}}" data-index="1">Отправить заявку</div>
+                                                <div class="ybutton ybutton--invers zayav-button" data-service="{{label}}" data-index="1">{{_parent.btntext}}</div>
                                             </div>
                                         </div>
                                     </wb-foreach>
