@@ -40,19 +40,20 @@
                                     <wb-foreach wb="from=list&tpl=false">
                                         <div class="root-slider__description-item swiper-slide">
                                             <div class="root-slider__description-content">
-                                                <p>
+                                                <p class="text-break">
                                                     {{text}}
                                                 </p>
-                                                <div class="ybutton ybutton--invers zayav-button" data-service="{{label}}" data-index="1">{{_parent.btntext}}</div>
+                                                <div class=" ybutton ybutton--invers zayav-button" data-service="{{label}}" data-index="1">{{_parent.btntext}}
                                             </div>
                                         </div>
-                                    </wb-foreach>
                                 </div>
+                                </wb-foreach>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 </view>
