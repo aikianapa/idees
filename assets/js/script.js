@@ -189,10 +189,22 @@ $(function() {
     $('.sub-menu').hover(function(e) {
         if (e.target == this)
             sub_hide()
-
     })
 
 
+    function currentPage () {
+        const currentUrlPath = window.location.pathname;
+        const listMenu = document.querySelectorAll('.menu-item');
+        const newUrl = currentUrlPath.split('/').slice(0, 2).join('/');
+
+        listMenu.forEach (itemMenu => {
+            let itemHref = itemMenu.pathname
+            if (itemHref === newUrl) {
+                itemMenu.classList.add('active')
+            }
+        })
+    }
+    currentPage();
 
     $(".slider").slick({
         dots: false,
