@@ -10,7 +10,7 @@
 
             <div class="title-section">
                 <h2 class="title-section__title">Услуги агенства</h2>
-                <a href="#" class="title-section__link big-link">
+                <a href="/services" class="title-section__link big-link">
                     <div class="big-link__wrapper">
                         <span class="big-link__text">Все <span class="big-link__text-all">услуги</span></span>
                         <i class="big-link__icon-arrow">

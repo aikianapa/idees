@@ -120,13 +120,11 @@ function servicesGetItem () {
 function getCheckboxes (services) {
     const checkboxParent = document.querySelector('.js-dropdown-list')
     const checkboxes = checkboxParent.querySelectorAll('.js-dropdown-option-input')
-    let labelCheckboxActive = document.querySelector('.dropdown-label')
     checkboxes.forEach((checkbox) => {
         checkbox.checked = false
 
         if (checkbox.value === services) {
             checkbox.checked = true
-            labelCheckboxActive.innerHTML = services
         }
     })
 }
@@ -264,33 +262,6 @@ function setModal(allModalsClass, modalClass, buttonOpenClass, buttonCloseClass)
             body.classList.remove('has-modal');
         });
     });
-}
-
-function setProjectsList() {
-    const projects = document.querySelector('.projects');
-
-    if (projects) {
-        const projectsList = projects.querySelector('.cases-section__list');
-        const toogleBlocks = projects.querySelector('.js-toogle-blocks');
-        const toogleList = projects.querySelector('.js-toogle-lines');
-
-        toogleBlocks.classList.add('projects__toogle-button--active');
-        projectsList.classList.add('cases-section__list--blocks');
-
-        toogleBlocks.addEventListener('click', (evt) => {
-            evt.preventDefault();
-            toogleBlocks.classList.add('projects__toogle-button--active');
-            toogleList.classList.remove('projects__toogle-button--active');
-            projectsList.classList.add('cases-section__list--blocks');
-        });
-
-        toogleList.addEventListener('click', (evt) => {
-            evt.preventDefault();
-            toogleBlocks.classList.remove('projects__toogle-button--active');
-            toogleList.classList.add('projects__toogle-button--active');
-            projectsList.classList.remove('cases-section__list--blocks');
-        });
-    }
 }
 
 function setScrollTop() {
@@ -629,13 +600,14 @@ new Swiper('.brand__slider', {
     },
 });
 
-var swiper = new Swiper(".js-feedback-slider-list", {
+const swiper = new Swiper(".js-feedback-slider-list", {
     slidesPerView: "auto",
     spaceBetween: 30,
     loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+    touchReleaseOnEdges: true,
+    slideToClickedSlide: true,
+    navigation: {
+        nextEl: '.js-feedback-slider-button--next'
     },
 });
 
@@ -667,24 +639,27 @@ const sliderDescription = new Swiper('.js-root-slider-description', {
 });
 
 function countboxScroll () {
-    let show = true;
-    let countbox = ".counter-list";
-    $(window).on("scroll load resize", function () {
-        if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
-        let w_top = $(window).scrollTop(); // Количество пикселей на которое была прокручена страница
-        let e_top = $(countbox).offset().top; // Расстояние от блока со счетчиками до верха всего документа
-        let w_height = $(window).height(); // Высота окна браузера
-        let d_height = $(document).height(); // Высота всего документа
-        let e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
-        if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
-            $('.about-regards__item-count-number').css('opacity', '1');
-            $('.about-regards__item-count-number').spincrement({
-                thousandSeparator: "",
-                duration: 1200
-            });
-            show = false;
-        }
-    });
+    const counterList = document.querySelector('.counter-list')
+    if (counterList) {
+        let countbox = ".counter-list";
+        let show = true;
+        $(window).on("scroll load resize", function () {
+            if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
+            let w_top = $(window).scrollTop(); // Количество пикселей на которое была прокручена страница
+            let e_top = $(countbox).offset().top; // Расстояние от блока со счетчиками до верха всего документа
+            let w_height = $(window).height(); // Высота окна браузера
+            let d_height = $(document).height(); // Высота всего документа
+            let e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
+            if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+                $('.about-regards__item-count-number').css('opacity', '1');
+                $('.about-regards__item-count-number').spincrement({
+                    thousandSeparator: "",
+                    duration: 1200
+                });
+                show = false;
+            }
+        });
+    }
 }
 
 sliderNav.on("slideChange", () => {
@@ -839,7 +814,6 @@ $(document).ready(function() {
     servicesGetItem();
     checkCookiesAccept();
     mailingSubscribe();
-    setProjectsList();
     setScrollTop();
     setAnimation();
     setPopupImages();

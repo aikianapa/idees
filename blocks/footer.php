@@ -120,7 +120,9 @@
             "/assets/js/script.js"]
         </wb-scripts>
         <wb-styles src="slick">
-            [ "/assets/css/swiper-bundle.min.css"
+            [ "/assets/css/swiper-bundle.min.css",
+            "/assets/js/slick/slick.css",
+            "/assets/js/slick/slick-theme.css"
             ]
         </wb-styles>
 </view>
