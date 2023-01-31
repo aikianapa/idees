@@ -3,7 +3,7 @@
         <div class="services-section">
             <div class="container">
                 <div class="services-section__container" wb-if="'{{title}}'>'' OR '{{text}}'>''">
-                    <h2 class="services-section__title" wb-if="'{{title}}'>''" >{{title}}</h2>
+                    <h2 class="services-section__title" wb-if="'{{title}}'>''">{{title}}</h2>
 
                     <div class="services-section__descrpiption-container" wb-if="'{{text}}'>''">
                         <p class="services-section__descrpiption text-break">{{text}}</p>
@@ -18,36 +18,15 @@
         <div class="about-regards">
             <div class="container">
                 <div class="about-regards__list counter-list">
-                    <div class="about-regards__item">
-                        <div class="about-regards__item-count">
-                            <span class="about-regards__item-count-number">2012</span>
+                    <wb-foreach wb="from=list&tpl=false">
+                        <div class="about-regards__item">
+                            <div class="about-regards__item-count">
+                                {{preffix}}<span class="about-regards__item-count-number">{{number}}</span>{{suffix}}
+                            </div>
+                            <div class="about-regards__item-title">{{subtitle}}</div>
+                            <div class="about-regards__item-description text-break">{{subtext}}</div>
                         </div>
-                        <div class="about-regards__item-title">Год основания</div>
-                        <div class="about-regards__item-description">
-                            Внимательно относимся к деталям, занимаемся сложными задачами и гарантировано исполняем свои
-                            обязательства. Не работаем формально, качество приоритетно.
-                        </div>
-                    </div>
-                    <div class="about-regards__item">
-                        <div class="about-regards__item-count">
-                            ><span class="about-regards__item-count-number">500</span>
-                        </div>
-                        <div class="about-regards__item-title">Реализованных проектов</div>
-                        <div class="about-regards__item-description">
-                            Внимательно относимся к деталям, занимаемся сложными задачами и гарантировано исполняем
-                            свои обязательства. Не работаем формально, качество приоритетно.
-                        </div>
-                    </div>
-                    <div class="about-regards__item">
-                        <div class="about-regards__item-count">
-                            <span class="about-regards__item-count-number">45</span> +
-                        </div>
-                        <div class="about-regards__item-title">Человек в команде</div>
-                        <div class="about-regards__item-description">
-                            Внимательно относимся к деталям, занимаемся сложными задачами и гарантировано исполняем
-                            свои обязательства. Не работаем формально, качество приоритетно.
-                        </div>
-                    </div>
+                    </wb-foreach>
                 </div>
             </div>
         </div>
@@ -70,7 +49,22 @@
             <textarea class="form-control" rows="auto" name="text" placeholder="Текст"></textarea>
         </div>
     </div>
-    <div class="alert alert-info">
-        Контент блока генерируется автоматически на основе существующих страниц.
-    </div>
+
+    <wb-multiinput name="list">
+        <div class="col">
+            <input class="form-control tx-right" type="text" name="preffix" placeholder="Префикс">
+        </div>
+        <div class="col-2">
+            <input class="form-control tx-center tx-bold" type="number" name="number" placeholder="Число">
+        </div>
+        <div class="col">
+            <input class="form-control tx-left" type="text" name="suffix" placeholder="Суффикс">
+        </div>
+        <div class="col-6">
+            <input class="form-control tx-bold" type="text" name="subtitle" placeholder="Заголовок">
+        </div>
+        <div class="col-12 mt-1">
+            <textarea class="form-control" rows="auto" name="subtext" placeholder="Текст"></textarea>
+        </div>
+    </wb-multiinput>
 </edit>

@@ -69,5 +69,6 @@
         <noscript>
             <img src="https://vk.com/rtrg?p=VK-RTRG-1363797-bWJc7" style="position:fixed; left:-999px;" alt="" />
         </noscript>
+        <wb-meta />
     </head>
 </view>
