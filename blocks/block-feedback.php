@@ -3,7 +3,7 @@
         <div class="feedback-section__title-container container">
             <div class="title-section">
                 <h2 class="title-section__title">{{header}}</h2>
-                <a href="#" class="title-section__link big-link">
+                <a href="/agency/feedback" class="title-section__link big-link">
                     <div class="big-link__wrapper">
                         <span class="big-link__text">Все <span class="big-link__text-all">{{header}}</span></span>
                         <i class="big-link__icon-arrow">
@@ -39,7 +39,16 @@
                                         <p class="feedback__text">
                                             {{text}}
                                         </p>
+                                        <div class="feedback__bottom">
                                         <h3 class="feedback__title">{{title}}</h3>
+                                            <button class="button feedback__next-button js-feedback-slider-button--next"
+                                                    type="button" aria-label="Следующий отзыв">
+                                                <svg class="feedback__next-button-icon" width="80" height="24"
+                                                     aria-hidden="true">
+                                                    <use xlink:href="/assets/img/sprite.svg#big-arrow-2"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
                                         <div class="feedback__actions">
                                             <a class="feedback__watch-link popup-video" href="%7B%7Byoutube%7D%7D"
                                                target="_blank" rel="noreferrer noopener nofollow"

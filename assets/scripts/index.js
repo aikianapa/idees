@@ -10,97 +10,6 @@ wbapp.lazyload = async function () {
 }
 wbapp.lazyload()
 
-const CheckboxDropdown = function(el) {
-    var _this = this;
-    this.isOpen = false;
-    this.areAllChecked = false;
-    this.$el = $(el);
-    this.$label = this.$el.find('.dropdown-label');
-    this.$checkAll = this.$el.find('[data-toggle="check-all"]').first();
-    this.$inputs = this.$el.find('[type="checkbox"]');
-
-    this.onCheckBox();
-
-    this.$label.on('click', function(e) {
-        e.preventDefault();
-        _this.toggleOpen();
-    });
-
-    this.$checkAll.on('click', function(e) {
-        e.preventDefault();
-        _this.onCheckAll();
-    });
-
-    this.$inputs.on('change', function(e) {
-        _this.onCheckBox();
-    });
-};
-
-CheckboxDropdown.prototype.onCheckBox = function() {
-    this.updateStatus();
-};
-
-CheckboxDropdown.prototype.updateStatus = function() {
-    var checked = this.$el.find(':checked');
-
-    this.areAllChecked = false;
-    this.$checkAll.html('Выбрать все');
-
-    if(checked.length <= 0) {
-        this.$label.html('Выбрать услугу');
-    }
-    else if(checked.length === 1) {
-        this.$label.html(checked.parent('label').text());
-    }
-    else if(checked.length === this.$inputs.length) {
-        this.$label.html('Все выбраны');
-        this.areAllChecked = true;
-        this.$checkAll.html('Cнять все');
-    }
-    else {
-        this.$label.html(checked.length + ' выбрано');
-    }
-};
-
-CheckboxDropdown.prototype.onCheckAll = function(checkAll) {
-    if(!this.areAllChecked || checkAll) {
-        this.areAllChecked = true;
-        this.$checkAll.html('Cнять все');
-        this.$inputs.prop('checked', true);
-    }
-    else {
-        this.areAllChecked = false;
-        this.$checkAll.html('Выбрать все');
-        this.$inputs.prop('checked', false);
-    }
-
-    this.updateStatus();
-};
-
-CheckboxDropdown.prototype.toggleOpen = function (forceOpen) {
-    var _this = this;
-
-    if(!this.isOpen || forceOpen) {
-        this.isOpen = true;
-        this.$el.addClass('on');
-    }
-    else {
-        this.isOpen = false;
-        this.$el.removeClass('on');
-    }
-    $(document).mouseup(function (e) {
-        let container = $(".dropdown");
-        if (container.has(e.target).length === 0){
-            container.removeClass('on');
-        }
-    });
-};
-
-var checkboxesDropdowns = document.querySelectorAll('[data-control="checkbox-dropdown"]');
-for(var i = 0, length = checkboxesDropdowns.length; i < length; i++) {
-    new CheckboxDropdown(checkboxesDropdowns[i]);
-}
-
 function servicesGetItem () {
     const sliderWrapper = document.querySelector('.root-slider__wrapper')
     if (sliderWrapper) {
@@ -120,13 +29,11 @@ function servicesGetItem () {
 function getCheckboxes (services) {
     const checkboxParent = document.querySelector('.js-dropdown-list')
     const checkboxes = checkboxParent.querySelectorAll('.js-dropdown-option-input')
-    let labelCheckboxActive = document.querySelector('.dropdown-label')
     checkboxes.forEach((checkbox) => {
         checkbox.checked = false
 
         if (checkbox.value === services) {
             checkbox.checked = true
-            labelCheckboxActive.innerHTML = services
         }
     })
 }
@@ -264,33 +171,6 @@ function setModal(allModalsClass, modalClass, buttonOpenClass, buttonCloseClass)
             body.classList.remove('has-modal');
         });
     });
-}
-
-function setProjectsList() {
-    const projects = document.querySelector('.projects');
-
-    if (projects) {
-        const projectsList = projects.querySelector('.cases-section__list');
-        const toogleBlocks = projects.querySelector('.js-toogle-blocks');
-        const toogleList = projects.querySelector('.js-toogle-lines');
-
-        toogleBlocks.classList.add('projects__toogle-button--active');
-        projectsList.classList.add('cases-section__list--blocks');
-
-        toogleBlocks.addEventListener('click', (evt) => {
-            evt.preventDefault();
-            toogleBlocks.classList.add('projects__toogle-button--active');
-            toogleList.classList.remove('projects__toogle-button--active');
-            projectsList.classList.add('cases-section__list--blocks');
-        });
-
-        toogleList.addEventListener('click', (evt) => {
-            evt.preventDefault();
-            toogleBlocks.classList.remove('projects__toogle-button--active');
-            toogleList.classList.add('projects__toogle-button--active');
-            projectsList.classList.remove('cases-section__list--blocks');
-        });
-    }
 }
 
 function setScrollTop() {
@@ -629,15 +509,25 @@ new Swiper('.brand__slider', {
     },
 });
 
-var swiper = new Swiper(".js-feedback-slider-list", {
-    slidesPerView: "auto",
+const swiper = new Swiper(".js-feedback-slider-list", {
+    slidesPerView: 3,
     spaceBetween: 30,
     loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+    centeredSlides: true,
+    touchReleaseOnEdges: true,
+    slideToClickedSlide: true,
+    navigation: {
+        nextEl: '.js-feedback-slider-button--next'
     },
 });
+
+window.onload = function() {
+        setTimeout( () => {
+            swiper.updateSlides();
+            swiper.updateSize();
+            swiper.updateSlidesClasses();
+        }, 3000);
+};
 
 const sliderNav = new Swiper('.js-root-slider-nav', {
     slidesPerView: "auto",
@@ -667,24 +557,27 @@ const sliderDescription = new Swiper('.js-root-slider-description', {
 });
 
 function countboxScroll () {
-    let show = true;
-    let countbox = ".counter-list";
-    $(window).on("scroll load resize", function () {
-        if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
-        let w_top = $(window).scrollTop(); // Количество пикселей на которое была прокручена страница
-        let e_top = $(countbox).offset().top; // Расстояние от блока со счетчиками до верха всего документа
-        let w_height = $(window).height(); // Высота окна браузера
-        let d_height = $(document).height(); // Высота всего документа
-        let e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
-        if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
-            $('.about-regards__item-count-number').css('opacity', '1');
-            $('.about-regards__item-count-number').spincrement({
-                thousandSeparator: "",
-                duration: 1200
-            });
-            show = false;
-        }
-    });
+    const counterList = document.querySelector('.counter-list')
+    if (counterList) {
+        let countbox = ".counter-list";
+        let show = true;
+        $(window).on("scroll load resize", function () {
+            if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
+            let w_top = $(window).scrollTop(); // Количество пикселей на которое была прокручена страница
+            let e_top = $(countbox).offset().top; // Расстояние от блока со счетчиками до верха всего документа
+            let w_height = $(window).height(); // Высота окна браузера
+            let d_height = $(document).height(); // Высота всего документа
+            let e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
+            if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+                $('.about-regards__item-count-number').css('opacity', '1');
+                $('.about-regards__item-count-number').spincrement({
+                    thousandSeparator: "",
+                    duration: 1200
+                });
+                show = false;
+            }
+        });
+    }
 }
 
 sliderNav.on("slideChange", () => {
@@ -839,7 +732,6 @@ $(document).ready(function() {
     servicesGetItem();
     checkCookiesAccept();
     mailingSubscribe();
-    setProjectsList();
     setScrollTop();
     setAnimation();
     setPopupImages();
@@ -874,7 +766,7 @@ $(document).ready(function() {
                     let that = this;
                     reader.readAsDataURL(file);
                     reader.onload = function() {
-                        data[that.name] = reader.result.toString(); //base64encoded string 
+                        data[that.name] = reader.result.toString(); //base64encoded string
                     };
                 }
             });

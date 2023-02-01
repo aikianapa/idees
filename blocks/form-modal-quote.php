@@ -29,54 +29,34 @@
                             <textarea name="description" placeholder="Описание задачи" class="js-textarea form__text-field" id="form1-description"></textarea>
                         </div>
                         <div class="form-item">
-                            <div class="dropdown" data-control="checkbox-dropdown">
-                                <label class="dropdown-label">Выбрать услугу</label>
+                            <div class="form-checkboxes">
+                                <label class="form__text-field-label form__text-field-label--inner">Выбрать услугу</label>
+                                <div class="form__row js-dropdown-list" data-control="checkbox-dropdown">
+                                <input class="form__checkbox visually-hidden js-dropdown-option-input" type="checkbox" id="ch1" value="стратегии в продвижении" name="budget" done="">
+                                <label class="form__checkbox-label" for="ch1">стратегии в продвижении</label>
 
-                                <div class="dropdown-list js-dropdown-list">
-                                    <a href="#" data-toggle="check-all" class="dropdown-option">
-                                        Выбрать все
-                                    </a>
+                                <input class="form__checkbox visually-hidden js-dropdown-option-input" type="checkbox" id="ch2" value="позиционирование" name="budget" done="">
+                                <label class="form__checkbox-label" for="ch2">позиционирование</label>
 
-                                    <label class="dropdown-option">
-                                        <input type="checkbox" name="services" value="стратегии в продвижении" class="js-dropdown-option-input" />
-                                        <span class="dropdown-option__fake-checkbox"></span>
-                                        стратегии в продвижении
-                                    </label>
+                                <input class="form__checkbox visually-hidden js-dropdown-option-input" type="checkbox" id="ch3" value="знаки и логотипы" name="budget" done="">
+                                <label class="form__checkbox-label" for="ch3">знаки и логотипы</label>
 
-                                    <label class="dropdown-option">
-                                        <input type="checkbox" name="services" value="позиционирование" class="js-dropdown-option-input" />
-                                        <span class="dropdown-option__fake-checkbox"></span>
-                                        позиционирование
-                                    </label>
 
-                                    <label class="dropdown-option">
-                                        <input type="checkbox" name="services" value="знаки и логотипы" class="js-dropdown-option-input" />
-                                        <span class="dropdown-option__fake-checkbox"></span>
-                                        знаки и логотипы
-                                    </label>
+                                <input class="form__checkbox visually-hidden js-dropdown-option-input" type="checkbox" id="ch4" value="фирменный стиль" name="budget" done="">
+                                <label class="form__checkbox-label" for="ch4">фирменный стиль</label>
 
-                                    <label class="dropdown-option">
-                                        <input type="checkbox" name="services" value="фирменный стиль" class="js-dropdown-option-input" />
-                                        <span class="dropdown-option__fake-checkbox"></span>
-                                        фирменный стиль
-                                    </label>
 
-                                    <label class="dropdown-option">
-                                        <input type="checkbox" name="services" value="корпоративные сайты" class="js-dropdown-option-input" />
-                                        <span class="dropdown-option__fake-checkbox"></span>
-                                        корпоративные сайты
-                                    </label>
-                                    <label class="dropdown-option">
-                                        <input type="checkbox" name="services" value="сложные веб приложения" class="js-dropdown-option-input" />
-                                        <span class="dropdown-option__fake-checkbox"></span>
-                                        сложные веб приложения
-                                    </label>
-                                    <label class="dropdown-option">
-                                        <input type="checkbox" name="services" value="интерфейсы сервисов" class="js-dropdown-option-input" />
-                                        <span class="dropdown-option__fake-checkbox"></span>
-                                        интерфейсы сервисов
-                                    </label>
-                                </div>
+                                <input class="form__checkbox visually-hidden js-dropdown-option-input" type="checkbox" id="ch5" value="корпоративные сайты" name="budget" done="">
+                                <label class="form__checkbox-label" for="ch5">корпоративные сайты</label>
+
+                                <input class="form__checkbox visually-hidden js-dropdown-option-input" type="checkbox" id="ch6" value="сложные веб приложения" name="budget" done="">
+                                <label class="form__checkbox-label" for="ch6">сложные веб приложения</label>
+
+
+                                <input class="form__checkbox visually-hidden js-dropdown-option-input" type="checkbox" id="ch7" value="интерфейсы сервисов" name="budget" done="">
+                                <label class="form__checkbox-label" for="ch7">интерфейсы сервисов</label>
+
+                            </div>
                             </div>
                         </div>
                         <div class="agree-wrapper">

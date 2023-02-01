@@ -205,41 +205,7 @@ $(function() {
         })
     }
     currentPage();
-
-    $(".slider").slick({
-        dots: false,
-        infinite: true,
-        slidesToShow: 1,
-        arrows: true,
-        autoplay: true,
-        autoplaySpeed: 6000,
-        responsive: [{
-            breakpoint: 520,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                infinite: true,
-                autoplay: true,
-                autoplaySpeed: 6000,
-
-            }
-        }]
-
-    });
-
-
     $(function() {
-
-        $('.slider').append('<div class="slider-counter"></div>')
-
-        $(".slider").on("afterChange", function(event, slick, currentSlide, nextSlide) {
-            $(".slider-counter").text((currentSlide + 1) + '/' + $('.slider').slick('getSlick').slideCount);
-            $(".slick-next").toggleClass('moved')
-            $(".slick-prev").toggleClass('moved')
-        });
-
-        $(".slider").trigger("afterChange", [$('.slider').slick('getSlick'), 0, 2])
-
         document.querySelectorAll('textarea').forEach(el => {
             el.style.height = el.setAttribute('style', 'height: ' + el.scrollHeight + 'px');
             el.classList.add('auto');
@@ -261,36 +227,11 @@ $(function() {
         $('.prikrepit-wrapper').click(function() {
             $(this).prev().trigger('click')
         })
-
-
-
-
-
-        /*
-        	$('input').focus(function(){
-        	    $(this).next().animate( {top: "-20px" , 'font-size' : '10px'} , 10 );
-        	})
-
-        	$('input').blur(function(){
-        	    if( !$(this).val() ){
-        		$(this).next().animate( {top: "1px"  , 'font-size' : '14px'} , 10 );
-        	    }
-        	})
-        */
-
-
-
-
     })
 
-
-
-
-    $('.up-button').click(function() {
+    $('.up-button').click(function(event) {
         event.preventDefault();
         $("html,body").animate({ scrollTop: 0 }, 300)
-
-        //  window.scrollTo(0, 0);
     })
 
 
@@ -309,7 +250,7 @@ $(function() {
         lastScrollTop = st;
     });
 
-    $('.modal__wrap').scroll(function(event) {
+    $('.modal__wrap').scroll(function() {
         var st = $(this).scrollTop();
         if (st > lastScrollTop) {
             $('.header--form').addClass('bottom-scroll')
