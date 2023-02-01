@@ -513,7 +513,6 @@ const swiper = new Swiper(".js-feedback-slider-list", {
     slidesPerView: 3,
     spaceBetween: 30,
     loop: true,
-    centeredSlides: true,
     touchReleaseOnEdges: true,
     slideToClickedSlide: true,
     navigation: {

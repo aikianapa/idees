@@ -2,7 +2,7 @@
     <section class="animation-section">
         <div class="root-slider">
             <div class="root-slider__img-wrapper" wb-if="'{{bkg.0.img}}'>''">
-                <wb-var bkg="{{bkg.0.img}}"/>
+                <wb-var bkg="{{bkg.0.img}}" />
                 <img src="{{_var.bkg}}" class="root-slider__img" alt="">
             </div>
             <div id="scene" class="main-section__scene" wb-if="'{{video_white.0.img}}'">
