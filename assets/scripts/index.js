@@ -10,97 +10,6 @@ wbapp.lazyload = async function () {
 }
 wbapp.lazyload()
 
-const CheckboxDropdown = function(el) {
-    var _this = this;
-    this.isOpen = false;
-    this.areAllChecked = false;
-    this.$el = $(el);
-    this.$label = this.$el.find('.dropdown-label');
-    this.$checkAll = this.$el.find('[data-toggle="check-all"]').first();
-    this.$inputs = this.$el.find('[type="checkbox"]');
-
-    this.onCheckBox();
-
-    this.$label.on('click', function(e) {
-        e.preventDefault();
-        _this.toggleOpen();
-    });
-
-    this.$checkAll.on('click', function(e) {
-        e.preventDefault();
-        _this.onCheckAll();
-    });
-
-    this.$inputs.on('change', function(e) {
-        _this.onCheckBox();
-    });
-};
-
-CheckboxDropdown.prototype.onCheckBox = function() {
-    this.updateStatus();
-};
-
-CheckboxDropdown.prototype.updateStatus = function() {
-    var checked = this.$el.find(':checked');
-
-    this.areAllChecked = false;
-    this.$checkAll.html('Выбрать все');
-
-    if(checked.length <= 0) {
-        this.$label.html('Выбрать услугу');
-    }
-    else if(checked.length === 1) {
-        this.$label.html(checked.parent('label').text());
-    }
-    else if(checked.length === this.$inputs.length) {
-        this.$label.html('Все выбраны');
-        this.areAllChecked = true;
-        this.$checkAll.html('Cнять все');
-    }
-    else {
-        this.$label.html(checked.length + ' выбрано');
-    }
-};
-
-CheckboxDropdown.prototype.onCheckAll = function(checkAll) {
-    if(!this.areAllChecked || checkAll) {
-        this.areAllChecked = true;
-        this.$checkAll.html('Cнять все');
-        this.$inputs.prop('checked', true);
-    }
-    else {
-        this.areAllChecked = false;
-        this.$checkAll.html('Выбрать все');
-        this.$inputs.prop('checked', false);
-    }
-
-    this.updateStatus();
-};
-
-CheckboxDropdown.prototype.toggleOpen = function (forceOpen) {
-    var _this = this;
-
-    if(!this.isOpen || forceOpen) {
-        this.isOpen = true;
-        this.$el.addClass('on');
-    }
-    else {
-        this.isOpen = false;
-        this.$el.removeClass('on');
-    }
-    $(document).mouseup(function (e) {
-        let container = $(".dropdown");
-        if (container.has(e.target).length === 0){
-            container.removeClass('on');
-        }
-    });
-};
-
-var checkboxesDropdowns = document.querySelectorAll('[data-control="checkbox-dropdown"]');
-for(var i = 0, length = checkboxesDropdowns.length; i < length; i++) {
-    new CheckboxDropdown(checkboxesDropdowns[i]);
-}
-
 function servicesGetItem () {
     const sliderWrapper = document.querySelector('.root-slider__wrapper')
     if (sliderWrapper) {
@@ -601,15 +510,24 @@ new Swiper('.brand__slider', {
 });
 
 const swiper = new Swiper(".js-feedback-slider-list", {
-    slidesPerView: "auto",
+    slidesPerView: 3,
     spaceBetween: 30,
     loop: true,
+    centeredSlides: true,
     touchReleaseOnEdges: true,
     slideToClickedSlide: true,
     navigation: {
         nextEl: '.js-feedback-slider-button--next'
     },
 });
+
+window.onload = function() {
+        setTimeout( () => {
+            swiper.updateSlides();
+            swiper.updateSize();
+            swiper.updateSlidesClasses();
+        }, 3000);
+};
 
 const sliderNav = new Swiper('.js-root-slider-nav', {
     slidesPerView: "auto",
@@ -848,7 +766,7 @@ $(document).ready(function() {
                     let that = this;
                     reader.readAsDataURL(file);
                     reader.onload = function() {
-                        data[that.name] = reader.result.toString(); //base64encoded string 
+                        data[that.name] = reader.result.toString(); //base64encoded string
                     };
                 }
             });

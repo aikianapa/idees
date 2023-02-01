@@ -9,7 +9,7 @@
                         <p class="services-section__descrpiption text-break">{{text}}</p>
                     </div>
 
-                    <button class="ybutton services-section__button js-form-open" type="button">
+                    <button class="ybutton services-section__button zayav-button" type="button">
                         начать проект
                     </button>
                 </div>

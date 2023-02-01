@@ -1,9 +1,14 @@
 <view>
     <section class="animation-section">
         <div class="root-slider">
-            <div class="root-slider__img-wrapper">
-                <wb-var bkg="{{bkg.0.img}}" wb-if="'{{bkg.0.img}}'>''" else="/assets/img/bg-root-banner.png" />
+            <div class="root-slider__img-wrapper" wb-if="'{{bkg.0.img}}'>''">
+                <wb-var bkg="{{bkg.0.img}}"/>
                 <img src="{{_var.bkg}}" class="root-slider__img" alt="">
+            </div>
+            <div id="scene" class="main-section__scene" wb-if="'{{video_white.0.img}}'">
+                <video class="main-section__scene-video main-section__scene-video-white" autoplay playsinline muted loop>
+                    <source type="video/mp4" src="{{video_white.0.img}}">
+                </video>
             </div>
             <div class="container">
                 <div class="root-slider__wrapper">
@@ -81,6 +86,10 @@
     <div class="form-group row">
         <div class="col-12">
             <input wb="module=filepicker&mode=single&width=400&height=200" name="bkg" wb-ext="jpg,jpeg,png,svg,gif,webp" wb-path="/assets/img/" />
+        </div>
+        <div class="col-sm-12">
+            <label>Видео</label>
+            <wb-module wb="module=filepicker&mode=single&width=300&height=200&name=video_white" wb-ext="mp4,avi,mpeg,webm" wb-path="/assets/img/" />
         </div>
     </div>
 </edit>

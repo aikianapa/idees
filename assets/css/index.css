@@ -3070,11 +3070,11 @@ ol.document__list--alpha {
 .main-section__scene {
     position: absolute;
     overflow: hidden;
-    top: 0;
+    top: -1px;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: -1;
+    z-index: 1;
 }
 
 .main-section__scene-video-black {
