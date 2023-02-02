@@ -102,12 +102,17 @@ body {
     cursor: pointer;
 }
 
+.ybutton span {
+    color: #FFFFFF;
+}
+
 .ybutton--invers {
     background: #ffffff;
     color: #23282B;
 }
 
-.ybutton:hover {
+.ybutton:hover,
+.ybutton:hover span {
     background: #FFFF50;
     color: #23282B;
 }
@@ -724,9 +729,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 40px;
-    height: 40px;
-    border: 1px solid currentColor;
-    border-radius: 99em;
+    height: 24px;
 }
 
 .button__icon {
@@ -2419,6 +2422,16 @@ footer a:hover {
     }
 }
 
+//project-team
+
+.project-team {
+
+}
+
+.project-team__item {
+
+}
+
 .feedback__swiper {
     position: relative;
 }
@@ -3246,7 +3259,7 @@ footer a:hover {
     a {
         font-weight: 400;
         font-size: 14px;
-        line-height: 18px;
+        line-height: 35px;
     }
 }
 

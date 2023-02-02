@@ -23,10 +23,10 @@
                             <wb-foreach wb="from=blocks&tpl=false" wb-filter="name=project-descr">
                                 <wb-var cover="{{cover.0.img}}" wb-if="'{{_var.cover}}' == ''" />
                             </wb-foreach>
-                            <a href="/projects/{{wbFurlGenerate({{name}})}}" class="cases-new__img-link lazy-wrapper ttext">
+                            <a href="/projects/{{wbFurlGenerate({{name}})}}" class="cases-new__img-link lazy-wrapper">
                                 <div class="cases-new__img-wrapper">
                                     <img class="cases-new__img loading lazy-wrapper__img"
-                                         data-src="/thumbc/700x400/src{{_var.cover}}"
+                                         data-src="/thumbc/3240x1200/src/uploads/projects/cover/id635ba9faimg0284.jpg 2x"
                                          data-srcset="/thumbc/1580x1000/src{{_var.cover}} 2x" alt="{{descr}}">
                                 </div>
                             </a>

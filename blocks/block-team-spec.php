@@ -22,7 +22,7 @@
 
 <view>
 
-<div class="gray-box mt-0">
+<div class="gray-box mt-0 mb-0">
 			<div class="command container">
 				<div>
 					<h2 class="sub-title"> Команда проекта </h2>

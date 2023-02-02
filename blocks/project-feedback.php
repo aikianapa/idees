@@ -1,5 +1,5 @@
 <view>
-    <section class="project__feedback mt-150">
+    <section class="project__feedback container">
         <h2 class="page__section-title">Отзыв клиента</h2>
 
         <blockquote class="feedback">
@@ -8,26 +8,28 @@
             <p class="feedback__text feedback__text--single text-block">
                 {{text}}
             </p>
+            <div class="feedback__bottom feedback__bottom--inner">
+                <cite class="feedback__author">
+                    <img class="feedback__author-avatar" width="72" height="72" data-src="/thumbc/72x72/src{{avatar.0.img}}"
+                        data-srcset="/thumbc/144x144/src{{avatar.0.img}} 2x" alt="{{author}}">
+                    <span class="feedback__name">{{author}}</span>
+                    <span class="feedback__role">{{position}}</span>
+                </cite>
 
-            <cite class="feedback__author">
-                <img class="feedback__author-avatar" width="72" height="72" data-src="/thumbc/72x72/src{{avatar.0.img}}"
-                    data-srcset="/thumbc/144x144/src{{avatar.0.img}} 2x" alt="{{author}}">
-                <span class="feedback__name">{{author}}</span>
-                <span class="feedback__role">{{position}}</span>
-            </cite>
+                <div class="feedback__actions">
+                    <a class="feedback__watch-link popup-video" href="{{video}}" rel="noreferrer noopener nofollow">
+                        <svg class="feedback__watch-link-icon" width="24" height="24" aria-hidden="true">
+                            <use xlink:href="/assets/img/sprite.svg#play"></use>
+                        </svg>
 
-            <div class="feedback__actions">
-                <a class="feedback__watch-link popup-video" href="{{video}}" rel="noreferrer noopener nofollow" wb-if="'{{video}}'>''">
-                    <svg class="feedback__watch-link-icon" width="24" height="24" aria-hidden="true">
-                        <use xlink:href="/assets/img/sprite.svg#play"></use>
-                    </svg>
+                        <span class="feedback__watch-link-text">смотреть отзыв</span>
+                    </a>
 
-                    <span class="feedback__watch-link-text">смотреть отзыв</span>
-                </a>
+                    <a class="feedback__facebook-link" href="{{link}}" target="_blank" rel="noreferrer noopener nofollow" wb-if="'{{link}}'>''">
+                        читать на facebook
+                    </a>
 
-                <a class="feedback__facebook-link" href="{{link}}" target="_blank" rel="noreferrer noopener nofollow" wb-if="'{{link}}'>''">
-                    читать на facebook
-                </a>
+                </div>
             </div>
         </blockquote>
     </section>

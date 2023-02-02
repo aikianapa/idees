@@ -34,14 +34,8 @@
     </div>
 
     <div class="form__row form__row--bottom form__row--submit">
-      <button class="button" type="submit">
-        <span class="button__icon-wrapper">
-          <svg class="button__icon" width="24" height="24">
-            <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
-          </svg>
-        </span>
-
-        <span class="button__text">отправить заявку</span>
+      <button class="ybutton" type="submit">
+        <span>отправить заявку</span>
       </button>
 
       <input class="visually-hidden" id="short-form-file" type="file" accept="{{_sett.attach}}" name="file">
