@@ -30,16 +30,6 @@
                 </div>
 
                 <div class="form__row form__row--bottom form__row--submit">
-                    <button class="button" type="submit">
-                        <span class="button__icon-wrapper">
-                            <svg class="button__icon" width="24" height="24">
-                                <use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
-                            </svg>
-                        </span>
-
-                        <span class="button__text">отправить заявку</span>
-                    </button>
-
                     <input class="visually-hidden" id="short-form-file" type="file" accept="{{_sett.attach}}" name="file" done="">
                     <label class="file-upload" for="short-form-file">
                         <span class="file-upload__icon-wrapper">
@@ -53,13 +43,15 @@
                             <span class="file-upload__info-bottom-text">Не более {{_env.max_post}}</span>
                         </span>
                     </label>
+                    <p class="form__text">
+                        Отправляя заявку, я соглашаюсь передать свои персональные данные, содержащиеся в анкете и всех приложенных файлах. Я понимаю
+                        и соглашаюсь, что мои данные будут храниться и обрабатываться в течение пяти лет, в соответствии с Федеральным
+                        законом «О персональных данных».
+                    </p>
                 </div>
-
-                <p class="form__text">
-                    Отправляя заявку, я соглашаюсь передать свои персональные данные, содержащиеся в анкете и всех приложенных файлах. Я понимаю
-                    и соглашаюсь, что мои данные будут храниться и обрабатываться в течение пяти лет, в соответствии с Федеральным
-                    законом «О персональных данных».
-                </p>
+                <button class="ybutton" type="submit">
+                    <span>отправить заявку</span>
+                </button>
             </form>
         </wb-data>
     </section>
