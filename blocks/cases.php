@@ -1,5 +1,5 @@
 <view>
-    <section class="cases-section container">
+    <section class="container cases-section">
         <h2 class="visually-hidden">{{header}}</h2>
         <ul class="cases-section__list">
             <wb-var cover="" />
