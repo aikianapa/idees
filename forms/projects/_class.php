@@ -23,10 +23,6 @@ class projectsClass extends cmsFormsClass
         $item['header'] = $item['name'];
         $this->similar($item);
     }
-    function afterItemSave(&$item)
-    {
-        $this->app->shadow('/cms/ajax/form/pages/list');
-    }
 
     function similar(&$item = null) {
         if (!$item) return;

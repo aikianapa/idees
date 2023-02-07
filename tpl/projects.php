@@ -64,14 +64,18 @@
         </div>
         <ul class="project__similar-list">
             <div class="cases-new">
-                <wb-foreach wb="from=similar&size=6&limit=18&more=true:ещё" wb-filter="active=on">
+                <wb-foreach wb="from=similar&size=6&limit=18&more=true:ещё">
                     <wb-var link="/projects/{{wbFurlGenerate({{name}})}}"/>
                     <li class="cases-new__case">
                         <a href="/projects/{{wbFurlGenerate({{name}})}}" class="cases-new__img-link lazy-wrapper">
                             <div class="cases-new__img-wrapper">
+                                <wb-var cover="" />
+                                <wb-foreach wb="from=blocks&tpl=false" wb-filter="name=project-descr">
+                                    <wb-var cover="{{cover.0.img}}" wb-if="'{{_var.cover}}'==''"/>
+                                </wb-foreach>
                                 <img class="cases-new__img loading lazy-wrapper__img"
-                                     data-src="/thumbc/700x400/src{{cover.0.img}}"
-                                     data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x" alt="{{descr}}">
+                                     data-src="/thumbc/700x400/src{{_var.cover}}"
+                                     data-srcset="/thumbc/1580x1000/src{{_var.cover}} 2x" alt="{{descr}}">
                             </div>
                         </a>
                         <a href="/projects/{{wbFurlGenerate({{name}})}}" class="cases-new__description">
