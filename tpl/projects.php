@@ -8,7 +8,7 @@
 <wb-module wb="module=yonger&mode=render&view=header"/>
 <main class="page__main">
     <section class="project">
-        <div class="project__title-container container">
+        <div class="container project__title-container">
             <h1 class="page__title">{{descr}}</h1>
 
             <ul class="project__tags">
@@ -36,7 +36,7 @@
     </section>
 
 
-    <div class="project__controls container">
+    <div class="container project__controls">
         <a class="project__controls-button" href="/projects/{{wbFurlGenerate({{prev_item.name}})}}">
             <span class="button__icon-wrapper">
                     <svg class="button__icon" width="24" height="24" aria-hidden="true">
@@ -58,20 +58,20 @@
         </a>
     </div>
 
-    <section class="project__similar container" wb-if="'{{similar}}'>'[]'">
+    <section class="container project__similar" wb-if="'{{similar}}'>'[]'">
         <div class="project__similar-top block-button-arrows">
             <h2 class="page__section-title">Похожие проекты</h2>
         </div>
         <ul class="project__similar-list">
             <div class="cases-new">
-                <wb-foreach wb="from=similar&size=6&limit=18&more=true:ещё">
+                <wb-foreach wb="from=similar&size=6&limit=18&more=true:ещё" wb-filter="active=on">
                     <wb-var link="/projects/{{wbFurlGenerate({{name}})}}"/>
                     <li class="cases-new__case">
                         <a href="/projects/{{wbFurlGenerate({{name}})}}" class="cases-new__img-link lazy-wrapper">
                             <div class="cases-new__img-wrapper">
                                 <img class="cases-new__img loading lazy-wrapper__img"
-                                     data-src="/thumbc/700x400/src{{_var.cover}}"
-                                     data-srcset="/thumbc/1580x1000/src{{_var.cover}} 2x" alt="{{descr}}">
+                                     data-src="/thumbc/700x400/src{{cover.0.img}}"
+                                     data-srcset="/thumbc/1580x1000/src{{cover.0.img}} 2x" alt="{{descr}}">
                             </div>
                         </a>
                         <a href="/projects/{{wbFurlGenerate({{name}})}}" class="cases-new__description">
