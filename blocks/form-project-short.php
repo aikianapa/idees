@@ -1,5 +1,5 @@
 <view>
-    <section class="page__form-section container" id="partners-form">
+    <section class="container page__form-section" id="partners-form">
         <wb-var header="Начать проект" wb-if="'{{header}}'==''" else="{{header}}"></wb-var>
         <h2 class="page__section-title">{{_var.header}}</h2>
         <wb-data wb-from="_cleardata">
@@ -59,10 +59,12 @@
 
 <edit header="Анкета проекта - короткая">
     <div>
-        <wb-module wb="module=yonger&amp;mode=edit&amp;block=common.inc"></wb-module>
+        <wb-module wb="module=yonger&mode=edit&block=common.inc"></wb-module>
     </div>
     <div class="alert alert-info">
         Нажмите кнопку
         <a href="#" onclick="$('#yongerEditorBtnEdit').trigger('click')">Редактор</a>, чтобы редактировать форму.
     </div>
+    <label>Заголовок</label>
+    <input name="header" class="form-control">
 </edit>
