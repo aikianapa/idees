@@ -1,6 +1,6 @@
 <view>
     <main class="page__main">
-        <section class="projects container">
+        <section class="container projects">
             <div class="projects__title-container">
                 <h1 class="page__title">{{title}}</h1>
 
@@ -24,7 +24,7 @@
             <div class="cases-section projects__content">
                 <wb-var cover="" />
                 <ul class="cases-new" id="projectsList">
-                    <wb-foreach wb="table=projects&sort=_sort&size=2&bind=cms.list.projects&render=server&more=true:"
+                    <wb-foreach wb="table=projects&sort=_sort&size=7&bind=cms.list.projects&render=server&more=true:"
                         wb-filter="active=on">
                         <wb-foreach wb="from=blocks&tpl=false" wb-filter="name=project-descr">
                             <wb-var cover="{{cover.0.img}}" wb-if="'{{_var.cover}}' == ''" />
