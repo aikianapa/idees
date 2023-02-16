@@ -510,13 +510,24 @@ new Swiper('.brand__slider', {
 });
 
 const swiper = new Swiper(".js-feedback-slider-list", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
     touchReleaseOnEdges: true,
     slideToClickedSlide: true,
     navigation: {
         nextEl: '.js-feedback-slider-button--next'
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
     },
 });
 
@@ -579,7 +590,19 @@ function countboxScroll () {
             let w_height = $(window).height(); // Высота окна браузера
             let d_height = $(document).height(); // Высота всего документа
             let e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
-            if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+            const mq768 = window.matchMedia('(max-width: 768px)')
+            const indent = mq768.matches ? 800 : 500;
+
+            if (w_top + indent >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+                $('.about-regards__item-count-number').css('opacity', '1');
+                $('.about-regards__item-count-number').spincrement({
+                    thousandSeparator: "",
+                    duration: 1200
+                });
+                show = false;
+            }
+
+            if (w_top + 400 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
                 $('.about-regards__item-count-number').css('opacity', '1');
                 $('.about-regards__item-count-number').spincrement({
                     thousandSeparator: "",
