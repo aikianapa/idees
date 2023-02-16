@@ -2408,16 +2408,6 @@ footer a:hover {
     }
 }
 
-//project-team
-
-.project-team {
-
-}
-
-.project-team__item {
-
-}
-
 .feedback__swiper {
     position: relative;
 }
@@ -2432,6 +2422,10 @@ footer a:hover {
 
 .root-slider__nav-wrapper .swiper-wrapper {
     margin-top: 8px;
+
+    @media (max-width: 1150px) {
+        margin-top: 10px;
+    }
 }
 
 .root-slider__nav-item {
