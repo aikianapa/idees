@@ -31,7 +31,6 @@
             </div>
         </div>
     </section>
-    <wb-module wb="module=yonger&mode=render&view=block-services-list" />
 </view>
 <edit header="Список категорий услуг">
     <div>
@@ -63,7 +62,7 @@
         <div class="col-6">
             <input class="form-control tx-bold" type="text" name="subtitle" placeholder="Заголовок">
         </div>
-        <div class="col-12 mt-1">
+        <div class="mt-1 col-12">
             <textarea class="form-control" rows="auto" name="subtext" placeholder="Текст"></textarea>
         </div>
     </wb-multiinput>

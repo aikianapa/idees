@@ -8,7 +8,7 @@
 <wb-module wb="module=yonger&mode=render&view=header"/>
 <main class="page__main">
     <section class="project">
-        <div class="project__title-container container">
+        <div class="container project__title-container">
             <h1 class="page__title">{{descr}}</h1>
 
             <ul class="project__tags">
@@ -36,7 +36,7 @@
     </section>
 
 
-    <div class="project__controls container">
+    <div class="container project__controls">
         <a class="project__controls-button" href="/projects/{{wbFurlGenerate({{prev_item.name}})}}">
             <span class="button__icon-wrapper">
                     <svg class="button__icon" width="24" height="24" aria-hidden="true">
@@ -57,74 +57,6 @@
                 </span>
         </a>
     </div>
-
-    <section class="project__similar container" wb-if="'{{similar}}'>'[]'">
-        <div class="project__similar-top block-button-arrows">
-            <h2 class="page__section-title">Похожие проекты</h2>
-        </div>
-        <ul class="project__similar-list">
-            <div class="cases-new">
-                <wb-foreach wb="from=similar&size=6&limit=18&more=true:ещё">
-                    <wb-var link="/projects/{{wbFurlGenerate({{name}})}}"/>
-                    <li class="cases-new__case">
-                        <a href="/projects/{{wbFurlGenerate({{name}})}}" class="cases-new__img-link lazy-wrapper">
-                            <div class="cases-new__img-wrapper">
-                                <img class="cases-new__img loading lazy-wrapper__img"
-                                     data-src="/thumbc/700x400/src{{_var.cover}}"
-                                     data-srcset="/thumbc/1580x1000/src{{_var.cover}} 2x" alt="{{descr}}">
-                            </div>
-                        </a>
-                        <a href="/projects/{{wbFurlGenerate({{name}})}}" class="cases-new__description">
-                            {{descr}}
-                        </a>
-                    </li>
-                </wb-foreach>
-            </div>
-        </ul>
-    </section>
-    <div class="gray-box2-clear section-outer">
-        <div class="container">
-
-            <div class="title-section">
-                <h2 class="title-section__title">Услуги агенства</h2>
-                <a href="/services" class="title-section__link big-link">
-                    <div class="big-link__wrapper">
-                        <span class="big-link__text">Все <span class="big-link__text-all">услуги</span></span>
-                        <i class="big-link__icon-arrow">
-                            <svg class="big-link__icon-arrow-svg" width="34" height="9" aria-hidden="true">
-                                <use xlink:href="/assets/img/sprite.svg#big-arrow"></use>
-                            </svg>
-                        </i>
-                    </div>
-                </a>
-            </div>
-
-            <wb-var menu="{{yongerSiteMenu()}}"/>
-
-            <wb-foreach wb="from=_var.menu&tpl=false">
-
-                <div class="uslugi" wb-if="'{{name}}'=='services'">
-
-                    <wb-foreach wb="from=children&tpl=false">
-                        <div class="uslugi-item" wb-if="'{{name}}'!=='services'">
-                            <h3 class="sub-sub-title"> {{menu_title}} </h3>
-
-                            <div class="ttext">
-                            </div>
-                            <div class="tlist">
-                                <wb-foreach wb="table={{attach}}&tpl=false" wb-filter="{{attach_filter}}">
-                                    <a href="{{path}}" class="menu__sub-link">
-                                        {{header}}
-                                    </a>
-                                </wb-foreach>
-                            </div>
-                        </div>
-                    </wb-foreach>
-                </div>
-            </wb-foreach>
-        </div>
-    </div>
-    <wb-module wb="module=yonger&mode=render&view=form-project-short"/>
 </main>
 
 <wb-module wb="module=yonger&mode=render&view=footer"/>
