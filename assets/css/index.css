@@ -3111,7 +3111,6 @@ body:not(.dark) .main-section__scene-video-white {
     opacity: 1;
     visibility: visible;
     max-width: 100vw;
-    height: auto;
 }
 
 .main-section__scene-img {
