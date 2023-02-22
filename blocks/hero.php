@@ -6,7 +6,7 @@
                 <img src="{{_var.bkg}}" class="root-slider__img" alt="">
             </div>
             <div id="scene" class="main-section__scene" wb-if="'{{video_white.0.img}}'">
-                <video class="main-section__scene-video main-section__scene-video-white" autoplay playsinline muted loop>
+                <video class="main-section__scene-video main-section__scene-video-white" autoplay="true" playsinline="true" muted="true" loop="true">
                     <source type="video/mp4" src="{{video_white.0.img}}">
                 </video>
             </div>
