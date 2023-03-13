@@ -17,7 +17,7 @@
 						<div class="footer-top-right">
 							<div class="big-gray davayte"> давайте </div>
 							<div class="big-gray sozdavat"> создавать </div>
-							<button class="ybutton footer-button zayav-button"> Оставить заявку </button>
+							<button class="ybutton footer-button zayav-button"> Отправить заявку </button>
 						</div>
 					</div>
 
