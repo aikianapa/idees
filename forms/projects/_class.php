@@ -14,14 +14,17 @@ class projectsClass extends cmsFormsClass
         $prev = isset($keys[$pos-1]) ? $keys[$pos-1] : $keys[$count];
         $item['next_item'] = $list[$next];
         $item['prev_item'] = $list[$prev];
+        $item['header'] = $item['name'];
         // поиск похожих
+        /*
         $tags = $item['tags'];
         $similar = wbArrayFilter($list, ['filter'=> [
             'id'=>['$ne'=>$item['id']],
             'tags'=>['$like'=>$tags[0]]
         ]]);
-        $item['header'] = $item['name'];
+        
         $this->similar($item);
+        */
     }
 
     function similar(&$item = null) {
