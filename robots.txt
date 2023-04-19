@@ -4,8 +4,11 @@ Disallow: /assets
 Disallow: /blocks
 Disallow: /tpl
 Disallow: /forms
+Disallow: /engine
 Disallow: /modules
 Disallow: /uploads
+Disallow: /signup
+Disallow: /signin
 
 User-agent: Yandex
 Clean-param: utm
