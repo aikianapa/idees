@@ -1,6 +1,9 @@
 <html class="page" lang="ru">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="follow, noarchive, noindex">
     <title>{{title}}</title>
 </head>
 
