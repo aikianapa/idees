@@ -1,8 +1,8 @@
 <view>
-<section class="page__form-section pt-0 pb-0">
+<section class="pt-0 pb-0 page__form-section">
 		<div class="slider-wrapper">
 			<div class="container">
-				<div class="bread"> <a href="/">Главная </a> / <a href="/services">Услуги</a> / Корпоративные сайты </div>
+				<div class="bread"> <a href="/">Главная </a> / <a href="/services">Услуги</a> / {{_parent.header}} </div>
 			</div>
 
 			<div class="slider">
