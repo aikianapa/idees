@@ -9,6 +9,8 @@ Disallow: /modules
 Disallow: /uploads
 Disallow: /signup
 Disallow: /signin
+Disallow: *?etext=
+Disallow: *?
 
 User-agent: Yandex
 Clean-param: utm
