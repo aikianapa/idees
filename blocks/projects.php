@@ -34,9 +34,7 @@
                             <a class="cases-new__img-link lazy-wrapper ttext" href="/projects/{{wbFurlGenerate({{name}})}}">
                                 <div class="cases-new__img-wrapper">
                                     <img class="cases-new__img loading lazy-wrapper__img" 
-                                    sizes="(max-width: 1200px) 1x, 2x"
-                                        data-src="/thumbc/790x500/src/{{_var.cover}} 1x"
-                                        data-srcset="/thumbc/1580x1000/src/{{_var.cover}} 2x"
+                                        data-src="/thumbc/1185x750/src/{{_var.cover}}"
                                         alt="{{name}}">
                                 </div>
                             </a>
