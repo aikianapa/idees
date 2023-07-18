@@ -27,7 +27,7 @@
 
         <div class="project__content-image-box" wb-if="'{{images.0.img}}'>''">
             <wb-foreach wb="from=images&tpl=false">
-                <img class="project__content-image popup-image" width="928" height="600" data-src="/thumbc/928x600/src{{img}}" data-srcset="/thumbc/1856x1200/src{{img}} 2x" alt="{{alt}}" wb-if="'{{img}}'>''">
+                <img class="project__content-image popup-image" width="928" height="600" data-src="/thumbc/1856x1200/src{{img}}" data-srcset="/thumbc/1856x1200/src{{img}} 2x" alt="{{alt}}" wb-if="'{{img}}'>''">
             </wb-foreach>
         </div>
     </div>
