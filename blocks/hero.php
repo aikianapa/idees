@@ -60,6 +60,7 @@
         </div>
     </section>
 </view>
+
 <edit header="Заголовок главной страницы">
     <div>
         <wb-module wb="module=yonger&mode=edit&block=common.inc" />
