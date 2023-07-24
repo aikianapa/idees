@@ -28,7 +28,7 @@
         <link rel="manifest" href="/assets/manifest.webmanifest">
 
         <!-- Yandex.Metrika counter -->
-        <script type="text/javascript">
+        <script >
             (function(m, e, t, r, i, k, a) {
                 m[i] = m[i] || function() {
                     (m[i].a = m[i].a || []).push(arguments)
@@ -57,7 +57,7 @@
         <!-- Яндекс верификатор для вебмастера -->
         <meta name="yandex-verification" content="c15ff6821fb31878" />
         <!-- /Яндекс верификатор для вебмастера -->
-        <script type="text/javascript">
+        <script >
             ! function() {
                 var t = document.createElement("script");
                 t.type = "text/javascript", t.async = !0, t.src = 'https://vk.com/js/api/openapi.js?169', t.onload =
