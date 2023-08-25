@@ -15,7 +15,7 @@
 				<div class="slide" wb-if="'{{active}}'=='on'">
                     <wb-var url="{{_var.descr.cover.0.img}}" wb-if="'{{_var.descr.cover.0.img}}' >''" else="/assets/img/slider/slide.jpg"/>
                     <wb-var link="/projects/{{wbFurlGenerate({{name}})}}"/>
-					<div class="slide-inner" style="background-image: url({{_var.url}})">
+					<div class="slide-inner" style="background-image: url('{{_var.url}}')">
 						<div class="container">
 							<div class="slider-title"> {{descr}}
 							</div>
