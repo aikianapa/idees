@@ -9,7 +9,7 @@
         Айдис - агентство по созданию брендов и цифровых продуктов
     </title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Проведение исследований,аналитика,разработка позиционирования и стратегии бренда,Нейминг,регистрация ТЗ (торгового знака) в ФИПС,слоган,дескриптор,копирайт,Айдентика,логотип,фирменный стиль,дизайн носители,брендбук,Веб-сайты,лендинги,веб-сервисы,Буклеты,презентации,иллюстрации,видеоролики">
     <meta name="description" content="Branding и digital решения для современных компаний. Предлагаем услуги по созданию брендов, веб-сайтов, презентаций, дизайна и видео.">
     <link rel="stylesheet" href="/assets/css/style.css">
