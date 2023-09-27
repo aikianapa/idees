@@ -2,6 +2,7 @@
 
 <head>
     <title>{{title}}</title>
+    <wb-module wb="module=yonger&mode=render&view=head" />
 </head>
 
 <body class="page__body">
@@ -13,7 +14,7 @@
 
         <section>
             <wb-module wb="module=yonger&mode=render&view=form-vacancy" />
-        </section>    
+        </section>
 
     </main>
 

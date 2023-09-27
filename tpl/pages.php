@@ -1,6 +1,8 @@
 <html class="page" lang="ru">
+
 <head>
     <title>{{header}}</title>
+    <wb-module wb="module=yonger&mode=render&view=head" />
 </head>
 
 <body>
@@ -17,4 +19,5 @@
     </div> -->
 
 </body>
+
 </html>

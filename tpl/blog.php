@@ -2,6 +2,7 @@
 
 <head>
   <title>{{title}}</title>
+  <wb-module wb="module=yonger&mode=render&view=head" />
 </head>
 
 <body class="page__body">
@@ -11,7 +12,7 @@
   </wb-data>
 
   <main class="page__main">
-    <section class="article-page container">
+    <section class="container article-page">
       <div class="article__tag-line article-page__tag-line">
         <wb-foreach wb="from=tags&tpl=false">
           <span class="article__tag">
@@ -55,7 +56,7 @@
             <!--p class="article__item-description category__item-description">{{blocks.block_paragraph.text}}</p-->
             <div class="tlist">
               <wb-foreach wb="table={{attach}}&tpl=false" wb-filter="{{attach_filter}}">
-                  <a class="menu__sub-link" href="{{_parent.url}}/{{wbFurlGenerate({{name}})}}">{{name}}</a>
+                <a class="menu__sub-link" href="{{_parent.url}}/{{wbFurlGenerate({{name}})}}">{{name}}</a>
               </wb-foreach>
             </div>
 
@@ -64,7 +65,7 @@
       </div>
     </section>
 
-    <section class="page__section container" wb-if="'{{similar}}'>''">
+    <section class="container page__section" wb-if="'{{similar}}'>''">
       <div class="page__section-top block-button-arrows">
         <h2 class="page__section-title">Похожие статьи</h2>
         <div class="page__section-slider-buttons swiper-slider-buttons">
