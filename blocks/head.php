@@ -3,7 +3,7 @@
         <wb-module wb="module=yonger&amp;mode=edit&amp;block=common.inc"></wb-module>
     </div>
 </edit>
-<view>
+<view head>
     <base href="/">
     <title>
         Айдис - агентство по созданию брендов и цифровых продуктов
