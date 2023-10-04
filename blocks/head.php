@@ -22,6 +22,7 @@
     <link rel="icon" href="/assets/img/favicons/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png">
     <link rel="manifest" href="/assets/manifest.webmanifest">
+    <link rel="canonical" href="https://idees.ru{{_route.uri}}" />
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function(m, e, t, r, i, k, a) {
